@@ -5,3 +5,16 @@ work/pytest-tmp/
 work/seed-*/
 work/latest_metrics.txt
 outputs/demo/phenotype_table.csv
+outputs/demo_compound*/
+outputs/external_validation/
+outputs/external_validation_longpath*/
+outputs/test-tmp*/
+outputs/validation/
+outputs/validation_grouped/
+outputs/validation_ridge*/
+outputs/validation_compound/seed_*/
+outputs/validation_compound_grouped/seed_*/
+work/external/
+work/ffmpeg/
+work/drag.html
+work/kaggle_thumbnail.png
