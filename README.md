@@ -60,7 +60,7 @@ The original implementation in this repository is MIT licensed. Synthetic images
 ## Competition deliverables
 
 - Technical report: [`docs/TECHNICAL_REPORT.md`](docs/TECHNICAL_REPORT.md)
-- Kaggle writeup draft: [`docs/KAGGLE_WRITEUP.md`](docs/KAGGLE_WRITEUP.md)
+- Kaggle writeup: [`docs/KAGGLE_WRITEUP.md`](docs/KAGGLE_WRITEUP.md)
 - Submission checklist: [`docs/SUBMISSION_CHECKLIST.md`](docs/SUBMISSION_CHECKLIST.md)
 - Leading-project analysis: [`docs/LEADING_PROJECT_ANALYSIS.md`](docs/LEADING_PROJECT_ANALYSIS.md)
 - Reproduction script: `python -m src.neurochip_twin`
