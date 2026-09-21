@@ -3,50 +3,53 @@
   "n_samples": 180,
   "train_size": 135,
   "test_size": 45,
+  "split_mode": "stratified",
+  "scenario": "compound_specific",
+  "group_count": null,
   "data_kind": "synthetic_organ_on_chip_proxy",
   "baseline": {
-    "roc_auc": 0.27999999999999997,
-    "average_precision": 0.555507651864754,
-    "balanced_accuracy": 0.5,
-    "accuracy": 0.6666666666666666,
-    "f1": 0.8
+    "roc_auc": 0.5674603174603174,
+    "average_precision": 0.6197280165681859,
+    "balanced_accuracy": 0.5803571428571428,
+    "accuracy": 0.6,
+    "f1": 0.7
   },
   "physics_only": {
-    "roc_auc": 0.9977777777777778,
-    "average_precision": 0.9989247311827957,
-    "balanced_accuracy": 0.9833333333333334,
-    "accuracy": 0.9777777777777777,
-    "f1": 0.9830508474576272
+    "roc_auc": 0.6924603174603174,
+    "average_precision": 0.7782431019166034,
+    "balanced_accuracy": 0.6755952380952381,
+    "accuracy": 0.6666666666666666,
+    "f1": 0.6341463414634146
   },
   "temporal_reservoir": {
-    "roc_auc": 0.9955555555555555,
-    "average_precision": 0.9978136200716846,
-    "balanced_accuracy": 0.95,
-    "accuracy": 0.9555555555555556,
-    "f1": 0.9666666666666667
+    "roc_auc": 0.9682539682539684,
+    "average_precision": 0.9719903744446077,
+    "balanced_accuracy": 0.9077380952380952,
+    "accuracy": 0.9111111111111111,
+    "f1": 0.92
   },
   "multimodal_no_interactions": {
-    "roc_auc": 0.9977777777777778,
-    "average_precision": 0.9989247311827957,
-    "balanced_accuracy": 0.95,
+    "roc_auc": 0.990079365079365,
+    "average_precision": 0.9909075616412573,
+    "balanced_accuracy": 0.9553571428571428,
     "accuracy": 0.9555555555555556,
-    "f1": 0.9666666666666667
+    "f1": 0.9583333333333334
   },
   "multimodal_physics": {
-    "roc_auc": 0.9977777777777778,
-    "average_precision": 0.9989247311827957,
-    "balanced_accuracy": 0.9666666666666667,
-    "accuracy": 0.9777777777777777,
-    "f1": 0.9836065573770492
+    "roc_auc": 0.990079365079365,
+    "average_precision": 0.9909075616412573,
+    "balanced_accuracy": 0.9553571428571428,
+    "accuracy": 0.9555555555555556,
+    "f1": 0.9583333333333334
   },
-  "multimodal_vs_temporal_delta_roc_auc": 0.0022222222222222365,
+  "multimodal_vs_temporal_delta_roc_auc": 0.021825396825396637,
   "multimodal_viability": {
-    "rmse": 5.222325210823986,
-    "r2": 0.9695378926861625
+    "rmse": 5.856394932709457,
+    "r2": 0.9568812878954335
   },
   "multimodal_ic50": {
-    "rmse": 0.19039031948800264,
-    "r2": 0.9732247959327469
+    "rmse": 0.21550050288487937,
+    "r2": 0.9567427457020665
   },
   "feature_names": [
     "count_ratio",
@@ -64,9 +67,12 @@
     "flow_rate_uL_min",
     "wall_shear_proxy",
     "clearance_factor",
-    "effective_dose"
+    "effective_dose",
+    "compound_logp_proxy",
+    "target_pathway_proxy",
+    "compound_sensitivity_proxy"
   ],
-  "fusion_feature_count": 169,
-  "fusion_design": "phenotype + fixed temporal reservoir + hydrodynamic covariates + explicit cross-modal interactions",
+  "fusion_feature_count": 295,
+  "fusion_design": "phenotype + fixed temporal reservoir + hydrodynamic/compound covariates + explicit cross-modal interactions",
   "uncertainty_proxy": "distance from 0.5; not a clinical confidence interval"
 }

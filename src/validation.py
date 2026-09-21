@@ -70,6 +70,7 @@ def run_validation(
     seeds: Iterable[int] = range(10),
     n_samples: int = 180,
     split_mode: str = "stratified",
+    scenario: str = "compound_specific",
 ) -> dict[str, object]:
     """Run the benchmark for explicit seeds and persist an audit report."""
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -83,7 +84,13 @@ def run_validation(
 
     rows: list[dict[str, float | int]] = []
     for seed in seed_values:
-        result = run(out_dir / f"seed_{seed}", seed=seed, n_samples=n_samples, split_mode=split_mode)
+        result = run(
+            out_dir / f"seed_{seed}",
+            seed=seed,
+            n_samples=n_samples,
+            split_mode=split_mode,
+            scenario=scenario,
+        )
         rows.append(_flatten_result(result, seed))
 
     frame = pd.DataFrame(rows).sort_values("seed").reset_index(drop=True)
@@ -93,6 +100,7 @@ def run_validation(
         "seeds": seed_values,
         "n_samples_per_seed": n_samples,
         "split_mode": split_mode,
+        "scenario": scenario,
         "per_seed": frame.to_dict(orient="records"),
         "aggregate": _aggregate(frame),
         "interpretation": (
@@ -113,8 +121,15 @@ def main() -> None:
     parser.add_argument("--seeds", type=int, nargs="+", default=list(range(10)))
     parser.add_argument("--samples", type=int, default=180)
     parser.add_argument("--split-mode", choices=["stratified", "grouped"], default="stratified")
+    parser.add_argument("--scenario", choices=["exposure_only", "compound_specific"], default="compound_specific")
     args = parser.parse_args()
-    report = run_validation(args.out, seeds=args.seeds, n_samples=args.samples, split_mode=args.split_mode)
+    report = run_validation(
+        args.out,
+        seeds=args.seeds,
+        n_samples=args.samples,
+        split_mode=args.split_mode,
+        scenario=args.scenario,
+    )
     print(json.dumps(report["aggregate"], indent=2))
 
 

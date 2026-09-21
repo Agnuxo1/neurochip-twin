@@ -14,13 +14,13 @@ Attach `outputs/demo/neurochip_twin_demo.mp4` (maximum five minutes) or a public
 
 NeuroChip Twin is an interpretable temporal digital-twin prototype for organ-on-chip microscopy. It converts a time-lapse into cell tracks and phenotype trajectories, then fuses them with dose, flow, shear and clearance context using a compact physics-informed readout. Separate heads estimate toxicity, viability and IC50, while a flow counterfactual shows how the predicted response changes under altered perfusion. The output includes measurable reasons behind the prediction: cell-count change, morphology, intensity, motion, track persistence and exposure context. Static and temporal baselines are included as ablations, so the value of dynamics and multimodal context is testable rather than assumed.
 
-On the repository's deterministic synthetic organ-on-chip-like benchmark (seed 42, 180 sequences, 25% held out), the static baseline ROC-AUC is 0.280, the temporal model is 0.996, and the multimodal physics-informed model is 0.998 (F1 0.984). The auxiliary heads obtain viability R² 0.970 and IC50 R² 0.973. A ten-seed audit gives multimodal ROC-AUC 0.992 ± 0.010, F1 0.963 ± 0.023, viability R² 0.964 ± 0.013, and IC50 R² 0.968 ± 0.011. These values are a synthetic stress test, not clinical performance. The project intentionally exposes this limitation and provides the data contract and validation plan for authorized public microscopy and organ-on-chip data.
+On the repository's deterministic compound-specific synthetic organ-on-chip-like benchmark (seed 42, 180 sequences, 25% held out), the static baseline ROC-AUC is 0.567, the physics-only baseline is 0.692, the temporal model is 0.968, and the multimodal physics-informed model is 0.990 with F1 0.958. The auxiliary heads obtain viability R² 0.957 and IC50 R² 0.957. A ten-seed audit gives multimodal ROC-AUC 0.987, F1 0.936, viability R² 0.902 and IC50 R² 0.908; the grouped audit gives multimodal ROC-AUC 0.983 and F1 0.944. These values are a synthetic stress test, not clinical performance. The project intentionally exposes this limitation and provides the data contract and validation plan for authorized public microscopy and organ-on-chip data.
 
-As an additional leakage diagnostic, a ten-seed grouped acquisition-batch split gives ROC-AUC 0.995 ± 0.005, F1 0.973 ± 0.017, viability R² 0.962 ± 0.020, and IC50 R² 0.965 ± 0.018. These synthetic batch IDs are explicitly only a proxy; real evaluation must use measured chip/experiment IDs.
+The primary scenario includes seeded compound descriptors and a latent susceptibility factor visible only through temporal phenotype. This makes the physics-only ablation materially weaker and tests whether dynamics add information. The ten-seed multimodal-versus-temporal ROC-AUC gain averages +0.0023 in random splits and +0.0035 in grouped splits; these synthetic batch IDs are explicitly only a proxy, and real evaluation must use measured chip/experiment IDs.
 
 The image-analysis front-end was also audited on 24 held-out BBBC038v1 microscopy images after parameter calibration on 12 separate images: mean pixel IoU 0.520, Dice 0.575, precision 0.842 and recall 0.578. BBBC038 is public CC0 microscopy data; this is a portability check for segmentation only, not OoC response validation or clinical performance. The repository documents the exact download, license and command.
 
-An important ablation finding is that the physics-only baseline also reaches ROC-AUC 0.998 on this proxy. We therefore make no claim that the multimodal interactions improve accuracy until the system is tested on real or harder compound-specific data; their current value is interpretability, counterfactual analysis, and an extensible interface for measured OoC covariates.
+The older `exposure_only` scenario remains available as a control and is intentionally not used as the headline result because its label is too tightly coupled to dose and shear. The primary scenario is still synthetic and makes no biological generalization claim; the value of the system is the auditable temporal/multimodal workflow and its explicit path to authorized OoC data.
 
 ### Technical report
 
@@ -35,7 +35,7 @@ Organ-on-chip experiments are dynamic. A final image can miss delayed death, tra
 ```powershell
 python -m pip install -r requirements.txt
 python -m pytest -q
-python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180
+python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180 --scenario compound_specific
 ```
 
 ### Limitations and ethics

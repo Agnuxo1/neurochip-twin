@@ -1,22 +1,22 @@
 <!doctype html><meta charset='utf-8'><title>NeuroChip Twin demo</title>
     <h1>NeuroChip Twin</h1><p>Self-contained synthetic organ-on-chip proxy benchmark; no clinical claim.</p>
-    <p>Static ROC-AUC: <b>0.280</b> · Temporal: <b>0.996</b> · Multimodal physics: <b>0.998</b></p>
+    <p>Static ROC-AUC: <b>0.567</b> · Temporal: <b>0.968</b> · Multimodal physics: <b>0.990</b></p>
     <img src='demo_overview.png' style='max-width:100%'><img src='confusion_matrix.png' style='max-width:420px'><img src='counterfactual_flow.png' style='max-width:620px'>
     <h2>Interpretation</h2><pre>{
-  "count_ratio": 0.1667,
-  "area_ratio": 0.343,
-  "intensity_ratio": 0.3621,
-  "elongation_ratio": 2.0583,
-  "motility": 1.4545,
-  "persistence": 0.3913,
-  "count_slope": -0.9091,
-  "area_slope": -17.1526,
-  "intensity_slope": -0.0261
+  "count_ratio": 0.9286,
+  "area_ratio": 0.6093,
+  "intensity_ratio": 0.4108,
+  "elongation_ratio": 1.7115,
+  "motility": 1.7739,
+  "persistence": 0.4194,
+  "count_slope": -0.0909,
+  "area_slope": -2.5221,
+  "intensity_slope": -0.0183
 }</pre>
     <h2>Physics counterfactual</h2><pre> flow_rate_uL_min  wall_shear_proxy  predicted_toxicity_probability  predicted_viability
-              0.0              0.00                        1.000000             0.000000
-              2.0              0.36                        1.000000             0.000000
-             10.0              1.80                        1.000000             0.000000
-             20.0              3.60                        0.999995            10.141015
-             40.0              7.20                        0.999850            23.951889</pre>
+              0.0              0.00                        0.999838            40.487884
+              2.0              0.36                        0.998448            44.510496
+             10.0              1.80                        0.483640            61.983594
+             20.0              3.60                        0.060330            68.358357
+             40.0              7.20                        0.049964            69.070649</pre>
     <p>Uncertainty is a transparent distance-from-threshold proxy and must not be read as a clinical confidence interval.</p>

@@ -10,9 +10,9 @@ The temporal readout is QESN-inspired: a fixed recurrent reservoir compresses fr
 
 ```powershell
 python -m pip install -r requirements.txt
-python -m src.neurochip_twin --out outputs/demo --seed 42
-python -m src.validation --out outputs/validation --seeds 0 1 2 3 4 5 6 7 8 9
-python -m src.validation --out outputs/validation_grouped --seeds 0 1 2 3 4 5 6 7 8 9 --split-mode grouped
+python -m src.neurochip_twin --out outputs/demo --seed 42 --scenario compound_specific
+python -m src.validation --out outputs/validation --seeds 0 1 2 3 4 5 6 7 8 9 --scenario compound_specific
+python -m src.validation --out outputs/validation_grouped --seeds 0 1 2 3 4 5 6 7 8 9 --scenario compound_specific --split-mode grouped
 python -m src.external_validation --root /path/to/stage1_train --out outputs/external_validation --samples 36 --seed 42 --calibrate
 python -m pytest -q
 ```
@@ -39,10 +39,10 @@ in `outputs/external_validation_calibrated/bbbc038_summary.json`.
 - Cell analysis: denoising, threshold segmentation, connected components, centroid tracking.
 - Features: count, area, intensity, elongation, motion, persistence, and temporal slopes.
 - Model: static baseline vs. fixed-reservoir temporal classifier vs. a multimodal physics-informed readout.
-- Multimodal fusion: morphology + temporal reservoir + dose/flow/shear/clearance, with explicit cross-modal interactions.
+- Multimodal fusion: morphology + temporal reservoir + dose/flow/shear/clearance + compound context, with explicit cross-modal interactions.
 - Outputs: toxicity probability, viability and IC50 regression, held-out metrics, and a flow counterfactual.
 
-Synthetic data are used deliberately for a runnable, license-clean smoke test. The `data/` contract supports replacing generated sequences with legally obtained BBBC, RxRx1, Cell Painting, or authorized organ-on-chip data; the report lists the required validation protocol.
+Synthetic data are used deliberately for a runnable, license-clean stress test. The primary `compound_specific` scenario includes hidden sequence-level susceptibility to make the temporal ablation meaningful; `--scenario exposure_only` reproduces the simpler control. The `data/` contract supports replacing generated sequences with legally obtained BBBC, RxRx1, Cell Painting, or authorized organ-on-chip data; the report lists the required validation protocol.
 
 ## Provenance and licensing
 

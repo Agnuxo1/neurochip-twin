@@ -56,6 +56,13 @@ def test_grouped_split_is_supported(tmp_path: Path):
     assert 0 < result["test_size"] < result["n_samples"]
 
 
+def test_compound_specific_scenario_exposes_context(tmp_path: Path):
+    result = run(tmp_path, seed=42, n_samples=48, scenario="compound_specific")
+    assert result["scenario"] == "compound_specific"
+    assert len(result["physics_feature_names"]) == 8
+    assert result["fusion_feature_count"] > 200
+
+
 def test_external_pixel_metrics_have_expected_bounds():
     metrics = _pixel_metrics(np.array([[1, 0], [0, 1]]), np.array([[1, 0], [0, 1]]))
     assert metrics == {"iou": 1.0, "dice": 1.0, "precision": 1.0, "recall": 1.0}

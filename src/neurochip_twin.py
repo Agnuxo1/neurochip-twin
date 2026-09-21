@@ -51,7 +51,21 @@ PHYSICS_FEATURE_NAMES = [
     "wall_shear_proxy",
     "clearance_factor",
     "effective_dose",
+    "compound_logp_proxy",
+    "target_pathway_proxy",
+    "compound_sensitivity_proxy",
 ]
+
+COMPOUND_CONTEXT = np.array([
+    [0.15, 0.10, 0.62],
+    [0.35, 0.85, 0.78],
+    [0.55, 0.25, 0.94],
+    [0.75, 0.70, 0.58],
+    [0.95, 0.40, 1.08],
+    [1.20, 0.90, 0.72],
+    [1.45, 0.15, 1.22],
+    [1.70, 0.60, 0.88],
+], dtype=float)
 
 
 @dataclass(frozen=True)
@@ -64,6 +78,10 @@ class Sequence:
     toxicity_score: float = 0.0
     viability_target: float = 100.0
     ic50_target: float = -6.0
+    compound_id: int = 0
+    compound_logp: float = 0.0
+    target_pathway: float = 0.0
+    compound_sensitivity: float = 1.0
 
 
 def _draw_gaussian(image: np.ndarray, cy: float, cx: float, sy: float, sx: float, amp: float) -> None:
@@ -83,12 +101,22 @@ def generate_sequence(
     flow_rate: float | None = None,
     frames: int = 12,
     shape: tuple[int, int] = (128, 160),
+    scenario: str = "exposure_only",
 ) -> Sequence:
     """Generate an organ-on-chip-like cell movie with a known perturbation."""
+    if scenario not in {"exposure_only", "compound_specific"}:
+        raise ValueError(f"Unsupported scenario: {scenario}")
     rng = np.random.default_rng(seed)
     h, w = shape
+    sampled_flow = float(rng.choice([0.0, 2.0, 10.0, 40.0]))
     if flow_rate is None:
-        flow_rate = float(rng.choice([0.0, 2.0, 10.0, 40.0]))
+        flow_rate = sampled_flow
+    if scenario == "compound_specific":
+        compound_id = int(rng.integers(0, len(COMPOUND_CONTEXT)))
+        compound_logp, target_pathway, compound_sensitivity = COMPOUND_CONTEXT[compound_id]
+    else:
+        compound_id = 0
+        compound_logp, target_pathway, compound_sensitivity = 0.0, 0.0, 1.0
     clearance_factor = 1.0 / (1.0 + 0.045 * flow_rate)
     shear_stress = 0.18 * flow_rate
     shear_penalty = max(0.0, flow_rate - 15.0) / 30.0
@@ -101,7 +129,25 @@ def generate_sequence(
     # The response is driven by effective exposure plus a high-shear penalty.
     # This is a transparent synthetic physics proxy, not a biological law.
     effective_dose = dose * clearance_factor
-    toxicity = np.clip(effective_dose * 1.65 + shear_penalty * 0.32 + rng.normal(0, 0.08), 0, 1)
+    exposure_response = effective_dose * (1.15 + 0.85 * compound_sensitivity)
+    pathway_response = target_pathway * effective_dose * 0.18
+    if scenario == "compound_specific":
+        # A latent, sequence-level susceptibility factor is only observable
+        # through the resulting temporal phenotype.  It is intentionally not
+        # included in the compound metadata or hydrodynamic feature block.
+        latent_cell_state = float(rng.normal(0.0, 0.28))
+        toxicity = np.clip(
+            0.16
+            + effective_dose * (0.48 + 0.34 * compound_sensitivity)
+            + pathway_response * 0.55
+            + shear_penalty * 0.22
+            + latent_cell_state
+            + rng.normal(0, 0.05),
+            0,
+            1,
+        )
+    else:
+        toxicity = np.clip(exposure_response + pathway_response + shear_penalty * 0.32 + rng.normal(0, 0.08), 0, 1)
     label = int(toxicity > 0.42)
     out = np.zeros((frames, h, w), dtype=np.float32)
     for t in range(frames):
@@ -123,7 +169,20 @@ def generate_sequence(
         out[t] = np.clip(ndimage.gaussian_filter(image, 0.6), 0, 1)
     viability_target = float(np.clip(100.0 * (1.0 - toxicity), 0.0, 100.0))
     ic50_target = float(-7.2 + 3.6 * (1.0 - toxicity) + 0.015 * flow_rate)
-    return Sequence(out, float(dose), label, seed, float(flow_rate), float(toxicity), viability_target, ic50_target)
+    return Sequence(
+        out,
+        float(dose),
+        label,
+        seed,
+        float(flow_rate),
+        float(toxicity),
+        viability_target,
+        ic50_target,
+        compound_id,
+        float(compound_logp),
+        float(target_pathway),
+        float(compound_sensitivity),
+    )
 
 
 def segment(
@@ -232,6 +291,9 @@ def physics_features(sequence: Sequence) -> np.ndarray:
         0.18 * flow,
         clearance,
         sequence.dose * clearance,
+        sequence.compound_logp,
+        sequence.target_pathway,
+        sequence.compound_sensitivity,
     ], dtype=float)
 
 
@@ -242,12 +304,12 @@ def cross_modal_features(temporal: np.ndarray, physical: np.ndarray) -> np.ndarr
     readout can condition phenotype changes on exposure and shear without
     hiding the interaction in a large neural network.
     """
-    interactions = np.einsum("ij,ik->ijk", temporal, physical[:, [2, 3, 4]]).reshape(len(temporal), -1)
+    interactions = np.einsum("ij,ik->ijk", temporal, physical[:, 2:]).reshape(len(temporal), -1)
     return np.c_[temporal, physical, interactions]
 
 
 def fused_feature_names() -> list[str]:
-    interaction_names = [f"{t}×{p}" for t in FEATURE_NAMES + [f"reservoir_{i}" for i in range(32)] for p in ["wall_shear_proxy", "clearance_factor", "effective_dose"]]
+    interaction_names = [f"{t}×{p}" for t in FEATURE_NAMES + [f"reservoir_{i}" for i in range(32)] for p in PHYSICS_FEATURE_NAMES[2:]]
     return FEATURE_NAMES + [f"reservoir_{i}" for i in range(32)] + PHYSICS_FEATURE_NAMES + interaction_names
 
 
@@ -312,10 +374,23 @@ def _split_indices(y: np.ndarray, n_samples: int, seed: int, split_mode: str) ->
     raise RuntimeError("Could not find a grouped split containing both classes")
 
 
-def run(out_dir: Path, seed: int = 42, n_samples: int = 180, split_mode: str = "stratified") -> dict:
+def run(
+    out_dir: Path,
+    seed: int = 42,
+    n_samples: int = 180,
+    split_mode: str = "stratified",
+    scenario: str = "compound_specific",
+) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(seed)
-    sequences = [generate_sequence(int(rng.integers(1_000_000)), float(rng.uniform(0, 1))) for _ in range(n_samples)]
+    sequences = [
+        generate_sequence(
+            int(rng.integers(1_000_000)),
+            float(rng.uniform(0, 1)),
+            scenario=scenario,
+        )
+        for _ in range(n_samples)
+    ]
     X, static_X, physical_X, y, viability, ic50, tables, doses = [], [], [], [], [], [], [], []
     for seq in sequences:
         feat, table = phenotype_features(seq)
@@ -375,7 +450,7 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180, split_mode: str = "
     demo = sequences[int(np.argmax([s.dose * (1.0 / (1.0 + 0.045 * s.flow_rate)) for s in sequences]))]
     counterfactual_rows = []
     for flow in [0.0, 2.0, 10.0, 20.0, 40.0]:
-        cf = generate_sequence(demo.seed, demo.dose, flow_rate=flow)
+        cf = generate_sequence(demo.seed, demo.dose, flow_rate=flow, scenario=scenario)
         cf_feat, cf_table = phenotype_features(cf)
         cf_r = reservoir.transform([cf_table])[0]
         cf_physics = physics_features(cf)[None, :]
@@ -402,6 +477,7 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180, split_mode: str = "
         "train_size": int(len(train_idx)),
         "test_size": int(len(test_idx)),
         "split_mode": split_mode,
+        "scenario": scenario,
         "group_count": group_count,
         "data_kind": "synthetic_organ_on_chip_proxy",
         "baseline": metrics(y[test_idx], p_base),
@@ -415,7 +491,7 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180, split_mode: str = "
         "feature_names": FEATURE_NAMES,
         "physics_feature_names": PHYSICS_FEATURE_NAMES,
         "fusion_feature_count": int(fused_X.shape[1]),
-        "fusion_design": "phenotype + fixed temporal reservoir + hydrodynamic covariates + explicit cross-modal interactions",
+        "fusion_design": "phenotype + fixed temporal reservoir + hydrodynamic/compound covariates + explicit cross-modal interactions",
         "uncertainty_proxy": "distance from 0.5; not a clinical confidence interval",
     }
     (out_dir / "metrics.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
@@ -460,8 +536,9 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--samples", type=int, default=180)
     parser.add_argument("--split-mode", choices=["stratified", "grouped"], default="stratified")
+    parser.add_argument("--scenario", choices=["exposure_only", "compound_specific"], default="compound_specific")
     args = parser.parse_args()
-    print(json.dumps(run(args.out, args.seed, args.samples, args.split_mode), indent=2))
+    print(json.dumps(run(args.out, args.seed, args.samples, args.split_mode, args.scenario), indent=2))
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@
 
 ## Abstract
 
-Organ-on-chip experiments produce time-resolved microscopy and experimental metadata, but many analysis pipelines collapse the movie into a single endpoint. NeuroChip Twin keeps the temporal signal, adds hydrodynamic exposure context, and exposes the interaction between the two. It segments cell-like objects, associates them between frames, extracts interpretable phenotype trajectories, and combines them with a fixed recurrent reservoir plus a compact physics-informed multimodal readout. Separate heads estimate toxicity, viability and IC50, and a flow counterfactual makes the digital-twin idea testable. The repository contains a deterministic image generator, analysis code, tests, figures, and an HTML demo. On the fixed-seed synthetic benchmark, the multimodal model obtains ROC-AUC 0.998, F1 0.984, viability R² 0.970 and IC50 R² 0.973. These are synthetic stress-test numbers, not clinical performance or real organ-on-chip validation. The project is designed as a license-clean bridge to later evaluation on authorized organ-on-chip data and public microscopy resources such as BBBC, RxRx1, and Cell Painting.
+Organ-on-chip experiments produce time-resolved microscopy and experimental metadata, but many analysis pipelines collapse the movie into a single endpoint. NeuroChip Twin keeps the temporal signal, adds hydrodynamic exposure and compound context, and exposes the interaction between the two. It segments cell-like objects, associates them between frames, extracts interpretable phenotype trajectories, and combines them with a fixed recurrent reservoir plus a compact physics-informed multimodal readout. Separate heads estimate toxicity, viability and IC50, and a flow counterfactual makes the digital-twin idea testable. The repository contains a deterministic compound-specific stress-test generator, analysis code, tests, figures, and an HTML demo. On the fixed-seed synthetic benchmark, the multimodal model obtains ROC-AUC 0.990, F1 0.958, viability R² 0.957 and IC50 R² 0.957. These are synthetic stress-test numbers, not clinical performance or real organ-on-chip validation. The project is designed as a license-clean bridge to later evaluation on authorized organ-on-chip data and public microscopy resources such as BBBC, RxRx1, and Cell Painting.
 
 ## 1. Problem and impact
 
@@ -27,13 +27,13 @@ The design reuses ideas from the author's public work while disclosing the adapt
 - **CAJAL:** source of the scientific-audit and reproducibility orientation; it is not used to generate or alter benchmark results.
 - **JEV-Orchestrator:** used as the local decision/control plane for repository-first analysis and evidence checkpoints; no private user data is part of the model.
 
-The new competition-specific contribution is the self-contained cell-phenotype-to-response pipeline, its synthetic stress test, explicit static-vs-temporal ablation, and reproducibility contract.
+The new competition-specific contribution is the self-contained cell-phenotype-to-response pipeline, its compound-specific synthetic stress test, explicit static-vs-temporal/multimodal ablations, and reproducibility contract.
 
 ## 3. Data and compliance
 
 The included benchmark is generated locally by `src/neurochip_twin.py`. It contains no human data, clinical identifiers, copyrighted images, or hidden labels. Each sequence is seeded, and the generator is part of the repository, so the benchmark is reproducible from source.
 
-The generator simulates bright cell-like objects, motion, disappearance, changing morphology, intensity loss, and debris-like background under a treatment perturbation. “Toxicity” is a synthetic latent state used only to test whether the pipeline can recover temporal change.
+The generator simulates bright cell-like objects, motion, disappearance, changing morphology, intensity loss, and debris-like background under a treatment perturbation. The primary `compound_specific` scenario adds seeded compound descriptors and a latent sequence-level susceptibility that is observable through the time series but not exposed directly to the physics-only ablation. The older `exposure_only` scenario remains available as a control. “Toxicity” is a synthetic latent state used only to test whether the pipeline can recover temporal change.
 
 For a real study, the input contract can be replaced by authorized organ-on-chip microscopy and metadata. The planned public-data validation track is: (1) BBBC or Cell Painting for segmentation/phenotype portability, (2) RxRx1 for perturbation-response representation, and (3) authorized OoC data for the final biological claim. Licences and permitted uses must be checked per dataset and recorded before inclusion.
 
@@ -65,7 +65,7 @@ For frame-level phenotype vector `x_t`, the fixed reservoir state is:
 
 ### 4.5 Physics-informed multimodal fusion
 
-Each sequence also carries dose, flow rate, a documented wall-shear proxy, clearance factor, and effective dose. The final feature vector concatenates temporal phenotype, reservoir state and physics covariates, then adds explicit products between phenotype/reservoir features and shear, clearance, and effective dose. This is a compact, interpretable analogue of multimodal cross-attention: the effect of a phenotype can change with exposure conditions without requiring a large opaque model.
+Each sequence carries dose, flow rate, a documented wall-shear proxy, clearance factor, effective dose, and three seeded compound-context descriptors. The final feature vector concatenates temporal phenotype, reservoir state and context covariates, then adds explicit products between phenotype/reservoir features and shear, clearance, effective dose, and compound context. This is a compact, interpretable analogue of multimodal cross-attention: the effect of a phenotype can change with exposure conditions and compound context without requiring a large opaque model.
 
 The classifier is accompanied by Ridge regression heads for end-of-sequence viability and IC50. The synthetic generator applies effective exposure attenuation under flow and a high-shear penalty; both are labeled as proxies rather than biological laws.
 
@@ -78,26 +78,26 @@ The demo reports a distance-from-0.5 uncertainty proxy for the binary readout. I
 Command:
 
 ```powershell
-python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180
+python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180 --scenario compound_specific
 ```
 
 The fixed split has 135 training and 45 held-out sequences. The current generated result is:
 
 | Model | ROC-AUC | Average precision | Balanced accuracy | Accuracy | F1 |
 |---|---:|---:|---:|---:|---:|
-| First-frame static baseline | 0.280 | 0.556 | 0.500 | 0.667 | 0.800 |
-| Physics-only baseline | 0.998 | 0.999 | 0.983 | 0.978 | 0.983 |
-| Temporal fixed reservoir + readout | 0.996 | 0.998 | 0.950 | 0.956 | 0.967 |
-| Temporal + physics, no interactions | 0.998 | 0.999 | 0.950 | 0.956 | 0.967 |
-| Multimodal physics-informed readout | 0.998 | 0.999 | 0.967 | 0.978 | 0.984 |
+| First-frame static baseline | 0.567 | 0.620 | 0.580 | 0.600 | 0.700 |
+| Physics-only baseline | 0.692 | 0.778 | 0.676 | 0.667 | 0.634 |
+| Temporal fixed reservoir + readout | 0.968 | 0.972 | 0.908 | 0.911 | 0.920 |
+| Temporal + compound context, no interactions | 0.990 | 0.991 | 0.955 | 0.956 | 0.958 |
+| Multimodal physics-informed readout | 0.990 | 0.991 | 0.955 | 0.956 | 0.958 |
 
-The multimodal heads also obtain viability RMSE 5.222/R² 0.970 and IC50 RMSE 0.190/R² 0.973 for this seed. The result is intentionally easy to audit, not presented as a population estimate. The next mandatory experiment is to repeat across at least 10 seeds, add chip-level rather than frame-level splits, and test robustness to blur, illumination drift, object overlap, and missing frames.
+The multimodal heads obtain viability RMSE 5.856/R² 0.957 and IC50 RMSE 0.216/R² 0.957 for this seed. The result is intentionally a stress test, not a population estimate. The temporal model improves sharply over physics-only because the latent susceptibility is only visible through phenotype dynamics; compound context then provides a small additional gain over the temporal representation.
 
-The ablation is also a guard against overclaiming: because the current synthetic label is generated directly from effective dose and shear, the physics-only baseline nearly saturates classification. The multimodal architecture is therefore a systems and interpretability upgrade, not yet a demonstrated accuracy improvement. A harder benchmark must introduce compound-specific response variation and nuisance factors before using the score to justify the fusion layer.
+The `exposure_only` control remains intentionally easy and demonstrates why a dose/shear-only synthetic label is insufficient. The primary compound-specific scenario avoids presenting that control as the main result: physics-only ROC-AUC is 0.692, temporal ROC-AUC is 0.968, and multimodal ROC-AUC is 0.990 for seed 42. This is still synthetic evidence and must not be confused with biological generalization.
 
-The reproducible multi-seed audit now runs ten independent seeds (`python -m src.validation --out outputs/validation --seeds 0 1 2 3 4 5 6 7 8 9`). Multimodal classification gives ROC-AUC mean 0.992 (range 0.973–1.000), average precision mean 0.997, and F1 mean 0.963 (range 0.925–1.000). With the compact, regularized regression heads, viability gives RMSE 5.58 ± 0.79 and R² 0.964 ± 0.013 (minimum 0.932); IC50 gives RMSE 0.203 ± 0.029 and R² 0.968 ± 0.011 (minimum 0.941). The multimodal-versus-temporal ROC-AUC delta averages +0.0053, but ranges from −0.0051 to +0.0177, so the current synthetic benchmark does not justify claiming a universal fusion gain. These are regression-test results only; biological claims require experiment/chip-level grouped splits and external validation.
+The primary ten-seed audit runs `python -m src.validation --out outputs/validation --seeds 0 1 2 3 4 5 6 7 8 9 --scenario compound_specific`. Multimodal classification gives ROC-AUC mean 0.987 (range 0.968–0.998), average precision mean 0.992, and F1 mean 0.936. Physics-only ROC-AUC averages 0.696, while the temporal reservoir averages 0.985; the multimodal-versus-temporal delta averages +0.0023. With the compact, regularized regression heads, viability gives RMSE 8.53 ± 4.21 and R² 0.902 ± 0.103; IC50 gives RMSE 0.310 ± 0.135 and R² 0.908 ± 0.085. These are regression-test results only; biological claims require experiment/chip-level grouped splits and external validation.
 
-A grouped acquisition-batch audit (ten seeds, eight sequences per synthetic batch, no batch shared between train and test) gives multimodal ROC-AUC 0.995 ± 0.005 (range 0.985–1.000), F1 0.973 ± 0.017, viability R² 0.962 ± 0.020 (minimum 0.926), and IC50 R² 0.965 ± 0.018 (minimum 0.934). The grouped result is a leakage-resistance diagnostic only: the synthetic batches are not real chips, and the report must not present them as biological validation.
+A grouped compound-specific audit (ten seeds, eight sequences per synthetic batch, no batch shared between train and test) gives multimodal ROC-AUC 0.983 ± 0.023, F1 0.944 ± 0.051, viability R² 0.945 ± 0.019, and IC50 R² 0.942 ± 0.027. Physics-only ROC-AUC is 0.683 and the temporal reservoir 0.980. The grouped result is a leakage-resistance diagnostic only: the synthetic batches are not real chips, and the report must not present them as biological validation.
 
 ### External front-end portability audit
 
@@ -118,7 +118,8 @@ To test the image-analysis component outside the generator, the repository inclu
 ```powershell
 python -m pip install -r requirements.txt
 python -m pytest -q
-python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180
+python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180 --scenario compound_specific
+python -m src.neurochip_twin --out outputs/demo_control --seed 42 --samples 180 --scenario exposure_only
 ```
 
 All generated outputs are disposable and can be regenerated. The repository does not require an API key, cloud service, proprietary hardware, or private data.
