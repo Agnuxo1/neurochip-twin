@@ -99,6 +99,10 @@ The reproducible multi-seed audit now runs ten independent seeds (`python -m src
 
 A grouped acquisition-batch audit (ten seeds, eight sequences per synthetic batch, no batch shared between train and test) gives multimodal ROC-AUC 0.995 ± 0.005 (range 0.985–1.000), F1 0.973 ± 0.017, viability R² 0.962 ± 0.020 (minimum 0.926), and IC50 R² 0.965 ± 0.018 (minimum 0.934). The grouped result is a leakage-resistance diagnostic only: the synthetic batches are not real chips, and the report must not present them as biological validation.
 
+### External front-end portability audit
+
+To test the image-analysis component outside the generator, the repository includes `src.external_validation` for BBBC038v1, a public microscopy dataset with CC0/public-domain images and instance masks. A deterministic sample of 36 cases was split into 12 calibration cases and 24 evaluation cases. The threshold and minimum-area parameters were selected on calibration cases only, then frozen for evaluation. On the 24 held-out images, the unmodified NeuroChip Twin segmentation front-end obtained mean pixel IoU 0.515, Dice 0.573, precision 0.843, recall 0.571, and absolute object-count error 14.9. This is useful evidence that the front-end can be exercised on real microscopy, but it is not organ-on-chip validation, response prediction, or clinical performance. The source page and download URL are persisted in the generated JSON artifact; no external images are committed to the repository.
+
 ## 6. Failure modes and safeguards
 
 - **Segmentation bias:** thresholding can merge cells or miss dim cells. The report must show masks and object-count calibration.

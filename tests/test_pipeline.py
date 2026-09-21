@@ -3,6 +3,7 @@ from pathlib import Path
 import numpy as np
 
 from src.neurochip_twin import generate_sequence, phenotype_features, run, segment, track_objects
+from src.external_validation import _pixel_metrics
 from src.validation import run_validation
 
 
@@ -53,3 +54,8 @@ def test_grouped_split_is_supported(tmp_path: Path):
     assert result["split_mode"] == "grouped"
     assert result["group_count"] is not None
     assert 0 < result["test_size"] < result["n_samples"]
+
+
+def test_external_pixel_metrics_have_expected_bounds():
+    metrics = _pixel_metrics(np.array([[1, 0], [0, 1]]), np.array([[1, 0], [0, 1]]))
+    assert metrics == {"iou": 1.0, "dice": 1.0, "precision": 1.0, "recall": 1.0}

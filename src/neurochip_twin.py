@@ -126,9 +126,20 @@ def generate_sequence(
     return Sequence(out, float(dose), label, seed, float(flow_rate), float(toxicity), viability_target, ic50_target)
 
 
-def segment(frame: np.ndarray) -> tuple[np.ndarray, list[dict[str, float]]]:
-    """Segment bright cells and return a labelled image plus interpretable objects."""
-    threshold = max(float(np.quantile(frame, 0.985) * 0.35), 0.10)
+def segment(
+    frame: np.ndarray,
+    *,
+    threshold_scale: float = 0.35,
+    min_area: int = 8,
+    max_area: int = 1200,
+) -> tuple[np.ndarray, list[dict[str, float]]]:
+    """Segment bright cells and return a labelled image plus interpretable objects.
+
+    The defaults preserve the synthetic benchmark.  Explicit parameters allow
+    a calibration split to adapt the front-end to a new microscopy domain
+    without changing the downstream feature or model code.
+    """
+    threshold = max(float(np.quantile(frame, 0.985) * threshold_scale), 0.10)
     mask = frame > threshold
     mask = ndimage.binary_opening(mask, structure=np.ones((2, 2)))
     mask = ndimage.binary_closing(mask, structure=np.ones((3, 3)))
@@ -137,7 +148,7 @@ def segment(frame: np.ndarray) -> tuple[np.ndarray, list[dict[str, float]]]:
     for idx in range(1, count + 1):
         ys, xs = np.where(labels == idx)
         area = len(xs)
-        if area < 8 or area > 1200:
+        if area < min_area or area > max_area:
             labels[labels == idx] = 0
             continue
         vals = frame[ys, xs]

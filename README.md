@@ -13,6 +13,7 @@ python -m pip install -r requirements.txt
 python -m src.neurochip_twin --out outputs/demo --seed 42
 python -m src.validation --out outputs/validation --seeds 0 1 2 3 4 5 6 7 8 9
 python -m src.validation --out outputs/validation_grouped --seeds 0 1 2 3 4 5 6 7 8 9 --split-mode grouped
+python -m src.external_validation --root /path/to/stage1_train --out outputs/external_validation --samples 36 --seed 42 --calibrate
 python -m pytest -q
 ```
 
@@ -25,6 +26,12 @@ experiment/chip-level grouped splits and external validation.
 The grouped command provides a leakage-resistant synthetic acquisition-batch
 audit; its groups are only a proxy and must be replaced by measured chip or
 experiment IDs for biological validation.
+
+The optional external audit reuses the same segmentation front-end on a
+deterministic calibration/evaluation split from BBBC038v1. It reports real
+microscopy portability only; it does not claim organ-on-chip transfer or
+response-prediction performance. Download and licensing details are recorded
+in `outputs/external_validation_calibrated/bbbc038_summary.json`.
 
 ## Scientific scope
 

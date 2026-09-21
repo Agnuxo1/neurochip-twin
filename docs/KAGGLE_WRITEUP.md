@@ -18,6 +18,8 @@ On the repository's deterministic synthetic organ-on-chip-like benchmark (seed 4
 
 As an additional leakage diagnostic, a ten-seed grouped acquisition-batch split gives ROC-AUC 0.995 ± 0.005, F1 0.973 ± 0.017, viability R² 0.962 ± 0.020, and IC50 R² 0.965 ± 0.018. These synthetic batch IDs are explicitly only a proxy; real evaluation must use measured chip/experiment IDs.
 
+The image-analysis front-end was also audited on 24 held-out BBBC038v1 microscopy images after parameter calibration on 12 separate images: mean pixel IoU 0.515, Dice 0.573, precision 0.843 and recall 0.571. BBBC038 is public CC0 microscopy data; this is a portability check for segmentation only, not OoC response validation or clinical performance. The repository documents the exact download, license and command.
+
 An important ablation finding is that the physics-only baseline also reaches ROC-AUC 0.998 on this proxy. We therefore make no claim that the multimodal interactions improve accuracy until the system is tested on real or harder compound-specific data; their current value is interpretability, counterfactual analysis, and an extensible interface for measured OoC covariates.
 
 ### Technical report

@@ -1,0 +1,37 @@
+{
+  "dataset": "BBBC038v1",
+  "source_url": "https://bbbc.broadinstitute.org/BBBC038",
+  "download_url": "https://data.broadinstitute.org/bbbc/BBBC038/stage1_train.zip",
+  "license": "CC0 / public domain according to the Broad BBBC038 page",
+  "task": "external segmentation portability audit only",
+  "sampled_cases": 36,
+  "calibration_samples": 12,
+  "evaluation_samples": 24,
+  "calibrated": true,
+  "seed": 42,
+  "threshold_scale": 0.35,
+  "min_area": 4,
+  "metrics": {
+    "iou": {
+      "mean": 0.5146685725706687,
+      "std": 0.3990943013425126
+    },
+    "dice": {
+      "mean": 0.5726816933928435,
+      "std": 0.4249933801232208
+    },
+    "precision": {
+      "mean": 0.8427958522981612,
+      "std": 0.2725535901817119
+    },
+    "recall": {
+      "mean": 0.5711383316745434,
+      "std": 0.44564637476187546
+    },
+    "count_abs_error": {
+      "mean": 14.875,
+      "std": 19.480899229311994
+    }
+  },
+  "interpretation": "Real microscopy front-end evidence; not organ-on-chip validation, response prediction, or clinical performance."
+}
