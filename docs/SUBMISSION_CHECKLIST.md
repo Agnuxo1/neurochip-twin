@@ -1,0 +1,50 @@
+# Kaggle submission checklist
+
+This checklist records the state of the AI4S Open Innovation: AI for Life Science
+writeup without claiming that the public text has been updated when it has not.
+
+## Submission fields
+
+- Category: **End-to-End System**
+- Title: `NeuroChip Twin: interpretable temporal OoC digital twin`
+- Subtitle: `Physics-informed temporal microscopy analysis for toxicity, viability and dose-response screening`
+- Competition: [AI4S Open Innovation: AI for Life Science](https://www.kaggle.com/competitions/ai-4-s-open-innovation-artificial-intelligence-for-life-scien)
+- Writeup editor: [NeuroChip Twin writeup](https://www.kaggle.com/competitions/ai-4-s-open-innovation-artificial-intelligence-for-life-scien/writeups/new-writeup-1789975521348)
+- Video: [YouTube demo](https://www.youtube.com/watch?v=U0zyU-AvXo8)
+- Code: [public GitHub repository](https://github.com/Agnuxo1/neurochip-twin)
+- Technical report: [technical report](https://github.com/Agnuxo1/neurochip-twin/blob/main/docs/TECHNICAL_REPORT.md)
+- Video file mirror: `outputs/demo/neurochip_twin_demo.mp4`
+
+## Evidence to report
+
+The current public repository is reproducible from commit `b06cfc9` or later.
+The primary benchmark is explicitly labelled synthetic:
+
+- seed 42, 180 sequences, 25% held out;
+- multimodal ROC-AUC 0.990, F1 0.958;
+- viability R² 0.957 and IC50 R² 0.957;
+- ten-seed random audit: ROC-AUC 0.987, F1 0.936;
+- ten-seed grouped audit: ROC-AUC 0.983, F1 0.944;
+- multimodal Brier/ECE: 0.041/0.064 on seed 42, 0.053/0.069 random-audit mean, and 0.048/0.071 grouped-audit mean;
+- BBBC038 front-end audit: 12 calibration and 24 frozen evaluation images, IoU 0.520 and Dice 0.575.
+
+## Compliance gates
+
+- No clinical or patient claim is made.
+- Synthetic labels and latent variables are disclosed.
+- BBBC038 is used only for the segmentation portability audit; its source,
+  download URL and CC0/public-domain statement are recorded in the generated
+  JSON artifact.
+- No external evaluation images are committed to the repository.
+- Grouped validation is described as a synthetic leakage diagnostic, not as a
+  substitute for measured chip/experiment IDs.
+- The writeup must use the updated text in `docs/KAGGLE_WRITEUP.md`, not the
+  older text currently visible in the editor.
+
+## Final state
+
+The Kaggle editor was complete (7/7 required items), and the video plus links
+were already present. The remaining external action is to replace the old
+description with `docs/KAGGLE_WRITEUP.md` and press **Update Submission**.
+That public edit is intentionally not represented as complete until it is
+performed and visibly verified in Kaggle.
