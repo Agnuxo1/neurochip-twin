@@ -32,7 +32,7 @@
     "accuracy": 0.9111111111111111,
     "f1": 0.92,
     "brier_score": 0.06877829210355303,
-    "expected_calibration_error": 0.0725451749753623
+    "expected_calibration_error": 0.07254517497536231
   },
   "multimodal_no_interactions": {
     "roc_auc": 0.990079365079365,
@@ -41,7 +41,7 @@
     "accuracy": 0.9555555555555556,
     "f1": 0.9583333333333334,
     "brier_score": 0.04085555483819365,
-    "expected_calibration_error": 0.0847138792283863
+    "expected_calibration_error": 0.08471387922838632
   },
   "multimodal_physics": {
     "roc_auc": 0.990079365079365,

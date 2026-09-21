@@ -71,7 +71,7 @@ The classifier is accompanied by Ridge regression heads for end-of-sequence viab
 
 ### 4.6 Uncertainty and auditability
 
-The demo reports a distance-from-0.5 uncertainty proxy for the binary readout and stores Brier score plus ten-bin expected calibration error (ECE) in `metrics.json`. For seed 42 the multimodal readout gives Brier 0.041 and ECE 0.064; the ten-seed audit averages 0.053 and 0.069, and the grouped audit averages 0.048 and 0.071. These are calibration diagnostics for the synthetic proxy, not confidence intervals. A real deployment must replace them with calibration curves, bootstrap intervals, replicate-aware splits, and external validation.
+The demo reports a distance-from-0.5 uncertainty proxy for the binary readout, stores Brier score plus ten-bin expected calibration error (ECE) in `metrics.json`, and renders `calibration_curve.png`. For seed 42 the multimodal readout gives Brier 0.041 and ECE 0.064; the ten-seed audit averages 0.053 and 0.069, and the grouped audit averages 0.048 and 0.071. These are calibration diagnostics for the synthetic proxy, not confidence intervals. A real deployment must replace them with calibration curves, bootstrap intervals, replicate-aware splits, and external validation.
 
 ## 5. Experiments
 

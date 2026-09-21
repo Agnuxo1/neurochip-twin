@@ -341,12 +341,8 @@ class TemporalReservoir:
 
 def metrics(y: np.ndarray, p: np.ndarray) -> dict[str, float]:
     pred = (p >= 0.5).astype(int)
-    bins = np.linspace(0.0, 1.0, 11)
-    ece = 0.0
-    for lower, upper in zip(bins[:-1], bins[1:]):
-        in_bin = (p >= lower) & ((p < upper) if upper < 1.0 else (p <= upper))
-        if np.any(in_bin):
-            ece += float(np.mean(in_bin)) * abs(float(np.mean(p[in_bin])) - float(np.mean(y[in_bin])))
+    predicted_bins, observed_bins, counts = calibration_points(y, p)
+    ece = float(np.sum((counts / max(len(y), 1)) * np.abs(observed_bins - predicted_bins)))
     return {
         "roc_auc": float(roc_auc_score(y, p)),
         "average_precision": float(average_precision_score(y, p)),
@@ -356,6 +352,19 @@ def metrics(y: np.ndarray, p: np.ndarray) -> dict[str, float]:
         "brier_score": float(brier_score_loss(y, p)),
         "expected_calibration_error": ece,
     }
+
+
+def calibration_points(y: np.ndarray, p: np.ndarray, n_bins: int = 10) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Return predicted, observed and count values for non-empty bins."""
+    bins = np.linspace(0.0, 1.0, n_bins + 1)
+    predicted, observed, counts = [], [], []
+    for lower, upper in zip(bins[:-1], bins[1:]):
+        in_bin = (p >= lower) & ((p < upper) if upper < 1.0 else (p <= upper))
+        if np.any(in_bin):
+            predicted.append(float(np.mean(p[in_bin])))
+            observed.append(float(np.mean(y[in_bin])))
+            counts.append(int(np.sum(in_bin)))
+    return np.asarray(predicted), np.asarray(observed), np.asarray(counts, dtype=float)
 
 
 def regression_metrics(y: np.ndarray, prediction: np.ndarray) -> dict[str, float]:
@@ -523,6 +532,17 @@ def run(
     for (i, j), value in np.ndenumerate(cm): ax.text(j, i, int(value), ha="center", va="center")
     fig.tight_layout(); fig.savefig(out_dir / "confusion_matrix.png", dpi=160); plt.close(fig)
 
+    predicted_bins, observed_bins, bin_counts = calibration_points(y[test_idx], p_multimodal)
+    fig, ax = plt.subplots(figsize=(5, 5))
+    ax.plot([0, 1], [0, 1], "--", color="gray", label="perfect calibration")
+    sizes = 30 + 120 * bin_counts / max(float(bin_counts.max()), 1.0)
+    ax.scatter(predicted_bins, observed_bins, s=sizes, color="navy", label="multimodal")
+    ax.set_xlim(0, 1); ax.set_ylim(0, 1)
+    ax.set_xlabel("mean predicted probability"); ax.set_ylabel("observed frequency")
+    ax.set_title("Probability calibration (held-out test set)")
+    ax.legend(loc="upper left"); fig.tight_layout()
+    fig.savefig(out_dir / "calibration_curve.png", dpi=160); plt.close(fig)
+
     fig, ax = plt.subplots(figsize=(6, 4)); ax.plot(counterfactual["flow_rate_uL_min"], counterfactual["predicted_viability"], marker="o", label="predicted viability")
     ax2 = ax.twinx(); ax2.plot(counterfactual["flow_rate_uL_min"], counterfactual["predicted_toxicity_probability"], marker="s", color="crimson", label="toxicity probability")
     ax.set_xlabel("flow rate (uL/min)"); ax.set_ylabel("viability"); ax2.set_ylabel("toxicity probability"); ax.set_title("Physics counterfactual: flow modulation")
@@ -531,7 +551,7 @@ def run(
     html = f"""<!doctype html><meta charset='utf-8'><title>NeuroChip Twin demo</title>
     <h1>NeuroChip Twin</h1><p>Self-contained synthetic organ-on-chip proxy benchmark; no clinical claim.</p>
     <p>Static ROC-AUC: <b>{result['baseline']['roc_auc']:.3f}</b> · Temporal: <b>{result['temporal_reservoir']['roc_auc']:.3f}</b> · Multimodal physics: <b>{result['multimodal_physics']['roc_auc']:.3f}</b></p>
-    <img src='demo_overview.png' style='max-width:100%'><img src='confusion_matrix.png' style='max-width:420px'><img src='counterfactual_flow.png' style='max-width:620px'>
+    <img src='demo_overview.png' style='max-width:100%'><img src='confusion_matrix.png' style='max-width:420px'><img src='calibration_curve.png' style='max-width:420px'><img src='counterfactual_flow.png' style='max-width:620px'>
     <h2>Interpretation</h2><pre>{json.dumps(dict(zip(FEATURE_NAMES, demo_features.round(4))), indent=2)}</pre>
     <h2>Physics counterfactual</h2><pre>{counterfactual.to_string(index=False)}</pre>
     <p>Uncertainty is a transparent distance-from-threshold proxy and must not be read as a clinical confidence interval.</p>"""
