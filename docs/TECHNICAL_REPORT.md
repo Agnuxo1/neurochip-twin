@@ -37,6 +37,14 @@ The generator simulates bright cell-like objects, motion, disappearance, changin
 
 For a real study, the input contract can be replaced by authorized organ-on-chip microscopy and metadata. The planned public-data validation track is: (1) BBBC or Cell Painting for segmentation/phenotype portability, (2) RxRx1 for perturbation-response representation, and (3) authorized OoC data for the final biological claim. Licences and permitted uses must be checked per dataset and recorded before inclusion.
 
+As a low-risk first step toward that domain shift, the repository audits the
+metadata spreadsheet from the public [Organ-on-a-Chip (OOC) Image Dataset](https://zenodo.org/records/10203721)
+without committing or downloading its 6.7 GB image archive. The record
+describes 3000+ brightfield images from six cell-line categories and labels
+expert-assessed sample quality as good/bad; those labels are not toxicity or
+treatment-response ground truth. The audit therefore measures data coverage
+and missingness only, and does not count as biological validation.
+
 ## 4. System architecture
 
 ### 4.1 Pre-processing and segmentation
@@ -107,6 +115,20 @@ A stricter ten-seed compound-holdout audit keeps every compound entirely on one 
 
 To test the image-analysis component outside the generator, the repository includes `src.external_validation` for BBBC038v1, a public microscopy dataset with CC0/public-domain images and instance masks. A deterministic sample of 36 cases was split into 12 calibration cases and 24 evaluation cases. Threshold, minimum-area, and morphology parameters were selected on calibration cases only, then frozen for evaluation. On the 24 held-out images, the NeuroChip Twin segmentation front-end obtained mean pixel IoU 0.520, Dice 0.575, precision 0.842, recall 0.578, and absolute object-count error 14.2. This is useful evidence that the front-end can be exercised on real microscopy, but it is not organ-on-chip validation, response prediction, or clinical performance. The source page and download URL are persisted in the generated JSON artifact; no external images are committed to the repository.
 
+### OOC metadata/domain audit
+
+`src.ooc_metadata_audit` reads the 119.7 kB `OOC_datasheet.xlsx` from the
+Zenodo record using only the Python standard library. On the downloaded v1
+spreadsheet, the audit found 3,072 non-empty metadata rows and six cell-line
+categories (`A549`, `CACO`, `HPMEC`, `HSAEC`, `HUVEC`, `NHBE`), with 46 fully
+blank trailing rows. Quality labels were 1,727 good and 1,345 bad rows among
+the non-blank labels, while flow rate was present in 2,213 rows and seeding
+density in 2,728 rows. Time-after-seeding was present in 828 rows. These are
+coverage facts for planning an external evaluation, not model scores. The
+audit records the input SHA-256 and source URLs in
+`outputs/ooc_metadata_audit/summary.json`; the image archive is intentionally
+not downloaded or committed.
+
 ## 6. Failure modes and safeguards
 
 - **Segmentation bias:** thresholding can merge cells or miss dim cells. The report must show masks and object-count calibration.
@@ -124,14 +146,16 @@ python -m pip install -r requirements.txt
 python -m pytest -q
 python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180 --scenario compound_specific
 python -m src.neurochip_twin --out outputs/demo_control --seed 42 --samples 180 --scenario exposure_only
+# after downloading the small metadata file from the Zenodo record:
+python -m src.ooc_metadata_audit --input /path/to/OOC_datasheet.xlsx --out outputs/ooc_metadata_audit/summary.json
 ```
 
 All generated outputs are disposable and can be regenerated. The repository does not require an API key, cloud service, proprietary hardware, or private data.
 
 ## 8. Planned real-data validation
 
-1. Add an adapter for a legally redistributable microscopy benchmark and preserve raw-data provenance.
-2. Validate segmentation against object masks using IoU/F1 and report per-condition variance.
+1. Use the completed OOC metadata audit to define a legal, condition-aware image evaluation plan and preserve raw-data provenance.
+2. Add an adapter for the OOC image archive only after confirming its permitted use, then validate segmentation against object masks using IoU/F1 and report per-condition variance.
 3. Use chip/experiment-level grouped splits and never mix adjacent frames across train/test.
 4. Compare static morphology, temporal reservoir, 3D CNN/UNet, and a simple dose-only baseline.
 5. Calibrate probabilities and report bootstrap intervals across experiments.

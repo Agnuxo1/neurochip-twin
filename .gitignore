@@ -16,6 +16,7 @@ outputs/validation_compound/seed_*/
 outputs/validation_compound_grouped/seed_*/
 outputs/validation_compound_holdout/seed_*/
 work/external/
+outputs/ooc_metadata_audit/
 work/ffmpeg/
 work/drag.html
 work/kaggle_thumbnail.png

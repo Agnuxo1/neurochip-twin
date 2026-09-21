@@ -42,6 +42,23 @@ in `outputs/external_validation_calibrated/bbbc038_summary.json`. The adapter
 also handles Windows extended paths, so an extracted dataset can be audited
 from a deep workspace directory without silently changing the evaluation.
 
+### Real OOC metadata audit
+
+The repository also includes a small, dependency-light audit for the public
+[Organ-on-a-Chip image dataset](https://zenodo.org/records/10203721). It reads
+only `OOC_datasheet.xlsx`, records provenance, cell-line coverage, quality-label
+balance, numeric ranges and missingness, and deliberately avoids downloading
+the 6.7 GB image archive. Run it after downloading the datasheet:
+
+```powershell
+python -m src.ooc_metadata_audit --input /path/to/OOC_datasheet.xlsx --out outputs/ooc_metadata_audit/summary.json
+```
+
+The audit is a domain-shift/data-contract check, not biological validation.
+The dataset's labels describe expert-assessed sample quality (`good`/`bad`),
+not toxicity or treatment response, and the output must not be used to claim
+clinical performance.
+
 ## Scientific scope
 
 - Input: grayscale microscopy-like time series with one or more chips and treatment doses.
