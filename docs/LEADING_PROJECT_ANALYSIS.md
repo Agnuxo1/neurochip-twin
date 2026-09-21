@@ -25,6 +25,9 @@ The notebook reports a fully synthetic benchmark mapped to BBBC/JUMP-Cell Painti
 - Added an explicit low-order cross-modal fusion layer, smaller and more inspectable than copying a deep attention network.
 - Added multi-task readouts for binary toxicity, viability and IC50.
 - Added flow counterfactual output: `outputs/demo/counterfactual_flow.csv` and `counterfactual_flow.png`.
+- Added a dependency-light audit of the public OOC metadata spreadsheet,
+  preserving its SHA-256 and missingness/condition coverage without treating
+  sample-quality labels as toxicity labels.
 - Added a stronger reproducibility contract and tests before considering any public submission.
 
 ## Current local evidence
@@ -41,4 +44,4 @@ The stronger compound-holdout audit puts every compound on one side of the split
 
 The probability audit now reports multimodal Brier/ECE of 0.053/0.069 for random splits and 0.048/0.071 for grouped splits. These diagnostics improve transparency around the uncertainty proxy but do not convert synthetic probabilities into clinical confidence.
 
-We also added a real-data front-end check on BBBC038v1. After calibrating on 12 images and freezing the parameters, 24 held-out images gave mean IoU 0.520, Dice 0.575, precision 0.842 and recall 0.578. This improves the validation story compared with a synthetic-only submission, while the modest recall and non-OoC domain are disclosed rather than hidden. The next score-critical experiment is authorized OoC or matched perturbation data with measured chip/experiment IDs.
+We also added a real-data front-end check on BBBC038v1. After calibrating on 12 images and freezing the parameters, 24 held-out images gave mean IoU 0.520, Dice 0.575, precision 0.842 and recall 0.578. The new OOC metadata audit adds direct domain coverage and missingness evidence, but still no response score. This improves the validation story compared with a synthetic-only submission, while the modest recall and non-OoC segmentation domain are disclosed rather than hidden. The next score-critical experiment is authorized OoC image/quality evaluation or matched perturbation data with measured chip/experiment IDs.

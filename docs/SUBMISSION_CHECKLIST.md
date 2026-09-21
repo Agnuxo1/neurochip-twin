@@ -17,7 +17,7 @@ writeup and its reproducibility evidence.
 
 ## Evidence to report
 
-The current public repository is reproducible from commit `f20470b` or later.
+The current public repository is reproducible from commit `3349f89` or later.
 The primary benchmark is explicitly labelled synthetic:
 
 - seed 42, 180 sequences, 25% held out;
@@ -28,6 +28,8 @@ The primary benchmark is explicitly labelled synthetic:
 - ten-seed compound-holdout audit: additive multimodal ROC-AUC 0.991 ± 0.007, F1 0.954 ± 0.028; explicit-interaction ablation ROC-AUC 0.986, F1 0.938;
 - multimodal Brier/ECE: 0.041/0.064 on seed 42, 0.053/0.069 random-audit mean, and 0.048/0.071 grouped-audit mean;
 - BBBC038 front-end audit: 12 calibration and 24 frozen evaluation images, IoU 0.520 and Dice 0.575.
+- Public OOC metadata audit: 3,072 non-empty rows across six cell-line
+  categories; this is domain-coverage evidence only, not biological validation.
 
 ## Compliance gates
 
@@ -39,6 +41,9 @@ The primary benchmark is explicitly labelled synthetic:
 - No external evaluation images are committed to the repository.
 - Grouped validation is described as a synthetic leakage diagnostic, not as a
   substitute for measured chip/experiment IDs.
+- The Zenodo OOC spreadsheet is used only for provenance, coverage and
+  missingness planning; its good/bad sample-quality labels are not response
+  labels, and the 6.7 GB image archive is not committed.
 - The public writeup uses the cleaned, metrics-aligned content represented by
   `docs/KAGGLE_WRITEUP.md`.
 
