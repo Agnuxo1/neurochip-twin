@@ -132,6 +132,8 @@ def segment(
     threshold_scale: float = 0.35,
     min_area: int = 8,
     max_area: int = 1200,
+    opening_size: int = 2,
+    closing_size: int = 3,
 ) -> tuple[np.ndarray, list[dict[str, float]]]:
     """Segment bright cells and return a labelled image plus interpretable objects.
 
@@ -141,8 +143,10 @@ def segment(
     """
     threshold = max(float(np.quantile(frame, 0.985) * threshold_scale), 0.10)
     mask = frame > threshold
-    mask = ndimage.binary_opening(mask, structure=np.ones((2, 2)))
-    mask = ndimage.binary_closing(mask, structure=np.ones((3, 3)))
+    if opening_size > 0:
+        mask = ndimage.binary_opening(mask, structure=np.ones((opening_size, opening_size)))
+    if closing_size > 0:
+        mask = ndimage.binary_closing(mask, structure=np.ones((closing_size, closing_size)))
     labels, count = ndimage.label(mask)
     objects: list[dict[str, float]] = []
     for idx in range(1, count + 1):

@@ -51,7 +51,13 @@ def _pixel_metrics(pred: np.ndarray, truth: np.ndarray) -> dict[str, float]:
     }
 
 
-def _evaluate_case(image_path: Path, threshold_scale: float, min_area: int) -> dict[str, float | int | str]:
+def _evaluate_case(
+    image_path: Path,
+    threshold_scale: float,
+    min_area: int,
+    opening_size: int,
+    closing_size: int,
+) -> dict[str, float | int | str]:
     case_dir = image_path.parent.parent
     mask_paths = sorted((case_dir / "masks").glob("*.png"))
     with Image.open(image_path) as handle:
@@ -61,7 +67,13 @@ def _evaluate_case(image_path: Path, threshold_scale: float, min_area: int) -> d
         truth |= _read_mask(mask_path)
     with Image.open(image_path) as handle:
         image = _normalise(np.asarray(handle.convert("L")))
-    labels, objects = segment(image, threshold_scale=threshold_scale, min_area=min_area)
+    labels, objects = segment(
+        image,
+        threshold_scale=threshold_scale,
+        min_area=min_area,
+        opening_size=opening_size,
+        closing_size=closing_size,
+    )
     metrics = _pixel_metrics(labels > 0, truth)
     return {
         "case_id": case_dir.name,
@@ -81,6 +93,8 @@ def run_external_validation(
     threshold_scale: float = 0.35,
     min_area: int = 8,
     calibrate: bool = False,
+    opening_size: int = 2,
+    closing_size: int = 3,
 ) -> dict[str, object]:
     cases = sorted(root.glob("*/images/*.png"))
     if not cases:
@@ -90,16 +104,22 @@ def run_external_validation(
     if calibrate and len(chosen) >= 12:
         calibration_count = max(8, len(chosen) // 3)
         calibration_cases, evaluation_cases = chosen[:calibration_count], chosen[calibration_count:]
-        candidates = [(scale, area) for scale in [0.12, 0.18, 0.24, 0.30, 0.35] for area in [2, 4, 8, 16]]
+        candidates = [
+            (scale, area, opening, closing)
+            for scale in [0.12, 0.18, 0.24, 0.30, 0.35]
+            for area in [2, 4, 8, 16]
+            for opening in [0, 2]
+            for closing in [0, 3]
+        ]
         scores = []
-        for scale, area in candidates:
-            candidate_rows = [_evaluate_case(path, scale, area) for path in calibration_cases]
-            scores.append((float(np.mean([row["dice"] for row in candidate_rows])), scale, area))
-        _, threshold_scale, min_area = max(scores, key=lambda item: item[0])
+        for scale, area, opening, closing in candidates:
+            candidate_rows = [_evaluate_case(path, scale, area, opening, closing) for path in calibration_cases]
+            scores.append((float(np.mean([row["dice"] for row in candidate_rows])), scale, area, opening, closing))
+        _, threshold_scale, min_area, opening_size, closing_size = max(scores, key=lambda item: item[0])
     else:
         calibration_cases, evaluation_cases = [], chosen
         calibration_count = 0
-    rows = [_evaluate_case(path, threshold_scale, min_area) for path in evaluation_cases]
+    rows = [_evaluate_case(path, threshold_scale, min_area, opening_size, closing_size) for path in evaluation_cases]
     frame = pd.DataFrame(rows)
     out_dir.mkdir(parents=True, exist_ok=True)
     frame.to_csv(out_dir / "bbbc038_per_image.csv", index=False)
@@ -117,6 +137,8 @@ def run_external_validation(
         "seed": seed,
         "threshold_scale": threshold_scale,
         "min_area": min_area,
+        "opening_size": opening_size,
+        "closing_size": closing_size,
         "metrics": {column: {"mean": float(numeric[column].mean()), "std": float(numeric[column].std(ddof=1)) if len(frame) > 1 else 0.0} for column in ["iou", "dice", "precision", "recall", "count_abs_error"]},
         "interpretation": "Real microscopy front-end evidence; not organ-on-chip validation, response prediction, or clinical performance.",
     }
@@ -133,8 +155,10 @@ def main() -> None:
     parser.add_argument("--threshold-scale", type=float, default=0.35)
     parser.add_argument("--min-area", type=int, default=8)
     parser.add_argument("--calibrate", action="store_true")
+    parser.add_argument("--opening-size", type=int, default=2)
+    parser.add_argument("--closing-size", type=int, default=3)
     args = parser.parse_args()
-    print(json.dumps(run_external_validation(args.root, args.out, args.samples, args.seed, args.threshold_scale, args.min_area, args.calibrate), indent=2))
+    print(json.dumps(run_external_validation(args.root, args.out, args.samples, args.seed, args.threshold_scale, args.min_area, args.calibrate, args.opening_size, args.closing_size), indent=2))
 
 
 if __name__ == "__main__":

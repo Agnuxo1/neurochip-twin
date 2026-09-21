@@ -10,27 +10,29 @@
   "calibrated": true,
   "seed": 42,
   "threshold_scale": 0.35,
-  "min_area": 4,
+  "min_area": 2,
+  "opening_size": 2,
+  "closing_size": 0,
   "metrics": {
     "iou": {
-      "mean": 0.5146685725706687,
-      "std": 0.3990943013425126
+      "mean": 0.519923715631716,
+      "std": 0.405248373089729
     },
     "dice": {
-      "mean": 0.5726816933928435,
-      "std": 0.4249933801232208
+      "mean": 0.574635957808801,
+      "std": 0.43014688356837394
     },
     "precision": {
-      "mean": 0.8427958522981612,
-      "std": 0.2725535901817119
+      "mean": 0.8416306445506431,
+      "std": 0.27294871587182584
     },
     "recall": {
-      "mean": 0.5711383316745434,
-      "std": 0.44564637476187546
+      "mean": 0.5775007416039557,
+      "std": 0.452564424527315
     },
     "count_abs_error": {
-      "mean": 14.875,
-      "std": 19.480899229311994
+      "mean": 14.208333333333334,
+      "std": 19.15833152095105
     }
   },
   "interpretation": "Real microscopy front-end evidence; not organ-on-chip validation, response prediction, or clinical performance."
