@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -22,6 +23,17 @@ SOURCE_URL = "https://bbbc.broadinstitute.org/BBBC038"
 DOWNLOAD_URL = "https://data.broadinstitute.org/bbbc/BBBC038/stage1_train.zip"
 
 
+def _io_path(path: Path) -> Path:
+    """Return a filesystem-safe path for Windows long-path extraction trees."""
+    if os.name != "nt":
+        return path
+    absolute = path if path.is_absolute() else path.resolve()
+    text = str(absolute)
+    if len(text) >= 240 and not text.startswith("\\\\?\\"):
+        return Path("\\\\?\\" + text)
+    return absolute
+
+
 def _normalise(image: np.ndarray) -> np.ndarray:
     values = image.astype(np.float32)
     lo, hi = np.quantile(values, [0.01, 0.998])
@@ -31,7 +43,8 @@ def _normalise(image: np.ndarray) -> np.ndarray:
 
 
 def _read_mask(path: Path) -> np.ndarray:
-    return np.asarray(Image.open(path)) > 0
+    with Image.open(_io_path(path)) as handle:
+        return np.asarray(handle) > 0
 
 
 def _pixel_metrics(pred: np.ndarray, truth: np.ndarray) -> dict[str, float]:
@@ -60,12 +73,12 @@ def _evaluate_case(
 ) -> dict[str, float | int | str]:
     case_dir = image_path.parent.parent
     mask_paths = sorted((case_dir / "masks").glob("*.png"))
-    with Image.open(image_path) as handle:
+    with Image.open(_io_path(image_path)) as handle:
         raw = np.asarray(handle)
     truth = np.zeros(raw.shape[:2], dtype=bool)
     for mask_path in mask_paths:
         truth |= _read_mask(mask_path)
-    with Image.open(image_path) as handle:
+    with Image.open(_io_path(image_path)) as handle:
         image = _normalise(np.asarray(handle.convert("L")))
     labels, objects = segment(
         image,

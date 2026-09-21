@@ -31,7 +31,9 @@ The optional external audit reuses the same segmentation front-end on a
 deterministic calibration/evaluation split from BBBC038v1. It reports real
 microscopy portability only; it does not claim organ-on-chip transfer or
 response-prediction performance. Download and licensing details are recorded
-in `outputs/external_validation_calibrated/bbbc038_summary.json`.
+in `outputs/external_validation_calibrated/bbbc038_summary.json`. The adapter
+also handles Windows extended paths, so an extracted dataset can be audited
+from a deep workspace directory without silently changing the evaluation.
 
 ## Scientific scope
 

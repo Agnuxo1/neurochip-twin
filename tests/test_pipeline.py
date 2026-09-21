@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 
 from src.neurochip_twin import generate_sequence, phenotype_features, run, segment, track_objects
-from src.external_validation import _pixel_metrics
+from src.external_validation import _io_path, _pixel_metrics
 from src.validation import run_validation
 
 
@@ -66,3 +66,12 @@ def test_compound_specific_scenario_exposes_context(tmp_path: Path):
 def test_external_pixel_metrics_have_expected_bounds():
     metrics = _pixel_metrics(np.array([[1, 0], [0, 1]]), np.array([[1, 0], [0, 1]]))
     assert metrics == {"iou": 1.0, "dice": 1.0, "precision": 1.0, "recall": 1.0}
+
+
+def test_external_validation_supports_long_windows_paths():
+    long_path = Path("C:/") / ("nested-" * 45) / "image.png"
+    adapted = _io_path(long_path)
+    if __import__("os").name == "nt":
+        assert str(adapted).startswith("\\\\?\\")
+    else:
+        assert adapted == long_path
