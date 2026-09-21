@@ -1,7 +1,7 @@
 # Kaggle submission checklist
 
 This checklist records the state of the AI4S Open Innovation: AI for Life Science
-writeup without claiming that the public text has been updated when it has not.
+writeup and its reproducibility evidence.
 
 ## Submission fields
 
@@ -17,7 +17,7 @@ writeup without claiming that the public text has been updated when it has not.
 
 ## Evidence to report
 
-The current public repository is reproducible from commit `b06cfc9` or later.
+The current public repository is reproducible from commit `f20470b` or later.
 The primary benchmark is explicitly labelled synthetic:
 
 - seed 42, 180 sequences, 25% held out;
@@ -39,13 +39,12 @@ The primary benchmark is explicitly labelled synthetic:
 - No external evaluation images are committed to the repository.
 - Grouped validation is described as a synthetic leakage diagnostic, not as a
   substitute for measured chip/experiment IDs.
-- The writeup must use the updated text in `docs/KAGGLE_WRITEUP.md`, not the
-  older text currently visible in the editor.
+- The public writeup uses the cleaned, metrics-aligned content represented by
+  `docs/KAGGLE_WRITEUP.md`.
 
 ## Final state
 
 The Kaggle editor was complete (7/7 required items), and the video plus links
-were already present. The remaining external action is to replace the old
-description with `docs/KAGGLE_WRITEUP.md` and press **Update Submission**.
-That public edit is intentionally not represented as complete until it is
-performed and visibly verified in Kaggle.
+were present. The cleaned public description was submitted and visibly
+verified after pressing **Update Submission**. Future public edits require a
+fresh action-time confirmation before changing the Kaggle writeup.
