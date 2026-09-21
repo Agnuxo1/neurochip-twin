@@ -15,6 +15,15 @@ writeup and its reproducibility evidence.
 - Technical report: [technical report](https://github.com/Agnuxo1/neurochip-twin/blob/main/docs/TECHNICAL_REPORT.md)
 - Video file mirror: `outputs/demo/neurochip_twin_demo.mp4`
 
+## Eligibility gate
+
+Kaggle's official competition page requires the team leader to complete the
+[official registration form](https://docs.google.com/forms/d/e/1FAIpQLSdRAat5jIunRaFNh_NntsVeJUnekEJDrbuokLZ32LFgCwPtiA/viewform)
+before the Writeup is eligible for evaluation. On 2026-09-21 the signed-in
+form still showed all required fields empty, so registration is **pending**.
+The automated workflow has not entered or transmitted personal data such as
+WhatsApp details, travel preference or contact information.
+
 ## Evidence to report
 
 The current public repository is reproducible from commit `3349f89` or later.
