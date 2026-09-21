@@ -3,6 +3,7 @@ from pathlib import Path
 import numpy as np
 
 from src.neurochip_twin import generate_sequence, phenotype_features, run, segment, track_objects
+from src.validation import run_validation
 
 
 def test_generation_is_deterministic():
@@ -36,3 +37,19 @@ def test_end_to_end_outputs(tmp_path: Path):
     assert (tmp_path / "counterfactual_flow.csv").exists()
     assert (tmp_path / "metrics.json").exists()
     assert (tmp_path / "index.html").exists()
+
+
+def test_multi_seed_validation_writes_audit_report(tmp_path: Path):
+    report = run_validation(tmp_path, seeds=[1, 2], n_samples=40)
+    assert report["seeds"] == [1, 2]
+    assert (tmp_path / "validation_per_seed.csv").exists()
+    assert (tmp_path / "validation_summary.json").exists()
+    assert report["aggregate"]["multimodal_physics_roc_auc"]["min"] >= 0.0
+    assert report["aggregate"]["multimodal_viability_r2"]["min"] > -10.0
+
+
+def test_grouped_split_is_supported(tmp_path: Path):
+    result = run(tmp_path, seed=42, n_samples=80, split_mode="grouped")
+    assert result["split_mode"] == "grouped"
+    assert result["group_count"] is not None
+    assert 0 < result["test_size"] < result["n_samples"]

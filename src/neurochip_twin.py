@@ -28,7 +28,7 @@ from sklearn.metrics import (
     r2_score,
     roc_auc_score,
 )
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GroupShuffleSplit, train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import Ridge
 from sklearn.preprocessing import StandardScaler
@@ -279,7 +279,25 @@ def regression_metrics(y: np.ndarray, prediction: np.ndarray) -> dict[str, float
     }
 
 
-def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
+def _split_indices(y: np.ndarray, n_samples: int, seed: int, split_mode: str) -> tuple[np.ndarray, np.ndarray, int | None]:
+    """Create either a stratified random split or a leakage-resistant group split."""
+    idx = np.arange(n_samples)
+    if split_mode == "stratified":
+        train_idx, test_idx = train_test_split(idx, test_size=0.25, random_state=seed, stratify=y)
+        return train_idx, test_idx, None
+    if split_mode != "grouped":
+        raise ValueError(f"Unsupported split_mode: {split_mode}")
+    # Synthetic acquisition batches stand in for independent chips/experiments.
+    # A real-data run must replace these IDs with measured chip or experiment IDs.
+    groups = np.arange(n_samples) // 8
+    splitter = GroupShuffleSplit(n_splits=32, test_size=0.25, random_state=seed)
+    for train_idx, test_idx in splitter.split(idx, y, groups):
+        if np.unique(y[train_idx]).size == 2 and np.unique(y[test_idx]).size == 2:
+            return train_idx, test_idx, int(np.unique(groups).size)
+    raise RuntimeError("Could not find a grouped split containing both classes")
+
+
+def run(out_dir: Path, seed: int = 42, n_samples: int = 180, split_mode: str = "stratified") -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(seed)
     sequences = [generate_sequence(int(rng.integers(1_000_000)), float(rng.uniform(0, 1))) for _ in range(n_samples)]
@@ -297,8 +315,7 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
         physical_X.append(physics_features(seq)); viability.append(seq.viability_target); ic50.append(seq.ic50_target)
     X, static_X, physical_X = np.asarray(X), np.asarray(static_X), np.asarray(physical_X)
     y, viability, ic50, doses = np.asarray(y), np.asarray(viability), np.asarray(ic50), np.asarray(doses)
-    idx = np.arange(n_samples)
-    train_idx, test_idx = train_test_split(idx, test_size=0.25, random_state=seed, stratify=y)
+    train_idx, test_idx, group_count = _split_indices(y, n_samples, seed, split_mode)
     baseline = Pipeline([("scale", StandardScaler()), ("model", LogisticRegression(max_iter=2000, random_state=seed))])
     baseline.fit(static_X[train_idx], y[train_idx])
     p_base = baseline.predict_proba(static_X[test_idx])[:, 1]
@@ -318,12 +335,28 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
     multimodal = Pipeline([("scale", StandardScaler()), ("model", LogisticRegression(max_iter=2000, random_state=seed, C=0.7))])
     multimodal.fit(fused_X[train_idx], y[train_idx])
     p_multimodal = multimodal.predict_proba(fused_X[test_idx])[:, 1]
-    viability_model = Pipeline([("scale", StandardScaler()), ("model", Ridge(alpha=1.0))])
-    ic50_model = Pipeline([("scale", StandardScaler()), ("model", Ridge(alpha=1.0))])
-    viability_model.fit(fused_X[train_idx], viability[train_idx])
-    ic50_model.fit(fused_X[train_idx], ic50[train_idx])
-    viability_pred = viability_model.predict(fused_X[test_idx])
-    ic50_pred = ic50_model.predict(fused_X[test_idx])
+    # The interaction block is intentionally wide (p > n for small studies).
+    # A stronger penalty plus LSQR avoids ill-conditioned normal-equation
+    # solutions that can explode on otherwise valid random seeds.
+    # Regression heads use the compact multimodal block rather than all
+    # pairwise interactions: with p > n, the wide interaction matrix can make
+    # otherwise valid seeds numerically explosive.  The classifier still uses
+    # the full auditable interaction design above.
+    regression_X = np.c_[temporal_X, physical_X]
+    viability_model = Pipeline([("scale", StandardScaler()), ("model", Ridge(alpha=10.0, solver="lsqr"))])
+    ic50_model = Pipeline([("scale", StandardScaler()), ("model", Ridge(alpha=10.0, solver="lsqr"))])
+    viability_model.fit(regression_X[train_idx], viability[train_idx])
+    ic50_model.fit(regression_X[train_idx], ic50[train_idx])
+    viability_pred = np.clip(
+        viability_model.predict(regression_X[test_idx]),
+        viability[train_idx].min(),
+        viability[train_idx].max(),
+    )
+    ic50_pred = np.clip(
+        ic50_model.predict(regression_X[test_idx]),
+        ic50[train_idx].min(),
+        ic50[train_idx].max(),
+    )
     demo = sequences[int(np.argmax([s.dose * (1.0 / (1.0 + 0.045 * s.flow_rate)) for s in sequences]))]
     counterfactual_rows = []
     for flow in [0.0, 2.0, 10.0, 20.0, 40.0]:
@@ -333,11 +366,18 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
         cf_physics = physics_features(cf)[None, :]
         cf_temporal = np.concatenate([cf_feat, cf_r])[None, :]
         cf_fused = cross_modal_features(cf_temporal, cf_physics)
+        cf_regression = np.c_[cf_temporal, cf_physics]
         counterfactual_rows.append({
             "flow_rate_uL_min": flow,
             "wall_shear_proxy": 0.18 * flow,
             "predicted_toxicity_probability": float(multimodal.predict_proba(cf_fused)[0, 1]),
-            "predicted_viability": float(viability_model.predict(cf_fused)[0]),
+            "predicted_viability": float(
+                np.clip(
+                    viability_model.predict(cf_regression)[0],
+                    viability[train_idx].min(),
+                    viability[train_idx].max(),
+                )
+            ),
         })
     counterfactual = pd.DataFrame(counterfactual_rows)
     counterfactual.to_csv(out_dir / "counterfactual_flow.csv", index=False)
@@ -346,6 +386,8 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
         "n_samples": n_samples,
         "train_size": int(len(train_idx)),
         "test_size": int(len(test_idx)),
+        "split_mode": split_mode,
+        "group_count": group_count,
         "data_kind": "synthetic_organ_on_chip_proxy",
         "baseline": metrics(y[test_idx], p_base),
         "physics_only": metrics(y[test_idx], p_physics),
@@ -402,8 +444,9 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=Path("outputs/demo"))
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--samples", type=int, default=180)
+    parser.add_argument("--split-mode", choices=["stratified", "grouped"], default="stratified")
     args = parser.parse_args()
-    print(json.dumps(run(args.out, args.seed, args.samples), indent=2))
+    print(json.dumps(run(args.out, args.seed, args.samples, args.split_mode), indent=2))
 
 
 if __name__ == "__main__":
