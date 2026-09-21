@@ -47,7 +47,7 @@ from a deep workspace directory without silently changing the evaluation.
 - Input: grayscale microscopy-like time series with one or more chips and treatment doses.
 - Cell analysis: denoising, threshold segmentation, connected components, centroid tracking.
 - Features: count, area, intensity, elongation, motion, persistence, and temporal slopes.
-- Model: static baseline vs. fixed-reservoir temporal classifier vs. a multimodal physics-informed readout.
+- Model: static baseline vs. fixed-reservoir temporal classifier vs. a multimodal context readout; the additive readout is primary for unseen-compound robustness and explicit interactions remain an ablation.
 - Multimodal fusion: morphology + temporal reservoir + dose/flow/shear/clearance + compound context, with explicit cross-modal interactions.
 - Outputs: toxicity probability, viability and IC50 regression, held-out metrics, and a flow counterfactual.
 

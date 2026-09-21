@@ -34,10 +34,12 @@ def test_end_to_end_outputs(tmp_path: Path):
     assert result["test_size"] == 12
     assert 0.0 <= result["temporal_reservoir"]["roc_auc"] <= 1.0
     assert 0.0 <= result["multimodal_physics"]["roc_auc"] <= 1.0
+    assert result["primary_model"] == "multimodal_no_interactions"
     assert "r2" in result["multimodal_viability"]
     assert (tmp_path / "counterfactual_flow.csv").exists()
     assert (tmp_path / "metrics.json").exists()
     assert (tmp_path / "index.html").exists()
+    assert "multimodal_no_interactions_probability" in (tmp_path / "predictions.csv").read_text(encoding="utf-8")
 
 
 def test_multi_seed_validation_writes_audit_report(tmp_path: Path):

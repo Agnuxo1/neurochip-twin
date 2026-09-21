@@ -67,7 +67,7 @@ For frame-level phenotype vector `x_t`, the fixed reservoir state is:
 
 Each sequence carries dose, flow rate, a documented wall-shear proxy, clearance factor, effective dose, and three seeded compound-context descriptors. The final feature vector concatenates temporal phenotype, reservoir state and context covariates, then adds explicit products between phenotype/reservoir features and shear, clearance, effective dose, and compound context. This is a compact, interpretable analogue of multimodal cross-attention: the effect of a phenotype can change with exposure conditions and compound context without requiring a large opaque model.
 
-The classifier is accompanied by Ridge regression heads for end-of-sequence viability and IC50. The synthetic generator applies effective exposure attenuation under flow and a high-shear penalty; both are labeled as proxies rather than biological laws.
+The additive multimodal readout is the primary reported classifier because it is more stable in the unseen-compound holdout; the explicit interaction readout remains a transparent ablation. Both are accompanied by Ridge regression heads for end-of-sequence viability and IC50. The synthetic generator applies effective exposure attenuation under flow and a high-shear penalty; both are labeled as proxies rather than biological laws.
 
 ### 4.6 Uncertainty and auditability
 
@@ -82,6 +82,8 @@ python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180 --scenar
 ```
 
 The fixed split has 135 training and 45 held-out sequences. The current generated result is:
+
+The additive multimodal context readout is the primary model shown in the demo; the interaction readout remains an explicit ablation. They tie on this seed, while the compound-holdout audit below favors the additive variant.
 
 | Model | ROC-AUC | Average precision | Balanced accuracy | Accuracy | F1 |
 |---|---:|---:|---:|---:|---:|

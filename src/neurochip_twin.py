@@ -460,6 +460,7 @@ def run(
     multimodal = Pipeline([("scale", StandardScaler()), ("model", LogisticRegression(max_iter=2000, random_state=seed, C=0.7))])
     multimodal.fit(fused_X[train_idx], y[train_idx])
     p_multimodal = multimodal.predict_proba(fused_X[test_idx])[:, 1]
+    primary_model = "multimodal_no_interactions"
     # The interaction block is intentionally wide (p > n for small studies).
     # A stronger penalty plus LSQR avoids ill-conditioned normal-equation
     # solutions that can explode on otherwise valid random seeds.
@@ -495,7 +496,8 @@ def run(
         counterfactual_rows.append({
             "flow_rate_uL_min": flow,
             "wall_shear_proxy": 0.18 * flow,
-            "predicted_toxicity_probability": float(multimodal.predict_proba(cf_fused)[0, 1]),
+            "predicted_toxicity_probability": float(no_interaction_model.predict_proba(np.c_[cf_temporal, cf_physics])[0, 1]),
+            "interaction_ablation_probability": float(multimodal.predict_proba(cf_fused)[0, 1]),
             "predicted_viability": float(
                 np.clip(
                     viability_model.predict(cf_regression)[0],
@@ -513,6 +515,7 @@ def run(
         "test_size": int(len(test_idx)),
         "split_mode": split_mode,
         "scenario": scenario,
+        "primary_model": primary_model,
         "group_count": group_count,
         "data_kind": "synthetic_organ_on_chip_proxy",
         "baseline": metrics(y[test_idx], p_base),
@@ -530,7 +533,15 @@ def run(
         "uncertainty_proxy": "distance from 0.5; not a clinical confidence interval",
     }
     (out_dir / "metrics.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
-    pred = pd.DataFrame({"index": test_idx, "dose": doses[test_idx], "label": y[test_idx], "baseline_probability": p_base, "temporal_probability": p_temporal})
+    pred = pd.DataFrame({
+        "index": test_idx,
+        "dose": doses[test_idx],
+        "label": y[test_idx],
+        "baseline_probability": p_base,
+        "temporal_probability": p_temporal,
+        "multimodal_no_interactions_probability": p_no_interaction,
+        "multimodal_interaction_probability": p_multimodal,
+    })
     pred.to_csv(out_dir / "predictions.csv", index=False)
     pd.concat([t.assign(sequence=i) for i, t in enumerate(tables)], ignore_index=True).to_csv(out_dir / "phenotype_table.csv", index=False)
 
@@ -567,7 +578,7 @@ def run(
 
     html = f"""<!doctype html><meta charset='utf-8'><title>NeuroChip Twin demo</title>
     <h1>NeuroChip Twin</h1><p>Self-contained synthetic organ-on-chip proxy benchmark; no clinical claim.</p>
-    <p>Static ROC-AUC: <b>{result['baseline']['roc_auc']:.3f}</b> · Temporal: <b>{result['temporal_reservoir']['roc_auc']:.3f}</b> · Multimodal physics: <b>{result['multimodal_physics']['roc_auc']:.3f}</b></p>
+    <p>Static ROC-AUC: <b>{result['baseline']['roc_auc']:.3f}</b> · Temporal: <b>{result['temporal_reservoir']['roc_auc']:.3f}</b> · Primary additive multimodal: <b>{result[primary_model]['roc_auc']:.3f}</b> · Interaction ablation: <b>{result['multimodal_physics']['roc_auc']:.3f}</b></p>
     <img src='demo_overview.png' style='max-width:100%'><img src='confusion_matrix.png' style='max-width:420px'><img src='calibration_curve.png' style='max-width:420px'><img src='counterfactual_flow.png' style='max-width:620px'>
     <h2>Interpretation</h2><pre>{json.dumps(dict(zip(FEATURE_NAMES, demo_features.round(4))), indent=2)}</pre>
     <h2>Physics counterfactual</h2><pre>{counterfactual.to_string(index=False)}</pre>

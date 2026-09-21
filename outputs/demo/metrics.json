@@ -5,6 +5,7 @@
   "test_size": 45,
   "split_mode": "stratified",
   "scenario": "compound_specific",
+  "primary_model": "multimodal_no_interactions",
   "group_count": null,
   "data_kind": "synthetic_organ_on_chip_proxy",
   "baseline": {

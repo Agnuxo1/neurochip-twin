@@ -19,7 +19,7 @@ def main() -> None:
     out = Path("outputs/demo/neurochip_twin_demo.mp4")
     out.parent.mkdir(parents=True, exist_ok=True)
     metrics = json.loads((out.parent / "metrics.json").read_text(encoding="utf-8"))
-    calibration = metrics["multimodal_physics"]
+    calibration = metrics[metrics.get("primary_model", "multimodal_physics")]
     seq = generate_sequence(2026, 0.82, frames=36, scenario="compound_specific")
     writer = cv2.VideoWriter(str(out), cv2.VideoWriter_fourcc(*"mp4v"), 8, (960, 600))
     for i, frame in enumerate(seq.frames):
