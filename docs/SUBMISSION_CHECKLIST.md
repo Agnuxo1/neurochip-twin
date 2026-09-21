@@ -25,6 +25,7 @@ The primary benchmark is explicitly labelled synthetic:
 - viability R² 0.957 and IC50 R² 0.957;
 - ten-seed random audit: ROC-AUC 0.987, F1 0.936;
 - ten-seed grouped audit: ROC-AUC 0.983, F1 0.944;
+- ten-seed compound-holdout audit: additive multimodal ROC-AUC 0.991 ± 0.007, F1 0.954 ± 0.028; explicit-interaction ablation ROC-AUC 0.986, F1 0.938;
 - multimodal Brier/ECE: 0.041/0.064 on seed 42, 0.053/0.069 random-audit mean, and 0.048/0.071 grouped-audit mean;
 - BBBC038 front-end audit: 12 calibration and 24 frozen evaluation images, IoU 0.520 and Dice 0.575.
 

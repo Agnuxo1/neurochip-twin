@@ -14,6 +14,7 @@ outputs/validation_grouped/
 outputs/validation_ridge*/
 outputs/validation_compound/seed_*/
 outputs/validation_compound_grouped/seed_*/
+outputs/validation_compound_holdout/seed_*/
 work/external/
 work/ffmpeg/
 work/drag.html

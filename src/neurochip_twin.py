@@ -374,12 +374,29 @@ def regression_metrics(y: np.ndarray, prediction: np.ndarray) -> dict[str, float
     }
 
 
-def _split_indices(y: np.ndarray, n_samples: int, seed: int, split_mode: str) -> tuple[np.ndarray, np.ndarray, int | None]:
+def _split_indices(
+    y: np.ndarray,
+    n_samples: int,
+    seed: int,
+    split_mode: str,
+    compound_ids: np.ndarray | None = None,
+) -> tuple[np.ndarray, np.ndarray, int | None]:
     """Create either a stratified random split or a leakage-resistant group split."""
     idx = np.arange(n_samples)
     if split_mode == "stratified":
         train_idx, test_idx = train_test_split(idx, test_size=0.25, random_state=seed, stratify=y)
         return train_idx, test_idx, None
+    if split_mode == "compound_holdout":
+        if compound_ids is None:
+            raise ValueError("compound_ids are required for compound_holdout")
+        groups = np.asarray(compound_ids)
+        if np.unique(groups).size < 4:
+            raise ValueError("compound_holdout requires at least four compounds")
+        splitter = GroupShuffleSplit(n_splits=64, test_size=0.25, random_state=seed)
+        for train_idx, test_idx in splitter.split(idx, y, groups):
+            if np.unique(y[train_idx]).size == 2 and np.unique(y[test_idx]).size == 2:
+                return train_idx, test_idx, int(np.unique(groups).size)
+        raise RuntimeError("Could not find a compound holdout containing both classes")
     if split_mode != "grouped":
         raise ValueError(f"Unsupported split_mode: {split_mode}")
     # Synthetic acquisition batches stand in for independent chips/experiments.
@@ -409,7 +426,7 @@ def run(
         )
         for _ in range(n_samples)
     ]
-    X, static_X, physical_X, y, viability, ic50, tables, doses = [], [], [], [], [], [], [], []
+    X, static_X, physical_X, y, viability, ic50, tables, doses, compound_ids = [], [], [], [], [], [], [], [], []
     for seq in sequences:
         feat, table = phenotype_features(seq)
         first_objects = table[table["frame"] == table["frame"].min()] if not table.empty else table
@@ -419,11 +436,11 @@ def run(
             float(first_objects["intensity"].mean()) if not first_objects.empty else 0.0,
             float(first_objects["elongation"].mean()) if not first_objects.empty else 0.0,
         ])
-        X.append(feat); y.append(seq.label); tables.append(table); doses.append(seq.dose)
+        X.append(feat); y.append(seq.label); tables.append(table); doses.append(seq.dose); compound_ids.append(seq.compound_id)
         physical_X.append(physics_features(seq)); viability.append(seq.viability_target); ic50.append(seq.ic50_target)
     X, static_X, physical_X = np.asarray(X), np.asarray(static_X), np.asarray(physical_X)
-    y, viability, ic50, doses = np.asarray(y), np.asarray(viability), np.asarray(ic50), np.asarray(doses)
-    train_idx, test_idx, group_count = _split_indices(y, n_samples, seed, split_mode)
+    y, viability, ic50, doses, compound_ids = np.asarray(y), np.asarray(viability), np.asarray(ic50), np.asarray(doses), np.asarray(compound_ids)
+    train_idx, test_idx, group_count = _split_indices(y, n_samples, seed, split_mode, compound_ids)
     baseline = Pipeline([("scale", StandardScaler()), ("model", LogisticRegression(max_iter=2000, random_state=seed))])
     baseline.fit(static_X[train_idx], y[train_idx])
     p_base = baseline.predict_proba(static_X[test_idx])[:, 1]
@@ -564,7 +581,7 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=Path("outputs/demo"))
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--samples", type=int, default=180)
-    parser.add_argument("--split-mode", choices=["stratified", "grouped"], default="stratified")
+    parser.add_argument("--split-mode", choices=["stratified", "grouped", "compound_holdout"], default="stratified")
     parser.add_argument("--scenario", choices=["exposure_only", "compound_specific"], default="compound_specific")
     args = parser.parse_args()
     print(json.dumps(run(args.out, args.seed, args.samples, args.split_mode, args.scenario), indent=2))

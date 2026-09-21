@@ -128,7 +128,7 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=Path("outputs/validation"))
     parser.add_argument("--seeds", type=int, nargs="+", default=list(range(10)))
     parser.add_argument("--samples", type=int, default=180)
-    parser.add_argument("--split-mode", choices=["stratified", "grouped"], default="stratified")
+    parser.add_argument("--split-mode", choices=["stratified", "grouped", "compound_holdout"], default="stratified")
     parser.add_argument("--scenario", choices=["exposure_only", "compound_specific"], default="compound_specific")
     args = parser.parse_args()
     report = run_validation(

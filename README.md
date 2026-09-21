@@ -13,6 +13,7 @@ python -m pip install -r requirements.txt
 python -m src.neurochip_twin --out outputs/demo --seed 42 --scenario compound_specific
 python -m src.validation --out outputs/validation --seeds 0 1 2 3 4 5 6 7 8 9 --scenario compound_specific
 python -m src.validation --out outputs/validation_grouped --seeds 0 1 2 3 4 5 6 7 8 9 --scenario compound_specific --split-mode grouped
+python -m src.validation --out outputs/validation_compound_holdout --seeds 0 1 2 3 4 5 6 7 8 9 --scenario compound_specific --split-mode compound_holdout
 python -m src.external_validation --root /path/to/stage1_train --out outputs/external_validation --samples 36 --seed 42 --calibrate
 python -m pytest -q
 ```
@@ -27,6 +28,11 @@ experiment/chip-level grouped splits and external validation.
 The grouped command provides a leakage-resistant synthetic acquisition-batch
 audit; its groups are only a proxy and must be replaced by measured chip or
 experiment IDs for biological validation.
+The compound-holdout command is stricter: no compound identifier is shared
+between train and test. In this synthetic audit, the additive multimodal
+readout is the conservative generalization choice; explicit cross-modal
+interactions remain an inspectable ablation because they can overfit unseen
+compound context.
 
 The optional external audit reuses the same segmentation front-end on a
 deterministic calibration/evaluation split from BBBC038v1. It reports real

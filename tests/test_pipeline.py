@@ -2,7 +2,7 @@ from pathlib import Path
 
 import numpy as np
 
-from src.neurochip_twin import generate_sequence, metrics, phenotype_features, run, segment, track_objects
+from src.neurochip_twin import _split_indices, generate_sequence, metrics, phenotype_features, run, segment, track_objects
 from src.external_validation import _io_path, _pixel_metrics
 from src.validation import run_validation
 
@@ -54,6 +54,16 @@ def test_grouped_split_is_supported(tmp_path: Path):
     assert result["split_mode"] == "grouped"
     assert result["group_count"] is not None
     assert 0 < result["test_size"] < result["n_samples"]
+
+
+def test_compound_holdout_split_never_shares_compounds():
+    y = np.array([0, 1] * 40)
+    compounds = np.repeat(np.arange(8), 10)
+    train_idx, test_idx, group_count = _split_indices(
+        y, len(y), seed=42, split_mode="compound_holdout", compound_ids=compounds
+    )
+    assert group_count == 8
+    assert set(compounds[train_idx]).isdisjoint(set(compounds[test_idx]))
 
 
 def test_compound_specific_scenario_exposes_context(tmp_path: Path):
