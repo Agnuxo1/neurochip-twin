@@ -41,3 +41,11 @@ Build an End-to-End System named **NeuroChip Twin**: interpretable temporal micr
 3. No fabricated real-data or clinical claims; all numbers trace to generated artifacts.
 4. Public repository contains code, environment, report, sample outputs, license, and reproduction commands.
 5. Kaggle Writeup links the repo, demo, report, limitations, and registration form status.
+## 2026-09-21 — leading-project audit and reconfiguration
+
+- Kaggle writeups are hidden until the hackathon closes; no official first place is currently exposed.
+- Strongest public code signal: `BioFluidNet-OoC: Multimodal Phenotypic Profiling`, 14 votes, Bronze, linked GitHub source, synthetic BBBC/JUMP-inspired benchmark, multimodal physics-informed architecture, multi-task outputs, ablations, attribution and flow counterfactual.
+- Local adaptation: hydrodynamic covariates, exposure/shear proxy, explicit cross-modal interactions, toxicity/viability/IC50 heads, counterfactual CSV/PNG, and reproducibility tests.
+- Seed 42: multimodal ROC-AUC 0.998/F1 0.984; viability R² 0.967; IC50 R² 0.972.
+- Five-seed check: multimodal ROC-AUC mean 0.997 (0.994–1.000), F1 mean 0.970 (0.958–0.984), viability R² mean 0.901, IC50 R² mean 0.910.
+- Critical caveat: physics-only ROC-AUC is also 0.998; the generator couples label directly to exposure, so fusion accuracy is not yet evidence of biological superiority. Priority is licensed real/public data and harder compound-specific nuisance variation.

@@ -2,4 +2,6 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 work/pytest-tmp/
+work/seed-*/
+work/latest_metrics.txt
 outputs/demo/phenotype_table.csv

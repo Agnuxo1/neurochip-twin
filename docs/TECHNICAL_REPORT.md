@@ -7,7 +7,7 @@
 
 ## Abstract
 
-Organ-on-chip experiments produce time-resolved microscopy and experimental metadata, but many analysis pipelines collapse the movie into a single endpoint. NeuroChip Twin keeps the temporal signal. It segments cell-like objects, associates them between frames, extracts interpretable phenotype trajectories, and combines them with a fixed recurrent reservoir inspired by temporal echo-state models. A linear readout estimates a treatment-response/toxicity state and exposes a transparent distance-from-threshold uncertainty proxy. The repository contains a deterministic image generator, analysis code, tests, figures, and an HTML demo. On the fixed-seed synthetic benchmark shipped with this repository, a first-frame static baseline obtains ROC-AUC 0.345 while the temporal model obtains ROC-AUC 1.000, a difference of +0.655. These are synthetic stress-test numbers, not clinical performance or real organ-on-chip validation. The project is designed as a license-clean bridge to later evaluation on authorized organ-on-chip data and public microscopy resources such as BBBC, RxRx1, and Cell Painting.
+Organ-on-chip experiments produce time-resolved microscopy and experimental metadata, but many analysis pipelines collapse the movie into a single endpoint. NeuroChip Twin keeps the temporal signal, adds hydrodynamic exposure context, and exposes the interaction between the two. It segments cell-like objects, associates them between frames, extracts interpretable phenotype trajectories, and combines them with a fixed recurrent reservoir plus a compact physics-informed multimodal readout. Separate heads estimate toxicity, viability and IC50, and a flow counterfactual makes the digital-twin idea testable. The repository contains a deterministic image generator, analysis code, tests, figures, and an HTML demo. On the fixed-seed synthetic benchmark, the multimodal model obtains ROC-AUC 0.998, F1 0.984, viability R² 0.967 and IC50 R² 0.972. These are synthetic stress-test numbers, not clinical performance or real organ-on-chip validation. The project is designed as a license-clean bridge to later evaluation on authorized organ-on-chip data and public microscopy resources such as BBBC, RxRx1, and Cell Painting.
 
 ## 1. Problem and impact
 
@@ -63,7 +63,13 @@ For frame-level phenotype vector `x_t`, the fixed reservoir state is:
 
 `W` is scaled to spectral radius 0.82 and is never trained. A logistic regression readout is trained on the concatenation of the interpretable summary features and the final reservoir state. This separation keeps the temporal memory inspectable and makes the trainable component small.
 
-### 4.5 Uncertainty and auditability
+### 4.5 Physics-informed multimodal fusion
+
+Each sequence also carries dose, flow rate, a documented wall-shear proxy, clearance factor, and effective dose. The final feature vector concatenates temporal phenotype, reservoir state and physics covariates, then adds explicit products between phenotype/reservoir features and shear, clearance, and effective dose. This is a compact, interpretable analogue of multimodal cross-attention: the effect of a phenotype can change with exposure conditions without requiring a large opaque model.
+
+The classifier is accompanied by Ridge regression heads for end-of-sequence viability and IC50. The synthetic generator applies effective exposure attenuation under flow and a high-shear penalty; both are labeled as proxies rather than biological laws.
+
+### 4.6 Uncertainty and auditability
 
 The demo reports a distance-from-0.5 uncertainty proxy for the binary readout. It is deliberately labelled as a proxy, not a confidence interval. A real deployment must replace it with calibration curves, bootstrap intervals, replicate-aware splits, and external validation.
 
@@ -79,10 +85,17 @@ The fixed split has 135 training and 45 held-out sequences. The current generate
 
 | Model | ROC-AUC | Average precision | Balanced accuracy | Accuracy | F1 |
 |---|---:|---:|---:|---:|---:|
-| First-frame static baseline | 0.345 | 0.559 | 0.483 | 0.622 | 0.767 |
-| Temporal fixed reservoir + readout | 1.000 | 1.000 | 0.969 | 0.978 | 0.983 |
+| First-frame static baseline | 0.280 | 0.556 | 0.500 | 0.667 | 0.800 |
+| Physics-only baseline | 0.998 | 0.999 | 0.983 | 0.978 | 0.983 |
+| Temporal fixed reservoir + readout | 0.996 | 0.998 | 0.950 | 0.956 | 0.967 |
+| Temporal + physics, no interactions | 0.998 | 0.999 | 0.950 | 0.956 | 0.967 |
+| Multimodal physics-informed readout | 0.998 | 0.999 | 0.967 | 0.978 | 0.984 |
 
-`delta_roc_auc = +0.655` for this seed. The result is intentionally easy to audit, not presented as a population estimate. The next mandatory experiment is to repeat across at least 10 seeds, add chip-level rather than frame-level splits, and test robustness to blur, illumination drift, object overlap, and missing frames.
+The multimodal heads also obtain viability RMSE 5.448/R² 0.967 and IC50 RMSE 0.196/R² 0.972 for this seed. The result is intentionally easy to audit, not presented as a population estimate. The next mandatory experiment is to repeat across at least 10 seeds, add chip-level rather than frame-level splits, and test robustness to blur, illumination drift, object overlap, and missing frames.
+
+The ablation is also a guard against overclaiming: because the current synthetic label is generated directly from effective dose and shear, the physics-only baseline nearly saturates classification. The multimodal architecture is therefore a systems and interpretability upgrade, not yet a demonstrated accuracy improvement. A harder benchmark must introduce compound-specific response variation and nuisance factors before using the score to justify the fusion layer.
+
+As an initial stability check, five additional seeds gave multimodal ROC-AUC mean 0.997 (range 0.994–1.000) and F1 mean 0.970 (range 0.958–0.984). Regression was more variable: viability R² mean 0.901 and IC50 R² mean 0.910. These ranges reinforce that the synthetic benchmark is useful for regression testing but cannot substitute for independent biological validation.
 
 ## 6. Failure modes and safeguards
 
@@ -92,6 +105,7 @@ The fixed split has 135 training and 45 held-out sequences. The current generate
 - **Confounding:** treatment dose can correlate with batch, illumination, or plate position. Real validation must include randomized controls and batch-aware evaluation.
 - **Uncertainty misuse:** the current proxy is not a calibrated probability of biological failure.
 - **Tracking errors:** crowded fields and divisions can break one-to-one assignment. A real extension needs division-aware or transformer-based association.
+- **Synthetic physics:** flow, clearance and shear are transparent proxies; they must be calibrated against measured chip geometry and experimental observations.
 
 ## 7. Reproduction and extension
 
@@ -110,7 +124,8 @@ All generated outputs are disposable and can be regenerated. The repository does
 3. Use chip/experiment-level grouped splits and never mix adjacent frames across train/test.
 4. Compare static morphology, temporal reservoir, 3D CNN/UNet, and a simple dose-only baseline.
 5. Calibrate probabilities and report bootstrap intervals across experiments.
-6. Obtain domain review before interpreting a phenotype as toxicity.
+6. Fit dose-response curves and inspect flow counterfactuals against controls.
+7. Obtain domain review before interpreting a phenotype as toxicity.
 
 ## 9. Conclusion
 

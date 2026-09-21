@@ -1,16 +1,22 @@
 <!doctype html><meta charset='utf-8'><title>NeuroChip Twin demo</title>
     <h1>NeuroChip Twin</h1><p>Self-contained synthetic organ-on-chip proxy benchmark; no clinical claim.</p>
-    <p>Temporal ROC-AUC: <b>1.000</b> · Static ROC-AUC: <b>0.345</b> · Δ=+0.655</p>
-    <img src='demo_overview.png' style='max-width:100%'><img src='confusion_matrix.png' style='max-width:420px'>
+    <p>Static ROC-AUC: <b>0.280</b> · Temporal: <b>0.996</b> · Multimodal physics: <b>0.998</b></p>
+    <img src='demo_overview.png' style='max-width:100%'><img src='confusion_matrix.png' style='max-width:420px'><img src='counterfactual_flow.png' style='max-width:620px'>
     <h2>Interpretation</h2><pre>{
-  "count_ratio": 0.1818,
-  "area_ratio": 0.0541,
-  "intensity_ratio": 0.3168,
-  "elongation_ratio": 1.7646,
-  "motility": 1.3602,
-  "persistence": 0.25,
-  "count_slope": -0.8182,
-  "area_slope": -21.6312,
-  "intensity_slope": -0.0222
+  "count_ratio": 0.1667,
+  "area_ratio": 0.343,
+  "intensity_ratio": 0.3621,
+  "elongation_ratio": 2.0583,
+  "motility": 1.4545,
+  "persistence": 0.3913,
+  "count_slope": -0.9091,
+  "area_slope": -17.1526,
+  "intensity_slope": -0.0261
 }</pre>
+    <h2>Physics counterfactual</h2><pre> flow_rate_uL_min  wall_shear_proxy  predicted_toxicity_probability  predicted_viability
+              0.0              0.00                        1.000000           -12.435605
+              2.0              0.36                        1.000000            -9.887142
+             10.0              1.80                        1.000000            -1.878284
+             20.0              3.60                        0.999995            11.120635
+             40.0              7.20                        0.999850            27.410045</pre>
     <p>Uncertainty is a transparent distance-from-threshold proxy and must not be read as a clinical confidence interval.</p>

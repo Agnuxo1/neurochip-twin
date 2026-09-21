@@ -31,5 +31,8 @@ def test_end_to_end_outputs(tmp_path: Path):
     result = run(tmp_path, seed=5, n_samples=48)
     assert result["test_size"] == 12
     assert 0.0 <= result["temporal_reservoir"]["roc_auc"] <= 1.0
+    assert 0.0 <= result["multimodal_physics"]["roc_auc"] <= 1.0
+    assert "r2" in result["multimodal_viability"]
+    assert (tmp_path / "counterfactual_flow.csv").exists()
     assert (tmp_path / "metrics.json").exists()
     assert (tmp_path / "index.html").exists()

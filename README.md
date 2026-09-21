@@ -21,8 +21,9 @@ The run writes `metrics.json`, `predictions.csv`, `phenotype_table.csv`, an HTML
 - Input: grayscale microscopy-like time series with one or more chips and treatment doses.
 - Cell analysis: denoising, threshold segmentation, connected components, centroid tracking.
 - Features: count, area, intensity, elongation, motion, persistence, and temporal slopes.
-- Model: static logistic baseline vs. fixed-reservoir temporal classifier.
-- Output: toxicity/response probability, calibrated held-out metrics, and uncertainty proxy.
+- Model: static baseline vs. fixed-reservoir temporal classifier vs. a multimodal physics-informed readout.
+- Multimodal fusion: morphology + temporal reservoir + dose/flow/shear/clearance, with explicit cross-modal interactions.
+- Outputs: toxicity probability, viability and IC50 regression, held-out metrics, and a flow counterfactual.
 
 Synthetic data are used deliberately for a runnable, license-clean smoke test. The `data/` contract supports replacing generated sequences with legally obtained BBBC, RxRx1, Cell Painting, or authorized organ-on-chip data; the report lists the required validation protocol.
 
@@ -34,5 +35,6 @@ The original implementation in this repository is MIT licensed. Synthetic images
 
 - Technical report: [`docs/TECHNICAL_REPORT.md`](docs/TECHNICAL_REPORT.md)
 - Kaggle writeup draft: [`docs/KAGGLE_WRITEUP.md`](docs/KAGGLE_WRITEUP.md)
+- Leading-project analysis: [`docs/LEADING_PROJECT_ANALYSIS.md`](docs/LEADING_PROJECT_ANALYSIS.md)
 - Reproduction script: `python -m src.neurochip_twin`
 - Test suite: `tests/`

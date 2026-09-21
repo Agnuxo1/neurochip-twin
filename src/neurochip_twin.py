@@ -24,10 +24,13 @@ from sklearn.metrics import (
     balanced_accuracy_score,
     confusion_matrix,
     f1_score,
+    mean_squared_error,
+    r2_score,
     roc_auc_score,
 )
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
+from sklearn.linear_model import Ridge
 from sklearn.preprocessing import StandardScaler
 
 
@@ -42,6 +45,13 @@ FEATURE_NAMES = [
     "area_slope",
     "intensity_slope",
 ]
+PHYSICS_FEATURE_NAMES = [
+    "dose",
+    "flow_rate_uL_min",
+    "wall_shear_proxy",
+    "clearance_factor",
+    "effective_dose",
+]
 
 
 @dataclass(frozen=True)
@@ -50,6 +60,10 @@ class Sequence:
     dose: float
     label: int
     seed: int
+    flow_rate: float = 0.0
+    toxicity_score: float = 0.0
+    viability_target: float = 100.0
+    ic50_target: float = -6.0
 
 
 def _draw_gaussian(image: np.ndarray, cy: float, cx: float, sy: float, sx: float, amp: float) -> None:
@@ -62,22 +76,39 @@ def _draw_gaussian(image: np.ndarray, cy: float, cx: float, sy: float, sx: float
     image[y0:y1, x0:x1] += amp * np.exp(-0.5 * (((yy - cy) / sy) ** 2 + ((xx - cx) / sx) ** 2))
 
 
-def generate_sequence(seed: int, dose: float, *, frames: int = 12, shape: tuple[int, int] = (128, 160)) -> Sequence:
+def generate_sequence(
+    seed: int,
+    dose: float,
+    *,
+    flow_rate: float | None = None,
+    frames: int = 12,
+    shape: tuple[int, int] = (128, 160),
+) -> Sequence:
     """Generate an organ-on-chip-like cell movie with a known perturbation."""
     rng = np.random.default_rng(seed)
     h, w = shape
+    if flow_rate is None:
+        flow_rate = float(rng.choice([0.0, 2.0, 10.0, 40.0]))
+    clearance_factor = 1.0 / (1.0 + 0.045 * flow_rate)
+    shear_stress = 0.18 * flow_rate
+    shear_penalty = max(0.0, flow_rate - 15.0) / 30.0
     n_cells = int(rng.integers(14, 24))
     y = rng.uniform(18, h - 18, n_cells)
     x = rng.uniform(18, w - 18, n_cells)
     sy = rng.uniform(2.0, 4.3, n_cells)
     sx = sy * rng.uniform(0.8, 1.8, n_cells)
     drift = rng.normal(0, 0.8, (n_cells, 2))
-    toxicity = np.clip(dose * 1.35 + rng.normal(0, 0.08), 0, 1)
+    # The response is driven by effective exposure plus a high-shear penalty.
+    # This is a transparent synthetic physics proxy, not a biological law.
+    effective_dose = dose * clearance_factor
+    toxicity = np.clip(effective_dose * 1.65 + shear_penalty * 0.32 + rng.normal(0, 0.08), 0, 1)
     label = int(toxicity > 0.42)
     out = np.zeros((frames, h, w), dtype=np.float32)
     for t in range(frames):
         image = rng.normal(0.025, 0.012, shape).astype(np.float32)
         vitality = np.clip(1.0 - toxicity * (t / max(frames - 1, 1)) * 1.20, 0.12, 1.0)
+        if flow_rate > 15.0:
+            vitality = np.clip(vitality - shear_penalty * (t / max(frames - 1, 1)) * 0.22, 0.08, 1.0)
         for i in range(n_cells):
             cy = y[i] + drift[i, 0] * t + rng.normal(0, 0.25)
             cx = x[i] + drift[i, 1] * t + rng.normal(0, 0.25)
@@ -90,7 +121,9 @@ def generate_sequence(seed: int, dose: float, *, frames: int = 12, shape: tuple[
             # A faint debris-like background signal makes threshold choice nontrivial.
             image += ndimage.gaussian_filter(rng.random(shape).astype(np.float32), 4) * toxicity * 0.018
         out[t] = np.clip(ndimage.gaussian_filter(image, 0.6), 0, 1)
-    return Sequence(out, float(dose), label, seed)
+    viability_target = float(np.clip(100.0 * (1.0 - toxicity), 0.0, 100.0))
+    ic50_target = float(-7.2 + 3.6 * (1.0 - toxicity) + 0.015 * flow_rate)
+    return Sequence(out, float(dose), label, seed, float(flow_rate), float(toxicity), viability_target, ic50_target)
 
 
 def segment(frame: np.ndarray) -> tuple[np.ndarray, list[dict[str, float]]]:
@@ -174,6 +207,35 @@ def phenotype_features(sequence: Sequence) -> tuple[np.ndarray, pd.DataFrame]:
     return features, table
 
 
+def physics_features(sequence: Sequence) -> np.ndarray:
+    """Return transparent hydrodynamic and exposure covariates."""
+    flow = float(sequence.flow_rate)
+    clearance = 1.0 / (1.0 + 0.045 * flow)
+    return np.array([
+        sequence.dose,
+        flow,
+        0.18 * flow,
+        clearance,
+        sequence.dose * clearance,
+    ], dtype=float)
+
+
+def cross_modal_features(temporal: np.ndarray, physical: np.ndarray) -> np.ndarray:
+    """Fuse phenotype and physics with explicit low-order interactions.
+
+    This is an interpretable local analogue of multimodal cross-attention: the
+    readout can condition phenotype changes on exposure and shear without
+    hiding the interaction in a large neural network.
+    """
+    interactions = np.einsum("ij,ik->ijk", temporal, physical[:, [2, 3, 4]]).reshape(len(temporal), -1)
+    return np.c_[temporal, physical, interactions]
+
+
+def fused_feature_names() -> list[str]:
+    interaction_names = [f"{t}×{p}" for t in FEATURE_NAMES + [f"reservoir_{i}" for i in range(32)] for p in ["wall_shear_proxy", "clearance_factor", "effective_dose"]]
+    return FEATURE_NAMES + [f"reservoir_{i}" for i in range(32)] + PHYSICS_FEATURE_NAMES + interaction_names
+
+
 class TemporalReservoir:
     """Small fixed reservoir; only the readout is fitted."""
     def __init__(self, input_dim: int, hidden: int = 32, seed: int = 7, spectral: float = 0.82):
@@ -210,11 +272,18 @@ def metrics(y: np.ndarray, p: np.ndarray) -> dict[str, float]:
     }
 
 
+def regression_metrics(y: np.ndarray, prediction: np.ndarray) -> dict[str, float]:
+    return {
+        "rmse": float(mean_squared_error(y, prediction) ** 0.5),
+        "r2": float(r2_score(y, prediction)),
+    }
+
+
 def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(seed)
     sequences = [generate_sequence(int(rng.integers(1_000_000)), float(rng.uniform(0, 1))) for _ in range(n_samples)]
-    X, static_X, y, tables, doses = [], [], [], [], []
+    X, static_X, physical_X, y, viability, ic50, tables, doses = [], [], [], [], [], [], [], []
     for seq in sequences:
         feat, table = phenotype_features(seq)
         first_objects = table[table["frame"] == table["frame"].min()] if not table.empty else table
@@ -225,7 +294,9 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
             float(first_objects["elongation"].mean()) if not first_objects.empty else 0.0,
         ])
         X.append(feat); y.append(seq.label); tables.append(table); doses.append(seq.dose)
-    X, static_X, y, doses = np.asarray(X), np.asarray(static_X), np.asarray(y), np.asarray(doses)
+        physical_X.append(physics_features(seq)); viability.append(seq.viability_target); ic50.append(seq.ic50_target)
+    X, static_X, physical_X = np.asarray(X), np.asarray(static_X), np.asarray(physical_X)
+    y, viability, ic50, doses = np.asarray(y), np.asarray(viability), np.asarray(ic50), np.asarray(doses)
     idx = np.arange(n_samples)
     train_idx, test_idx = train_test_split(idx, test_size=0.25, random_state=seed, stratify=y)
     baseline = Pipeline([("scale", StandardScaler()), ("model", LogisticRegression(max_iter=2000, random_state=seed))])
@@ -233,9 +304,43 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
     p_base = baseline.predict_proba(static_X[test_idx])[:, 1]
     reservoir = TemporalReservoir(input_dim=3, seed=seed + 11)
     R = reservoir.transform(tables)
-    fusion = Pipeline([("scale", StandardScaler()), ("model", LogisticRegression(max_iter=2000, random_state=seed))])
-    fusion.fit(np.c_[X[train_idx], R[train_idx]], y[train_idx])
-    p_temporal = fusion.predict_proba(np.c_[X[test_idx], R[test_idx]])[:, 1]
+    temporal_X = np.c_[X, R]
+    temporal_model = Pipeline([("scale", StandardScaler()), ("model", LogisticRegression(max_iter=2000, random_state=seed))])
+    temporal_model.fit(temporal_X[train_idx], y[train_idx])
+    p_temporal = temporal_model.predict_proba(temporal_X[test_idx])[:, 1]
+    fused_X = cross_modal_features(temporal_X, physical_X)
+    physics_model = Pipeline([("scale", StandardScaler()), ("model", LogisticRegression(max_iter=2000, random_state=seed))])
+    physics_model.fit(physical_X[train_idx], y[train_idx])
+    p_physics = physics_model.predict_proba(physical_X[test_idx])[:, 1]
+    no_interaction_model = Pipeline([("scale", StandardScaler()), ("model", LogisticRegression(max_iter=2000, random_state=seed))])
+    no_interaction_model.fit(np.c_[temporal_X[train_idx], physical_X[train_idx]], y[train_idx])
+    p_no_interaction = no_interaction_model.predict_proba(np.c_[temporal_X[test_idx], physical_X[test_idx]])[:, 1]
+    multimodal = Pipeline([("scale", StandardScaler()), ("model", LogisticRegression(max_iter=2000, random_state=seed, C=0.7))])
+    multimodal.fit(fused_X[train_idx], y[train_idx])
+    p_multimodal = multimodal.predict_proba(fused_X[test_idx])[:, 1]
+    viability_model = Pipeline([("scale", StandardScaler()), ("model", Ridge(alpha=1.0))])
+    ic50_model = Pipeline([("scale", StandardScaler()), ("model", Ridge(alpha=1.0))])
+    viability_model.fit(fused_X[train_idx], viability[train_idx])
+    ic50_model.fit(fused_X[train_idx], ic50[train_idx])
+    viability_pred = viability_model.predict(fused_X[test_idx])
+    ic50_pred = ic50_model.predict(fused_X[test_idx])
+    demo = sequences[int(np.argmax([s.dose * (1.0 / (1.0 + 0.045 * s.flow_rate)) for s in sequences]))]
+    counterfactual_rows = []
+    for flow in [0.0, 2.0, 10.0, 20.0, 40.0]:
+        cf = generate_sequence(demo.seed, demo.dose, flow_rate=flow)
+        cf_feat, cf_table = phenotype_features(cf)
+        cf_r = reservoir.transform([cf_table])[0]
+        cf_physics = physics_features(cf)[None, :]
+        cf_temporal = np.concatenate([cf_feat, cf_r])[None, :]
+        cf_fused = cross_modal_features(cf_temporal, cf_physics)
+        counterfactual_rows.append({
+            "flow_rate_uL_min": flow,
+            "wall_shear_proxy": 0.18 * flow,
+            "predicted_toxicity_probability": float(multimodal.predict_proba(cf_fused)[0, 1]),
+            "predicted_viability": float(viability_model.predict(cf_fused)[0]),
+        })
+    counterfactual = pd.DataFrame(counterfactual_rows)
+    counterfactual.to_csv(out_dir / "counterfactual_flow.csv", index=False)
     result = {
         "seed": seed,
         "n_samples": n_samples,
@@ -243,9 +348,17 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
         "test_size": int(len(test_idx)),
         "data_kind": "synthetic_organ_on_chip_proxy",
         "baseline": metrics(y[test_idx], p_base),
+        "physics_only": metrics(y[test_idx], p_physics),
         "temporal_reservoir": metrics(y[test_idx], p_temporal),
-        "delta_roc_auc": float(roc_auc_score(y[test_idx], p_temporal) - roc_auc_score(y[test_idx], p_base)),
+        "multimodal_no_interactions": metrics(y[test_idx], p_no_interaction),
+        "multimodal_physics": metrics(y[test_idx], p_multimodal),
+        "multimodal_vs_temporal_delta_roc_auc": float(roc_auc_score(y[test_idx], p_multimodal) - roc_auc_score(y[test_idx], p_temporal)),
+        "multimodal_viability": regression_metrics(viability[test_idx], viability_pred),
+        "multimodal_ic50": regression_metrics(ic50[test_idx], ic50_pred),
         "feature_names": FEATURE_NAMES,
+        "physics_feature_names": PHYSICS_FEATURE_NAMES,
+        "fusion_feature_count": int(fused_X.shape[1]),
+        "fusion_design": "phenotype + fixed temporal reservoir + hydrodynamic covariates + explicit cross-modal interactions",
         "uncertainty_proxy": "distance from 0.5; not a clinical confidence interval",
     }
     (out_dir / "metrics.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
@@ -253,7 +366,6 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
     pred.to_csv(out_dir / "predictions.csv", index=False)
     pd.concat([t.assign(sequence=i) for i, t in enumerate(tables)], ignore_index=True).to_csv(out_dir / "phenotype_table.csv", index=False)
 
-    demo = sequences[int(np.argmax(doses))]
     demo_features, demo_table = phenotype_features(demo)
     fig, axes = plt.subplots(1, 3, figsize=(14, 4))
     axes[0].imshow(demo.frames[0], cmap="magma"); axes[0].set_title("t=0 microscopy proxy"); axes[0].axis("off")
@@ -269,11 +381,17 @@ def run(out_dir: Path, seed: int = 42, n_samples: int = 180) -> dict:
     for (i, j), value in np.ndenumerate(cm): ax.text(j, i, int(value), ha="center", va="center")
     fig.tight_layout(); fig.savefig(out_dir / "confusion_matrix.png", dpi=160); plt.close(fig)
 
+    fig, ax = plt.subplots(figsize=(6, 4)); ax.plot(counterfactual["flow_rate_uL_min"], counterfactual["predicted_viability"], marker="o", label="predicted viability")
+    ax2 = ax.twinx(); ax2.plot(counterfactual["flow_rate_uL_min"], counterfactual["predicted_toxicity_probability"], marker="s", color="crimson", label="toxicity probability")
+    ax.set_xlabel("flow rate (uL/min)"); ax.set_ylabel("viability"); ax2.set_ylabel("toxicity probability"); ax.set_title("Physics counterfactual: flow modulation")
+    fig.tight_layout(); fig.savefig(out_dir / "counterfactual_flow.png", dpi=160); plt.close(fig)
+
     html = f"""<!doctype html><meta charset='utf-8'><title>NeuroChip Twin demo</title>
     <h1>NeuroChip Twin</h1><p>Self-contained synthetic organ-on-chip proxy benchmark; no clinical claim.</p>
-    <p>Temporal ROC-AUC: <b>{result['temporal_reservoir']['roc_auc']:.3f}</b> · Static ROC-AUC: <b>{result['baseline']['roc_auc']:.3f}</b> · Δ={result['delta_roc_auc']:+.3f}</p>
-    <img src='demo_overview.png' style='max-width:100%'><img src='confusion_matrix.png' style='max-width:420px'>
+    <p>Static ROC-AUC: <b>{result['baseline']['roc_auc']:.3f}</b> · Temporal: <b>{result['temporal_reservoir']['roc_auc']:.3f}</b> · Multimodal physics: <b>{result['multimodal_physics']['roc_auc']:.3f}</b></p>
+    <img src='demo_overview.png' style='max-width:100%'><img src='confusion_matrix.png' style='max-width:420px'><img src='counterfactual_flow.png' style='max-width:620px'>
     <h2>Interpretation</h2><pre>{json.dumps(dict(zip(FEATURE_NAMES, demo_features.round(4))), indent=2)}</pre>
+    <h2>Physics counterfactual</h2><pre>{counterfactual.to_string(index=False)}</pre>
     <p>Uncertainty is a transparent distance-from-threshold proxy and must not be read as a clinical confidence interval.</p>"""
     (out_dir / "index.html").write_text(html, encoding="utf-8")
     return result

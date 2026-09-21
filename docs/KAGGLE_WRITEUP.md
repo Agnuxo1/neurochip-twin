@@ -12,9 +12,11 @@ Attach `outputs/demo/neurochip_twin_demo.mp4` (maximum five minutes) or a public
 
 ### Summary
 
-NeuroChip Twin is an interpretable temporal digital-twin prototype for organ-on-chip microscopy. It converts a time-lapse into cell tracks and phenotype trajectories, then uses a fixed recurrent reservoir with a small logistic readout to estimate a treatment-response/toxicity state. The output includes the measurable reasons behind the prediction: cell-count change, morphology, intensity, motion, and track persistence. A static first-frame baseline is included as an ablation, so the value of temporal information is testable rather than assumed.
+NeuroChip Twin is an interpretable temporal digital-twin prototype for organ-on-chip microscopy. It converts a time-lapse into cell tracks and phenotype trajectories, then fuses them with dose, flow, shear and clearance context using a compact physics-informed readout. Separate heads estimate toxicity, viability and IC50, while a flow counterfactual shows how the predicted response changes under altered perfusion. The output includes measurable reasons behind the prediction: cell-count change, morphology, intensity, motion, track persistence and exposure context. Static and temporal baselines are included as ablations, so the value of dynamics and multimodal context is testable rather than assumed.
 
-On the repository's deterministic synthetic organ-on-chip-like benchmark (seed 42, 180 sequences, 25% held out), the static baseline ROC-AUC is 0.345 and the temporal model ROC-AUC is 1.000 (Δ=+0.655). These values are a synthetic stress test, not clinical performance. The project intentionally exposes this limitation and provides the data contract and validation plan for authorized public microscopy and organ-on-chip data.
+On the repository's deterministic synthetic organ-on-chip-like benchmark (seed 42, 180 sequences, 25% held out), the static baseline ROC-AUC is 0.280, the temporal model is 0.996, and the multimodal physics-informed model is 0.998 (F1 0.984). The auxiliary heads obtain viability R² 0.967 and IC50 R² 0.972. These values are a synthetic stress test, not clinical performance. The project intentionally exposes this limitation and provides the data contract and validation plan for authorized public microscopy and organ-on-chip data.
+
+An important ablation finding is that the physics-only baseline also reaches ROC-AUC 0.998 on this proxy. We therefore make no claim that the multimodal interactions improve accuracy until the system is tested on real or harder compound-specific data; their current value is interpretability, counterfactual analysis, and an extensible interface for measured OoC covariates.
 
 ### Technical report
 
