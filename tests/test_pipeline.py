@@ -2,7 +2,7 @@ from pathlib import Path
 
 import numpy as np
 
-from src.neurochip_twin import generate_sequence, phenotype_features, run, segment, track_objects
+from src.neurochip_twin import generate_sequence, metrics, phenotype_features, run, segment, track_objects
 from src.external_validation import _io_path, _pixel_metrics
 from src.validation import run_validation
 
@@ -66,6 +66,12 @@ def test_compound_specific_scenario_exposes_context(tmp_path: Path):
 def test_external_pixel_metrics_have_expected_bounds():
     metrics = _pixel_metrics(np.array([[1, 0], [0, 1]]), np.array([[1, 0], [0, 1]]))
     assert metrics == {"iou": 1.0, "dice": 1.0, "precision": 1.0, "recall": 1.0}
+
+
+def test_probability_calibration_metrics_are_bounded():
+    result = metrics(np.array([0, 0, 1, 1]), np.array([0.1, 0.4, 0.6, 0.9]))
+    assert 0.0 <= result["brier_score"] <= 1.0
+    assert 0.0 <= result["expected_calibration_error"] <= 1.0
 
 
 def test_external_validation_supports_long_windows_paths():

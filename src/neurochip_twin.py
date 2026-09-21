@@ -22,6 +22,7 @@ from sklearn.metrics import (
     accuracy_score,
     average_precision_score,
     balanced_accuracy_score,
+    brier_score_loss,
     confusion_matrix,
     f1_score,
     mean_squared_error,
@@ -340,12 +341,20 @@ class TemporalReservoir:
 
 def metrics(y: np.ndarray, p: np.ndarray) -> dict[str, float]:
     pred = (p >= 0.5).astype(int)
+    bins = np.linspace(0.0, 1.0, 11)
+    ece = 0.0
+    for lower, upper in zip(bins[:-1], bins[1:]):
+        in_bin = (p >= lower) & ((p < upper) if upper < 1.0 else (p <= upper))
+        if np.any(in_bin):
+            ece += float(np.mean(in_bin)) * abs(float(np.mean(p[in_bin])) - float(np.mean(y[in_bin])))
     return {
         "roc_auc": float(roc_auc_score(y, p)),
         "average_precision": float(average_precision_score(y, p)),
         "balanced_accuracy": float(balanced_accuracy_score(y, pred)),
         "accuracy": float(accuracy_score(y, pred)),
         "f1": float(f1_score(y, pred, zero_division=0)),
+        "brier_score": float(brier_score_loss(y, p)),
+        "expected_calibration_error": ece,
     }
 
 

@@ -37,4 +37,6 @@ The ten-seed compound-specific audit reports multimodal ROC-AUC mean 0.987 (rang
 
 The grouped compound-specific audit reports multimodal ROC-AUC 0.983 ± 0.023, F1 0.944 ± 0.051, viability R² 0.945 ± 0.019, and IC50 R² 0.942 ± 0.027 across ten seeds. It is deliberately labelled as a synthetic leakage diagnostic: replacing the proxy batch IDs with real chip/experiment IDs is required before treating the result as evidence of transfer.
 
+The probability audit now reports multimodal Brier/ECE of 0.053/0.069 for random splits and 0.048/0.071 for grouped splits. These diagnostics improve transparency around the uncertainty proxy but do not convert synthetic probabilities into clinical confidence.
+
 We also added a real-data front-end check on BBBC038v1. After calibrating on 12 images and freezing the parameters, 24 held-out images gave mean IoU 0.520, Dice 0.575, precision 0.842 and recall 0.578. This improves the validation story compared with a synthetic-only submission, while the modest recall and non-OoC domain are disclosed rather than hidden. The next score-critical experiment is authorized OoC or matched perturbation data with measured chip/experiment IDs.

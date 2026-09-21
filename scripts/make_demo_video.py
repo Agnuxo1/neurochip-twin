@@ -1,5 +1,6 @@
 """Create a short local MP4 for the Kaggle writeup attachment."""
 from dataclasses import replace
+import json
 from pathlib import Path
 import sys
 
@@ -17,6 +18,8 @@ from src.neurochip_twin import generate_sequence, phenotype_features
 def main() -> None:
     out = Path("outputs/demo/neurochip_twin_demo.mp4")
     out.parent.mkdir(parents=True, exist_ok=True)
+    metrics = json.loads((out.parent / "metrics.json").read_text(encoding="utf-8"))
+    calibration = metrics["multimodal_physics"]
     seq = generate_sequence(2026, 0.82, frames=36, scenario="compound_specific")
     writer = cv2.VideoWriter(str(out), cv2.VideoWriter_fourcc(*"mp4v"), 8, (960, 600))
     for i, frame in enumerate(seq.frames):
@@ -36,6 +39,7 @@ def main() -> None:
         draw2.text((690, 165), "tracking: Hungarian", fill=(20, 30, 50))
         draw2.text((690, 200), "readout: fixed reservoir", fill=(20, 30, 50))
         draw2.text((690, 235), f"compound context: {seq.compound_id}", fill=(20, 30, 50))
+        draw2.text((690, 255), f"Brier/ECE: {calibration['brier_score']:.3f}/{calibration['expected_calibration_error']:.3f}", fill=(20, 30, 50))
         draw2.text((690, 290), "No clinical claim", fill=(160, 45, 40))
         writer.write(cv2.cvtColor(np.asarray(canvas), cv2.COLOR_RGB2BGR))
     writer.release()

@@ -25,7 +25,15 @@ CLASSIFICATION_MODELS = (
     "multimodal_no_interactions",
     "multimodal_physics",
 )
-CLASSIFICATION_METRICS = ("roc_auc", "average_precision", "balanced_accuracy", "accuracy", "f1")
+CLASSIFICATION_METRICS = (
+    "roc_auc",
+    "average_precision",
+    "balanced_accuracy",
+    "accuracy",
+    "f1",
+    "brier_score",
+    "expected_calibration_error",
+)
 REGRESSION_HEADS = ("multimodal_viability", "multimodal_ic50")
 REGRESSION_METRICS = ("rmse", "r2")
 

@@ -8,6 +8,6 @@
 
 2:10–3:10 — Show the static, physics-only, temporal and multimodal ablations. Read the exact ROC-AUC values from `metrics.json` and explain why the harder scenario prevents a dose-only shortcut.
 
-3:10–4:10 — Show the probability, uncertainty proxy, confusion matrix, and one failure mode. Say explicitly that the benchmark is synthetic.
+3:10–4:10 — Show the probability, uncertainty proxy, Brier/ECE calibration diagnostics, confusion matrix, and one failure mode. Say explicitly that the benchmark is synthetic and that calibration is not a clinical confidence interval.
 
 4:10–5:00 — Show the test suite and report. End with the real-data validation plan and the no-clinical-claim boundary.

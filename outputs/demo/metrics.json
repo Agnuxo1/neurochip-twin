@@ -12,35 +12,45 @@
     "average_precision": 0.6197280165681859,
     "balanced_accuracy": 0.5803571428571428,
     "accuracy": 0.6,
-    "f1": 0.7
+    "f1": 0.7,
+    "brier_score": 0.24276888803001853,
+    "expected_calibration_error": 0.09416285517656314
   },
   "physics_only": {
     "roc_auc": 0.6924603174603174,
     "average_precision": 0.7782431019166034,
     "balanced_accuracy": 0.6755952380952381,
     "accuracy": 0.6666666666666666,
-    "f1": 0.6341463414634146
+    "f1": 0.6341463414634146,
+    "brier_score": 0.2246514169778015,
+    "expected_calibration_error": 0.136539689060645
   },
   "temporal_reservoir": {
     "roc_auc": 0.9682539682539684,
     "average_precision": 0.9719903744446077,
     "balanced_accuracy": 0.9077380952380952,
     "accuracy": 0.9111111111111111,
-    "f1": 0.92
+    "f1": 0.92,
+    "brier_score": 0.06877829210355303,
+    "expected_calibration_error": 0.0725451749753623
   },
   "multimodal_no_interactions": {
     "roc_auc": 0.990079365079365,
     "average_precision": 0.9909075616412573,
     "balanced_accuracy": 0.9553571428571428,
     "accuracy": 0.9555555555555556,
-    "f1": 0.9583333333333334
+    "f1": 0.9583333333333334,
+    "brier_score": 0.04085555483819365,
+    "expected_calibration_error": 0.0847138792283863
   },
   "multimodal_physics": {
     "roc_auc": 0.990079365079365,
     "average_precision": 0.9909075616412573,
     "balanced_accuracy": 0.9553571428571428,
     "accuracy": 0.9555555555555556,
-    "f1": 0.9583333333333334
+    "f1": 0.9583333333333334,
+    "brier_score": 0.04086131371418083,
+    "expected_calibration_error": 0.06383576501864328
   },
   "multimodal_vs_temporal_delta_roc_auc": 0.021825396825396637,
   "multimodal_viability": {
