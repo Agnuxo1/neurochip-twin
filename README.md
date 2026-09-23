@@ -59,6 +59,30 @@ The dataset's labels describe expert-assessed sample quality (`good`/`bad`),
 not toxicity or treatment response, and the output must not be used to claim
 clinical performance.
 
+### Exploratory external neural-assay audit (not OoC validation)
+
+`src.external_assay_validation` provides a separate tabular audit for the
+public [U.S. EPA acute embryonic-rat DRG workbook](https://catalog.data.gov/dataset/kodavantip-acute_hsab_aop_neurotox_science-hub-data-090319).
+It covers LDH, neurite length, neuron counts and MEA firing. On the MEA endpoint,
+a fixed Random Forest using only dose and pre-dose firing reached out-of-fold
+R² 0.335 / MAE 0.391 while each of 12 treatment labels was held out in turn
+(155 scored non-control rows); the same-input Ridge baseline reached R² 0.171 /
+MAE 0.449. A paired bootstrap over treatment-label errors is included in the
+machine-readable output: the equal-label paired MAE difference is -0.056
+(95% bootstrap interval -0.084 to -0.028; 12 source labels). This is
+exploratory rat DRG evidence, not OoC data,
+not matched to the microscopy sequences, and not validation of the image model.
+The other date-held-out endpoints are weak or negative. The EPA [license and
+disclaimer](https://pasteur.epa.gov/license/sciencehub-license.html) and
+[source paper](https://doi.org/10.1016/j.tiv.2020.104989) are recorded in the
+technical report; the workbook is not bundled.
+
+Download the linked workbook and run:
+
+```powershell
+python -m src.external_assay_validation --input /path/to/KodavantiP_Acute_HSAB_AOP_Neurotox_Science_Hub.xlsx --out outputs/external_assay_validation/summary.json
+```
+
 ## Scientific scope
 
 - Input: grayscale microscopy-like time series with one or more chips and treatment doses.

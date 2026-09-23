@@ -47,6 +47,33 @@ The probability audit now reports multimodal Brier/ECE of 0.053/0.069 for random
 
 We also added a real-data front-end check on BBBC038v1. After calibrating on 12 images and freezing the parameters, 24 held-out images gave mean IoU 0.520, Dice 0.575, precision 0.842 and recall 0.578. The new OOC metadata audit adds direct domain coverage and missingness evidence, but still no response score. This improves the validation story compared with a synthetic-only submission, while the modest recall and non-OoC segmentation domain are disclosed rather than hidden. The next score-critical experiment is authorized OoC image/quality evaluation or matched perturbation data with measured chip/experiment IDs.
 
+## External neural-assay audit — 2026-09-23 (exploratory, not OoC validation)
+
+To add a measured-biology branch without implying that it validates the image
+model, we implemented a reproducible audit of the public [EPA acute
+embryonic-rat DRG workbook](https://catalog.data.gov/dataset/kodavantip-acute_hsab_aop_neurotox_science-hub-data-090319),
+citing its [license/disclaimer](https://pasteur.epa.gov/license/sciencehub-license.html)
+and [source paper](https://doi.org/10.1016/j.tiv.2020.104989). For MEA firing,
+leave-one-treatment-label-out validation (12 labels; 155 non-control rows;
+controls training-only) gives a fixed dose + pre-rate Random Forest R² 0.335,
+MAE 0.391 versus Ridge R² 0.171, MAE 0.449. The module reports equal-label
+macro-MAE 0.384 (95% bootstrap interval 0.299–0.482) versus 0.440
+(0.356–0.533); paired forest-minus-Ridge difference -0.056 (-0.084 to
+-0.028; 95% cluster-bootstrap interval, 10,000 resamples). This resamples
+treatment labels instead of treating rows as independent replicates.
+Recorded-date MEA validation also gives context Random Forest R²
+0.308 over 10 dates; LDH, NLPN and NPF grouped results are weak or negative.
+This remains a modest exploratory association: the source uses acute rat DRG
+cultures, recorded dates are only batch proxies, and its endpoints are not
+paired with our microscopy sequences. It does not validate the image encoder,
+OoC transfer, human biology or clinical outcomes.
+
+The Kaggle CLI recheck on Sep 23 returned `userHasEntered=True` and
+`userRank=0`; the official competition leaderboard command returned “No
+results found.” Participation is reflected by Kaggle, but there is no official
+rank yet and no basis to call any entry first/second. The competition closes
+Oct 10, 2026 at 15:59:59 UTC (17:59:59 Madrid time).
+
 ## Live review — 2026-09-23 (not a placement)
 
 Before the NeuroChip Twin notebook was published, the Kaggle API's
