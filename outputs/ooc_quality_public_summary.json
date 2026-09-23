@@ -1,0 +1,111 @@
+{
+  "cell_type_counts": {
+    "A549": 775,
+    "CACO": 346,
+    "HPMEC": 1462,
+    "HSAEC": 244,
+    "HUVEC": 107,
+    "NHBE": 138
+  },
+  "dataset": "Organ-on-a-Chip (OOC) Image Dataset",
+  "license_and_redistribution": {
+    "images_included": false,
+    "model_weights_included": false,
+    "per_image_predictions_included": false,
+    "status": "Zenodo record and data paper state different licenses; discrepancy unresolved."
+  },
+  "models": {
+    "image_hog": {
+      "cell_type_macro_roc_auc": 0.655134849,
+      "n_scored_images": 3072,
+      "per_cell_type_roc_auc": {
+        "A549": 0.595958,
+        "CACO": 0.678706,
+        "HPMEC": 0.586555,
+        "HSAEC": 0.503219,
+        "HUVEC": 0.831884,
+        "NHBE": 0.734488
+      }
+    },
+    "image_plus_metadata": {
+      "cell_type_macro_roc_auc": 0.664651665,
+      "n_scored_images": 3072,
+      "per_cell_type_roc_auc": {
+        "A549": 0.607475,
+        "CACO": 0.663686,
+        "HPMEC": 0.624668,
+        "HSAEC": 0.552677,
+        "HUVEC": 0.835507,
+        "NHBE": 0.703896
+      }
+    },
+    "inception_v3_logistic": {
+      "cell_type_macro_roc_auc": 0.76030176,
+      "n_scored_images": 3072,
+      "per_cell_type_roc_auc": {
+        "A549": 0.725811,
+        "CACO": 0.812991,
+        "HPMEC": 0.661756,
+        "HSAEC": 0.68136,
+        "HUVEC": 0.921739,
+        "NHBE": 0.758153
+      }
+    },
+    "inception_v3_plus_metadata": {
+      "cell_type_macro_roc_auc": 0.772578481,
+      "n_scored_images": 3072,
+      "per_cell_type_roc_auc": {
+        "A549": 0.726359,
+        "CACO": 0.802656,
+        "HPMEC": 0.67401,
+        "HSAEC": 0.689919,
+        "HUVEC": 0.957246,
+        "NHBE": 0.785281
+      }
+    },
+    "metadata_only": {
+      "cell_type_macro_roc_auc": 0.611348683,
+      "n_scored_images": 3072,
+      "per_cell_type_roc_auc": {
+        "A549": 0.527702,
+        "CACO": 0.611543,
+        "HPMEC": 0.565856,
+        "HSAEC": 0.633379,
+        "HUVEC": 0.990217,
+        "NHBE": 0.339394
+      }
+    }
+  },
+  "n_labelled_images": 3072,
+  "provenance": {
+    "audit_summary_sha256": {
+      "frozen_inception_v3": "b6195a3ac130764e4a1dd183d6fe11a6d458c4b4c646cc285ba903f5161921d8",
+      "hog": "d37e4a33607543c531ac2c8d1de4a60f953913f9a2df66c718c130b613fa9df6"
+    },
+    "dataset_archive_md5": "8f7e058996203d48eb03b2d86c0a2e4d",
+    "license_notes": {
+      "dataset_paper": "CC-BY-SA",
+      "resolution": "The two source statements differ. This audit does not redistribute images or model weights; cite both sources and do not re-host the archive.",
+      "zenodo_record_api": "CC-BY-4.0"
+    },
+    "metadata_sha256": "863fc133f8be825c010c41ea26168fedb75af8d2722646f61402779583073eba",
+    "private_prediction_file_sha256": {
+      "frozen_inception_v3": "ede0896570f64e5cb18f726f23f37ef79d20dcfce721b858767243e010deb3d0",
+      "hog": "f2d82201c8c42ba83193c8ebcf054afc62bc33b7bb68c0abaace22ef3edffaab"
+    },
+    "source_paper_url": "https://doi.org/10.3390/data9020028",
+    "source_record_url": "https://zenodo.org/records/10203721"
+  },
+  "quality_counts": {
+    "bad": 1345,
+    "good": 1727
+  },
+  "schema_version": "ooc_quality_public_aggregate_v1",
+  "task": "expert-assessed good/bad OOC sample image-quality classification",
+  "validation": {
+    "interpretation": "Exploratory sample-quality triage only; not toxicity or treatment-response validation.",
+    "pooled_roc_auc": null,
+    "primary_metric": "unweighted macro mean of six held-out-cell-type ROC-AUCs",
+    "protocol": "leave-one-cell-type-out; cell type is not a model feature"
+  }
+}

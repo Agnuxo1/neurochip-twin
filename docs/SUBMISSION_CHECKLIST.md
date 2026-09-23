@@ -10,7 +10,8 @@ writeup and its reproducibility evidence.
 - Subtitle: `Physics-informed temporal microscopy analysis for toxicity, viability and dose-response screening`
 - Competition: [AI4S Open Innovation: AI for Life Science](https://www.kaggle.com/competitions/ai-4-s-open-innovation-artificial-intelligence-for-life-scien)
 - Writeup editor: [NeuroChip Twin writeup](https://www.kaggle.com/competitions/ai-4-s-open-innovation-artificial-intelligence-for-life-scien/writeups/new-writeup-1789975521348)
-- Video: [YouTube demo](https://www.youtube.com/watch?v=U0zyU-AvXo8)
+- Current YouTube demo (38 seconds): [public video](https://www.youtube.com/watch?v=U0zyU-AvXo8)
+- New judge demo included in this repository release: `outputs/demo/neurochip_twin_judges_demo.mp4` plus SRT captions
 - Code: [public GitHub repository](https://github.com/Agnuxo1/neurochip-twin)
 - Kaggle code mirror: [CPU-only synthetic reproduction notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-ai4s-reproducible-synthetic-demo)
 - Technical report: [technical report](https://github.com/Agnuxo1/neurochip-twin/blob/main/docs/TECHNICAL_REPORT.md)
@@ -18,34 +19,32 @@ writeup and its reproducibility evidence.
 
 ## Live Kaggle audit — 2026-09-23
 
-- The public writeup still displays **Submitted!** and is dated Sep 21, 2026.
-  This confirms a writeup is present, not that all eligibility gates are
-  complete. A fresh authenticated read-only check on Sep 23 found the same
-  older content; no editor or submission action was opened.
+- The authenticated writeup page displays **Submitted!** (Sep 21, 2026) and
+  remains editable until Oct 10. Its body still has the earlier long Project
+  Summary, does not begin with the required **End-to-End System** category,
+  and does not include the latest OoC image-quality audit. The corrected
+  `docs/KAGGLE_WRITEUP.md` remains a local draft; the public page was not edited.
 - Its visible Project Summary is the old, long synthetic/BBBC038 summary and
   does not declare **End-to-End System** at the beginning of the body, although
   Kaggle's rules require the category first and recommend a 200–300-word
   summary. The replacement in `docs/KAGGLE_WRITEUP.md` now has the category
-  first and a 235-word Project Summary; it remains local pending a fresh,
+  first and a 294-word Project Summary; it remains local pending a fresh,
   immediate confirmation before public editing and **Update Submission**.
-- Kaggle's overview reports 11 teams and 11 submissions. The event uses expert
-  review after the Oct 10 deadline (Oct 10–20), then selects 20 finalists; no
-  official first/second-place ranking is published yet. Kaggle's notebook
-  settings for this event show no scored submissions; the code notebook is a
-  reproducibility/code-sharing artifact, not a leaderboard entry.
+- Kaggle's Writeups page lists ten submitted team entries as of this check,
+  but the other teams' contents are marked **Viewable at Hackathon close**.
+  There is no public first/second-place ranking to analyze. The Kaggle CLI
+  reports no scored submissions; this is an expert-reviewed writeup challenge,
+  not a prediction leaderboard. Do not infer placement from votes or team count.
 - The judging rubric weights impact 30%, technical approach 30%, results and
   validation 20%, reproducibility 10%, and presentation 10%. The project's
   largest scientific limitation remains the lack of paired neural OoC response
   validation; synthetic benchmark metrics do not fill that gap.
-- An unauthenticated browser could load the public YouTube video; it is 38
-  seconds and has no subtitles. A playback sample visibly presents a synthetic
-  dose-response frame, cell count, dose, Hungarian tracking, fixed-reservoir
-  readout and a no-clinical-claim notice. It is a genuine project output, but
-  the short clip does not clearly walk through input → run → report/tests, so a
-  fuller captioned workflow demo remains worthwhile. The GitHub MP4 is only
-  4.5 seconds (36 frames at 8 fps) and is not that public 38-second video. The
-  older 132-second draft mentioned in an earlier checkpoint is absent and must
-  not be described as available.
+- The current public YouTube demo is 38 seconds and has no subtitles; the old
+  GitHub MP4 is only 4.5 seconds. A new 107-second, English, captioned
+  judge demo and SRT have now been rendered and are included in this repository
+  release. It shows the synthetic workflow, the separate OoC image-quality
+  audit, and BBBC038 segmentation with scopes explicitly labelled. It has not
+  replaced the YouTube video embedded in the Kaggle writeup.
 - Kaggle's foundational code-sharing rule requires code shared publicly during
   the competition to also be shared in its Kaggle discussion or code page.
   NeuroChip Twin now has a public, competition-linked Kaggle notebook that
@@ -55,30 +54,32 @@ writeup and its reproducibility evidence.
   run with synthetic ROC-AUC 0.990 and F1 0.958; this is not biological
   validation. The current hotness-sorted listing shows BioFluidNet-OoC at 15
   votes and NeuroChip Twin at 0 votes; these are votes, not judged placements.
-- Kaggle separately requires the team leader to submit its registration form.
-  The prior local audit recorded required form fields as blank on Sep 21;
-  current completion is unverified. Do not treat the writeup's Submitted state
-  as proof of form completion.
-- The current repository main is commit `9924768` (Sep 21). The earlier dirty
-  checkout and its Quris audit scripts/results were not present at the recorded
-  path on Sep 23. Do not publish those prior Quris metrics from memory; recover
-  their provenance or rerun an explicitly exploratory audit before reuse.
+- Kaggle requires the team leader to submit the registration form. A read-only
+  check on Sep 23 shows all required fields are still blank, including WhatsApp
+  and Guangzhou travel preference. No personal data was entered or transmitted;
+  **Submitted!** on the writeup is not proof of eligibility.
+- Before this repository release, remote GitHub `main` was commit `bd90a3b`.
+  Quris audit scripts/results are not present in this checkout. Do not publish
+  any prior Quris metrics from memory; recover their provenance or rerun an
+  explicitly exploratory audit before reuse.
 
 The replacement summary prepared in this local checkout starts with the
-category declaration and is 235 words. It is not uploaded to Kaggle.
+category declaration. It is not uploaded to Kaggle; editing the public writeup
+and pressing **Update Submission** require immediate action-time confirmation.
 
 ## Eligibility gate
 
 Kaggle's official competition page requires the team leader to complete the
 [official registration form](https://docs.google.com/forms/d/e/1FAIpQLSdRAat5jIunRaFNh_NntsVeJUnekEJDrbuokLZ32LFgCwPtiA/viewform)
-before the Writeup is eligible for evaluation. On 2026-09-21 the signed-in
+before the Writeup is eligible for evaluation. On 2026-09-23 the signed-in
 form still showed all required fields empty, so registration is **pending**.
-The automated workflow has not entered or transmitted personal data such as
-WhatsApp details, travel preference or contact information.
+No personal data, WhatsApp details or travel preference have been entered or
+transmitted.
 
 ## Evidence to report
 
-The current public repository is reproducible from commit `3349f89` or later.
+The public repository's previous base commit was `bd90a3b`; this release adds
+the demo, aggregate audit artifact, exporter and integrity checks.
 The primary benchmark is explicitly labelled synthetic:
 
 - seed 42, 180 sequences, 25% held out;
@@ -113,20 +114,22 @@ The primary benchmark is explicitly labelled synthetic:
   6.7 GB image archive, per-image predictions and model weights are not
   committed. The source record/paper license discrepancy is disclosed in the
   technical report and Kaggle writeup draft.
+- `outputs/ooc_quality_public_summary.json` contains aggregate-only audited
+  scores; images, per-image predictions and model weights are omitted.
+- The new judge demo is included in this GitHub release; the writeup still
+  embeds the earlier 38-second YouTube video and has not been updated.
 - The public writeup uses the cleaned, metrics-aligned content represented by
   `docs/KAGGLE_WRITEUP.md` only in this local recovery checkout. The currently
   published writeup still has the longer, older summary described above.
 
 ## Final state
 
-The public Kaggle writeup is present but needs a compliant summary/category
-refresh. The Kaggle code-sharing gate is now covered by the public notebook;
-the separate registration status is still unverified. The recovered source
-checkout is at `work/neurochip-twin-recovery-20260923`. Commit `20973b9`
-publishes the competition-linked notebook source/metadata, exact-source-parity
-test, README links, and updated competition/validation documentation to
-GitHub. `.cognition/` contains local reference and run-output evidence and is
-not published. The test suite passes, `compileall` passes, and
-`git diff --check` passes. No Kaggle writeup edit was made. The public writeup
-must not be edited or submitted until the required immediate action-time
-confirmation is obtained.
+The public Kaggle writeup is present but needs a compliant summary/video
+refresh, and registration remains pending. Competitor writeups are hidden until
+the event closes, so no verified project ranking is available. Local source,
+tests and public-safe aggregate results are included in this repository
+release; `.cognition/` contains private audit files and is not published. The
+new judge video is in GitHub, while the YouTube channel and Kaggle embed still
+show the earlier video.
+The Kaggle writeup was not modified; a public edit and **Update Submission**
+require immediate action-time confirmation.

@@ -53,6 +53,24 @@ in `docs/bbbc038_watershed_split_seed20260924.json`; BBBC038 remains a nuclei-
 segmentation portability audit, not organ-on-chip or biological-response
 validation. The default connected-component behavior is unchanged.
 
+For the exploratory OoC image-quality audit, the repository publishes only a
+small aggregate score table at
+[`outputs/ooc_quality_public_summary.json`](outputs/ooc_quality_public_summary.json).
+It contains six cell-line-held-out metrics and provenance hashes, not images,
+per-image predictions or model weights. The Zenodo record and dataset paper
+state conflicting licenses; the discrepancy remains unresolved and source
+images are not redistributed.
+
+To regenerate that aggregate from completed local audits (the two run folders
+contain per-image outputs and should remain local), use:
+
+```bash
+python scripts/export_ooc_quality_summary.py \
+  --hog-audit-dir /path/to/hog_audit \
+  --inception-audit-dir /path/to/inception_audit \
+  --out outputs/ooc_quality_public_summary.json
+```
+
 ### Real OOC metadata audit
 
 The repository includes a small, dependency-light audit for the public
@@ -168,5 +186,7 @@ The original implementation in this repository is MIT licensed. Synthetic images
 - Kaggle writeup: [`docs/KAGGLE_WRITEUP.md`](docs/KAGGLE_WRITEUP.md)
 - Submission checklist: [`docs/SUBMISSION_CHECKLIST.md`](docs/SUBMISSION_CHECKLIST.md)
 - Leading-project analysis: [`docs/LEADING_PROJECT_ANALYSIS.md`](docs/LEADING_PROJECT_ANALYSIS.md)
+- Judge demo: [107-second captioned MP4](outputs/demo/neurochip_twin_judges_demo.mp4) · [SRT captions](outputs/demo/neurochip_twin_judges_demo.srt)
 - Reproduction script: `python -m src.neurochip_twin`
+- Render the judge demo: `python scripts/make_demo_video.py` (107-second MP4 plus SRT captions)
 - Test suite: `tests/`

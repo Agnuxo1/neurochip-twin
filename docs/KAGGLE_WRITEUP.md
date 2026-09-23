@@ -1,5 +1,9 @@
 **Submission category: End-to-End System**
 
+## Demo Video
+
+[Captioned 107-second workflow demo](https://github.com/Agnuxo1/neurochip-twin/raw/refs/heads/main/outputs/demo/neurochip_twin_judges_demo.mp4) · [SRT captions](https://github.com/Agnuxo1/neurochip-twin/blob/main/outputs/demo/neurochip_twin_judges_demo.srt)
+
 ## Project Summary
 
 NeuroChip Twin is a transparent research prototype for time-lapse microscopy in organ-on-chip workflows. It segments and tracks cell-like objects, extracts morphology, intensity and motion, summarizes temporal trajectories with a fixed reservoir, and fuses them with dose, flow, shear and clearance context. Auditable readouts estimate toxicity, viability and IC50; reports include phenotype traces and flow counterfactuals.
@@ -41,6 +45,7 @@ The public repository contains source code, tests, report and generated demo art
     python -m pip install -r requirements.txt
     python -m pytest -q
     python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180 --scenario compound_specific
+    python scripts/make_demo_video.py
     python -m src.external_assay_validation --input /path/to/KodavantiP_Acute_HSAB_AOP_Neurotox_Science_Hub.xlsx --out outputs/external_assay_validation/summary.json
 
 Technical report: https://github.com/Agnuxo1/neurochip-twin/blob/main/docs/TECHNICAL_REPORT.md

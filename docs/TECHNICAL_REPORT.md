@@ -182,6 +182,16 @@ label/metadata mechanisms. The Inception run used Python 3.13.7, PyTorch
 `Inception_V3_Weights.IMAGENET1K_V1` with its torchvision RGB/ImageNet
 preprocessing and 16-image batches.
 
+The aggregate-only, per-cell-line scores are recorded in
+`outputs/ooc_quality_public_summary.json`. They are regenerated from the two
+audit summaries and prediction tables by
+`scripts/export_ooc_quality_summary.py`; the exporter verifies the cell-line
+holdout assignment and recomputed macro ROC-AUC before writing. The published
+artifact contains no image identifiers, individual predictions, images or
+weights. Before export, the script also checks per-model row totals, cell-line
+and label counts, finite scores, and agreement for any model repeated across
+the two independent audit runs.
+
 There is an unresolved source-license discrepancy: the [Zenodo record API](https://zenodo.org/records/10203721)
 says CC-BY-4.0, while the [dataset paper](https://doi.org/10.3390/data9020028)
 states CC-BY-SA. Until clarified, retain both citations, do not re-host the images or model weights, and keep derived
