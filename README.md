@@ -12,9 +12,9 @@ The temporal readout is QESN-inspired: a fixed recurrent reservoir compresses fr
 
 - **See the system:** [107-second captioned judge demo (MP4)](https://raw.githubusercontent.com/Agnuxo1/neurochip-twin/main/outputs/demo/neurochip_twin_judges_demo.mp4) · [captions (SRT)](outputs/demo/neurochip_twin_judges_demo.srt)
 - **Reproduce it:** follow the [quick start](#quick-start) and run the test suite with `python -m pytest -q`.
-- **Check the evidence:** read the [technical report](docs/TECHNICAL_REPORT.md) and [evidence-boundary matrix](docs/EVIDENCE_BOUNDARIES.md).
+- **Check the evidence:** read the [technical report](docs/TECHNICAL_REPORT.md), [evidence-boundary matrix](docs/EVIDENCE_BOUNDARIES.md), and [external dataset due-diligence register](docs/EXTERNAL_DATASET_DUE_DILIGENCE.md).
 
-**Evidence limit:** the core response metrics come from a repository-generated synthetic benchmark. The public OoC image-quality, rat DRG electrophysiology, and BBBC038 audits are distinct tasks; none validates neural organ-on-chip image-based response prediction. BBBC038 supports segmentation audit only.
+**Evidence limit:** the core response metrics come from a repository-generated synthetic benchmark. The public OoC image-quality, rat DRG electrophysiology, and BBBC038 audits are distinct tasks; none validates neural organ-on-chip image-based response prediction. A human midbrain-organoid toxicity dataset is a new, unevaluated candidate only; its data rights and group structure remain unverified. BBBC038 supports segmentation audit only.
 
 ## Quick start
 
