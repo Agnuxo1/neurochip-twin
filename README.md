@@ -55,11 +55,11 @@ validation. The default connected-component behavior is unchanged.
 
 ### Real OOC metadata audit
 
-The repository also includes a small, dependency-light audit for the public
-[Organ-on-a-Chip image dataset](https://zenodo.org/records/10203721). It reads
-only `OOC_datasheet.xlsx`, records provenance, cell-line coverage, quality-label
-balance, numeric ranges and missingness, and deliberately avoids downloading
-the 6.7 GB image archive. Run it after downloading the datasheet:
+The repository includes a small, dependency-light audit for the public
+[Organ-on-a-Chip image dataset](https://zenodo.org/records/10203721). The
+metadata-only command below records provenance, cell-line coverage,
+quality-label balance, numeric ranges and missingness without downloading the
+6.7 GB image archive:
 
 ```powershell
 python -m src.ooc_metadata_audit --input /path/to/OOC_datasheet.xlsx --out outputs/ooc_metadata_audit/summary.json
@@ -69,6 +69,58 @@ The audit is a domain-shift/data-contract check, not biological validation.
 The dataset's labels describe expert-assessed sample quality (`good`/`bad`),
 not toxicity or treatment response, and the output must not be used to claim
 clinical performance.
+
+### Exploratory OOC sample-quality image audit (not response validation)
+
+An optional audit evaluates the public archive's expert-assessed `good`/`bad`
+image-quality labels across six non-neural cell lines. The default comparison
+uses fixed HOG/image-quality features, metadata-only logistic regression, and
+their combination, with one entire cell line held out per fold. It does not
+use the dataset's image-level train/test split as evidence of transfer to a
+new cell type. This is an upstream imaging-quality task, not toxicity,
+treatment-response, neural-tissue, or clinical validation.
+
+Download `OOC_image_dataset.zip` and `OOC_datasheet.xlsx` from Zenodo to a
+location outside the repository, then run:
+
+```powershell
+python -m src.ooc_quality_validation `
+  --images-zip /path/to/OOC_image_dataset.zip `
+  --metadata-xlsx /path/to/OOC_datasheet.xlsx `
+  --out /path/outside/repository/ooc_quality_audit
+```
+
+For an optional literature-informed comparison, install `torch` and
+`torchvision` and run the frozen ImageNet Inception-v3 embeddings plus
+metadata/hybrid logistic models on the same cell-line-held-out folds:
+
+```powershell
+python -m pip install torch torchvision
+python -m src.ooc_quality_validation `
+  --images-zip /path/to/OOC_image_dataset.zip `
+  --metadata-xlsx /path/to/OOC_datasheet.xlsx `
+  --out /path/outside/repository/ooc_inception_audit `
+  --include-inception --inception-only
+```
+
+The Inception-v3 comparison follows the frozen-embedding approach studied by
+[George and Kenry (2025)](https://doi.org/10.1021/cbe.5c00087), while using a
+stricter leave-one-cell-type-out evaluation rather than interpreting a random
+image split as cross-cell-type transfer. The [Zenodo record](https://zenodo.org/records/10203721)
+reports CC-BY-4.0, while its [dataset paper](https://doi.org/10.3390/data9020028)
+states CC-BY-SA; cite both and do not redistribute the
+archive or derived model weights until the discrepancy is clarified. Keep all
+downloaded images and per-image outputs outside this repository.
+
+On 3,072 matched images, exploratory leave-one-cell-line-out macro ROC-AUC was
+0.655 for HOG image features, 0.611 for metadata alone, 0.665 for HOG plus
+metadata, 0.760 for frozen Inception-v3, and 0.773 for Inception-v3 plus
+metadata. This suggests a useful candidate for upstream image-quality triage,
+but does not validate toxicity/response prediction or neural OoC transfer. The
+Inception comparison was added after the initial HOG analysis, uses the same
+six cell-line folds, and is exploratory rather than an independent test. Full
+per-cell-line results and caveats are in
+[`docs/TECHNICAL_REPORT.md`](docs/TECHNICAL_REPORT.md).
 
 ### Exploratory external neural-assay audit (not OoC validation)
 

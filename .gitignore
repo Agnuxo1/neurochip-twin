@@ -1,4 +1,5 @@
 __pycache__/
+.cognition/
 *.py[cod]
 .pytest_cache/
 work/pytest-tmp/

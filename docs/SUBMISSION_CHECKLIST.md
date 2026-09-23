@@ -108,9 +108,11 @@ The primary benchmark is explicitly labelled synthetic:
 - No external evaluation images are committed to the repository.
 - Grouped validation is described as a synthetic leakage diagnostic, not as a
   substitute for measured chip/experiment IDs.
-- The Zenodo OOC spreadsheet is used only for provenance, coverage and
-  missingness planning; its good/bad sample-quality labels are not response
-  labels, and the 6.7 GB image archive is not committed.
+- The Zenodo OOC image archive is used only in a separate exploratory
+  good/bad sample-quality audit; those labels are not response labels. The
+  6.7 GB image archive, per-image predictions and model weights are not
+  committed. The source record/paper license discrepancy is disclosed in the
+  technical report and Kaggle writeup draft.
 - The public writeup uses the cleaned, metrics-aligned content represented by
   `docs/KAGGLE_WRITEUP.md` only in this local recovery checkout. The currently
   published writeup still has the longer, older summary described above.

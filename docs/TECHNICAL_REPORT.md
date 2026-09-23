@@ -125,11 +125,68 @@ spreadsheet, the audit found 3,072 non-empty metadata rows and six cell-line
 categories (`A549`, `CACO`, `HPMEC`, `HSAEC`, `HUVEC`, `NHBE`), with 46 fully
 blank trailing rows. Quality labels were 1,727 good and 1,345 bad rows among
 the non-blank labels, while flow rate was present in 2,213 rows and seeding
-density in 2,728 rows. Time-after-seeding was present in 828 rows. These are
-coverage facts for planning an external evaluation, not model scores. The
-audit records the input SHA-256 and source URLs in
-`outputs/ooc_metadata_audit/summary.json`; the image archive is intentionally
-not downloaded or committed.
+density in 2,728 rows. Time-after-seeding was present in 828 rows. The audit
+records the input SHA-256 and source URLs in
+`outputs/ooc_metadata_audit/summary.json`.
+
+### Exploratory external OoC sample-quality image audit (not response validation)
+
+The full 6.7 GB image archive was downloaded locally from the public
+[Zenodo record](https://zenodo.org/records/10203721) and its MD5 matched the
+published checksum (`8f7e058996203d48eb03b2d86c0a2e4d`). No archive images,
+per-image predictions, or trained weights were committed. The audit matched
+all 3,072 labelled images to the datasheet and archive folders and confirmed
+that their `good`/`bad` labels agree. It evaluates expert-assessed image/sample
+quality only; it does not evaluate toxicity, treatment response, neural OoC
+transfer, or clinical performance.
+
+To avoid treating correlated images from the same cell-line domain as
+independent transfer evidence, the outer validation holds out one entire cell
+line at a time. Cell type is not a predictor. Fixed comparisons are (a) 64×64
+grayscale HOG plus simple image-quality summaries with a balanced linear SVM,
+(b) numeric culture metadata only, and (c) their combination. After reviewing
+closely related published work, an additional exploratory comparison uses
+frozen ImageNet Inception-v3 embeddings with balanced logistic regression,
+plus an image+metadata variant. The 2025 study by [George and
+Kenry](https://doi.org/10.1021/cbe.5c00087) used pretrained Inception-v3
+embeddings and supervised classifiers but used a random image-level train/test
+split; its scores are not directly comparable to this stricter cell-line-held-
+out audit. Inception was added after the initial HOG run, so the architecture
+comparison is exploratory rather than preregistered or an independent test.
+
+| Held-out cell line | Images | HOG image | Metadata only | HOG + metadata | Inception-v3 | Inception-v3 + metadata |
+|---|---:|---:|---:|---:|---:|---:|
+| A549 | 775 | 0.596 | 0.528 | 0.607 | 0.726 | 0.726 |
+| CACO | 346 | 0.679 | 0.612 | 0.664 | 0.813 | 0.803 |
+| HPMEC | 1,462 | 0.587 | 0.566 | 0.625 | 0.662 | 0.674 |
+| HSAEC | 244 | 0.503 | 0.633 | 0.553 | 0.681 | 0.690 |
+| HUVEC | 107 | 0.832 | 0.990 | 0.836 | 0.922 | 0.957 |
+| NHBE | 138 | 0.734 | 0.339 | 0.704 | 0.758 | 0.785 |
+| **Unweighted cell-line macro ROC-AUC** | **3,072** | **0.655** | **0.611** | **0.665** | **0.760** | **0.773** |
+
+The highest observed macro ROC-AUC is 0.773 for frozen Inception-v3 plus
+metadata, versus 0.665 for HOG plus metadata. This is useful evidence for an
+upstream OoC image-quality triage component, not an improvement to the project's
+neural toxicity/response readout. The six cell lines are the only independent
+outer groups available; no confidence interval or significance claim is made.
+HUVEC has only 15 good versus 92 bad images, making its fold estimate
+particularly uncertain. The dataset lacks chip/experiment identifiers, so
+this is not experiment-held-out validation, and these six non-neural lines do
+not validate neural OoC transfer. HUVEC's metadata-only AUC of 0.990 also
+signals that culture metadata may strongly proxy the label in this dataset;
+deployment would require testing on new experiments and careful review of
+label/metadata mechanisms. The Inception run used Python 3.13.7, PyTorch
+2.6.0+cu124, torchvision 0.21.0+cu124, scikit-learn 1.4.0, scikit-image
+0.25.2, NumPy 2.2.6, SciPy 1.15.1, Pillow 10.4.0 and an NVIDIA GeForce RTX
+3090 (24 GB); fixed random states were 42. The encoder was
+`Inception_V3_Weights.IMAGENET1K_V1` with its torchvision RGB/ImageNet
+preprocessing and 16-image batches.
+
+There is an unresolved source-license discrepancy: the [Zenodo record API](https://zenodo.org/records/10203721)
+says CC-BY-4.0, while the [dataset paper](https://doi.org/10.3390/data9020028)
+states CC-BY-SA. Until clarified, retain both citations, do not re-host the images or model weights, and keep derived
+per-image files local. The audit code and exact commands are in the repository;
+its transfer checksum and metadata SHA-256 are recorded in the local summary.
 
 ### External neural-assay audit (not OoC validation)
 
@@ -206,21 +263,36 @@ python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180 --scenar
 python -m src.neurochip_twin --out outputs/demo_control --seed 42 --samples 180 --scenario exposure_only
 # after downloading the small metadata file from the Zenodo record:
 python -m src.ooc_metadata_audit --input /path/to/OOC_datasheet.xlsx --out outputs/ooc_metadata_audit/summary.json
+# after downloading the Zenodo OoC image archive and datasheet outside this repository:
+python -m src.ooc_quality_validation --images-zip /path/to/OOC_image_dataset.zip --metadata-xlsx /path/to/OOC_datasheet.xlsx --out /path/outside/repository/ooc_quality_audit
+# optional frozen Inception-v3 literature comparison (requires torch/torchvision and pretrained weights):
+python -m pip install torch torchvision
+python -m src.ooc_quality_validation --images-zip /path/to/OOC_image_dataset.zip --metadata-xlsx /path/to/OOC_datasheet.xlsx --out /path/outside/repository/ooc_inception_audit --include-inception --inception-only
 # after downloading the public-domain EPA DRG workbook:
 python -m src.external_assay_validation --input /path/to/KodavantiP_Acute_HSAB_AOP_Neurotox_Science_Hub.xlsx --out outputs/external_assay_validation/summary.json
 ```
 
 All generated outputs are disposable and can be regenerated. The repository does not require an API key, cloud service, proprietary hardware, or private data.
 
-## 8. Planned real-data validation
+## 8. Next steps for response-model validation
 
-1. Use the completed OOC metadata audit to define a legal, condition-aware image evaluation plan and preserve raw-data provenance.
-2. Add an adapter for the OOC image archive only after confirming its permitted use, then validate segmentation against object masks using IoU/F1 and report per-condition variance.
-3. Use chip/experiment-level grouped splits and never mix adjacent frames across train/test.
-4. Compare static morphology, temporal reservoir, 3D CNN/UNet, and a simple dose-only baseline.
-5. Calibrate probabilities and report bootstrap intervals across experiments.
-6. Fit dose-response curves and inspect flow counterfactuals against controls.
-7. Obtain domain review before interpreting a phenotype as toxicity.
+1. Obtain authorized neural OoC data pairing time-lapse images with measured
+   treatment/control conditions and biological response endpoints. The public
+   six-cell-line archive audited above contains sample-quality labels only.
+2. Preserve chip, experiment and biological-replicate identifiers; split by
+   experiment/chip before feature learning or threshold selection. The current
+   public archive does not provide these identifiers.
+3. Keep image-quality screening as a separate preflight module. Do not pass its
+   `good`/`bad` labels off as toxicity outcomes or train the response heads on
+   them.
+4. With paired response data, compare static morphology, the temporal
+   reservoir, image embeddings, and dose/context-only baselines under the same
+   experiment-held-out folds.
+5. Calibrate uncertainty and report intervals resampled at the experiment or
+   biological-replicate level; inspect dose-response and flow counterfactuals
+   against controls.
+6. Obtain domain review before interpreting a phenotype as toxicity or using
+   any output for experimental decisions.
 
 ## 9. Conclusion
 
