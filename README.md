@@ -1,5 +1,7 @@
 # NeuroChip Twin
 
+[![Tests](https://github.com/Agnuxo1/neurochip-twin/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Agnuxo1/neurochip-twin/actions/workflows/ci.yml)
+
 Interpretable temporal phenotype analysis for organ-on-chip research.
 
 NeuroChip Twin is an **End-to-End System** prototype for the AI4S Open Innovation: AI for Life Science challenge. It turns a microscopy time-lapse into cell-level tracks, interpretable phenotype features, a toxicity/response estimate, uncertainty, and an auditable report.
@@ -165,6 +167,10 @@ python -m src.external_assay_validation --input /path/to/KodavantiP_Acute_HSAB_A
 ```
 
 ## Scientific scope
+
+For a reviewer-facing map of which evidence supports which claims—and where
+modalities must remain separate—see
+[`docs/EVIDENCE_BOUNDARIES.md`](docs/EVIDENCE_BOUNDARIES.md).
 
 - Input: grayscale microscopy-like time series with one or more chips and treatment doses.
 - Cell analysis: denoising, threshold segmentation, connected components, centroid tracking; optional distance-transform watershed can split touching foreground objects.
