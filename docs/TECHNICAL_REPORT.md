@@ -313,6 +313,17 @@ All generated outputs are disposable and can be regenerated. The repository does
 
 ## 8. Next steps for response-model validation
 
+A newly identified public candidate is the human peripheral-central dual
+neural-organoid (hPCO) drug-screen archive. Its Mendeley landing page states
+CC BY 4.0 and lists raw bright-field images across six archive batches; the
+paper describes AI-assisted image analysis for teratogenicity screening. This
+is not an organ-on-chip or verified longitudinal dataset, and image-level
+labels, treatment mapping, and independent batch units still need to be
+checked. No images or measurements have been inspected. If a preregistered
+audit becomes feasible, a region-aware static-image model could analyze the
+central- and peripheral-like regions separately and compare that hybrid with
+a whole-image baseline. This is a proposed experiment, not a current result.
+
 1. Obtain authorized neural OoC data pairing time-lapse images with measured
    treatment/control conditions and biological response endpoints. The public
    six-cell-line archive audited above contains sample-quality labels only.
