@@ -72,10 +72,11 @@ Synthetic data are used deliberately for a runnable, license-clean stress test. 
 
 ## Provenance and licensing
 
-The original implementation in this repository is MIT licensed. Synthetic images and labels are generated locally. Third-party libraries retain their own licenses. The design was informed by the author's QESN_MABe and CAJAL projects; those prior projects are disclosed in `docs/TECHNICAL_REPORT.md`.
+The original implementation in this repository is MIT licensed. Synthetic images and labels are generated locally. Third-party libraries retain their own licenses. The public Kaggle notebook mirror carries the Apache 2.0 license shown on its Kaggle page; the companion GitHub repository remains MIT. The design was informed by the author's QESN_MABe and CAJAL projects; those prior projects are disclosed in `docs/TECHNICAL_REPORT.md`.
 
 ## Competition deliverables
 
+- Competition code/reproduction notebook: [NeuroChip Twin on Kaggle](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-ai4s-reproducible-synthetic-demo)
 - Technical report: [`docs/TECHNICAL_REPORT.md`](docs/TECHNICAL_REPORT.md)
 - Kaggle writeup: [`docs/KAGGLE_WRITEUP.md`](docs/KAGGLE_WRITEUP.md)
 - Submission checklist: [`docs/SUBMISSION_CHECKLIST.md`](docs/SUBMISSION_CHECKLIST.md)

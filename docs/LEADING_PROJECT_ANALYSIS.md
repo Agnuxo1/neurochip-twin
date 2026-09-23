@@ -1,6 +1,7 @@
-# Evidence-based analysis of the leading visible Kaggle project
+# Analysis of the most visible public Kaggle code notebook (not a ranked submission)
 
-**Checked:** 2026-09-21. **Competition:** [AI4S Open Innovation: AI for Life Science](https://www.kaggle.com/competitions/ai-4-s-open-innovation-artificial-intelligence-for-life-scien)
+**Initial check:** 2026-09-21; live code-page review updated 2026-09-23.
+**Competition:** [AI4S Open Innovation: AI for Life Science](https://www.kaggle.com/competitions/ai-4-s-open-innovation-artificial-intelligence-for-life-scien)
 
 ## What “first place” means at this stage
 
@@ -45,3 +46,67 @@ The stronger compound-holdout audit puts every compound on one side of the split
 The probability audit now reports multimodal Brier/ECE of 0.053/0.069 for random splits and 0.048/0.071 for grouped splits. These diagnostics improve transparency around the uncertainty proxy but do not convert synthetic probabilities into clinical confidence.
 
 We also added a real-data front-end check on BBBC038v1. After calibrating on 12 images and freezing the parameters, 24 held-out images gave mean IoU 0.520, Dice 0.575, precision 0.842 and recall 0.578. The new OOC metadata audit adds direct domain coverage and missingness evidence, but still no response score. This improves the validation story compared with a synthetic-only submission, while the modest recall and non-OoC segmentation domain are disclosed rather than hidden. The next score-critical experiment is authorized OoC image/quality evaluation or matched perturbation data with measured chip/experiment IDs.
+
+## Live review — 2026-09-23 (not a placement)
+
+Before the NeuroChip Twin notebook was published, the Kaggle API's
+competition-code query, sorted by hotness, returned the public BioFluidNet-OoC
+notebook as the only visible result on its first page; it had 15 votes at the
+time checked. After publication, the same query returns BioFluidNet-OoC (15
+votes) and NeuroChip Twin (0 votes). Votes measure community activity, **not**
+official rank, winner, or evidence that either project is first or second.
+This is a manually judged hackathon; expert review follows the Oct 10
+submission deadline.
+
+I downloaded and statically inspected its public notebook without executing
+any cells: [BioFluidNet-OoC notebook](https://www.kaggle.com/code/avikdas567/biofluidnet-ooc-multimodal-phenotypic-profiling).
+The review identifies methodological risks to account for when comparing
+reported scores:
+
+- The notebook calls `fit_transform` on each complete feature matrix before
+  making the train/test partition. That allows held-out rows to influence
+  preprocessing statistics.
+- It uses a stratified sample-level fold rather than a compound-, chip-, or
+  experiment-held-out split. Its synthetic generator assigns toxicity and
+  mechanism labels from a fixed compound table, while compound descriptors
+  recur across the random split.
+- The same test partition is evaluated every epoch and is used for checkpoint
+  selection, so it is not an untouched final test set.
+- Several ablation scores are literal constants in the plotted comparison
+  table rather than outputs recomputed by the notebook's ablation code. Those
+  comparisons therefore cannot be independently reproduced from that table.
+- Its perfect headline metrics come from its own synthetic benchmark. The
+  notebook's text presents biological interpretation, but the displayed
+  metrics are not measured neural OoC response validation.
+
+These are observations about the visible code, not allegations of intent and
+not a verified competition ranking. Useful ideas to retain are multimodal
+context, explicit physics features, multiple task heads and flow
+counterfactuals. NeuroChip Twin should keep the smaller, auditable hybrid and
+prefer group/compound holdouts, train-only preprocessing, a final test set not
+used for checkpoint selection, and executable ablations. Its own synthetic
+metrics still do not establish biological transfer.
+
+Recent primary/domain sources reinforce this direction: the ISO/CD 25591
+committee draft is developing OoC/MPS metadata and experimental-design
+requirements for digital twins; the PReP MPS reproducibility protocol
+emphasizes metadata plus CV, ANOVA and ICC; and a 2026 cancer-on-chip study
+reports that longitudinal, baseline-normalized viability features improved
+dose-response sensitivity in its own system. These support better metadata,
+replicate-aware evaluation and temporal measurements; none validates our
+neural OoC model. See [ISO/CD 25591](https://www.iso.org/es/contents/data/standard/09/08/90834.html?browse=tc),
+[MPS reproducibility analytics](https://pmc.ncbi.nlm.nih.gov/articles/PMC12256941/),
+and [longitudinal cancer-on-chip imaging](https://pmc.ncbi.nlm.nih.gov/articles/PMC13159154/).
+
+### Operational consequence
+
+The current public writeup still needs a fresh, action-time-approved update.
+The [Kaggle foundational rules](https://www.kaggle.com/competitions/ai-4-s-open-innovation-artificial-intelligence-for-life-scien/rules)
+also require code shared publicly during the event to be shared on its Kaggle
+discussion or code page; GitHub alone does not satisfy that separate
+condition. The [CPU-only NeuroChip Twin Kaggle notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-ai4s-reproducible-synthetic-demo)
+now embeds the source mirror and is linked to the competition. Version 2 ran
+successfully on Kaggle (49 seconds); it regenerated ROC-AUC 0.990 and F1
+0.958 from 180 synthetic sequences, with no Internet or GPU. Kaggle labels the
+notebook copy Apache 2.0; the GitHub repository remains MIT. The output is not
+biological validation and the notebook is not a leaderboard submission.

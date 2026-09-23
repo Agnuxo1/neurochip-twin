@@ -1,0 +1,17 @@
+{
+  "id": "franciscoangulo/neurochip-twin-ai4s-reproducible-synthetic-demo",
+  "title": "Neurochip Twin AI4S Reproducible Synthetic Demo",
+  "code_file": "neurochip_twin_ai4s_demo.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [
+    "ai-4-s-open-innovation-artificial-intelligence-for-life-scien"
+  ],
+  "model_sources": []
+}

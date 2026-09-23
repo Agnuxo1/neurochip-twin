@@ -1,18 +1,12 @@
+**Submission category: End-to-End System**
+
 ## Project Summary
 
-NeuroChip Twin is an interpretable temporal digital-twin prototype for organ-on-chip microscopy. It converts a time-lapse into cell tracks and phenotype trajectories, then fuses them with dose, flow, shear and clearance context using a compact physics-informed readout. Separate heads estimate toxicity, viability and IC50, while a flow counterfactual shows how the predicted response changes under altered perfusion. The output includes measurable reasons behind each prediction: cell-count change, morphology, intensity, motion, track persistence and exposure context. Static and temporal baselines are included as ablations, so the value of dynamics and multimodal context is testable rather than assumed.
+NeuroChip Twin is an interpretable research prototype for time-lapse microscopy in organ-on-chip workflows. It tracks cells, extracts morphology, intensity, motion and persistence features, summarizes temporal trajectories with a fixed reservoir, and combines them with dose, flow, shear and clearance context. Separate readout heads estimate toxicity, viability and IC50; a counterfactual tool explores how predicted response changes with perfusion. Reports expose predictions, phenotype traces and the factors behind each flag.
 
-On the repository's deterministic compound-specific synthetic organ-on-chip-like benchmark (seed 42, 180 sequences, 25% held out), the static baseline ROC-AUC is 0.567, the physics-only baseline is 0.692, the temporal model is 0.968, and the primary additive multimodal context readout is 0.990 with F1 0.958. The explicit physics-interaction readout is retained as an ablation with the same seed-42 score. The auxiliary heads obtain viability R² 0.957 and IC50 R² 0.957. A ten-seed audit gives multimodal ROC-AUC 0.987, F1 0.936, viability R² 0.902 and IC50 R² 0.908; the grouped audit gives multimodal ROC-AUC 0.983 and F1 0.944. These values are a synthetic stress test, not clinical performance. The project intentionally exposes this limitation and provides the data contract and validation plan for authorized public microscopy and organ-on-chip data.
+Because no paired neural OoC response dataset is included, response claims are tested on repository-generated synthetic data, not biological measurements. In the deterministic compound-specific benchmark (seed 42, 180 sequences, 25% held out), static and physics-only baselines reach ROC-AUC 0.567 and 0.692; the temporal model reaches 0.968, and additive multimodal fusion reaches 0.990 (F1 0.958). Ten-seed validation averages 0.987 ROC-AUC and 0.936 F1; grouped synthetic splits reach 0.983 ROC-AUC. A compound-holdout audit reaches 0.991 ± 0.007 ROC-AUC and 0.954 ± 0.028 F1. The benchmark deliberately includes latent susceptibility encoded in temporal features, so these stress tests do not estimate biological transfer.
 
-The probability readout is audited as well as ranked: seed 42 gives a multimodal Brier score of 0.041 and ten-bin ECE of 0.064; across ten seeds these average 0.053 and 0.069, while the grouped audit averages 0.048 and 0.071. These are calibration diagnostics for the synthetic proxy, not clinical confidence intervals.
-
-The primary scenario includes seeded compound descriptors and a latent susceptibility factor visible only through temporal phenotype. This makes the physics-only ablation materially weaker and tests whether dynamics add information. The ten-seed multimodal-versus-temporal ROC-AUC gain averages +0.0023 in random splits and +0.0035 in grouped splits; these synthetic batch IDs are explicitly only a proxy, and real evaluation must use measured chip/experiment IDs.
-
-As a stricter generalization check, a ten-seed compound-holdout audit keeps each compound entirely out of either train or test. The additive multimodal readout reaches ROC-AUC 0.991 ± 0.007 and F1 0.954 ± 0.028, compared with 0.989 for the temporal-only readout and 0.986/0.938 for the explicit interaction readout. This makes additive fusion the conservative unseen-compound choice; all values remain synthetic regression-test evidence, not biological validation.
-
-The image-analysis front-end was also audited on 24 held-out BBBC038v1 microscopy images after parameter calibration on 12 separate images: mean pixel IoU 0.520, Dice 0.575, precision 0.842 and recall 0.578. BBBC038 is public CC0 microscopy data; this is a portability check for segmentation only, not OoC response validation or clinical performance. The repository documents the exact download, license and command.
-
-The older exposure_only scenario remains available as a control and is intentionally not used as the headline result because its label is too tightly coupled to dose and shear. The primary scenario is still synthetic and makes no biological generalization claim; the value of the system is the auditable temporal/multimodal workflow and its explicit path to authorized OoC data.
+The image front end was separately audited on BBBC038v1: after calibration on 12 images, segmentation on 24 held-out images yields pixel IoU 0.520 and Dice 0.575. BBBC038 is a segmentation-portability audit only, not OoC response validation. This research-assistance prototype is not a clinical or dosing tool. Its decisive next test requires authorized neural OoC data, chip- or experiment-held-out evaluation, biological replicates and external validation. The public repository includes source, tests, technical report and reproducible commands.
 
 ## Technical Method
 
@@ -31,6 +25,8 @@ The public repository contains source code, tests, report and generated demo art
     python -m src.neurochip_twin --out outputs/demo --seed 42 --samples 180 --scenario compound_specific
 
 Technical report: https://github.com/Agnuxo1/neurochip-twin/blob/main/docs/TECHNICAL_REPORT.md
+
+Competition code notebook: https://www.kaggle.com/code/franciscoangulo/neurochip-twin-ai4s-reproducible-synthetic-demo
 
 ## Limitations and Ethics
 
