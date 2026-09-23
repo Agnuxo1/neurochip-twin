@@ -1,9 +1,10 @@
 # NeuroChip Twin: an interpretable temporal digital twin for organ-on-chip phenotype screening
 
-**Submission category:** End-to-End System  
-**Author:** Francisco Angulo de Lafuente (`Agnuxo1`)  
-**Challenge:** AI4S Open Innovation: AI for Life Science  
-**Status:** reproducible research prototype; synthetic validation proxy
+- **Submission category:** End-to-End System
+- **Author:** Francisco Angulo de Lafuente (`Agnuxo1`)
+- **Team composition:** Francisco Angulo de Lafuente is the sole listed team member and team leader; no biology, bioengineering, or clinical collaborator is listed, so no cross-disciplinary bonus is claimed.
+- **Challenge:** AI4S Open Innovation: AI for Life Science
+- **Status:** reproducible research prototype; synthetic validation proxy
 
 ## Abstract
 
