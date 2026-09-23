@@ -23,6 +23,26 @@ def test_segmentation_and_features_are_finite():
     assert np.isfinite(features).all()
 
 
+def test_segment_bbox_label_iteration_keeps_objects_and_filters_small_components():
+    frame = np.zeros((32, 32), dtype=np.float32)
+    frame[3:8, 4:10] = 0.9
+    frame[20:22, 20:22] = 0.9
+
+    labels, objects = segment(
+        frame,
+        threshold_scale=0.1,
+        min_area=8,
+        opening_size=0,
+        closing_size=0,
+    )
+
+    assert len(objects) == 1
+    assert objects[0]["area"] == 30.0
+    assert objects[0]["cy"] == 5.0
+    assert objects[0]["cx"] == 6.5
+    assert np.count_nonzero(labels) == 30
+
+
 def test_tracking_assigns_ids():
     detections = [[{"cy": 1.0, "cx": 1.0}], [{"cy": 1.5, "cx": 1.5}]]
     tracked = track_objects(detections)

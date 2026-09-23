@@ -15,6 +15,8 @@ python -m src.validation --out outputs/validation --seeds 0 1 2 3 4 5 6 7 8 9 --
 python -m src.validation --out outputs/validation_grouped --seeds 0 1 2 3 4 5 6 7 8 9 --scenario compound_specific --split-mode grouped
 python -m src.validation --out outputs/validation_compound_holdout --seeds 0 1 2 3 4 5 6 7 8 9 --scenario compound_specific --split-mode compound_holdout
 python -m src.external_validation --root /path/to/stage1_train --out outputs/external_validation --samples 36 --seed 42 --calibrate
+# reproduce the recorded instance-segmentation audit with its fixed image split:
+python -m src.external_validation --root /path/to/stage1_train --out outputs/bbbc038_watershed --method distance_watershed --calibrate --split-file docs/bbbc038_watershed_split_seed20260924.json
 python -m pytest -q
 ```
 
@@ -41,6 +43,15 @@ response-prediction performance. Download and licensing details are recorded
 in `outputs/external_validation_calibrated/bbbc038_summary.json`. The adapter
 also handles Windows extended paths, so an extracted dataset can be audited
 from a deep workspace directory without silently changing the evaluation.
+An additional exploratory instance-level audit compares the default connected-
+component method with optional distance-transform watershed. On a fixed,
+previously unused 40-image calibration / 80-image evaluation split, the latter
+improved mean per-image instance F1 averaged over IoU 0.50–0.95 from 0.3207 to
+0.3325 (paired-image bootstrap 95% interval for the difference: 0.0013–0.0226).
+Pixel Dice was unchanged. Exact case IDs, parameters and archive checksum are
+in `docs/bbbc038_watershed_split_seed20260924.json`; BBBC038 remains a nuclei-
+segmentation portability audit, not organ-on-chip or biological-response
+validation. The default connected-component behavior is unchanged.
 
 ### Real OOC metadata audit
 
@@ -86,7 +97,7 @@ python -m src.external_assay_validation --input /path/to/KodavantiP_Acute_HSAB_A
 ## Scientific scope
 
 - Input: grayscale microscopy-like time series with one or more chips and treatment doses.
-- Cell analysis: denoising, threshold segmentation, connected components, centroid tracking.
+- Cell analysis: denoising, threshold segmentation, connected components, centroid tracking; optional distance-transform watershed can split touching foreground objects.
 - Features: count, area, intensity, elongation, motion, persistence, and temporal slopes.
 - Model: static baseline vs. fixed-reservoir temporal classifier vs. a multimodal context readout; the additive readout is primary for unseen-compound robustness and explicit interactions remain an ablation.
 - Multimodal fusion: morphology + temporal reservoir + dose/flow/shear/clearance + compound context, with explicit cross-modal interactions.

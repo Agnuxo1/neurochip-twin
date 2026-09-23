@@ -49,7 +49,7 @@ and missingness only, and does not count as biological validation.
 
 ### 4.1 Pre-processing and segmentation
 
-Each frame is lightly smoothed, thresholded using a robust intensity quantile, and cleaned with binary opening/closing. Connected components become candidate cells. Objects outside an area gate are rejected. For each object we retain centroid, area, mean intensity, and covariance-based elongation.
+Each frame is lightly smoothed, thresholded using a robust intensity quantile, and cleaned with binary opening/closing. The default method labels connected components; an optional distance-transform watershed partitions touching foreground objects using local distance peaks. Objects outside an area gate are rejected. For each object we retain centroid, area, mean intensity, and covariance-based elongation. The default remains connected components; watershed is an exploratory alternative, not a validated OoC model.
 
 ### 4.2 Tracking
 
@@ -113,7 +113,9 @@ A stricter ten-seed compound-holdout audit keeps every compound entirely on one 
 
 ### External front-end portability audit
 
-To test the image-analysis component outside the generator, the repository includes `src.external_validation` for BBBC038v1, a public microscopy dataset with CC0/public-domain images and instance masks. A deterministic sample of 36 cases was split into 12 calibration cases and 24 evaluation cases. Threshold, minimum-area, and morphology parameters were selected on calibration cases only, then frozen for evaluation. On the 24 held-out images, the NeuroChip Twin segmentation front-end obtained mean pixel IoU 0.520, Dice 0.575, precision 0.842, recall 0.578, and absolute object-count error 14.2. This is useful evidence that the front-end can be exercised on real microscopy, but it is not organ-on-chip validation, response prediction, or clinical performance. The source page and download URL are persisted in the generated JSON artifact; no external images are committed to the repository.
+To test the image-analysis component outside the generator, the repository includes `src.external_validation` for BBBC038v1, a public microscopy dataset with instance masks (the Broad page identifies the collection as CC0/public domain). A historical preliminary sample of 36 cases used 12 calibration and 24 evaluation images; its pixel IoU 0.520, Dice 0.575, precision 0.842, recall 0.578 and mean absolute object-count error 14.2 are retained as an earlier audit, not the main current comparison.
+
+A later exploratory instance-level experiment excluded 156 cases used by earlier audits and used a fixed 40-image calibration / 80-image evaluation split. Foreground parameters were held at threshold scale 0.35, minimum area 8, opening 2 and closing 3. Calibration selected watershed peak spacing 9 and minimum peak height 2.0 from a small grid, optimizing per-image instance F1 averaged over IoU thresholds 0.50–0.95. On the 80 paired evaluation images, optional distance watershed reached mean instance F1 0.3325 versus 0.3207 for connected components (paired difference +0.0118; 95% paired-image bootstrap interval +0.0013 to +0.0226, 10,000 resamples, seed 42). IoU-0.50 instance F1 was 0.5162 versus 0.4981. Pixel Dice was identical (0.5242), while mean absolute object-count error was 25.14 versus 27.96. The result supports testing instance-aware post-processing on this split, not a broad claim of segmentation superiority: it is one exploratory sample, its interval reflects image resampling only, and BBBC038 evaluates nuclei segmentation rather than OoC responses. Exact split IDs, parameters, source URL and archive SHA-256 are in `docs/bbbc038_watershed_split_seed20260924.json`; rerun with `--method distance_watershed --calibrate --split-file docs/bbbc038_watershed_split_seed20260924.json`. No external images are committed.
 
 ### OOC metadata/domain audit
 

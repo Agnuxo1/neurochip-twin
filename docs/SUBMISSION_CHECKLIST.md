@@ -18,11 +18,16 @@ writeup and its reproducibility evidence.
 
 ## Live Kaggle audit — 2026-09-23
 
-- The public writeup displays **Submitted!** and is dated Sep 21, 2026. This
-  confirms a writeup is present, not that all eligibility gates are complete.
-- Its visible Project Summary is 516 whitespace-delimited words. Kaggle's
-  recommended structure asks for 200–300 words. The current writeup also does
-  not declare **End-to-End System** at the beginning of its body.
+- The public writeup still displays **Submitted!** and is dated Sep 21, 2026.
+  This confirms a writeup is present, not that all eligibility gates are
+  complete. A fresh authenticated read-only check on Sep 23 found the same
+  older content; no editor or submission action was opened.
+- Its visible Project Summary is the old, long synthetic/BBBC038 summary and
+  does not declare **End-to-End System** at the beginning of the body, although
+  Kaggle's rules require the category first and recommend a 200–300-word
+  summary. The replacement in `docs/KAGGLE_WRITEUP.md` now has the category
+  first and a 235-word Project Summary; it remains local pending a fresh,
+  immediate confirmation before public editing and **Update Submission**.
 - Kaggle's overview reports 11 teams and 11 submissions. The event uses expert
   review after the Oct 10 deadline (Oct 10–20), then selects 20 finalists; no
   official first/second-place ranking is published yet. Kaggle's notebook
@@ -32,11 +37,15 @@ writeup and its reproducibility evidence.
   validation 20%, reproducibility 10%, and presentation 10%. The project's
   largest scientific limitation remains the lack of paired neural OoC response
   validation; synthetic benchmark metrics do not fill that gap.
-- The embedded YouTube demo is 38 seconds. The separately linked GitHub MP4 is
-  4.5 seconds. The 132-second draft noted in an earlier checkpoint is not
-  present in this recovered checkout and must not be described as available.
-  The public video's runtime/access were checked, but its content has not yet
-  been reviewed end-to-end against the required workflow/results narrative.
+- An unauthenticated browser could load the public YouTube video; it is 38
+  seconds and has no subtitles. A playback sample visibly presents a synthetic
+  dose-response frame, cell count, dose, Hungarian tracking, fixed-reservoir
+  readout and a no-clinical-claim notice. It is a genuine project output, but
+  the short clip does not clearly walk through input → run → report/tests, so a
+  fuller captioned workflow demo remains worthwhile. The GitHub MP4 is only
+  4.5 seconds (36 frames at 8 fps) and is not that public 38-second video. The
+  older 132-second draft mentioned in an earlier checkpoint is absent and must
+  not be described as available.
 - Kaggle's foundational code-sharing rule requires code shared publicly during
   the competition to also be shared in its Kaggle discussion or code page.
   NeuroChip Twin now has a public, competition-linked Kaggle notebook that
@@ -56,7 +65,7 @@ writeup and its reproducibility evidence.
   their provenance or rerun an explicitly exploratory audit before reuse.
 
 The replacement summary prepared in this local checkout starts with the
-category declaration and is 244 words. It is not uploaded to Kaggle.
+category declaration and is 235 words. It is not uploaded to Kaggle.
 
 ## Eligibility gate
 
@@ -79,7 +88,13 @@ The primary benchmark is explicitly labelled synthetic:
 - ten-seed grouped audit: ROC-AUC 0.983, F1 0.944;
 - ten-seed compound-holdout audit: additive multimodal ROC-AUC 0.991 ± 0.007, F1 0.954 ± 0.028; explicit-interaction ablation ROC-AUC 0.986, F1 0.938;
 - multimodal Brier/ECE: 0.041/0.064 on seed 42, 0.053/0.069 random-audit mean, and 0.048/0.071 grouped-audit mean;
-- BBBC038 front-end audit: 12 calibration and 24 frozen evaluation images, IoU 0.520 and Dice 0.575.
+- Historical BBBC038 pixel audit: 12 calibration and 24 evaluation images,
+  IoU 0.520 and Dice 0.575.
+- Exploratory BBBC038 instance audit: 40 calibration / 80 held-out images;
+  watershed mean instance F1 (IoU 0.50–0.95) 0.3325 vs connected components
+  0.3207; paired delta +0.0118, image-bootstrap 95% interval +0.0013 to
+  +0.0226. Pixel Dice is unchanged at 0.5242. This is segmentation portability
+  only, not OoC response validation.
 - Public OOC metadata audit: 3,072 non-empty rows across six cell-line
   categories; this is domain-coverage evidence only, not biological validation.
 

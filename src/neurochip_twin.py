@@ -194,26 +194,75 @@ def segment(
     max_area: int = 1200,
     opening_size: int = 2,
     closing_size: int = 3,
+    method: str = "connected_components",
+    min_distance: int = 5,
+    min_peak_height: float = 2.0,
 ) -> tuple[np.ndarray, list[dict[str, float]]]:
     """Segment bright cells and return a labelled image plus interpretable objects.
 
     The defaults preserve the synthetic benchmark.  Explicit parameters allow
     a calibration split to adapt the front-end to a new microscopy domain
-    without changing the downstream feature or model code.
+    without changing the downstream feature or model code. The optional
+    distance-watershed method splits touching foreground objects; it is an
+    experimental instance-segmentation option, not the default OoC model.
     """
+    if method not in {"connected_components", "distance_watershed"}:
+        raise ValueError(f"Unsupported segmentation method: {method}")
     threshold = max(float(np.quantile(frame, 0.985) * threshold_scale), 0.10)
     mask = frame > threshold
     if opening_size > 0:
         mask = ndimage.binary_opening(mask, structure=np.ones((opening_size, opening_size)))
     if closing_size > 0:
         mask = ndimage.binary_closing(mask, structure=np.ones((closing_size, closing_size)))
-    labels, count = ndimage.label(mask)
+    labels, _ = ndimage.label(mask)
+    if method == "distance_watershed":
+        for idx, bounds in enumerate(ndimage.find_objects(labels), start=1):
+            if bounds is None:
+                continue
+            component = labels[bounds]
+            area = int(np.count_nonzero(component == idx))
+            if area < min_area or area > max_area:
+                component[component == idx] = 0
+        foreground = labels > 0
+        if foreground.any():
+            from skimage.feature import peak_local_max
+            from skimage.segmentation import watershed
+
+            distance = ndimage.distance_transform_edt(foreground)
+            coordinates = peak_local_max(
+                distance,
+                min_distance=min_distance,
+                threshold_abs=min_peak_height,
+                labels=foreground.astype(np.uint8),
+                exclude_border=False,
+            )
+            markers = np.zeros(foreground.shape, dtype=np.int32)
+            for marker_id, (row, column) in enumerate(coordinates, start=1):
+                markers[row, column] = marker_id
+            components, _ = ndimage.label(foreground)
+            next_marker = len(coordinates) + 1
+            for component_id, bounds in enumerate(ndimage.find_objects(components), start=1):
+                if bounds is None:
+                    continue
+                component = components[bounds] == component_id
+                if np.any(markers[bounds][component]):
+                    continue
+                local_distance = np.where(component, distance[bounds], -1.0)
+                local_row, local_column = np.unravel_index(np.argmax(local_distance), local_distance.shape)
+                markers[bounds[0].start + local_row, bounds[1].start + local_column] = next_marker
+                next_marker += 1
+            labels = watershed(-distance, markers, mask=foreground).astype(np.int32, copy=False)
     objects: list[dict[str, float]] = []
-    for idx in range(1, count + 1):
-        ys, xs = np.where(labels == idx)
+    for idx, bounds in enumerate(ndimage.find_objects(labels), start=1):
+        if bounds is None:
+            continue
+        component = labels[bounds]
+        local_y, local_x = np.nonzero(component == idx)
+        ys = local_y + bounds[0].start
+        xs = local_x + bounds[1].start
         area = len(xs)
         if area < min_area or area > max_area:
-            labels[labels == idx] = 0
+            component[component == idx] = 0
             continue
         vals = frame[ys, xs]
         cy, cx = float(ys.mean()), float(xs.mean())
