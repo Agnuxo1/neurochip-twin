@@ -105,10 +105,11 @@ The primary benchmark is explicitly labelled synthetic:
 The public Kaggle writeup is present but needs a compliant summary/category
 refresh. The Kaggle code-sharing gate is now covered by the public notebook;
 the separate registration status is still unverified. The recovered source
-checkout is at `work/neurochip-twin-recovery-20260923`. Its pending project
-changes include the notebook source/metadata, an exact-source-parity test,
-README links, and updated competition/validation documentation; `.cognition/`
-contains local reference and run-output evidence. Fifteen tests pass,
-`compileall` passes, and `git diff --check` passes. No GitHub push or writeup
-edit was made. The public writeup must not be edited or submitted until the
-required immediate action-time confirmation is obtained.
+checkout is at `work/neurochip-twin-recovery-20260923`. Commit `20973b9`
+publishes the competition-linked notebook source/metadata, exact-source-parity
+test, README links, and updated competition/validation documentation to
+GitHub. `.cognition/` contains local reference and run-output evidence and is
+not published. The test suite passes, `compileall` passes, and
+`git diff --check` passes. No Kaggle writeup edit was made. The public writeup
+must not be edited or submitted until the required immediate action-time
+confirmation is obtained.
