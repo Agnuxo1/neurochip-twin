@@ -324,6 +324,20 @@ audit becomes feasible, a region-aware static-image model could analyze the
 central- and peripheral-like regions separately and compare that hybrid with
 a whole-image baseline. This is a proposed experiment, not a current result.
 
+A relevant neural-organoid methods precedent separates two questions rather
+than forcing them into one toxicity classifier: a supervised CNN measures
+known control/disease phenotype rescue, while an autoencoder latent space and
+Mahalanobis distance from controls estimate adverse effects not represented
+by a predefined label set. That work compared the latter with an orthogonal
+MTT assay. For hPCOs this suggests, only if data labels and independent groups
+are verified, comparing (1) a whole-image baseline, (2) central/peripheral
+region-aware supervised features for supported labels, and (3) a separately
+reported control-deviation score for open-set morphology. The source used
+immunofluorescence in a different neural-organoid model; these are design
+hypotheses, not transferable performance claims or implemented components.
+Any biological evaluation remains gated on a locked preregistration and
+verified experimental-unit mapping.
+
 1. Obtain authorized neural OoC data pairing time-lapse images with measured
    treatment/control conditions and biological response endpoints. The public
    six-cell-line archive audited above contains sample-quality labels only.

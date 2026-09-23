@@ -41,6 +41,19 @@ only after checking paired labels and acquisition structure. This is a
 proposal, not implemented or evaluated. Do not call the archive OoC data,
 time-lapse data, or project validation.
 
+**Method-design precedent:** Metzger et al. used a supervised CNN to measure
+known control-versus-disease phenotype rescue in micropatterned neural
+organoids. For adverse effects whose possible phenotypes were not known in
+advance, they instead used a convolutional autoencoder, removed the defined
+disease direction from its latent space, and measured Mahalanobis distance
+from the control distribution; they compared that readout with an MTT assay.
+This supports keeping *known-label phenotype/rescue* and *open-set deviation*
+as distinct, separately validated outputs in any future hybrid design. It is
+not a result for hPCOs or this project: the study used a different neural
+organoid and immunofluorescence images, while the candidate archive is
+bright-field and its targets and independent groups remain unverified. The
+paper's data are available on request, not a public benchmark for our model.
+
 ## Other candidates and boundaries
 
 | Source | Potential value | Main limitation for this project | Status |
@@ -65,6 +78,7 @@ time-lapse data, or project validation.
 ## Primary references
 
 - Lu et al., 2026, [Developmental Cell article record](https://pubmed.ncbi.nlm.nih.gov/42759501/), DOI [10.1016/j.devcel.2026.08.013](https://doi.org/10.1016/j.devcel.2026.08.013); [Mendeley Data record](https://data.mendeley.com/datasets/bm3726x9kp/1), DOI [10.17632/bm3726x9kp.1](https://doi.org/10.17632/bm3726x9kp.1), CC BY 4.0; [ShanghaiTech research summary](https://www.shanghaitech.edu.cn/en/2026/0921/c1260a1127488/page.htm).
+- Metzger et al., 2022, [open-access neural-organoid phenotypic-screen study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9500000/), DOI [10.1016/j.crmeth.2022.100297](https://doi.org/10.1016/j.crmeth.2022.100297). Its images/data are not a public benchmark; its open article license is CC BY-NC-ND 4.0.
 - Monzel et al., 2020, [author preprint and institutional record](https://orbilu.uni.lu/handle/10993/43214), [PubMed record](https://pubmed.ncbi.nlm.nih.gov/32534431/), DOI [10.1016/j.parkreldis.2020.05.011](https://doi.org/10.1016/j.parkreldis.2020.05.011).
 - Han et al., 2024, [human iPSC sensory-neuron MPS study](https://doi.org/10.3390/toxics12110809); [full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC11598741/). This is a directly relevant design precedent, not a reusable external benchmark: its data statement points to material in the article and author inquiry rather than a linked image-data repository.
 - [University of Luxembourg public data directory](https://webdav.lcsb.uni.lu/public/data/machine-learning-assisted-neurotoxicity-prediction-in-human-midbrain-organoid/) and its [HCS imaging file listing](https://webdav.lcsb.uni.lu/public/data/machine-learning-assisted-neurotoxicity-prediction-in-human-midbrain-organoid/HCS%20imaging%20data/).
