@@ -255,6 +255,32 @@ differences (not individual rows) with 10,000 fixed-seed percentile draws; it
 reflects variation over these source labels, not a population-level biological
 guarantee.
 
+### Closest human neural-MPS design precedent (not project validation)
+
+Han et al. report a human iPSC-derived sensory-neuron microphysiological
+system with neurites growing into microchannels. Their image workflow keeps
+neurite-toxicity and cytotoxicity outcomes distinct: transfer-learned GoogLeNet
+uses DMSO as a negative class, oxaliplatin as a cytotoxicity-positive class,
+and vincristine as a neurite-toxicity-positive class; the two positive ratios
+are then summarized separately. They also measure neurofilament light chain
+(NF-L) in channel supernatant as an orthogonal assay. This supports a concrete
+future design for NeuroChip Twin: separate neurite/axon-damage and broad
+cytotoxicity heads, with optional late fusion of NF-L or functional readouts
+only when those measurements are paired to the same experimental units.
+
+The scope does not transfer automatically: the study models peripheral
+sensory neurons, not midbrain organoids or a central-nervous-system OoC. The
+paper describes immunofluorescence images after 24-hour exposure, not a public
+longitudinal brightfield benchmark; its data statement points to data included
+in the article and further requests to the corresponding author, not to a
+linked training-image archive. The method section does not establish a
+held-out chip/experiment evaluation that can be reproduced from an open image
+archive. Consequently, this is literature guidance only—no scores from that
+paper are NeuroChip Twin results, and no biological model was trained or
+evaluated here. Any future paired-data study must preserve chip, experiment,
+and biological-replicate groups across splits and be preregistered before
+measurement-level analysis.
+
 ## 6. Failure modes and safeguards
 
 - **Segmentation bias:** thresholding can merge cells or miss dim cells. The report must show masks and object-count calibration.

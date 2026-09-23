@@ -17,7 +17,7 @@
 
 The OoC quality results and exact caveats are recorded in [`TECHNICAL_REPORT.md`](TECHNICAL_REPORT.md) and [`ooc_quality_public_summary.json`](../outputs/ooc_quality_public_summary.json). The rat DRG, BBBC038, and synthetic results are likewise documented in the technical report and their reproducible audit commands.
 
-The newly identified human midbrain-organoid source is only a due-diligence candidate; see [`EXTERNAL_DATASET_DUE_DILIGENCE.md`](EXTERNAL_DATASET_DUE_DILIGENCE.md) for its unresolved license, grouping, and preregistration gates.
+The human midbrain-organoid source is only a due-diligence candidate; see [`EXTERNAL_DATASET_DUE_DILIGENCE.md`](EXTERNAL_DATASET_DUE_DILIGENCE.md) for its unresolved license, grouping, and preregistration gates. A separate human sensory-neuron MPS paper gives a useful architectural precedent for distinct neurite-toxicity and cytotoxicity outputs plus an orthogonal NF-L assay, but it is peripheral-neuron literature, not a public benchmark or validation of this project.
 
 ## Non-negotiable interpretation rules
 
@@ -51,3 +51,4 @@ The strongest defensible submission should pair the clear system demonstration w
 - [BBBC038 dataset](https://bbbc.broadinstitute.org/BBBC038)
 - [GEO GSE255606](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE255606); [associated ALS spinal-cord-chip study](https://pmc.ncbi.nlm.nih.gov/articles/PMC12233189/)
 - [Monzel et al. human midbrain-organoid neurotoxicity study](https://doi.org/10.1016/j.parkreldis.2020.05.011); [public HCS data directory](https://webdav.lcsb.uni.lu/public/data/machine-learning-assisted-neurotoxicity-prediction-in-human-midbrain-organoid/); [analysis code](https://github.com/LCSB-DVB/Monzel_2020)
+- [Han et al. human sensory-neuron MPS and morphological deep-learning study](https://doi.org/10.3390/toxics12110809)
