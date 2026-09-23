@@ -30,8 +30,10 @@ writeup and its reproducibility evidence.
   summary. The replacement in `docs/KAGGLE_WRITEUP.md` now has the category
   first and a 294-word Project Summary; it remains local pending a fresh,
   immediate confirmation before public editing and **Update Submission**.
-- Kaggle's Writeups page lists ten submitted team entries as of this check,
-  but the other teams' contents are marked **Viewable at Hackathon close**.
+- Kaggle's Writeups page lists 12 submitted teams in the current overview.
+  The signed-in entry is marked **Submitted!**; writeups are marked **Viewable
+  at Hackathon close**, so no peer projects or official placement can currently
+  be inspected.
   There is no public first/second-place ranking to analyze. The Kaggle CLI
   reports no scored submissions; this is an expert-reviewed writeup challenge,
   not a prediction leaderboard. Do not infer placement from votes or team count.
@@ -54,10 +56,12 @@ writeup and its reproducibility evidence.
   run with synthetic ROC-AUC 0.990 and F1 0.958; this is not biological
   validation. The current hotness-sorted listing shows BioFluidNet-OoC at 15
   votes and NeuroChip Twin at 0 votes; these are votes, not judged placements.
-- Kaggle requires the team leader to submit the registration form. A read-only
-  check on Sep 23 shows all required fields are still blank, including WhatsApp
-  and Guangzhou travel preference. No personal data was entered or transmitted;
-  **Submitted!** on the writeup is not proof of eligibility.
+- Kaggle requires the team leader to submit the registration form. A fresh
+  read-only check on Sep 23 shows every required response blank: team and
+  leader names, participant type, organization, email, WhatsApp, country or
+  region, team-member names, Guangzhou travel preference, and Kaggle username.
+  No personal data was entered or transmitted; **Submitted!** on the writeup
+  is not proof of eligibility.
 - Before this repository release, remote GitHub `main` was commit `bd90a3b`.
   Quris audit scripts/results are not present in this checkout. Do not publish
   any prior Quris metrics from memory; recover their provenance or rerun an
@@ -73,8 +77,10 @@ Kaggle's official competition page requires the team leader to complete the
 [official registration form](https://docs.google.com/forms/d/e/1FAIpQLSdRAat5jIunRaFNh_NntsVeJUnekEJDrbuokLZ32LFgCwPtiA/viewform)
 before the Writeup is eligible for evaluation. On 2026-09-23 the signed-in
 form still showed all required fields empty, so registration is **pending**.
-No personal data, WhatsApp details or travel preference have been entered or
-transmitted.
+The required fields include names, participant type, organization, email,
+WhatsApp, country/region, team-member names, travel preference, and Kaggle
+username. No personal data, WhatsApp details or travel preference have been
+entered or transmitted.
 
 ## Evidence to report
 
@@ -125,8 +131,9 @@ The primary benchmark is explicitly labelled synthetic:
 ## Final state
 
 The public Kaggle writeup is present but needs a compliant summary/video
-refresh, and registration remains pending. Competitor writeups are hidden until
-the event closes, so no verified project ranking is available. Local source,
+refresh, and registration remains pending. The current overview shows 12
+submitting teams; competitor writeups are hidden until the event closes, so no
+verified project ranking is available. Local source,
 tests and public-safe aggregate results are included in this repository
 release; `.cognition/` contains private audit files and is not published. The
 new judge video is in GitHub, while the YouTube channel and Kaggle embed still
