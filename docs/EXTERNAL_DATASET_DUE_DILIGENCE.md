@@ -1,9 +1,40 @@
 # External Dataset Due-Diligence Register
 
-**Snapshot:** 2026-09-23
+**Snapshot:** 2026-09-24
 **Status:** candidate discovery and public-source review only; no external biological measurements were downloaded, inspected, trained on, or evaluated. No preregistration exists.
 
 This register distinguishes promising data sources from evidence actually produced by NeuroChip Twin. Public availability alone is not proof of reuse rights, and organoid data are not organ-on-chip data.
+
+## Highest direct-fit neural OoC candidate: CANDY brain-on-a-chip
+
+Choi et al. describe a human pluripotent-stem-cell-derived brain-on-a-chip
+containing separate neuron and astrocyte chambers. The open-access paper reports
+live confocal Calcein-AM imaging after methylmercury (MeHg) exposure at 1, 5,
+and 10 µM, plus a 0–3 hour co-culture time course at 10 µM. It links several
+supplementary microscopy movies and reports orthogonal marker/BDNF measurements.
+This is a stronger *domain match* to the intended neural OoC use than the hPCO
+organoid screen below, and its separate neural/glial compartments suggest a
+more faithful hybrid feature design.
+
+| Due-diligence item | Current finding | Remaining gate |
+|---|---|---|
+| Biological relevance | Human PSC-derived brain-on-a-chip with neuron and astrocyte chambers, flow context, MeHg exposure, and live-cell microscopy | One published platform/study and one toxicant; not evidence of broad drug generalization or clinical prediction |
+| Available material | The article says supporting information contains the study data and lists supplementary movies, including live imaging of the MeHg time-course experiments | Movie contents, frame-level treatment labels, control pairing, chip/sample identifiers, and the number of independent biological/experimental units have not been verified |
+| Reuse rights | The article is marked Open Access | The exact license and reuse terms for each supporting video/file have not been verified; do not download, redistribute, or train on them until checked |
+| Evaluation unit | The paper reports several dose and co-culture conditions and mean ± SD results | The accessible methods do not establish independent chip/differentiation/run IDs or an untouched experiment-level holdout |
+| Current project status | Bibliographic/method metadata only; no supporting files or biological measurements were downloaded, inspected, trained on, or evaluated | Keep all data use blocked until the file-specific rights, provenance, pairing, grouping, and a locked preregistration are confirmed |
+
+**Decision:** promote CANDY as the first-read *direct OoC candidate*, not as a
+ready-made benchmark. If its files and independent groups pass the gates below,
+the most defensible initial use would be a separately reported, narrowly scoped
+external challenge on the published MeHg conditions—not model training on
+frames randomly split from a few videos, not an unseen-compound claim, and not a
+replacement for multi-study validation. A hybrid adapted to this device should
+preserve compartment identity (neuronal vs astrocytic), temporal phenotype
+trajectories, and treatment/flow context as separate branches; compare each
+branch and their fusion using whole-chip/experiment-held-out splits. Known-dose
+response and open-set anomaly detection must remain separate outputs. This is a
+design proposal only; no CANDY result has been produced by NeuroChip Twin.
 
 ## Highest-priority candidate: human dual neural-organoid drug-screen images
 
@@ -77,6 +108,7 @@ paper's data are available on request, not a public benchmark for our model.
 
 ## Primary references
 
+- Choi et al., 2024, [CANDY human brain-on-a-chip neurotoxicity study](https://doi.org/10.1002/admt.202400107), [publisher full text and supplementary-file list](https://onlinelibrary.wiley.com/doi/10.1002/admt.202400107). Open-access article; exact supporting-file reuse license and independent experiment groups remain unverified.
 - Lu et al., 2026, [Developmental Cell article record](https://pubmed.ncbi.nlm.nih.gov/42759501/), DOI [10.1016/j.devcel.2026.08.013](https://doi.org/10.1016/j.devcel.2026.08.013); [Mendeley Data record](https://data.mendeley.com/datasets/bm3726x9kp/1), DOI [10.17632/bm3726x9kp.1](https://doi.org/10.17632/bm3726x9kp.1), CC BY 4.0; [ShanghaiTech research summary](https://www.shanghaitech.edu.cn/en/2026/0921/c1260a1127488/page.htm).
 - Metzger et al., 2022, [open-access neural-organoid phenotypic-screen study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9500000/), DOI [10.1016/j.crmeth.2022.100297](https://doi.org/10.1016/j.crmeth.2022.100297). Its images/data are not a public benchmark; its open article license is CC BY-NC-ND 4.0.
 - Monzel et al., 2020, [author preprint and institutional record](https://orbilu.uni.lu/handle/10993/43214), [PubMed record](https://pubmed.ncbi.nlm.nih.gov/32534431/), DOI [10.1016/j.parkreldis.2020.05.011](https://doi.org/10.1016/j.parkreldis.2020.05.011).
