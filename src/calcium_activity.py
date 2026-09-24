@@ -69,6 +69,11 @@ def calcium_activity_features(
     measurements, not independent experimental replicates. A missing peak set
     yields NaN for event prominence; a window with fewer than two varying cell
     traces yields NaN synchrony rather than an artificial zero.
+
+    Event width is measured at 10% of peak prominence (90% relative height)
+    and converted from samples to seconds. It is an event-shape descriptor,
+    not an inferred action-potential width or a direct reproduction of a
+    specific assay's peak-width definition.
     """
     traces = np.asarray(delta_f_over_f, dtype=float)
     times = np.asarray(times_s, dtype=float)
@@ -119,15 +124,19 @@ def calcium_activity_features(
             duration_min = (window_times[-1] - window_times[0] + dt) / 60.0
             event_rates: list[float] = []
             event_prominences: list[float] = []
+            event_widths_s: list[float] = []
             for trace in chamber_traces:
                 peaks, properties = find_peaks(
                     trace,
                     prominence=prominence,
                     distance=min_distance_frames,
+                    width=(None, None),
+                    rel_height=0.9,
                 )
                 in_window = time_mask[peaks]
                 event_rates.append(int(np.count_nonzero(in_window)) / duration_min)
                 event_prominences.extend(properties["prominences"][in_window].tolist())
+                event_widths_s.extend((properties["widths"][in_window] * dt).tolist())
 
             mean_r, connected_fraction = _pairwise_synchrony(
                 window, synchrony_threshold
@@ -144,6 +153,12 @@ def calcium_activity_features(
                         float(np.mean(event_prominences))
                         if event_prominences
                         else float("nan")
+                    ),
+                    "mean_event_width_at_10pct_prominence_s": (
+                        float(np.mean(event_widths_s)) if event_widths_s else float("nan")
+                    ),
+                    "median_event_width_at_10pct_prominence_s": (
+                        float(np.median(event_widths_s)) if event_widths_s else float("nan")
                     ),
                     "mean_pairwise_correlation": mean_r,
                     "fraction_pairs_above_sync_threshold": connected_fraction,

@@ -315,15 +315,21 @@ All generated outputs are disposable and can be regenerated. The repository does
 
 The newly added `src.calcium_activity.calcium_activity_features` function is a
 standalone, deterministic feature branch for already background-corrected
-neural ΔF/F traces. It reports cell-event rate/prominence and within-chamber
-pairwise synchrony separately by chamber and pre/post window, using a supplied
-cell-free noise floor for peak detection. Synthetic pulse tests check event
-counts, compartment separation, and undefined synchrony for insufficient
-cells; they do not validate calcium biology. The feature table is not yet wired
-into or trained with the toxicity head, and chamber/cell rows must remain
-nested under the true chip/experiment unit. Cross-chamber lag/propagation
-features are deliberately not implemented until paired timing and sample IDs
-are verified.
+neural ΔF/F traces. It reports cell-event rate/prominence, event width at 10%
+of prominence, and within-chamber pairwise synchrony separately by chamber and
+pre/post window, using a supplied cell-free noise floor for peak detection.
+Synthetic pulse tests check event counts, width units, compartment separation,
+and undefined synchrony for insufficient cells; they do not validate calcium
+biology. The feature table is not yet wired into or trained with the toxicity
+head, and chamber/cell rows must remain nested under the true chip/experiment
+unit. Cross-chamber lag/propagation features are deliberately not implemented
+until paired timing and sample IDs are verified.
+
+The public Sirenko human neural 3D-culture dataset is a separate tabular
+calcium/viability candidate under CC0, but uses spheroids in 384-well plates,
+not OoC, and reports two biological cell-lot experiments. Its measurements
+remain uninspected pending a locked preregistration and provenance review; it
+does not validate the per-cell image-response model.
 
 The strongest located source for this separate functional branch is the human
 MARC/iS3CC cerebral-tissue chip study. Its publisher lists live calcium movies,

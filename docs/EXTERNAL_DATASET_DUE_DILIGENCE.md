@@ -74,10 +74,48 @@ unit of inference.
 
 The initial software scaffold now exists in `src/calcium_activity.py`. It
 summarizes supplied corrected ΔF/F traces by chamber and pre/post window; its
-unit tests use deterministic synthetic pulses only. It is not integrated into
-the toxicity predictor, has not been run on iS3CC, and adds no biological
-validation claim. Cross-chamber propagation features remain deferred until
-paired timing and sample identifiers are verified.
+unit tests use deterministic synthetic pulses only. It reports event rate,
+prominence, width at 10% of prominence, and within-chamber synchrony. It is not
+integrated into the toxicity predictor, has not been run on iS3CC, and adds no
+biological validation claim. Cross-chamber propagation features remain
+deferred until paired timing and sample identifiers are verified.
+
+## Public human neural neurotoxicity readouts (not OoC)
+
+Sirenko et al. report spontaneous calcium-oscillation features and viability
+readouts from human iPSC-derived cortical neuron/astrocyte 3D cultures exposed
+to a diverse neurotoxicity library. The Dryad record lists 2.59 MB of
+spreadsheets/PDF; its usage notes identify Supplemental Table 2 as primary
+calcium-oscillation and viability readouts for the compound library. DataCite
+metadata identify the dataset license as CC0. The paper describes a 384-well
+plate assay, approximately 10-minute calcium recordings at 3 Hz, and two
+biological experiments using different cell lots; technical replicate wells
+and repeated compounds are nested observations, not independent compounds.
+
+This is the best newly verified public candidate for a *separate human neural
+functional-toxicology audit*, but it is not an organ-on-chip study. Public
+metadata describe tabulated assay readouts, not verified per-cell microscopy
+movies, so `src/calcium_activity.py` cannot be applied to it as-is. The paper's
+two biological experiments are also too few to support a strong
+experiment-held-out generalization claim. Any use would need to stay separate
+from the synthetic image-response benchmark and use a locked plan that groups
+all doses, wells, and repeats for each compound together.
+
+| Due-diligence item | Current finding | Remaining gate |
+|---|---|---|
+| Biological and task fit | Human iPSC-derived cortical neuron/astrocyte 3D cultures; calcium-oscillation and viability readouts for chemical exposures | 384-well spheroid assay, not a microfluidic chip; this supports neural functional-toxicology evidence only, not OoC or clinical validity |
+| Available material | Dryad lists primary calcium/viability readout tables and assay metadata (2.59 MB total); article methods describe a chemical library, dose series, repeated library experiments, and two biological cell-lot experiments | Exact columns, row-level replicate keys, endpoint timing, and whether raw traces exist in the bundle remain unverified; do not infer cell-level imaging availability |
+| Reuse rights | DataCite record reports CC0 1.0 for this Dryad dataset | Preserve DOI citation and verify record/version metadata again at retrieval; article text/figures and third-party material have separate rights |
+| Experimental units | Paper describes two biological experiments with different cell lots plus technical replicate wells; some chemicals were repeated | Two biological runs do not enable a reliable independent-run test; use compound-grouped evaluation and state the run-level uncertainty limitation |
+| Current project status | Public literature, repository metadata, and license metadata only; no data file or measurement inspected or downloaded | Complete a locked preregistration and data-dictionary/provenance review before measurement-level access, feature engineering, fitting, or evaluation |
+
+**Decision:** prioritize this dataset for a preregistered, compound-held-out
+external assay study only after the protocol is complete. A future hybrid
+could keep chemical/dose descriptors and calcium/viability readouts as
+separate branches and compare them against dose-only and calcium-only
+baselines. It must be labelled a human neural 3D-culture assay audit, not an
+OoC benchmark or validation of the current per-cell image pipeline. No result
+has been produced by NeuroChip Twin.
 
 ## Highest-priority candidate: human dual neural-organoid drug-screen images
 
@@ -153,6 +191,7 @@ paper's data are available on request, not a public benchmark for our model.
 
 - Choi et al., 2024, [CANDY human brain-on-a-chip neurotoxicity study](https://doi.org/10.1002/admt.202400107), [publisher full text and supplementary-file list](https://onlinelibrary.wiley.com/doi/10.1002/admt.202400107). Open-access article; exact supporting-file reuse license and independent experiment groups remain unverified.
 - Saberi et al., 2022, [human cerebral tissue and iS3CC chip study](https://doi.org/10.1038/s42003-022-03203-4), [publisher full text, CC BY 4.0 statement, supplementary files, and experiment counts](https://www.nature.com/articles/s42003-022-03203-4). Candidate for a separate neural-network-activity audit, not toxicity-prediction validation; file-specific supplementary rights and sample-ID mapping remain to be checked.
+- Sirenko et al., 2019, [human iPSC-derived neural 3D-culture neurotoxicity study](https://doi.org/10.1093/toxsci/kfy218), [Dryad dataset](https://doi.org/10.5061/dryad.sd660pm), [DataCite rights metadata](https://api.datacite.org/dois/10.5061/dryad.sd660pm). Public CC0 tabular calcium/viability candidate; two biological experiments, spheroids in plates rather than OoC, and no dataset file has been inspected.
 - Lu et al., 2026, [Developmental Cell article record](https://pubmed.ncbi.nlm.nih.gov/42759501/), DOI [10.1016/j.devcel.2026.08.013](https://doi.org/10.1016/j.devcel.2026.08.013); [Mendeley Data record](https://data.mendeley.com/datasets/bm3726x9kp/1), DOI [10.17632/bm3726x9kp.1](https://doi.org/10.17632/bm3726x9kp.1), CC BY 4.0; [ShanghaiTech research summary](https://www.shanghaitech.edu.cn/en/2026/0921/c1260a1127488/page.htm).
 - Metzger et al., 2022, [open-access neural-organoid phenotypic-screen study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9500000/), DOI [10.1016/j.crmeth.2022.100297](https://doi.org/10.1016/j.crmeth.2022.100297). Its images/data are not a public benchmark; its open article license is CC BY-NC-ND 4.0.
 - Monzel et al., 2020, [author preprint and institutional record](https://orbilu.uni.lu/handle/10993/43214), [PubMed record](https://pubmed.ncbi.nlm.nih.gov/32534431/), DOI [10.1016/j.parkreldis.2020.05.011](https://doi.org/10.1016/j.parkreldis.2020.05.011).

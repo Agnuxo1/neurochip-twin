@@ -27,7 +27,9 @@ def test_calcium_features_keep_chambers_and_windows_separate():
     assert (post["n_cells"] == 2).all()
     assert (post["event_rate_per_min_mean"] == 20.0).all()
     assert (post["fraction_pairs_above_sync_threshold"] == 1.0).all()
+    assert np.allclose(post["mean_event_width_at_10pct_prominence_s"], 1.8)
     assert result.loc[result["period"] == "baseline", "mean_event_prominence_dff"].isna().all()
+    assert result.loc[result["period"] == "baseline", "mean_event_width_at_10pct_prominence_s"].isna().all()
 
 
 def test_calcium_features_reject_irregular_time_sampling():
