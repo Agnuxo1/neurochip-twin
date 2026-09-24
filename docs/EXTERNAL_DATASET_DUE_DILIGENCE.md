@@ -78,9 +78,11 @@ unit tests use deterministic synthetic pulses only. It reports event rate,
 prominence, width at 10% of prominence, and within-chamber synchrony. It is not
 integrated into the toxicity predictor, has not been run on iS3CC, and adds no
 biological validation claim. Cross-chamber propagation features remain
-deferred until paired timing and sample identifiers are verified. Its
-minimum-distance filter operates within each pre/post interval independently,
-so a post-perturbation transient cannot erase a nearby baseline event.
+deferred until paired timing and sample identifiers are verified. Peak
+detection, prominence, width, and minimum-distance filtering operate on each
+pre/post interval independently, so post-perturbation signal cannot alter
+baseline event features. The first and last samples of an interval are not
+counted as peaks because they lack two-sided local-neighbor context.
 
 ## Public human neural neurotoxicity readouts (not OoC)
 

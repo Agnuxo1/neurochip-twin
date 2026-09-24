@@ -94,9 +94,12 @@ def calcium_activity_features(
     not an inferred action-potential width or a direct reproduction of a
     specific assay's peak-width definition.
 
-    Peak candidates are found on each full trace, then the minimum-distance
-    rule is applied independently within baseline and post windows. Thus, an
-    event in one period cannot suppress a nearby event in the other period.
+    Peak detection, prominence, width, and minimum-distance filtering are
+    computed independently on each period's trace segment. As with
+    ``scipy.signal.find_peaks``, the first and last sample of each segment are
+    not counted as peaks because they lack two-sided local-neighbor context.
+    This prevents measurements in one period from changing the other period's
+    event features.
     """
     traces = np.asarray(delta_f_over_f, dtype=float)
     times = np.asarray(times_s, dtype=float)
@@ -149,21 +152,21 @@ def calcium_activity_features(
             event_prominences: list[float] = []
             event_widths_s: list[float] = []
             for trace in chamber_traces:
+                window_trace = trace[time_mask]
                 peaks, properties = find_peaks(
-                    trace,
+                    window_trace,
                     prominence=prominence,
                     width=(None, None),
                     rel_height=0.9,
                 )
-                candidate_positions = np.flatnonzero(time_mask[peaks])
-                selected = candidate_positions[
+                selected = np.flatnonzero(
                     _keep_peaks_separated_within_window(
-                        peaks[candidate_positions],
-                        trace[peaks[candidate_positions]],
+                        peaks,
+                        window_trace[peaks],
                         min_distance_frames,
-                        len(trace),
+                        len(window_trace),
                     )
-                ]
+                )
                 event_rates.append(len(selected) / duration_min)
                 event_prominences.extend(properties["prominences"][selected].tolist())
                 event_widths_s.extend((properties["widths"][selected] * dt).tolist())

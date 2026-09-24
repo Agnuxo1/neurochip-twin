@@ -318,11 +318,13 @@ standalone, deterministic feature branch for already background-corrected
 neural ΔF/F traces. It reports cell-event rate/prominence, event width at 10%
 of prominence, and within-chamber pairwise synchrony separately by chamber and
 pre/post window, using a supplied cell-free noise floor for peak detection.
-The minimum event-spacing rule is applied independently inside each window, so
-a nearby event after perturbation cannot suppress a baseline event.
+Peak detection and all peak properties (prominence, width, and spacing) are
+computed from each period's trace segment only. This prevents the post-period
+signal from changing baseline measurements. The first and last sample of each
+period is excluded as a peak because it lacks two-sided local-neighbor context.
 Synthetic pulse tests check event counts, width units, compartment separation,
-transition-boundary event retention, and undefined synchrony for insufficient
-cells; they do not validate calcium biology. The feature table is not yet
+cross-period invariance, and undefined synchrony for insufficient cells; they
+do not validate calcium biology. The feature table is not yet
 wired into or trained with the toxicity head, and chamber/cell rows must remain
 nested under the true chip/experiment unit. Cross-chamber lag/propagation
 features are deliberately not implemented until paired timing and sample IDs
