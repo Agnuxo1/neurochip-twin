@@ -318,12 +318,15 @@ standalone, deterministic feature branch for already background-corrected
 neural ΔF/F traces. It reports cell-event rate/prominence, event width at 10%
 of prominence, and within-chamber pairwise synchrony separately by chamber and
 pre/post window, using a supplied cell-free noise floor for peak detection.
+The minimum event-spacing rule is applied independently inside each window, so
+a nearby event after perturbation cannot suppress a baseline event.
 Synthetic pulse tests check event counts, width units, compartment separation,
-and undefined synchrony for insufficient cells; they do not validate calcium
-biology. The feature table is not yet wired into or trained with the toxicity
-head, and chamber/cell rows must remain nested under the true chip/experiment
-unit. Cross-chamber lag/propagation features are deliberately not implemented
-until paired timing and sample IDs are verified.
+transition-boundary event retention, and undefined synchrony for insufficient
+cells; they do not validate calcium biology. The feature table is not yet
+wired into or trained with the toxicity head, and chamber/cell rows must remain
+nested under the true chip/experiment unit. Cross-chamber lag/propagation
+features are deliberately not implemented until paired timing and sample IDs
+are verified.
 
 The public Sirenko human neural 3D-culture dataset is a separate tabular
 calcium/viability candidate under CC0, but uses spheroids in 384-well plates,

@@ -30,6 +30,25 @@ def _pairwise_synchrony(
     return float(np.mean(upper)), float(np.mean(upper > threshold))
 
 
+def _keep_peaks_separated_within_window(
+    peaks: np.ndarray,
+    peak_heights: np.ndarray,
+    min_distance_frames: int,
+    n_frames: int,
+) -> np.ndarray:
+    """Return a mask that applies peak spacing without crossing a window edge."""
+    keep = np.zeros(len(peaks), dtype=bool)
+    blocked_frames = np.zeros(n_frames, dtype=bool)
+    for position in np.argsort(-peak_heights, kind="stable"):
+        peak = int(peaks[position])
+        if not blocked_frames[peak]:
+            keep[position] = True
+            left = max(0, peak - min_distance_frames + 1)
+            right = min(n_frames, peak + min_distance_frames)
+            blocked_frames[left:right] = True
+    return keep
+
+
 def calcium_activity_features(
     delta_f_over_f: np.ndarray,
     times_s: np.ndarray,
@@ -74,6 +93,10 @@ def calcium_activity_features(
     and converted from samples to seconds. It is an event-shape descriptor,
     not an inferred action-potential width or a direct reproduction of a
     specific assay's peak-width definition.
+
+    Peak candidates are found on each full trace, then the minimum-distance
+    rule is applied independently within baseline and post windows. Thus, an
+    event in one period cannot suppress a nearby event in the other period.
     """
     traces = np.asarray(delta_f_over_f, dtype=float)
     times = np.asarray(times_s, dtype=float)
@@ -129,14 +152,21 @@ def calcium_activity_features(
                 peaks, properties = find_peaks(
                     trace,
                     prominence=prominence,
-                    distance=min_distance_frames,
                     width=(None, None),
                     rel_height=0.9,
                 )
-                in_window = time_mask[peaks]
-                event_rates.append(int(np.count_nonzero(in_window)) / duration_min)
-                event_prominences.extend(properties["prominences"][in_window].tolist())
-                event_widths_s.extend((properties["widths"][in_window] * dt).tolist())
+                candidate_positions = np.flatnonzero(time_mask[peaks])
+                selected = candidate_positions[
+                    _keep_peaks_separated_within_window(
+                        peaks[candidate_positions],
+                        trace[peaks[candidate_positions]],
+                        min_distance_frames,
+                        len(trace),
+                    )
+                ]
+                event_rates.append(len(selected) / duration_min)
+                event_prominences.extend(properties["prominences"][selected].tolist())
+                event_widths_s.extend((properties["widths"][selected] * dt).tolist())
 
             mean_r, connected_fraction = _pairwise_synchrony(
                 window, synchrony_threshold

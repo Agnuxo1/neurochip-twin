@@ -56,3 +56,22 @@ def test_calcium_features_report_synchrony_as_undefined_for_one_cell():
     )
     assert result["mean_pairwise_correlation"].isna().all()
     assert result["fraction_pairs_above_sync_threshold"].isna().all()
+
+
+def test_peak_distance_does_not_suppress_events_across_perturbation_boundary():
+    times = np.arange(12, dtype=float)
+    traces = np.zeros((1, len(times)), dtype=float)
+    traces[0, 4] = 0.6
+    traces[0, 6] = 0.8
+
+    result = calcium_activity_features(
+        traces,
+        times,
+        np.array(["treated"]),
+        perturbation_time_s=6,
+        background_noise_dff=0.05,
+        min_peak_distance_s=3,
+    ).set_index("period")
+
+    assert result.loc["baseline", "event_rate_per_min_mean"] == 10.0
+    assert result.loc["post", "event_rate_per_min_mean"] == 10.0
