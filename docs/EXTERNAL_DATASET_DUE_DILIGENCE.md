@@ -72,6 +72,13 @@ classifier; if provenance resolves, first consider a frozen paired descriptive
 analysis with the independent experiment—not neuron, frame, or movie—as the
 unit of inference.
 
+The initial software scaffold now exists in `src/calcium_activity.py`. It
+summarizes supplied corrected ΔF/F traces by chamber and pre/post window; its
+unit tests use deterministic synthetic pulses only. It is not integrated into
+the toxicity predictor, has not been run on iS3CC, and adds no biological
+validation claim. Cross-chamber propagation features remain deferred until
+paired timing and sample identifiers are verified.
+
 ## Highest-priority candidate: human dual neural-organoid drug-screen images
 
 Lu et al. report human peripheral-central dual neural organoids (hPCOs) that

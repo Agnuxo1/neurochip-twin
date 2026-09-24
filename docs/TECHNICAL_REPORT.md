@@ -313,6 +313,29 @@ All generated outputs are disposable and can be regenerated. The repository does
 
 ## 8. Next steps for response-model validation
 
+The newly added `src.calcium_activity.calcium_activity_features` function is a
+standalone, deterministic feature branch for already background-corrected
+neural ΔF/F traces. It reports cell-event rate/prominence and within-chamber
+pairwise synchrony separately by chamber and pre/post window, using a supplied
+cell-free noise floor for peak detection. Synthetic pulse tests check event
+counts, compartment separation, and undefined synchrony for insufficient
+cells; they do not validate calcium biology. The feature table is not yet wired
+into or trained with the toxicity head, and chamber/cell rows must remain
+nested under the true chip/experiment unit. Cross-chamber lag/propagation
+features are deliberately not implemented until paired timing and sample IDs
+are verified.
+
+The strongest located source for this separate functional branch is the human
+MARC/iS3CC cerebral-tissue chip study. Its publisher lists live calcium movies,
+supplementary data and analysis code under an article marked CC BY 4.0. A
+replicate-count discrepancy remains: the figure caption says six samples from
+six independent experiments, while Methods report at least six tissues across
+three experimental rounds. File-specific rights and stable sample IDs are also
+unverified. Do not fit a supervised model to these few rounds; after the data
+and preregistration gates pass, the initial question should be a frozen paired
+descriptive functional-activity audit, not a toxicity or dose-response claim.
+No iS3CC data have been downloaded or used by this project.
+
 A newly identified public candidate is the human peripheral-central dual
 neural-organoid (hPCO) drug-screen archive. Its Mendeley landing page states
 CC BY 4.0 and lists raw bright-field images across six archive batches; the
