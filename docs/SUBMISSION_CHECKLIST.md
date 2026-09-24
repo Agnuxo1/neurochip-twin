@@ -140,3 +140,27 @@ new judge video is in GitHub, while the YouTube channel and Kaggle embed still
 show the earlier video.
 The Kaggle writeup was not modified; a public edit and **Update Submission**
 require immediate action-time confirmation.
+
+## Live Kaggle audit — 2026-09-24
+
+- Re-opened the authenticated public writeup read-only. It is still dated
+  Sep 21 and its visible Project Summary starts directly with the project
+  description; the required **End-to-End System** declaration is absent at
+  the beginning. Kaggle's [official rules](https://www.kaggle.com/competitions/ai-4-s-open-innovation-artificial-intelligence-for-life-scien/overview/url)
+  require a category declaration at the beginning and recommend a 200–300-word
+  summary.
+- The public summary still contains the older synthetic metrics and BBBC038
+  12-calibration / 24-evaluation pixel audit, and does not show the later
+  40-calibration / 80-held-out instance audit or the separate OoC sample-quality
+  audit. Its Project Links still point to `outputs/demo/neurochip_twin_demo.mp4`,
+  not the newer 107-second captioned judge demo.
+- The local [writeup draft](KAGGLE_WRITEUP.md) starts with
+  `Submission category: End-to-End System`, has a 294-word Project Summary,
+  and reflects the current evidence boundaries and audits. It is published in
+  the repository but has not yet been copied into the Kaggle writeup.
+- A fresh confirmation request for editing the public writeup and pressing
+  **Update Submission** is pending. No Kaggle changes were made in this audit.
+- At the start of this audit, GitHub `main` was clean at
+  `3d776233c44b08e7f4216d051667aff3972339d7`; CI run `35942806630` succeeded.
+  The official Kaggle CLI still exposes no scored leaderboard, so no
+  first-place or other official placement is known.
