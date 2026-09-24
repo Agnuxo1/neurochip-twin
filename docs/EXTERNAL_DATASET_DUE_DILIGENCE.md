@@ -36,6 +36,42 @@ branch and their fusion using whole-chip/experiment-held-out splits. Known-dose
 response and open-set anomaly detection must remain separate outputs. This is a
 design proposal only; no CANDY result has been produced by NeuroChip Twin.
 
+## Newly verified neural-chip functional-activity candidate: MARC/iS3CC
+
+Saberi et al. describe human iPSC-derived cerebral tissues in a two-chamber
+iS3CC culture chip, with live calcium imaging before and after Penicillin G is
+applied to one chamber. The paper reports activity and synchrony in both the
+treated and untreated chambers, 522 detected neurons in the illustrated
+experiment. Its figure caption says n=6 samples across six independent
+experiments, while the Methods say calcium/Penicillin experiments used at least
+six tissues across three independent experimental rounds; this discrepancy
+must be resolved from the supplementary data before defining a split. The
+publisher provides three supplementary movies, supplementary data files 1–4,
+and analysis software. The article itself is explicitly licensed CC BY 4.0;
+that article license does not by itself settle whether every separate
+supplementary asset has the same reuse terms, so the file-specific notices must
+still be checked.
+
+| Due-diligence item | Current finding | Remaining gate |
+|---|---|---|
+| Biological and task fit | Human cerebral tissue in an interconnected multi-chamber culture chip; paired treated/untreated chambers and pre/post calcium activity | This is a functional network-hyperactivity/propagation perturbation, not a conventional cytotoxicity or dose-response benchmark and not interchangeable with CANDY MeHg viability |
+| Available material | Publisher lists three supplementary movies, data 1–4, and analysis software; the figure caption says n=6 samples across six independent experiments, but Methods say at least six tissues across three independent rounds | Resolve the internal replicate-count discrepancy; do not assume each movie is an independent sample; verify which supplementary tables contain measurements and whether stable chip/experiment IDs survive |
+| Article license | Publisher states CC BY 4.0 for the article and specifies the treatment of third-party material in article credit lines | Verify the rights notice attached to each supplementary movie/data/software file before processing, redistribution, or model use |
+| Evaluation unit | Published figure caption and Methods disagree about the number of independent calcium/Penicillin experiment rounds (six vs three) | Confirm actual per-sample mapping from the supplementary data; if IDs are absent or the discrepancy cannot be resolved, an experiment-held-out evaluation cannot be reconstructed |
+| Current project status | Literature and publisher metadata only; no supplements or biological measurements were downloaded, opened, or analyzed | Biological evaluation remains blocked pending file-rights review, provenance/group verification, and a timestamped locked preregistration |
+
+**Decision:** prioritize iS3CC as the strongest discovered candidate for a
+separate *human neural-chip functional-activity audit*, alongside CANDY as the
+more directly toxicity-focused candidate. It could motivate a hybrid branch
+for calcium-event rate/amplitude, synchrony, and cross-compartment propagation,
+with morphology, dose-response, and functional-activity endpoints reported
+separately. This is a proposal only: it does not validate the current toxicity
+predictor, and no iS3CC result has been produced by NeuroChip Twin. Given the
+three-versus-six experiment-round discrepancy, do not fit a new supervised
+classifier; if provenance resolves, first consider a frozen paired descriptive
+analysis with the independent experiment—not neuron, frame, or movie—as the
+unit of inference.
+
 ## Highest-priority candidate: human dual neural-organoid drug-screen images
 
 Lu et al. report human peripheral-central dual neural organoids (hPCOs) that
@@ -109,6 +145,7 @@ paper's data are available on request, not a public benchmark for our model.
 ## Primary references
 
 - Choi et al., 2024, [CANDY human brain-on-a-chip neurotoxicity study](https://doi.org/10.1002/admt.202400107), [publisher full text and supplementary-file list](https://onlinelibrary.wiley.com/doi/10.1002/admt.202400107). Open-access article; exact supporting-file reuse license and independent experiment groups remain unverified.
+- Saberi et al., 2022, [human cerebral tissue and iS3CC chip study](https://doi.org/10.1038/s42003-022-03203-4), [publisher full text, CC BY 4.0 statement, supplementary files, and experiment counts](https://www.nature.com/articles/s42003-022-03203-4). Candidate for a separate neural-network-activity audit, not toxicity-prediction validation; file-specific supplementary rights and sample-ID mapping remain to be checked.
 - Lu et al., 2026, [Developmental Cell article record](https://pubmed.ncbi.nlm.nih.gov/42759501/), DOI [10.1016/j.devcel.2026.08.013](https://doi.org/10.1016/j.devcel.2026.08.013); [Mendeley Data record](https://data.mendeley.com/datasets/bm3726x9kp/1), DOI [10.17632/bm3726x9kp.1](https://doi.org/10.17632/bm3726x9kp.1), CC BY 4.0; [ShanghaiTech research summary](https://www.shanghaitech.edu.cn/en/2026/0921/c1260a1127488/page.htm).
 - Metzger et al., 2022, [open-access neural-organoid phenotypic-screen study](https://pmc.ncbi.nlm.nih.gov/articles/PMC9500000/), DOI [10.1016/j.crmeth.2022.100297](https://doi.org/10.1016/j.crmeth.2022.100297). Its images/data are not a public benchmark; its open article license is CC BY-NC-ND 4.0.
 - Monzel et al., 2020, [author preprint and institutional record](https://orbilu.uni.lu/handle/10993/43214), [PubMed record](https://pubmed.ncbi.nlm.nih.gov/32534431/), DOI [10.1016/j.parkreldis.2020.05.011](https://doi.org/10.1016/j.parkreldis.2020.05.011).
