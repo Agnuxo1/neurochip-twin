@@ -1,0 +1,8 @@
+# Keep byte-identical files on every OS (SHA-256 manifests are checked in CI)
+* text=auto eol=lf
+*.npz binary
+*.pt binary
+*.parquet binary
+*.png binary
+*.pdf binary
+*.mp4 binary
