@@ -1,0 +1,168 @@
+{
+  "description": "R10 failure analysis by annotated chemical class (k = 3 measured concentrations)",
+  "best_baseline": "loglinear_interp",
+  "classes": {
+    "Drug": {
+      "n": 4,
+      "neurotrajectory_curve_mae": 1.015,
+      "baseline_curve_mae": 1.0769,
+      "frac_improved": 0.75,
+      "n_no_estimable_potency": 0
+    },
+    "Food Additive": {
+      "n": 1,
+      "neurotrajectory_curve_mae": 1.225,
+      "baseline_curve_mae": 1.165,
+      "frac_improved": 0.0,
+      "n_no_estimable_potency": 0
+    },
+    "Food additive": {
+      "n": 6,
+      "neurotrajectory_curve_mae": 1.1343,
+      "baseline_curve_mae": 0.9996,
+      "frac_improved": 0.5,
+      "n_no_estimable_potency": 2
+    },
+    "Industrial": {
+      "n": 13,
+      "neurotrajectory_curve_mae": 1.063,
+      "baseline_curve_mae": 1.1354,
+      "frac_improved": 0.6923,
+      "n_no_estimable_potency": 5
+    },
+    "Metal": {
+      "n": 9,
+      "neurotrajectory_curve_mae": 1.8188,
+      "baseline_curve_mae": 1.934,
+      "frac_improved": 0.5556,
+      "n_no_estimable_potency": 2
+    },
+    "Neurotoxin": {
+      "n": 2,
+      "neurotrajectory_curve_mae": 0.9747,
+      "baseline_curve_mae": 1.2368,
+      "frac_improved": 1.0,
+      "n_no_estimable_potency": 1
+    },
+    "OP": {
+      "n": 6,
+      "neurotrajectory_curve_mae": 1.1221,
+      "baseline_curve_mae": 1.2978,
+      "frac_improved": 0.8333,
+      "n_no_estimable_potency": 2
+    },
+    "PAH": {
+      "n": 16,
+      "neurotrajectory_curve_mae": 0.8271,
+      "baseline_curve_mae": 0.9088,
+      "frac_improved": 0.9375,
+      "n_no_estimable_potency": 7
+    },
+    "PBDE": {
+      "n": 3,
+      "neurotrajectory_curve_mae": 1.3506,
+      "baseline_curve_mae": 1.3589,
+      "frac_improved": 0.6667,
+      "n_no_estimable_potency": 0
+    },
+    "Pesticide": {
+      "n": 11,
+      "neurotrajectory_curve_mae": 1.1153,
+      "baseline_curve_mae": 1.1907,
+      "frac_improved": 0.6364,
+      "n_no_estimable_potency": 5
+    },
+    "Pharmaceutical": {
+      "n": 38,
+      "neurotrajectory_curve_mae": 1.2633,
+      "baseline_curve_mae": 1.2524,
+      "frac_improved": 0.6316,
+      "n_no_estimable_potency": 14
+    },
+    "Phthalate": {
+      "n": 2,
+      "neurotrajectory_curve_mae": 1.541,
+      "baseline_curve_mae": 1.5857,
+      "frac_improved": 0.5,
+      "n_no_estimable_potency": 0
+    },
+    "Research": {
+      "n": 1,
+      "neurotrajectory_curve_mae": 0.9572,
+      "baseline_curve_mae": 1.2153,
+      "frac_improved": 1.0,
+      "n_no_estimable_potency": 0
+    },
+    "Vitamin": {
+      "n": 1,
+      "neurotrajectory_curve_mae": 1.1283,
+      "baseline_curve_mae": 1.0436,
+      "frac_improved": 0.0,
+      "n_no_estimable_potency": 1
+    },
+    "acetylcholinesterase": {
+      "n": 27,
+      "neurotrajectory_curve_mae": 1.1367,
+      "baseline_curve_mae": 1.3742,
+      "frac_improved": 0.7407,
+      "n_no_estimable_potency": 8
+    },
+    "avermectin": {
+      "n": 2,
+      "neurotrajectory_curve_mae": 1.5641,
+      "baseline_curve_mae": 1.9541,
+      "frac_improved": 1.0,
+      "n_no_estimable_potency": 0
+    },
+    "carbamate": {
+      "n": 4,
+      "neurotrajectory_curve_mae": 1.2451,
+      "baseline_curve_mae": 1.545,
+      "frac_improved": 0.75,
+      "n_no_estimable_potency": 0
+    },
+    "gaba": {
+      "n": 4,
+      "neurotrajectory_curve_mae": 1.2903,
+      "baseline_curve_mae": 1.2221,
+      "frac_improved": 0.5,
+      "n_no_estimable_potency": 0
+    },
+    "metal": {
+      "n": 2,
+      "neurotrajectory_curve_mae": 1.1299,
+      "baseline_curve_mae": 1.6166,
+      "frac_improved": 1.0,
+      "n_no_estimable_potency": 0
+    },
+    "neonicotinoid": {
+      "n": 5,
+      "neurotrajectory_curve_mae": 0.995,
+      "baseline_curve_mae": 1.0699,
+      "frac_improved": 0.8,
+      "n_no_estimable_potency": 2
+    },
+    "organochlorine": {
+      "n": 15,
+      "neurotrajectory_curve_mae": 1.3402,
+      "baseline_curve_mae": 1.7794,
+      "frac_improved": 0.9333,
+      "n_no_estimable_potency": 0
+    },
+    "pyrethroid": {
+      "n": 16,
+      "neurotrajectory_curve_mae": 1.1131,
+      "baseline_curve_mae": 1.3602,
+      "frac_improved": 1.0,
+      "n_no_estimable_potency": 0
+    },
+    "unannotated": {
+      "n": 55,
+      "neurotrajectory_curve_mae": 1.1614,
+      "baseline_curve_mae": 1.3492,
+      "frac_improved": 0.8545,
+      "n_no_estimable_potency": 11
+    }
+  },
+  "n_no_estimable_total": 60
+}

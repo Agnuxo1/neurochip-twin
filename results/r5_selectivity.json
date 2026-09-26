@@ -1,0 +1,39 @@
+{
+  "description": "R5 selectivity index of network disruption vs chemical-level cytotoxicity",
+  "n_positive": 79,
+  "n_negative": 19,
+  "auroc_selectivity_index": 0.5147,
+  "auroc_si_ci95": [
+    0.3493,
+    0.677
+  ],
+  "auroc_network_potency_only": 0.6576,
+  "auroc_network_ci95": [
+    0.5093,
+    0.7978
+  ],
+  "auroc_cytotoxic_potency_only": 0.7182,
+  "auroc_cyto_ci95": [
+    0.6129,
+    0.8161
+  ],
+  "specific_disruption_frac": {
+    "negative": 0.4737,
+    "positive": 0.519
+  },
+  "network_active_frac": {
+    "negative": 0.5263,
+    "positive": 0.8228
+  },
+  "cyto_active_frac": {
+    "negative": 0.0526,
+    "positive": 0.557
+  },
+  "n_by_label_and_cyto": {
+    "negative|not_cytotoxic": 18,
+    "negative|cytotoxic": 1,
+    "positive|not_cytotoxic": 35,
+    "positive|cytotoxic": 44
+  },
+  "note": "Cytotoxicity is a chemical-level anchor (PubChem AB/LDH of the NFA assay), not a same-well viability readout."
+}

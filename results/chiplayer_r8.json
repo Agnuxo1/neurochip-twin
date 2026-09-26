@@ -1,0 +1,90 @@
+{
+  "title": "Propagation fitted and evaluated on Brewer",
+  "source": "https://zenodo.org/records/10257483",
+  "n_recordings": 21,
+  "n_axons": 440,
+  "conditions": {
+    "NoStim": 9,
+    "HFS5": 6,
+    "HFS40": 6
+  },
+  "fid_semantics": "condition-local ordinal; HFS recordings are not paired to NoStim by fid",
+  "cv": {
+    "protocol": "leave-one-recording-out over nine NoStim recordings",
+    "seed": 17,
+    "model": "pair/tunnel empirical Bayes shrinkage, strength=8 axons",
+    "aggregation": "macro mean of nine recording MAEs; FF MAE per observed tunnel, delay MAE per held-out axon",
+    "summary": {
+      "model": {
+        "ff_fraction_mae": 0.3625478584621897,
+        "conduction_mae_ms": 0.1542703999389656,
+        "conduction_nll_nats": 2.368860627728017
+      },
+      "tunnel_mean": {
+        "ff_fraction_mae": 0.3985692364640804,
+        "conduction_mae_ms": 0.16096655229635132,
+        "conduction_nll_nats": 2.198991744380286
+      },
+      "permuted_direction": {
+        "ff_fraction_mae": 0.4029416171580122,
+        "conduction_mae_ms": 0.1542703999389656
+      }
+    },
+    "comparisons": {
+      "tunnel_mean": {
+        "ff_fraction_mae": {
+          "difference_model_minus_baseline": -0.03602137800189071,
+          "ci95": [
+            -0.056033500904379176,
+            -0.018218666241575726
+          ],
+          "p_bootstrap_no_improvement": 0.0,
+          "unit": "recording",
+          "n_resamples": 10000
+        },
+        "conduction_mae_ms": {
+          "difference_model_minus_baseline": -0.006696152357385737,
+          "ci95": [
+            -0.014731978616434646,
+            0.001210452694215931
+          ],
+          "p_bootstrap_no_improvement": 0.0519,
+          "unit": "recording",
+          "n_resamples": 10000
+        },
+        "conduction_nll_nats": {
+          "difference_model_minus_baseline": 0.16986888334773065,
+          "ci95": [
+            -0.39197031128776166,
+            0.9920355258100688
+          ],
+          "p_bootstrap_no_improvement": 0.6542,
+          "unit": "recording",
+          "n_resamples": 10000
+        }
+      },
+      "permuted_direction": {
+        "ff_fraction_mae": {
+          "difference_model_minus_baseline": -0.04039375869582249,
+          "ci95": [
+            -0.09565159279287352,
+            0.014395136436768602
+          ],
+          "p_bootstrap_no_improvement": 0.0765,
+          "unit": "recording",
+          "n_resamples": 10000
+        },
+        "conduction_mae_ms": {
+          "difference_model_minus_baseline": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_bootstrap_no_improvement": 1.0,
+          "unit": "recording",
+          "n_resamples": 10000
+        }
+      }
+    }
+  }
+}

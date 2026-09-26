@@ -1,0 +1,151 @@
+{
+ "c": {
+  "firing_rate_mean": 0.49048735401913,
+  "burst_rate": 1.291875,
+  "per_burst_interspike_interval": 0.005459656781971238,
+  "per_burst_spike_percent": 20.5401171875,
+  "burst_duration_mean": 0.0866640625,
+  "interburst_interval_mean": 3.4900546875,
+  "active_electrodes_number": 4.0,
+  "bursting_electrodes_number": 4.0,
+  "network_spike_number": 31.0,
+  "network_spike_peak": 3.288043478260875,
+  "spike_duration_mean": 0.04204380025,
+  "per_network_spike_spike_percent": 6.453348710885187,
+  "inter_network_spike_interval_mean": 1.77053629032258,
+  "network_spike_duration_std": 0.019265424875,
+  "per_network_spike_spike_number_mean": 13.860111597830613,
+  "correlation_coefficient_mean": 0.09705280981284975,
+  "mutual_information_norm": 0.004212597
+ },
+ "s": {
+  "firing_rate_mean": [
+   0.28802273116507615,
+   0.28408545006693475,
+   0.1795942638698727,
+   0.18681286009634124
+  ],
+  "burst_rate": [
+   0.13804462701196016,
+   0.22056723732062872,
+   0.1797088634303906,
+   0.18027547694259105
+  ],
+  "per_burst_interspike_interval": [
+   0.20761964322459403,
+   0.16906644163899603,
+   0.1573254321725009,
+   0.15432165030563777
+  ],
+  "per_burst_spike_percent": [
+   0.10233227152719075,
+   0.12541154665276152,
+   0.06320418040625009,
+   0.05
+  ],
+  "burst_duration_mean": [
+   0.248559441032168,
+   0.2294141665807671,
+   0.17016340830505486,
+   0.1981706405668507
+  ],
+  "interburst_interval_mean": [
+   0.2858584828021798,
+   0.17802591621874655,
+   0.17619177748608247,
+   0.1972265307232303
+  ],
+  "active_electrodes_number": [
+   0.1834468879449864,
+   0.10196765795391576,
+   0.05,
+   0.05
+  ],
+  "bursting_electrodes_number": [
+   0.11741787914496765,
+   0.15126718426304495,
+   0.05,
+   0.05
+  ],
+  "network_spike_number": [
+   0.05,
+   0.10825813427290061,
+   0.18175195365285574,
+   0.23826988631713855
+  ],
+  "network_spike_peak": [
+   0.10893682767382834,
+   0.08152548471617321,
+   0.07676068606964986,
+   0.0643689190442597
+  ],
+  "spike_duration_mean": [
+   0.176993679983129,
+   0.15395655965130384,
+   0.1274198951699643,
+   0.11838221696931936
+  ],
+  "per_network_spike_spike_percent": [
+   0.05,
+   0.18153907682040363,
+   0.1736440737553583,
+   0.13917710795543994
+  ],
+  "inter_network_spike_interval_mean": [
+   0.197304767706731,
+   0.2080152525171603,
+   0.24432853611763167,
+   0.24283079036715877
+  ],
+  "network_spike_duration_std": [
+   0.2286203593184296,
+   0.28964741482054485,
+   0.2278863256057333,
+   0.17594719950221374
+  ],
+  "per_network_spike_spike_number_mean": [
+   0.20913652138593952,
+   0.2163500972332419,
+   0.1912552242173577,
+   0.15997132752318136
+  ],
+  "correlation_coefficient_mean": [
+   0.05,
+   0.16266758626642377,
+   0.1545887610369601,
+   0.11166036702687428
+  ],
+  "mutual_information_norm": [
+   0.05,
+   0.11956049435466194,
+   0.17881061738847376,
+   0.1987349173879801
+  ]
+ },
+ "clip": 10.0,
+ "features": [
+  "firing_rate_mean",
+  "burst_rate",
+  "per_burst_interspike_interval",
+  "per_burst_spike_percent",
+  "burst_duration_mean",
+  "interburst_interval_mean",
+  "active_electrodes_number",
+  "bursting_electrodes_number",
+  "network_spike_number",
+  "network_spike_peak",
+  "spike_duration_mean",
+  "per_network_spike_spike_percent",
+  "inter_network_spike_interval_mean",
+  "network_spike_duration_std",
+  "per_network_spike_spike_number_mean",
+  "correlation_coefficient_mean",
+  "mutual_information_norm"
+ ],
+ "divs": [
+  5,
+  7,
+  9,
+  12
+ ]
+}

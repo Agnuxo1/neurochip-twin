@@ -1,0 +1,128 @@
+{
+  "description": "R9: ablations of NeuroTrajectory on the outer folds (same designs and metric as R2).",
+  "protocol": "R9: ablations of NeuroTrajectory on the outer folds (same designs and metric as R2).\n\nFor every outer fold, starting from the configuration chosen by nested selection for that fold\n(results/<summary>.json), one component is removed and the model is retrained with seed 0 on the same\nouter training set:\n  no_interp_decoder  : decoder without the interpolation-informed residual path (plain CNP)\n  no_dose_attention  : no dose-local attention path (global chemical summary only)\nReference = the seed-0 model of the full configuration (already trained, same seed and data), so each\ncomparison changes exactly one factor. The value of the 3-seed ensemble is reported by comparing the\nensemble with its seed-0 member. Metric: curve MAE at k = 1, 2, 3; paired bootstrap over chemicals of\n(ablated - full), positive = the component helps.\n\nUsage: python repo/scripts/run_ablations.py --summary trajectory_cv_v2.json --models-dir data/processed/models_v2 [--folds 0 1]",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "n_chemicals": 243,
+  "by_k": {
+    "1": {
+      "mean_curve_mae": {
+        "full_seed0": 1.4322,
+        "ensemble": 1.414,
+        "no_interp_decoder": 1.4645,
+        "no_dose_attention": 1.439
+      },
+      "no_interp_decoder_minus_full": {
+        "mean_diff": 0.0324,
+        "ci95": [
+          0.0139,
+          0.0507
+        ],
+        "rel_change_pct": 2.26,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.387
+      },
+      "no_dose_attention_minus_full": {
+        "mean_diff": 0.0068,
+        "ci95": [
+          -0.0068,
+          0.0203
+        ],
+        "rel_change_pct": 0.48,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.453
+      },
+      "single_seed_minus_ensemble": {
+        "mean_diff": 0.0182,
+        "ci95": [
+          0.0105,
+          0.0258
+        ],
+        "rel_change_pct": 1.29,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.346
+      }
+    },
+    "2": {
+      "mean_curve_mae": {
+        "full_seed0": 1.2937,
+        "ensemble": 1.28,
+        "no_interp_decoder": 1.3505,
+        "no_dose_attention": 1.3
+      },
+      "no_interp_decoder_minus_full": {
+        "mean_diff": 0.0567,
+        "ci95": [
+          0.0381,
+          0.0756
+        ],
+        "rel_change_pct": 4.39,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.333
+      },
+      "no_dose_attention_minus_full": {
+        "mean_diff": 0.0063,
+        "ci95": [
+          -0.0071,
+          0.0203
+        ],
+        "rel_change_pct": 0.48,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.502
+      },
+      "single_seed_minus_ensemble": {
+        "mean_diff": 0.0137,
+        "ci95": [
+          0.0061,
+          0.0216
+        ],
+        "rel_change_pct": 1.07,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.374
+      }
+    },
+    "3": {
+      "mean_curve_mae": {
+        "full_seed0": 1.1865,
+        "ensemble": 1.1809,
+        "no_interp_decoder": 1.2688,
+        "no_dose_attention": 1.2073
+      },
+      "no_interp_decoder_minus_full": {
+        "mean_diff": 0.0823,
+        "ci95": [
+          0.0622,
+          0.1041
+        ],
+        "rel_change_pct": 6.94,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.247
+      },
+      "no_dose_attention_minus_full": {
+        "mean_diff": 0.0209,
+        "ci95": [
+          0.0076,
+          0.0349
+        ],
+        "rel_change_pct": 1.76,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.428
+      },
+      "single_seed_minus_ensemble": {
+        "mean_diff": 0.0056,
+        "ci95": [
+          -0.0018,
+          0.0125
+        ],
+        "rel_change_pct": 0.47,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.362
+      }
+    }
+  }
+}

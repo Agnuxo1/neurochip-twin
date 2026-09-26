@@ -1,0 +1,99 @@
+chemical,fold,y,epa_DIV12,epa_AUC.3hit,epa_Top2,pred_x_full,pred_x_k3
+(-)-Nicotine,4,True,True,False,True,True,True
+"1,2-Propylene glycol",1,False,False,False,False,True,False
+1-Methyl-4-phenylpyridinium iodide,3,True,False,True,True,True,True
+"2,2',4,4',5,5'-Hexabromodiphenyl ether",0,True,True,False,False,False,True
+"2,2',4,4',5-Pentabromodiphenyl ether",0,True,True,True,True,True,True
+"2,2',4,4'-Tetrabromodiphenyl ether",0,True,True,True,True,True,True
+"3,3'-Iminobispropanenitrile",0,True,False,False,False,False,False
+"5,5-Diphenylhydantoin",3,True,False,False,False,True,True
+5-Fluorouracil,1,True,True,True,True,True,True
+6-Methyl-2-thiouracil,3,True,False,False,True,True,True
+6-Propyl-2-thiouracil,0,True,True,True,True,True,True
+6-aminopyridine-3-carboxamide,4,True,True,True,True,True,True
+Acrylamide,0,True,False,False,False,False,True
+Allethrin,3,True,True,True,True,True,True
+Amoxicillin,2,False,False,False,False,True,False
+Anthracene,3,False,False,False,False,False,False
+Aspirin,1,False,True,False,False,False,False
+Bis(tributyltin)oxide,1,True,True,True,True,True,True
+Bisindolylmaleimide I,1,True,True,True,True,True,True
+Bisphenol A,1,True,,,,True,True
+Bisphenol AF,2,True,True,True,True,True,True
+Bisphenol B,2,True,True,True,True,True,True
+Cadmium(II) chloride hydrate (2:5),2,True,True,True,True,True,True
+Caffeine,1,True,False,False,False,False,False
+Captopril,4,False,False,False,False,False,False
+Carbamazepine,2,True,False,False,False,True,True
+Chloramben,2,False,False,False,False,True,True
+Chlordiazepoxide hydrochloride,1,True,True,True,True,True,True
+Chlorpromazine hydrochloride,2,True,True,True,True,True,True
+Chlorpyrifos,0,True,True,True,True,True,True
+Chlorpyrifos oxon,4,True,True,True,True,False,False
+Cocaine,3,True,False,False,False,True,True
+Colchicine,3,True,True,True,True,True,True
+Cotinine,4,False,False,False,False,False,False
+Cyclophosphamide monohydrate,1,True,True,False,False,True,False
+Cypermethrin,4,True,True,True,True,True,True
+Cytarabine,0,True,True,True,True,True,True
+D-Glucitol,4,False,False,False,False,False,False
+D-Mannitol,3,False,False,False,False,False,False
+DDT,3,True,True,True,True,True,True
+Deltamethrin,3,True,True,True,True,True,True
+Dexamethasone,3,True,False,False,False,False,False
+Dextroamphetamine sulfate,4,True,False,False,False,True,True
+Di(2-ethylhexyl) phthalate,4,True,True,True,True,True,True
+Diazepam,1,True,True,True,True,True,True
+Diazinon,4,True,True,True,True,True,True
+Dieldrin,4,True,True,True,True,True,True
+Diethylene glycol,1,False,False,False,False,False,False
+Diethylstilbestrol,1,True,True,True,True,True,True
+Erythromycin,0,False,False,False,False,True,True
+Fluconazole,0,False,False,False,False,False,False
+Fluoxetine hydrochloride,0,True,True,True,True,True,True
+Glycerol,2,False,False,False,False,False,False
+Glyphosate,0,False,False,False,False,True,False
+Haloperidol,3,True,True,True,True,True,True
+Heptachlor epoxide B,4,True,True,True,True,True,True
+Hexachlorophene,3,True,True,True,True,True,True
+Hydroxyurea,0,True,False,False,False,True,True
+Kepone,4,True,True,True,True,True,True
+L-Ascorbic acid,2,False,False,False,False,False,False
+L-Domoic acid,0,True,True,True,True,True,True
+Lead(II) acetate trihydrate,3,True,True,True,True,True,True
+Lindane,2,True,True,False,False,True,False
+Loperamide,1,True,True,True,True,True,True
+Maneb,2,True,False,False,True,False,False
+Manganese dichloride,2,True,False,False,False,False,False
+Manganese(II) acetate,3,True,False,False,False,False,False
+Mercuric chloride,2,True,True,True,True,True,True
+Methadone hydrochloride,0,True,True,True,True,True,True
+Methimazole,4,True,False,False,False,False,False
+Methotrexate,0,True,True,True,True,True,True
+Methylmercuric(II) chloride,2,True,True,True,True,True,True
+Mevastatin,2,True,True,True,True,True,True
+Naloxone hydrochloride dihydrate,3,True,False,False,False,False,False
+Paraquat dichloride,4,True,True,True,True,True,True
+Parathion,2,True,False,False,False,True,True
+Permethrin,1,True,True,True,True,True,True
+Phenobarbital,4,True,False,False,False,False,True
+Phenobarbital sodium,0,True,False,False,False,False,False
+Phenol,3,False,False,False,False,False,False
+Retinoic acid,4,True,True,True,True,True,True
+Sodium arsenite,2,True,True,True,True,True,True
+Sodium benzoate,0,False,False,False,False,True,False
+Sodium fluoride,3,True,False,False,False,True,False
+Sodium orthovanadate,4,True,True,True,True,True,True
+Sodium saccharin hydrate,1,False,False,False,False,False,False
+Sodium valproate,1,True,True,False,True,True,True
+Tebuconazole,2,True,False,True,True,True,True
+Terbutaline hemisulfate,2,True,False,False,False,False,True
+Tetracycline,3,False,False,False,False,False,False
+Thalidomide,1,True,False,False,False,False,True
+Tributyltin chloride,3,True,True,True,True,True,True
+Tributyltin methacrylate,1,True,True,True,True,True,True
+Trichlorfon,2,True,True,True,True,True,True
+Triethyltin bromide,0,True,True,True,True,True,True
+Trimethyltin hydroxide,1,True,True,True,True,True,True
+"p,p'-DDD",1,True,True,True,True,True,True
+"p,p'-DDE",0,True,True,True,True,True,True

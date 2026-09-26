@@ -1,0 +1,174 @@
+{
+  "description": "R3: how well is chemical potency recovered from only k measured concentrations?",
+  "protocol": "R3: how well is chemical potency recovered from only k measured concentrations?\n\nReference (\"full information\"): the same potency rule (neurotwin.models.potency) applied to the\nobserved level means at ALL tested concentrations of the chemical (linear interpolation in log dose).\nFew-shot estimates: each method sees k levels (same seeded designs as R2) and predicts the\ndevelopmental curve on a 120-point grid spanning the chemical's tested range; the rule is applied\nto that prediction. Uses the cross-validated NeuroTrajectory models (a chemical is only ever scored\nby models that never saw it). Metrics: activity agreement (accuracy, Cohen's kappa) with the\nreference call, and |delta BMC| in log10 units for chemicals active in both; paired bootstrap over\nchemicals. Wells saved = 1 - k / (number of tested levels).",
+  "bmr_vehicle_sd": 3.0,
+  "n_chemicals": 243,
+  "n_reference_active": 183,
+  "by_k": {
+    "2": {
+      "wells_saved_median_pct": 71.4,
+      "methods": {
+        "analog_knn": {
+          "activity_accuracy": 0.7309,
+          "activity_kappa": 0.4251,
+          "bmc_abs_err_log10_median": 0.5441,
+          "bmc_abs_err_log10_mean": 0.8374,
+          "frac_within_0p5_log": 0.4575,
+          "n_pairs_active_both": 636
+        },
+        "hill_per_endpoint": {
+          "activity_accuracy": 0.7012,
+          "activity_kappa": 0.4289,
+          "bmc_abs_err_log10_median": 0.4702,
+          "bmc_abs_err_log10_mean": 0.6575,
+          "frac_within_0p5_log": 0.5272,
+          "n_pairs_active_both": 552
+        },
+        "loglinear_interp": {
+          "activity_accuracy": 0.7012,
+          "activity_kappa": 0.4289,
+          "bmc_abs_err_log10_median": 0.4702,
+          "bmc_abs_err_log10_mean": 0.6575,
+          "frac_within_0p5_log": 0.5272,
+          "n_pairs_active_both": 552
+        },
+        "neurotrajectory": {
+          "activity_accuracy": 0.8123,
+          "activity_kappa": 0.4999,
+          "bmc_abs_err_log10_median": 0.3675,
+          "bmc_abs_err_log10_mean": 0.5869,
+          "frac_within_0p5_log": 0.5822,
+          "n_pairs_active_both": 797
+        }
+      },
+      "composite_error_definition": "per chemical: |dBMC| log10 when active in both, 1.0 on activity disagreement, 0 when both inactive",
+      "composite_mean": {
+        "analog_knn": 0.7075,
+        "hill_per_endpoint": 0.5975,
+        "loglinear_interp": 0.5975,
+        "neurotrajectory": 0.5726
+      },
+      "best_baseline": "hill_per_endpoint",
+      "paired_vs_best": {
+        "mean_diff": -0.0249,
+        "ci95": [
+          -0.0881,
+          0.0394
+        ],
+        "rel_change_pct": -4.16,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.539
+      }
+    },
+    "3": {
+      "wells_saved_median_pct": 57.1,
+      "methods": {
+        "analog_knn": {
+          "activity_accuracy": 0.7564,
+          "activity_kappa": 0.4828,
+          "bmc_abs_err_log10_median": 0.4832,
+          "bmc_abs_err_log10_mean": 0.7741,
+          "frac_within_0p5_log": 0.5093,
+          "n_pairs_active_both": 648
+        },
+        "hill_per_endpoint": {
+          "activity_accuracy": 0.8444,
+          "activity_kappa": 0.5958,
+          "bmc_abs_err_log10_median": 0.2788,
+          "bmc_abs_err_log10_mean": 0.5139,
+          "frac_within_0p5_log": 0.636,
+          "n_pairs_active_both": 805
+        },
+        "loglinear_interp": {
+          "activity_accuracy": 0.8354,
+          "activity_kappa": 0.6384,
+          "bmc_abs_err_log10_median": 0.207,
+          "bmc_abs_err_log10_mean": 0.3829,
+          "frac_within_0p5_log": 0.7399,
+          "n_pairs_active_both": 715
+        },
+        "neurotrajectory": {
+          "activity_accuracy": 0.8642,
+          "activity_kappa": 0.6277,
+          "bmc_abs_err_log10_median": 0.3033,
+          "bmc_abs_err_log10_mean": 0.5145,
+          "frac_within_0p5_log": 0.6587,
+          "n_pairs_active_both": 841
+        }
+      },
+      "composite_error_definition": "per chemical: |dBMC| log10 when active in both, 1.0 on activity disagreement, 0 when both inactive",
+      "composite_mean": {
+        "analog_knn": 0.6565,
+        "hill_per_endpoint": 0.496,
+        "loglinear_interp": 0.3899,
+        "neurotrajectory": 0.4919
+      },
+      "best_baseline": "loglinear_interp",
+      "paired_vs_best": {
+        "mean_diff": 0.102,
+        "ci95": [
+          0.0497,
+          0.1575
+        ],
+        "rel_change_pct": 26.16,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.424
+      }
+    },
+    "4": {
+      "wells_saved_median_pct": 42.9,
+      "methods": {
+        "analog_knn": {
+          "activity_accuracy": 0.7687,
+          "activity_kappa": 0.5146,
+          "bmc_abs_err_log10_median": 0.4265,
+          "bmc_abs_err_log10_mean": 0.7224,
+          "frac_within_0p5_log": 0.5516,
+          "n_pairs_active_both": 649
+        },
+        "hill_per_endpoint": {
+          "activity_accuracy": 0.8749,
+          "activity_kappa": 0.6828,
+          "bmc_abs_err_log10_median": 0.176,
+          "bmc_abs_err_log10_mean": 0.4283,
+          "frac_within_0p5_log": 0.7106,
+          "n_pairs_active_both": 812
+        },
+        "loglinear_interp": {
+          "activity_accuracy": 0.9021,
+          "activity_kappa": 0.7676,
+          "bmc_abs_err_log10_median": 0.094,
+          "bmc_abs_err_log10_mean": 0.2895,
+          "frac_within_0p5_log": 0.8166,
+          "n_pairs_active_both": 796
+        },
+        "neurotrajectory": {
+          "activity_accuracy": 0.8815,
+          "activity_kappa": 0.677,
+          "bmc_abs_err_log10_median": 0.2076,
+          "bmc_abs_err_log10_mean": 0.426,
+          "frac_within_0p5_log": 0.742,
+          "n_pairs_active_both": 849
+        }
+      },
+      "composite_error_definition": "per chemical: |dBMC| log10 when active in both, 1.0 on activity disagreement, 0 when both inactive",
+      "composite_mean": {
+        "analog_knn": 0.6171,
+        "hill_per_endpoint": 0.4113,
+        "loglinear_interp": 0.2876,
+        "neurotrajectory": 0.4162
+      },
+      "best_baseline": "loglinear_interp",
+      "paired_vs_best": {
+        "mean_diff": 0.1286,
+        "ci95": [
+          0.0834,
+          0.1772
+        ],
+        "rel_change_pct": 44.7,
+        "n_chemicals": 243,
+        "frac_chem_improved": 0.358
+      }
+    }
+  }
+}

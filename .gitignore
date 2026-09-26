@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+outputs/
+.pytest_tmp/
+*.log
+site/data/chem/*.tmp

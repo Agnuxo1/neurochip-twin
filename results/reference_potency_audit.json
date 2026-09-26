@@ -1,0 +1,52 @@
+{
+  "endpoint_map_ntp_to_nfa": {
+    "bursts per minute": "burst_rate",
+    "mean correlation": "correlation_coefficient_mean",
+    "mean firing rate": "firing_rate_mean",
+    "mutual information": "mutual_information_norm",
+    "number active electrodes": "active_electrodes_number",
+    "number actively bursting electrodes": "bursting_electrodes_number",
+    "number network spikes": "network_spike_number",
+    "percent spikes in burst": "per_burst_spike_percent",
+    "percent spikes in network spike": "per_network_spike_spike_percent"
+  },
+  "epa_fits": {
+    "AUC": {
+      "active_rows": 1991,
+      "chemicals": 241,
+      "rows": 4335,
+      "unmatched_name_rows": 0
+    },
+    "DIV12": {
+      "active_rows": 767,
+      "chemicals": 241,
+      "rows": 1785,
+      "unmatched_name_rows": 0
+    }
+  },
+  "inactive_rule": "Retain numeric fits for audit; only active=True and positive finite potency is a reference call.",
+  "nfa_feature_count": 17,
+  "ntp_bmc": {
+    "curvep": {
+      "active_rows": 295,
+      "chemicals": 64,
+      "rows": 571
+    },
+    "hill": {
+      "active_rows": 268,
+      "chemicals": 64,
+      "rows": 571
+    }
+  },
+  "ntp_cross_assay_caveat": "NTP USEPA 91 neuron firing is a distinct assay, not NFA DIV12 or AUC wells.",
+  "ntp_mapped_endpoint_count": 9,
+  "source_sha256": {
+    "data/neurotox_probe/aid2284068.csv": "832c12598cefa32d7eb1be547afe259155b91f6b819b13615cd60e7a03072b07",
+    "data/neurotox_probe/aid2284083.csv": "0d185aa42ec440d0af0aceab26de0371e4a6e4721a5424ca11e3dd3984d4b353",
+    "data/neurotox_probe/ntp_dntdiver_Data_Release.zip": "6e7e2026ad196d66fcefb49768adcc6f19c5a2092126380f6bbb2ee8e92d64f1",
+    "data/processed/epa_nfa/upstream/AUC_analysis_tcplfit2_res_30Apr2025.xlsx": "045c298212e4e5e833a69b79ebbad8b5433014a76a5007b25c48703b3d2dbab9",
+    "data/processed/epa_nfa/upstream/DIV12_analysis_tcplfit2_res_02May2025.xlsx": "1fe6b420033cef660b713dad02c7bbddb383f0ca18ad3119749be54b3cf07aff",
+    "repo/results/cohort_freeze.json": "8a0b08649c7bee3d9e0b0b2dc3daf8151ea5c4690bcbfd01b76357135af981b0"
+  },
+  "units": "AC50, BMD/BMC, BMDL, BMDU in micromolar; bmd_log10_uM is log10(numeric micromolar)."
+}

@@ -1,0 +1,1072 @@
+{
+  "description": "R2: few-shot dose x DIV trajectory forecasting on unseen chemicals (EPA NFA), 5-fold chemical CV.",
+  "protocol": "R2: few-shot dose x DIV trajectory forecasting on unseen chemicals (EPA NFA), 5-fold chemical CV.\n\nProtocol (fixed before evaluation):\n- Outer folds: repo/results/splits_epa_nfa.json (all SPIDs of a chemical in one fold).\n- For each held-out chemical and k in {0,1,2,3,4} measured concentration levels, the context is\n  every well at k levels (5 seeded designs per k) and the targets are all wells at the other levels.\n  Every method receives exactly the same context.\n- Primary metric, CURVE MAE: for each held-out level, |prediction - mean of its replicate wells|\n  over the observed (DIV, feature) entries; averaged per chemical, then over chemicals.\n  Secondary metric, WELL MAE: the same against every individual well (dominated by replicate noise).\n- Model selection is nested: inside each outer training set, one inner fold is held out to choose\n  the likelihood (gaussian | laplace) and the decoder (plain | interpolation-informed), 4000 steps fixed a priori; the chosen configuration is then\n  retrained on the whole outer training set with 3 seeds (ensemble). Outer test chemicals are never\n  used for any choice.\n- Uncertainty: paired bootstrap over chemicals of (NeuroTrajectory - baseline).\n\nUsage: python repo/scripts/run_trajectory_cv.py [--seeds 0 1 2] [--quick]",
+  "n_chemicals": 243,
+  "outer_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "designs_per_k": 5,
+  "nested_selection": {
+    "0": {
+      "inner_fold": 1,
+      "grid": [
+        {
+          "likelihood": "gaussian",
+          "steps": 4000,
+          "use_interp": false
+        },
+        {
+          "likelihood": "laplace",
+          "steps": 4000,
+          "use_interp": false
+        },
+        {
+          "likelihood": "gaussian",
+          "steps": 4000,
+          "use_interp": true
+        },
+        {
+          "likelihood": "laplace",
+          "steps": 4000,
+          "use_interp": true
+        }
+      ],
+      "inner_curve_mae": [
+        1.4193086972852953,
+        1.4556828585206245,
+        1.376294426974796,
+        1.3671987273660646
+      ],
+      "chosen": {
+        "likelihood": "laplace",
+        "steps": 4000,
+        "use_interp": true
+      }
+    },
+    "1": {
+      "inner_fold": 2,
+      "grid": [
+        {
+          "likelihood": "gaussian",
+          "steps": 4000,
+          "use_interp": false
+        },
+        {
+          "likelihood": "laplace",
+          "steps": 4000,
+          "use_interp": false
+        },
+        {
+          "likelihood": "gaussian",
+          "steps": 4000,
+          "use_interp": true
+        },
+        {
+          "likelihood": "laplace",
+          "steps": 4000,
+          "use_interp": true
+        }
+      ],
+      "inner_curve_mae": [
+        1.4090039813194146,
+        1.4183203624624785,
+        1.3267538436010582,
+        1.3566527246009736
+      ],
+      "chosen": {
+        "likelihood": "gaussian",
+        "steps": 4000,
+        "use_interp": true
+      }
+    },
+    "2": {
+      "inner_fold": 3,
+      "grid": [
+        {
+          "likelihood": "gaussian",
+          "steps": 4000,
+          "use_interp": false
+        },
+        {
+          "likelihood": "laplace",
+          "steps": 4000,
+          "use_interp": false
+        },
+        {
+          "likelihood": "gaussian",
+          "steps": 4000,
+          "use_interp": true
+        },
+        {
+          "likelihood": "laplace",
+          "steps": 4000,
+          "use_interp": true
+        }
+      ],
+      "inner_curve_mae": [
+        1.3192852936228927,
+        1.2951011821931722,
+        1.215744141615978,
+        1.2549342168431703
+      ],
+      "chosen": {
+        "likelihood": "gaussian",
+        "steps": 4000,
+        "use_interp": true
+      }
+    },
+    "3": {
+      "inner_fold": 4,
+      "grid": [
+        {
+          "likelihood": "gaussian",
+          "steps": 4000,
+          "use_interp": false
+        },
+        {
+          "likelihood": "laplace",
+          "steps": 4000,
+          "use_interp": false
+        },
+        {
+          "likelihood": "gaussian",
+          "steps": 4000,
+          "use_interp": true
+        },
+        {
+          "likelihood": "laplace",
+          "steps": 4000,
+          "use_interp": true
+        }
+      ],
+      "inner_curve_mae": [
+        1.3510561200743871,
+        1.3575189320753651,
+        1.3013743853315394,
+        1.307873418145146
+      ],
+      "chosen": {
+        "likelihood": "gaussian",
+        "steps": 4000,
+        "use_interp": true
+      }
+    },
+    "4": {
+      "inner_fold": 0,
+      "grid": [
+        {
+          "likelihood": "gaussian",
+          "steps": 4000,
+          "use_interp": false
+        },
+        {
+          "likelihood": "laplace",
+          "steps": 4000,
+          "use_interp": false
+        },
+        {
+          "likelihood": "gaussian",
+          "steps": 4000,
+          "use_interp": true
+        },
+        {
+          "likelihood": "laplace",
+          "steps": 4000,
+          "use_interp": true
+        }
+      ],
+      "inner_curve_mae": [
+        1.3009991909370942,
+        1.3466465223808677,
+        1.2460374929467026,
+        1.2530877217143572
+      ],
+      "chosen": {
+        "likelihood": "gaussian",
+        "steps": 4000,
+        "use_interp": true
+      }
+    }
+  },
+  "development_note": "During development one smoke run (800 steps, 1 seed) was evaluated on outer fold 0 and motivated adding the interpolation-informed decoder as a candidate; the final choice is nested. 'by_k_folds_1to4' excludes fold 0 entirely.",
+  "target_units": "asinh(x/c_f) minus plate/date/DIV vehicle median, divided by pooled within-plate vehicle robust SD; clipped to +-10",
+  "by_k": {
+    "0": {
+      "curve_mae": {
+        "mean": {
+          "analog_knn": 1.7025,
+          "context_mean": 1.7688,
+          "hill_per_endpoint": 1.7688,
+          "loglinear_interp": 1.7688,
+          "neurotrajectory": 1.6889,
+          "neurotrajectory_seed0": 1.6859,
+          "neurotrajectory_seed1": 1.6934,
+          "neurotrajectory_seed2": 1.6899,
+          "zero": 1.7688
+        },
+        "best_baseline": "analog_knn",
+        "paired_vs_best": {
+          "mean_diff": -0.0135,
+          "ci95": [
+            -0.0272,
+            0.0002
+          ],
+          "rel_change_pct": -0.8,
+          "n_chemicals": 243,
+          "frac_chem_improved": 0.58
+        },
+        "paired_vs_all": {
+          "zero": {
+            "mean_diff": -0.0799,
+            "ci95": [
+              -0.1364,
+              -0.0219
+            ],
+            "rel_change_pct": -4.52,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.564
+          },
+          "context_mean": {
+            "mean_diff": -0.0799,
+            "ci95": [
+              -0.1364,
+              -0.0219
+            ],
+            "rel_change_pct": -4.52,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.564
+          },
+          "loglinear_interp": {
+            "mean_diff": -0.0799,
+            "ci95": [
+              -0.1364,
+              -0.0219
+            ],
+            "rel_change_pct": -4.52,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.564
+          },
+          "hill_per_endpoint": {
+            "mean_diff": -0.0799,
+            "ci95": [
+              -0.1364,
+              -0.0219
+            ],
+            "rel_change_pct": -4.52,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.564
+          },
+          "analog_knn": {
+            "mean_diff": -0.0135,
+            "ci95": [
+              -0.0272,
+              0.0002
+            ],
+            "rel_change_pct": -0.8,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.58
+          }
+        }
+      },
+      "well_mae": {
+        "mean": {
+          "analog_knn": 2.1722,
+          "context_mean": 2.1913,
+          "hill_per_endpoint": 2.1913,
+          "loglinear_interp": 2.1913,
+          "neurotrajectory": 2.1529,
+          "neurotrajectory_seed0": 2.1506,
+          "neurotrajectory_seed1": 2.1566,
+          "neurotrajectory_seed2": 2.1534,
+          "zero": 2.1913
+        },
+        "best_baseline": "analog_knn",
+        "paired_vs_best": {
+          "mean_diff": -0.0193,
+          "ci95": [
+            -0.0313,
+            -0.0071
+          ],
+          "rel_change_pct": -0.89,
+          "n_chemicals": 243,
+          "frac_chem_improved": 0.621
+        },
+        "paired_vs_all": {
+          "zero": {
+            "mean_diff": -0.0384,
+            "ci95": [
+              -0.0895,
+              0.0119
+            ],
+            "rel_change_pct": -1.75,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.539
+          },
+          "context_mean": {
+            "mean_diff": -0.0384,
+            "ci95": [
+              -0.0895,
+              0.0119
+            ],
+            "rel_change_pct": -1.75,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.539
+          },
+          "loglinear_interp": {
+            "mean_diff": -0.0384,
+            "ci95": [
+              -0.0895,
+              0.0119
+            ],
+            "rel_change_pct": -1.75,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.539
+          },
+          "hill_per_endpoint": {
+            "mean_diff": -0.0384,
+            "ci95": [
+              -0.0895,
+              0.0119
+            ],
+            "rel_change_pct": -1.75,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.539
+          },
+          "analog_knn": {
+            "mean_diff": -0.0193,
+            "ci95": [
+              -0.0313,
+              -0.0071
+            ],
+            "rel_change_pct": -0.89,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.621
+          }
+        }
+      },
+      "well_interval90": {
+        "coverage_mean": 0.8998,
+        "width_mean": 9.5765
+      }
+    },
+    "1": {
+      "curve_mae": {
+        "mean": {
+          "analog_knn": 1.4944,
+          "context_mean": 1.875,
+          "hill_per_endpoint": 1.875,
+          "loglinear_interp": 1.875,
+          "neurotrajectory": 1.4149,
+          "neurotrajectory_seed0": 1.429,
+          "neurotrajectory_seed1": 1.4436,
+          "neurotrajectory_seed2": 1.4313,
+          "zero": 1.7705
+        },
+        "best_baseline": "analog_knn",
+        "paired_vs_best": {
+          "mean_diff": -0.0795,
+          "ci95": [
+            -0.1151,
+            -0.0402
+          ],
+          "rel_change_pct": -5.32,
+          "n_chemicals": 243,
+          "frac_chem_improved": 0.671
+        },
+        "paired_vs_all": {
+          "zero": {
+            "mean_diff": -0.3556,
+            "ci95": [
+              -0.4435,
+              -0.2731
+            ],
+            "rel_change_pct": -20.08,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.704
+          },
+          "context_mean": {
+            "mean_diff": -0.4601,
+            "ci95": [
+              -0.5446,
+              -0.3695
+            ],
+            "rel_change_pct": -24.54,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.761
+          },
+          "loglinear_interp": {
+            "mean_diff": -0.4601,
+            "ci95": [
+              -0.5446,
+              -0.3695
+            ],
+            "rel_change_pct": -24.54,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.761
+          },
+          "hill_per_endpoint": {
+            "mean_diff": -0.4601,
+            "ci95": [
+              -0.5446,
+              -0.3695
+            ],
+            "rel_change_pct": -24.54,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.761
+          },
+          "analog_knn": {
+            "mean_diff": -0.0795,
+            "ci95": [
+              -0.1151,
+              -0.0402
+            ],
+            "rel_change_pct": -5.32,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.671
+          }
+        }
+      },
+      "well_mae": {
+        "mean": {
+          "analog_knn": 1.9914,
+          "context_mean": 2.3086,
+          "hill_per_endpoint": 2.3086,
+          "loglinear_interp": 2.3086,
+          "neurotrajectory": 1.9184,
+          "neurotrajectory_seed0": 1.9286,
+          "neurotrajectory_seed1": 1.9421,
+          "neurotrajectory_seed2": 1.932,
+          "zero": 2.1941
+        },
+        "best_baseline": "analog_knn",
+        "paired_vs_best": {
+          "mean_diff": -0.073,
+          "ci95": [
+            -0.1066,
+            -0.0361
+          ],
+          "rel_change_pct": -3.67,
+          "n_chemicals": 243,
+          "frac_chem_improved": 0.704
+        },
+        "paired_vs_all": {
+          "zero": {
+            "mean_diff": -0.2757,
+            "ci95": [
+              -0.3602,
+              -0.1975
+            ],
+            "rel_change_pct": -12.57,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.617
+          },
+          "context_mean": {
+            "mean_diff": -0.3903,
+            "ci95": [
+              -0.4696,
+              -0.3061
+            ],
+            "rel_change_pct": -16.9,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.745
+          },
+          "loglinear_interp": {
+            "mean_diff": -0.3903,
+            "ci95": [
+              -0.4696,
+              -0.3061
+            ],
+            "rel_change_pct": -16.9,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.745
+          },
+          "hill_per_endpoint": {
+            "mean_diff": -0.3903,
+            "ci95": [
+              -0.4696,
+              -0.3061
+            ],
+            "rel_change_pct": -16.9,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.745
+          },
+          "analog_knn": {
+            "mean_diff": -0.073,
+            "ci95": [
+              -0.1066,
+              -0.0361
+            ],
+            "rel_change_pct": -3.67,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.704
+          }
+        }
+      },
+      "well_interval90": {
+        "coverage_mean": 0.8688,
+        "width_mean": 7.2529
+      }
+    },
+    "2": {
+      "curve_mae": {
+        "mean": {
+          "analog_knn": 1.3929,
+          "context_mean": 1.6973,
+          "hill_per_endpoint": 1.5331,
+          "loglinear_interp": 1.5331,
+          "neurotrajectory": 1.2794,
+          "neurotrajectory_seed0": 1.2962,
+          "neurotrajectory_seed1": 1.2966,
+          "neurotrajectory_seed2": 1.2939,
+          "zero": 1.7734
+        },
+        "best_baseline": "analog_knn",
+        "paired_vs_best": {
+          "mean_diff": -0.1135,
+          "ci95": [
+            -0.1467,
+            -0.0783
+          ],
+          "rel_change_pct": -8.15,
+          "n_chemicals": 243,
+          "frac_chem_improved": 0.749
+        },
+        "paired_vs_all": {
+          "zero": {
+            "mean_diff": -0.4941,
+            "ci95": [
+              -0.589,
+              -0.4089
+            ],
+            "rel_change_pct": -27.86,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.807
+          },
+          "context_mean": {
+            "mean_diff": -0.4179,
+            "ci95": [
+              -0.4993,
+              -0.3337
+            ],
+            "rel_change_pct": -24.62,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.765
+          },
+          "loglinear_interp": {
+            "mean_diff": -0.2538,
+            "ci95": [
+              -0.3144,
+              -0.1878
+            ],
+            "rel_change_pct": -16.55,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.79
+          },
+          "hill_per_endpoint": {
+            "mean_diff": -0.2538,
+            "ci95": [
+              -0.3144,
+              -0.1878
+            ],
+            "rel_change_pct": -16.55,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.79
+          },
+          "analog_knn": {
+            "mean_diff": -0.1135,
+            "ci95": [
+              -0.1467,
+              -0.0783
+            ],
+            "rel_change_pct": -8.15,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.749
+          }
+        }
+      },
+      "well_mae": {
+        "mean": {
+          "analog_knn": 1.902,
+          "context_mean": 2.1641,
+          "hill_per_endpoint": 2.0185,
+          "loglinear_interp": 2.0185,
+          "neurotrajectory": 1.8066,
+          "neurotrajectory_seed0": 1.8197,
+          "neurotrajectory_seed1": 1.8199,
+          "neurotrajectory_seed2": 1.8175,
+          "zero": 2.1933
+        },
+        "best_baseline": "analog_knn",
+        "paired_vs_best": {
+          "mean_diff": -0.0953,
+          "ci95": [
+            -0.1256,
+            -0.0618
+          ],
+          "rel_change_pct": -5.01,
+          "n_chemicals": 243,
+          "frac_chem_improved": 0.737
+        },
+        "paired_vs_all": {
+          "zero": {
+            "mean_diff": -0.3867,
+            "ci95": [
+              -0.4765,
+              -0.3054
+            ],
+            "rel_change_pct": -17.63,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.728
+          },
+          "context_mean": {
+            "mean_diff": -0.3575,
+            "ci95": [
+              -0.434,
+              -0.2793
+            ],
+            "rel_change_pct": -16.52,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.765
+          },
+          "loglinear_interp": {
+            "mean_diff": -0.2118,
+            "ci95": [
+              -0.2696,
+              -0.1484
+            ],
+            "rel_change_pct": -10.5,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.794
+          },
+          "hill_per_endpoint": {
+            "mean_diff": -0.2118,
+            "ci95": [
+              -0.2696,
+              -0.1484
+            ],
+            "rel_change_pct": -10.5,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.794
+          },
+          "analog_knn": {
+            "mean_diff": -0.0953,
+            "ci95": [
+              -0.1256,
+              -0.0618
+            ],
+            "rel_change_pct": -5.01,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.737
+          }
+        }
+      },
+      "well_interval90": {
+        "coverage_mean": 0.876,
+        "width_mean": 6.9482
+      }
+    },
+    "3": {
+      "curve_mae": {
+        "mean": {
+          "analog_knn": 1.3272,
+          "context_mean": 1.6075,
+          "hill_per_endpoint": 1.4352,
+          "loglinear_interp": 1.3249,
+          "neurotrajectory": 1.1797,
+          "neurotrajectory_seed0": 1.1912,
+          "neurotrajectory_seed1": 1.1958,
+          "neurotrajectory_seed2": 1.1934,
+          "zero": 1.7827
+        },
+        "best_baseline": "loglinear_interp",
+        "paired_vs_best": {
+          "mean_diff": -0.1452,
+          "ci95": [
+            -0.1882,
+            -0.0988
+          ],
+          "rel_change_pct": -10.96,
+          "n_chemicals": 243,
+          "frac_chem_improved": 0.77
+        },
+        "paired_vs_all": {
+          "zero": {
+            "mean_diff": -0.603,
+            "ci95": [
+              -0.7098,
+              -0.506
+            ],
+            "rel_change_pct": -33.83,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.86
+          },
+          "context_mean": {
+            "mean_diff": -0.4278,
+            "ci95": [
+              -0.5084,
+              -0.3474
+            ],
+            "rel_change_pct": -26.61,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.774
+          },
+          "loglinear_interp": {
+            "mean_diff": -0.1452,
+            "ci95": [
+              -0.1882,
+              -0.0988
+            ],
+            "rel_change_pct": -10.96,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.77
+          },
+          "hill_per_endpoint": {
+            "mean_diff": -0.2554,
+            "ci95": [
+              -0.2999,
+              -0.2057
+            ],
+            "rel_change_pct": -17.8,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.893
+          },
+          "analog_knn": {
+            "mean_diff": -0.1475,
+            "ci95": [
+              -0.1774,
+              -0.1166
+            ],
+            "rel_change_pct": -11.11,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.815
+          }
+        }
+      },
+      "well_mae": {
+        "mean": {
+          "analog_knn": 1.8444,
+          "context_mean": 2.0929,
+          "hill_per_endpoint": 1.9241,
+          "loglinear_interp": 1.8452,
+          "neurotrajectory": 1.7238,
+          "neurotrajectory_seed0": 1.7323,
+          "neurotrajectory_seed1": 1.7356,
+          "neurotrajectory_seed2": 1.7348,
+          "zero": 2.2101
+        },
+        "best_baseline": "analog_knn",
+        "paired_vs_best": {
+          "mean_diff": -0.1206,
+          "ci95": [
+            -0.1479,
+            -0.0924
+          ],
+          "rel_change_pct": -6.54,
+          "n_chemicals": 243,
+          "frac_chem_improved": 0.815
+        },
+        "paired_vs_all": {
+          "zero": {
+            "mean_diff": -0.4863,
+            "ci95": [
+              -0.592,
+              -0.3918
+            ],
+            "rel_change_pct": -22.0,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.77
+          },
+          "context_mean": {
+            "mean_diff": -0.3692,
+            "ci95": [
+              -0.4422,
+              -0.2959
+            ],
+            "rel_change_pct": -17.64,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.765
+          },
+          "loglinear_interp": {
+            "mean_diff": -0.1214,
+            "ci95": [
+              -0.1615,
+              -0.0769
+            ],
+            "rel_change_pct": -6.58,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.778
+          },
+          "hill_per_endpoint": {
+            "mean_diff": -0.2003,
+            "ci95": [
+              -0.2421,
+              -0.1523
+            ],
+            "rel_change_pct": -10.41,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.889
+          },
+          "analog_knn": {
+            "mean_diff": -0.1206,
+            "ci95": [
+              -0.1479,
+              -0.0924
+            ],
+            "rel_change_pct": -6.54,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.815
+          }
+        }
+      },
+      "well_interval90": {
+        "coverage_mean": 0.8828,
+        "width_mean": 6.7723
+      }
+    },
+    "4": {
+      "curve_mae": {
+        "mean": {
+          "analog_knn": 1.3109,
+          "context_mean": 1.5903,
+          "hill_per_endpoint": 1.3078,
+          "loglinear_interp": 1.2387,
+          "neurotrajectory": 1.1382,
+          "neurotrajectory_seed0": 1.1473,
+          "neurotrajectory_seed1": 1.1526,
+          "neurotrajectory_seed2": 1.1524,
+          "zero": 1.8099
+        },
+        "best_baseline": "loglinear_interp",
+        "paired_vs_best": {
+          "mean_diff": -0.1004,
+          "ci95": [
+            -0.1357,
+            -0.0608
+          ],
+          "rel_change_pct": -8.11,
+          "n_chemicals": 243,
+          "frac_chem_improved": 0.77
+        },
+        "paired_vs_all": {
+          "zero": {
+            "mean_diff": -0.6716,
+            "ci95": [
+              -0.7928,
+              -0.5673
+            ],
+            "rel_change_pct": -37.11,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.905
+          },
+          "context_mean": {
+            "mean_diff": -0.452,
+            "ci95": [
+              -0.5354,
+              -0.3688
+            ],
+            "rel_change_pct": -28.42,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.786
+          },
+          "loglinear_interp": {
+            "mean_diff": -0.1004,
+            "ci95": [
+              -0.1357,
+              -0.0608
+            ],
+            "rel_change_pct": -8.11,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.77
+          },
+          "hill_per_endpoint": {
+            "mean_diff": -0.1696,
+            "ci95": [
+              -0.2084,
+              -0.1269
+            ],
+            "rel_change_pct": -12.97,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.827
+          },
+          "analog_knn": {
+            "mean_diff": -0.1726,
+            "ci95": [
+              -0.205,
+              -0.1422
+            ],
+            "rel_change_pct": -13.17,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.815
+          }
+        }
+      },
+      "well_mae": {
+        "mean": {
+          "analog_knn": 1.827,
+          "context_mean": 2.0752,
+          "hill_per_endpoint": 1.8097,
+          "loglinear_interp": 1.7709,
+          "neurotrajectory": 1.6871,
+          "neurotrajectory_seed0": 1.6931,
+          "neurotrajectory_seed1": 1.6983,
+          "neurotrajectory_seed2": 1.6976,
+          "zero": 2.2274
+        },
+        "best_baseline": "loglinear_interp",
+        "paired_vs_best": {
+          "mean_diff": -0.0838,
+          "ci95": [
+            -0.1168,
+            -0.0467
+          ],
+          "rel_change_pct": -4.73,
+          "n_chemicals": 243,
+          "frac_chem_improved": 0.79
+        },
+        "paired_vs_all": {
+          "zero": {
+            "mean_diff": -0.5402,
+            "ci95": [
+              -0.6591,
+              -0.4376
+            ],
+            "rel_change_pct": -24.25,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.815
+          },
+          "context_mean": {
+            "mean_diff": -0.3881,
+            "ci95": [
+              -0.463,
+              -0.315
+            ],
+            "rel_change_pct": -18.7,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.802
+          },
+          "loglinear_interp": {
+            "mean_diff": -0.0838,
+            "ci95": [
+              -0.1168,
+              -0.0467
+            ],
+            "rel_change_pct": -4.73,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.79
+          },
+          "hill_per_endpoint": {
+            "mean_diff": -0.1225,
+            "ci95": [
+              -0.1583,
+              -0.082
+            ],
+            "rel_change_pct": -6.77,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.819
+          },
+          "analog_knn": {
+            "mean_diff": -0.1399,
+            "ci95": [
+              -0.1699,
+              -0.1129
+            ],
+            "rel_change_pct": -7.66,
+            "n_chemicals": 243,
+            "frac_chem_improved": 0.823
+          }
+        }
+      },
+      "well_interval90": {
+        "coverage_mean": 0.8853,
+        "width_mean": 6.6835
+      }
+    }
+  },
+  "by_k_folds_1to4": {
+    "0": {
+      "best_baseline": "analog_knn",
+      "neurotrajectory": 1.7073,
+      "baseline": 1.7138,
+      "paired_vs_best": {
+        "mean_diff": -0.0065,
+        "ci95": [
+          -0.0122,
+          -0.0005
+        ],
+        "rel_change_pct": -0.38,
+        "n_chemicals": 194,
+        "frac_chem_improved": 0.577
+      }
+    },
+    "1": {
+      "best_baseline": "analog_knn",
+      "neurotrajectory": 1.4206,
+      "baseline": 1.5076,
+      "paired_vs_best": {
+        "mean_diff": -0.087,
+        "ci95": [
+          -0.13,
+          -0.0416
+        ],
+        "rel_change_pct": -5.77,
+        "n_chemicals": 194,
+        "frac_chem_improved": 0.68
+      }
+    },
+    "2": {
+      "best_baseline": "analog_knn",
+      "neurotrajectory": 1.2827,
+      "baseline": 1.4061,
+      "paired_vs_best": {
+        "mean_diff": -0.1235,
+        "ci95": [
+          -0.1596,
+          -0.0847
+        ],
+        "rel_change_pct": -8.78,
+        "n_chemicals": 194,
+        "frac_chem_improved": 0.768
+      }
+    },
+    "3": {
+      "best_baseline": "loglinear_interp",
+      "neurotrajectory": 1.194,
+      "baseline": 1.3453,
+      "paired_vs_best": {
+        "mean_diff": -0.1513,
+        "ci95": [
+          -0.1992,
+          -0.1
+        ],
+        "rel_change_pct": -11.25,
+        "n_chemicals": 194,
+        "frac_chem_improved": 0.773
+      }
+    },
+    "4": {
+      "best_baseline": "loglinear_interp",
+      "neurotrajectory": 1.1427,
+      "baseline": 1.2537,
+      "paired_vs_best": {
+        "mean_diff": -0.111,
+        "ci95": [
+          -0.1492,
+          -0.0694
+        ],
+        "rel_change_pct": -8.85,
+        "n_chemicals": 194,
+        "frac_chem_improved": 0.784
+      }
+    }
+  },
+  "elapsed_s_sum_workers": 6597.3
+}

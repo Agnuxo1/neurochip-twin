@@ -1,0 +1,3734 @@
+{
+  "assignments": [
+    {
+      "class_general": "food_additive",
+      "class_shafer": "food",
+      "dtxsid": "DTXSID0020232",
+      "family": "food",
+      "family_source": "class.shafer",
+      "names": [
+        "Caffeine"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000396"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID0020573",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "17beta-Estradiol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000331",
+        "TP0001649G08"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID0021123",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Phenobarbital sodium"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000449"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": null,
+      "dtxsid": "DTXSID0021206",
+      "family": "industrial",
+      "family_source": "Class",
+      "names": [
+        "1,2-Propylene glycol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000516"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID0021389",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Trichlorfon"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177F01"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID0022018",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Disulfoton"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TP0001649F06"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID0022432",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Chrysene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000320"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "food_additive",
+      "class_shafer": null,
+      "dtxsid": "DTXSID0022519",
+      "family": "food_additive",
+      "family_source": "Class",
+      "names": [
+        "Folic acid"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649H05"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID0023581",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Simvastatin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649C08"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": "produced_from_coal_tar",
+      "dtxsid": "DTXSID0023878",
+      "family": "produced_from_coal_tar",
+      "family_source": "class.shafer",
+      "names": [
+        "Anthracene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000301"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": "pah",
+      "dtxsid": "DTXSID0023907",
+      "family": "pah",
+      "family_source": "class.shafer",
+      "names": [
+        "Benzo(b)fluoranthene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649G02"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": null,
+      "dtxsid": "DTXSID0023909",
+      "family": "pah",
+      "family_source": "Class",
+      "names": [
+        "Benzo[k]fluoranthene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000307"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID0024002",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Fenpropathrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649B05"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "phosphorothioate",
+      "dtxsid": "DTXSID0024266",
+      "family": "phosphorothioate",
+      "family_source": "class.shafer",
+      "names": [
+        "Pirimiphos-methyl"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TT0000177D03"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": "flame_retardant",
+      "dtxsid": "DTXSID0026252",
+      "family": "flame_retardant",
+      "family_source": "class.shafer",
+      "names": [
+        "Triphenyl phosphite"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649E09"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": "preservative",
+      "dtxsid": "DTXSID0028038",
+      "family": "preservative",
+      "family_source": "class.shafer",
+      "names": [
+        "3-Iodo-2-propynyl-N-butylcarbamate"
+      ],
+      "neuro_class": "carbamate",
+      "spids": [
+        "EX000317",
+        "TP0001649E01"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID0032520",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Azoxystrobin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649G05"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID0032572",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Prallethrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649F10"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "neonicotinoid",
+      "dtxsid": "DTXSID0034300",
+      "family": "neonicotinoid",
+      "family_source": "class.shafer",
+      "names": [
+        "Acetamiprid"
+      ],
+      "neuro_class": "neonicotinoid",
+      "spids": [
+        "EX000521"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "avermectin",
+      "dtxsid": "DTXSID0034566",
+      "family": "avermectin",
+      "family_source": "class.shafer",
+      "names": [
+        "Emamectin benzoate"
+      ],
+      "neuro_class": "avermectin",
+      "spids": [
+        "EX000524"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": null,
+      "dtxsid": "DTXSID0034695",
+      "family": "pesticide",
+      "family_source": "Class",
+      "names": [
+        "Mancozeb"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649B02"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": null,
+      "dtxsid": "DTXSID0034930",
+      "family": "organophosphate",
+      "family_source": "Class",
+      "names": [
+        "Fosthiazate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TT0000177B04"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "carbamate?",
+      "dtxsid": "DTXSID0039223",
+      "family": "carbamate?",
+      "family_source": "class.shafer",
+      "names": [
+        "Aldicarb"
+      ],
+      "neuro_class": "carbamate",
+      "spids": [
+        "EX000429"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID0045838",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Oxidopamine hydrochloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000291"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID00880006",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Loperamide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000411"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "food_additive",
+      "class_shafer": null,
+      "dtxsid": "DTXSID1020140",
+      "family": "food_additive",
+      "family_source": "Class",
+      "names": [
+        "Sodium benzoate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000458"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID1020194",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Boric acid (H3BO3)"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649F05"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID1020560",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Endosulfan"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "TP0001649G06"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID1020770",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Kepone"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "TP0001649G12"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID1020930",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "(-)-Nicotine"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000416"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID1021166",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Piperonyl butoxide"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649A08"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID1021322",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Tetraethylthiuram disulfide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000356",
+        "TP0001649E11"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": "flame_retardant",
+      "dtxsid": "DTXSID1021952",
+      "family": "flame_retardant",
+      "family_source": "class.shafer",
+      "names": [
+        "Triphenyl phosphate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000360"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "food_additive",
+      "class_shafer": null,
+      "dtxsid": "DTXSID1023235",
+      "family": "food_additive",
+      "family_source": "Class",
+      "names": [
+        "D-Mannitol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649B08"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID1023998",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Cypermethrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "EX000523"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID1024091",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "S-Ethyl dipropylthiocarbamate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649A04"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": null,
+      "dtxsid": "DTXSID1024122",
+      "family": "pesticide",
+      "family_source": "Class",
+      "names": [
+        "Glyphosate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "MEA20201109A11"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID1024126",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Heptachlor epoxide B"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "EX000437"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID1024174",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Tribufos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177F03"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID1024209",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Naled"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177E03"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": null,
+      "dtxsid": "DTXSID1024887",
+      "family": "pah",
+      "family_source": "Class",
+      "names": [
+        "4H-Cyclopenta(def)phenanthrene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000289"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "plasticizer",
+      "dtxsid": "DTXSID1025300",
+      "family": "plasticizer",
+      "family_source": "class.shafer",
+      "names": [
+        "2-Ethylhexyl diphenyl phosphate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000280"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": "flame_retardant_(brominated)",
+      "dtxsid": "DTXSID1026081",
+      "family": "flame_retardant_(brominated)",
+      "family_source": "class.shafer",
+      "names": [
+        "3,3',5,5'-Tetrabromobisphenol A"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000454"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organothiophosphate",
+      "dtxsid": "DTXSID1032482",
+      "family": "organothiophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Tebupirimfos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177C02"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": null,
+      "dtxsid": "DTXSID1032648",
+      "family": "organophosphate",
+      "family_source": "Class",
+      "names": [
+        "Z-Tetrachlorvinphos"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TT0000177B01"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID1034187",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Tamoxifen"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649B03"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID1034212",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Spiroxamine"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000519"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID1037197",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Captopril"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000456"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID1038666",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Chlorpyrifos oxon"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "EX000378",
+        "TT0000177G02"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID1047576",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Cotinine"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000459"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "nsaid",
+      "dtxsid": "DTXSID2020006",
+      "family": "nsaid",
+      "family_source": "class.shafer",
+      "names": [
+        "Acetaminophen"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "MEA20201109A6",
+        "MEA20201109A7"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": null,
+      "dtxsid": "DTXSID2020139",
+      "family": "pah",
+      "family_source": "Class",
+      "names": [
+        "Benzo[a]pyrene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000304"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": null,
+      "dtxsid": "DTXSID2020262",
+      "family": "pesticide",
+      "family_source": "Class",
+      "names": [
+        "Chloramben"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000460"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": "flame_retardant",
+      "dtxsid": "DTXSID2020268",
+      "family": "flame_retardant",
+      "family_source": "class.shafer",
+      "names": [
+        "Chlorendic acid"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649F01"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "ectoparasiticide",
+      "dtxsid": "DTXSID2020347",
+      "family": "ectoparasiticide",
+      "family_source": "class.shafer",
+      "names": [
+        "Coumaphos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177A02"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID2020501",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Methadone hydrochloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649D10"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID2020630",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Sodium fluoride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000466"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID2020634",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "5-Fluorouracil"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000412"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID2020686",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Lindane"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "EX000527"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID2020890",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "6-Methyl-2-thiouracil"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649A12"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID2022254",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Terbufos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177E01"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "neurotoxin",
+      "class_shafer": null,
+      "dtxsid": "DTXSID20274180",
+      "family": "neurotoxin",
+      "family_source": "Class",
+      "names": [
+        "L-Domoic acid"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000487",
+        "MEA20201109A4"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID2032344",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Chlorethoxyfos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177G03"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": null,
+      "dtxsid": "DTXSID2032552",
+      "family": "pesticide",
+      "family_source": "Class",
+      "names": [
+        "Flufenacet"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649F04"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "neonicotinoid",
+      "dtxsid": "DTXSID2034465",
+      "family": "neonicotinoid",
+      "family_source": "class.shafer",
+      "names": [
+        "Clothianidin"
+      ],
+      "neuro_class": "neonicotinoid",
+      "spids": [
+        "TP0001649F07"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": "fungicide",
+      "dtxsid": "DTXSID2034625",
+      "family": "fungicide",
+      "family_source": "class.shafer",
+      "names": [
+        "Fluoxastrobin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649C07"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "neonicotinoid",
+      "dtxsid": "DTXSID2034962",
+      "family": "neonicotinoid",
+      "family_source": "class.shafer",
+      "names": [
+        "Thiamethoxam"
+      ],
+      "neuro_class": "neonicotinoid",
+      "spids": [
+        "TP0001649E10"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID2037269",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Sodium orthovanadate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000499"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID2038443",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Cocaine"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000382"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID2039336",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "S-Bioallethrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649B01"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "neurotoxin",
+      "class_shafer": null,
+      "dtxsid": "DTXSID2041464",
+      "family": "neurotoxin",
+      "family_source": "Class",
+      "names": [
+        "3,3'-Iminobispropanenitrile"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000287"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": "gaba-a_receptor_partial_agonist",
+      "dtxsid": "DTXSID2047276",
+      "family": "gaba-a_receptor_partial_agonist",
+      "family_source": "class.shafer",
+      "names": [
+        "CP-409092"
+      ],
+      "neuro_class": "gaba",
+      "spids": [
+        "TP0001649A06"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pfas",
+      "dtxsid": "DTXSID2047565",
+      "family": "pfas",
+      "family_source": "class.shafer",
+      "names": [
+        "1H,1H,2H,2H-Perfluorooctyl iodide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001413A04"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID2057865",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Dextroamphetamine sulfate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000402"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID3020384",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Dexamethasone"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000395"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID3020465",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Diethylstilbestrol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000432"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "conazole",
+      "dtxsid": "DTXSID3020627",
+      "family": "conazole",
+      "family_source": "class.shafer",
+      "names": [
+        "Fluconazole"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000462"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": "antineoplastic_(alkylating)",
+      "dtxsid": "DTXSID3020910",
+      "family": "antineoplastic_(alkylating)",
+      "family_source": "class.shafer",
+      "names": [
+        "Busulfan"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649A05"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": "pah",
+      "dtxsid": "DTXSID3021774",
+      "family": "pah",
+      "family_source": "class.shafer",
+      "names": [
+        "Acenaphthene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649D09"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID3022409",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "4,4'-Sulfonyldiphenol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000314"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID3022877",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Cytarabine"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000413"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": null,
+      "dtxsid": "DTXSID3023764",
+      "family": "pah",
+      "family_source": "Class",
+      "names": [
+        "Benzo[e]pyrene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000306"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": "pah",
+      "dtxsid": "DTXSID3023845",
+      "family": "pah",
+      "family_source": "class.shafer",
+      "names": [
+        "Acenaphthylene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649H08"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate_acetylcholinesterase_inhibitor",
+      "dtxsid": "DTXSID3024102",
+      "family": "organophosphate_acetylcholinesterase_inhibitor",
+      "family_source": "class.shafer",
+      "names": [
+        "Fenamiphos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TP0001649D05"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": null,
+      "class_shafer": "fungicide",
+      "dtxsid": "DTXSID3024235",
+      "family": "fungicide",
+      "family_source": "class.shafer",
+      "names": [
+        "Flusilazole"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000518"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": "pah",
+      "dtxsid": "DTXSID3024289",
+      "family": "pah",
+      "family_source": "class.shafer",
+      "names": [
+        "Pyrene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000351"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": null,
+      "dtxsid": "DTXSID3025465",
+      "family": "industrial",
+      "family_source": "Class",
+      "names": [
+        "Isodecyl diphenyl phosphate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000337"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": "metal",
+      "dtxsid": "DTXSID3027403",
+      "family": "metal",
+      "family_source": "class.shafer",
+      "names": [
+        "Tributyltin chloride"
+      ],
+      "neuro_class": "metal",
+      "spids": [
+        "TP0001649C09"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pbde",
+      "class_shafer": null,
+      "dtxsid": "DTXSID3030056",
+      "family": "pbde",
+      "family_source": "Class",
+      "names": [
+        "2,2',4,4'-Tetrabromodiphenyl ether"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000285",
+        "EX000461"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": null,
+      "dtxsid": "DTXSID3031521",
+      "family": "metal",
+      "family_source": "Class",
+      "names": [
+        "Lead(II) acetate trihydrate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000385"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID3032464",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Profenofos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177A01"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "antibacterial",
+      "dtxsid": "DTXSID3037044",
+      "family": "antibacterial",
+      "family_source": "class.shafer",
+      "names": [
+        "Amoxicillin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000399"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID3045437",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Terbutaline hemisulfate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000393"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID3047344",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Cariporide mesylate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649G07"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID4020373",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "p,p'-DDD"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "TP0001649A09"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID4020375",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "DDT"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "EX000328",
+        "TP0001649D03"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID4020406",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Diazepam"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000409"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID4020458",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Chlorpyrifos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "EX000384",
+        "TT0000177E02"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID4020537",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Diphenhydramine hydrochloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649G01"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID4020791",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Malathion"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177D02"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID4020820",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Methimazole"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649D01"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID4020822",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Methotrexate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000445"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": "flame_retardant",
+      "dtxsid": "DTXSID4021391",
+      "family": "flame_retardant",
+      "family_source": "class.shafer",
+      "names": [
+        "Tris(methylphenyl) phosphate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000359"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": "plastics",
+      "dtxsid": "DTXSID4022442",
+      "family": "plastics",
+      "family_source": "class.shafer",
+      "names": [
+        "Bisphenol B"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649H02"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID4022731",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Carbamazepine"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000470"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "antibacterial",
+      "dtxsid": "DTXSID4022991",
+      "family": "antibacterial",
+      "family_source": "class.shafer",
+      "names": [
+        "Erythromycin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649D07"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": "flame_retardant",
+      "dtxsid": "DTXSID4028880",
+      "family": "flame_retardant",
+      "family_source": "class.shafer",
+      "names": [
+        "Triphenyl phosphates isopropylated"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000350"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pbde",
+      "class_shafer": null,
+      "dtxsid": "DTXSID4030047",
+      "family": "pbde",
+      "family_source": "Class",
+      "names": [
+        "2,2',4,4',5,5'-Hexabromodiphenyl ether"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000284"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID4032459",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Phorate"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177F02"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID4032580",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Trifloxystrobin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649G10"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID4032611",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Ethoprop"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177D01"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID4032613",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Fenitrothion"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TP0001649F08"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID4032667",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Es-fenvalerate"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649C10"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID4034150",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Haloperidol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000410"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "gaba_a_r_ant",
+      "dtxsid": "DTXSID4034609",
+      "family": "gaba_a_r_ant",
+      "family_source": "class.shafer",
+      "names": [
+        "Fipronil"
+      ],
+      "neuro_class": "gaba",
+      "spids": [
+        "EX000525"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": null,
+      "dtxsid": "DTXSID4037580",
+      "family": "organophosphate",
+      "family_source": "Class",
+      "names": [
+        "Omethoate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TT0000177C04"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": null,
+      "dtxsid": "DTXSID4040183",
+      "family": "metal",
+      "family_source": "Class",
+      "names": [
+        "Cadmium(II) chloride hydrate (2:5)"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000388"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID4040684",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Mevastatin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000498",
+        "MEA20201109A5"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": "gaba-a_alpha5_selective_agonist",
+      "dtxsid": "DTXSID4047254",
+      "family": "gaba-a_alpha5_selective_agonist",
+      "family_source": "class.shafer",
+      "names": [
+        "CP-457920"
+      ],
+      "neuro_class": "gaba",
+      "spids": [
+        "TP0001649C04"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID4047258",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Enadoline"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649C12"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID40880040",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "1-Methyl-4-phenylpyridinium iodide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000279"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID40880060",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Chlordiazepoxide hydrochloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000390"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "research",
+      "class_shafer": null,
+      "dtxsid": "DTXSID50157932",
+      "family": "research",
+      "family_source": "Class",
+      "names": [
+        "Bisindolylmaleimide I"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000475",
+        "MEA20201109A1",
+        "MEA20201109A2",
+        "MEA20201109A3"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5020027",
+      "family": "industrial",
+      "family_source": "Class",
+      "names": [
+        "Acrylamide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000427"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5020104",
+      "family": "metal",
+      "family_source": "Class",
+      "names": [
+        "Sodium arsenite"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000465"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "vitamin",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5020106",
+      "family": "vitamin",
+      "family_source": "Class",
+      "names": [
+        "L-Ascorbic acid"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000338"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "nsaid",
+      "dtxsid": "DTXSID5020108",
+      "family": "nsaid",
+      "family_source": "class.shafer",
+      "names": [
+        "Aspirin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000297",
+        "TP0001649G04"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID5020449",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Dichlorvos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177C01"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "phthalate",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5020607",
+      "family": "phthalate",
+      "family_source": "Class",
+      "names": [
+        "Di(2-ethylhexyl) phthalate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000324",
+        "EX000422"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID5020784",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Lovastatin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649D08"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID5020811",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Mercuric chloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649C11"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5020813",
+      "family": "metal",
+      "family_source": "Class",
+      "names": [
+        "Methylmercuric(II) chloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000383"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5021122",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Phenobarbital"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000348"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5021124",
+      "family": "industrial",
+      "family_source": "Class",
+      "names": [
+        "Phenol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000455"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5021209",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "6-Propyl-2-thiouracil"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000421",
+        "TP0001649B07"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": "flame_retardant",
+      "dtxsid": "DTXSID5021411",
+      "family": "flame_retardant",
+      "family_source": "class.shafer",
+      "names": [
+        "Tris(2-chloroethyl) phosphate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000361"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "food_additive",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5023588",
+      "family": "food_additive",
+      "family_source": "Class",
+      "names": [
+        "D-Glucitol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000322",
+        "EX000400"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": "pah",
+      "dtxsid": "DTXSID5023902",
+      "family": "pah",
+      "family_source": "class.shafer",
+      "names": [
+        "Benz(a)anthracene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649B04"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5023908",
+      "family": "pah",
+      "family_source": "Class",
+      "names": [
+        "Benzo[g,h,i]perylene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000308"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID5024182",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "2-Methoxyethanol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000282"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID5024261",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Phosmet"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177C03"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID5024845",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Colchicine"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000431"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5026259",
+      "family": "industrial",
+      "family_source": "Class",
+      "names": [
+        "Tris(2-chloroisopropyl)phosphate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000364"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5027279",
+      "family": "metal",
+      "family_source": "Class",
+      "names": [
+        "Manganese(II) acetate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000296"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "neonicotinoid",
+      "dtxsid": "DTXSID5032442",
+      "family": "neonicotinoid",
+      "family_source": "class.shafer",
+      "names": [
+        "Imidacloprid"
+      ],
+      "neuro_class": "neonicotinoid",
+      "spids": [
+        "EX000526"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": "antibacterial",
+      "dtxsid": "DTXSID5032498",
+      "family": "antibacterial",
+      "family_source": "class.shafer",
+      "names": [
+        "Triclosan"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649H12"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID5032577",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Tefluthrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649E08"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID5035957",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Cyfluthrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649F02"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5037072",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Sodium valproate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000439"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID5037523",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Diazoxon"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177G01"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID5051446",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "6-aminopyridine-3-carboxamide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000424"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID601027734",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Esketamine hydrochloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000391"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": "preservative",
+      "dtxsid": "DTXSID6020220",
+      "family": "preservative",
+      "family_source": "class.shafer",
+      "names": [
+        "tert-Butylhydroquinone"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649C03"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID6020561",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Endrin"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "TP0001649G09"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID6020690",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Hexachlorophene"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "EX000335",
+        "EX000392"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "insecticide",
+      "dtxsid": "DTXSID6021248",
+      "family": "insecticide",
+      "family_source": "class.shafer",
+      "names": [
+        "Rotenone"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000352",
+        "TP0001649H01"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID6022345",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "o,p'-DDT"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "TP0001649G03"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID6024177",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Methamidophos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177B02"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID6024206",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Molinate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649A10"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": "pah",
+      "dtxsid": "DTXSID6024254",
+      "family": "pah",
+      "family_source": "class.shafer",
+      "names": [
+        "Phenanthrene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000347",
+        "TP0001649D02"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": "flame_retardant",
+      "dtxsid": "DTXSID6024701",
+      "family": "flame_retardant",
+      "family_source": "class.shafer",
+      "names": [
+        "tert-Butylphenyl diphenyl phosphate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000355"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID6024888",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Cyclophosphamide monohydrate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000472"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID6025438",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Hydroxyurea"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000446"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID6032354",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Clodinafop-propargyl"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649C01"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": null,
+      "dtxsid": "DTXSID6032358",
+      "family": "pesticide",
+      "family_source": "Class",
+      "names": [
+        "Cymoxanil"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649H09"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID6032562",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Octylbicycloheptenedicarboximide"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649H11"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID6032649",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Tetramethrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649A11"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "fungicide",
+      "dtxsid": "DTXSID6034392",
+      "family": "fungicide",
+      "family_source": "class.shafer",
+      "names": [
+        "Boscalid"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649B09"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": null,
+      "dtxsid": "DTXSID6034928",
+      "family": "pesticide",
+      "family_source": "Class",
+      "names": [
+        "Spirodiclofen"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649D12"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID6047525",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Pravastatin sodium"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649E12"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID6048175",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Difpas-pyrazole"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649H06"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": "plastics",
+      "dtxsid": "DTXSID7020182",
+      "family": "plastics",
+      "family_source": "class.shafer",
+      "names": [
+        "Bisphenol A"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000420"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID7020267",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Octachloro-4,7-methanotetrahydroindane"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "TP0001649C05"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID7020479",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Dimethoate"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177H02"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID7020635",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Fluoxetine hydrochloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000468"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": null,
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID7020895",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Mirex"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "TP0001649A02"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID7021100",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Parathion"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "EX000345",
+        "TP0001649B11"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": "fungicide",
+      "dtxsid": "DTXSID7021150",
+      "family": "fungicide",
+      "family_source": "class.shafer",
+      "names": [
+        "Phenylmercuric acetate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649D11"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID7021237",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Reserpine"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649A03"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID7021239",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Retinoic acid"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000386"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "food_additive",
+      "class_shafer": null,
+      "dtxsid": "DTXSID7021992",
+      "family": "food_additive",
+      "family_source": "Class",
+      "names": [
+        "Sodium saccharin hydrate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000403"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID7022253",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Resmethrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649B12"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "antibacterial",
+      "dtxsid": "DTXSID7023645",
+      "family": "antibacterial",
+      "family_source": "class.shafer",
+      "names": [
+        "Tetracycline"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649E03"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID7024160",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Lactofen"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000520"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": null,
+      "dtxsid": "DTXSID7024243",
+      "family": "pesticide",
+      "family_source": "Class",
+      "names": [
+        "Paraquat dichloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000464"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID7024827",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Chlorpromazine hydrochloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000469"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "phthalate",
+      "class_shafer": null,
+      "dtxsid": "DTXSID7027887",
+      "family": "phthalate",
+      "family_source": "Class",
+      "names": [
+        "Bis(2-ethylhexyl) tetrabromophthalate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000310"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID7032638",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Pyraclostrobin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649F09"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "neonicotinoid",
+      "dtxsid": "DTXSID7034961",
+      "family": "neonicotinoid",
+      "family_source": "class.shafer",
+      "names": [
+        "Thiacloprid"
+      ],
+      "neuro_class": "neonicotinoid",
+      "spids": [
+        "TP0001649E07"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": "plastics",
+      "dtxsid": "DTXSID7037717",
+      "family": "plastics",
+      "family_source": "class.shafer",
+      "names": [
+        "Bisphenol AF"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000313",
+        "TP0001649A01"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID70880073",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Firemaster 550"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000332"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID8020040",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Aldrin"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "TP0001649G11"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID8020381",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Deltamethrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "EX000423"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": null,
+      "dtxsid": "DTXSID8020462",
+      "family": "industrial",
+      "family_source": "Class",
+      "names": [
+        "Diethylene glycol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000457"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID8020541",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "5,5-Diphenylhydantoin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000381"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID8020755",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Isoniazid"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000441"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": "pah",
+      "dtxsid": "DTXSID8020913",
+      "family": "pah",
+      "family_source": "class.shafer",
+      "names": [
+        "Naphthalene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000344"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID8022292",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Permethrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "EX000346",
+        "EX000463"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID8022325",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "2,2-Bis(4-hydroxyphenyl)-1,1,1-trichloroethane"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649F03"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID8023846",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Acephate"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177A04"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": "avermectin",
+      "dtxsid": "DTXSID8023892",
+      "family": "avermectin",
+      "family_source": "class.shafer",
+      "names": [
+        "Abamectin"
+      ],
+      "neuro_class": "avermectin",
+      "spids": [
+        "TP0001649H03"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": null,
+      "dtxsid": "DTXSID8024105",
+      "family": "pah",
+      "family_source": "Class",
+      "names": [
+        "Fluorene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649H04"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID8024602",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Berberine chloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000309"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "ectoparasiticide",
+      "dtxsid": "DTXSID8035180",
+      "family": "ectoparasiticide",
+      "family_source": "class.shafer",
+      "names": [
+        "Allethrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649F12"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID8044175",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Clove leaf oil"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649E02"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pfas",
+      "dtxsid": "DTXSID8047553",
+      "family": "pfas",
+      "family_source": "class.shafer",
+      "names": [
+        "Perfluoroundecanoic acid"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001411E11"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID90199452",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Naloxone hydrochloride dihydrate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000471"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": null,
+      "class_shafer": "triazine",
+      "dtxsid": "DTXSID9020112",
+      "family": "triazine",
+      "family_source": "class.shafer",
+      "names": [
+        "Atrazine"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649E05"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID9020114",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Auramine hydrochloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000302"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID9020160",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Bifenthrin"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649H07"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": null,
+      "dtxsid": "DTXSID9020166",
+      "family": "metal",
+      "family_source": "Class",
+      "names": [
+        "Bis(tributyltin)oxide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000447"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID9020243",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Captan"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000316",
+        "TP0001649F11"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "carbamate",
+      "dtxsid": "DTXSID9020247",
+      "family": "carbamate",
+      "family_source": "class.shafer",
+      "names": [
+        "Carbaryl"
+      ],
+      "neuro_class": "carbamate",
+      "spids": [
+        "EX000522"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID9020249",
+      "family": "carbamate",
+      "family_source": "neuro.class",
+      "names": [
+        "Carbofuran"
+      ],
+      "neuro_class": "carbamate",
+      "spids": [
+        "TP0001649E04"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID9020374",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "p,p'-DDE"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "TP0001649C02"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID9020407",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Diazinon"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177H01"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": null,
+      "dtxsid": "DTXSID9020409",
+      "family": "pah",
+      "family_source": "Class",
+      "names": [
+        "Dibenz[a,h]anthracene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000326"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID9020453",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Dieldrin"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "EX000417"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": null,
+      "class_shafer": "pharmaceutical",
+      "dtxsid": "DTXSID9020617",
+      "family": "pharmaceutical",
+      "family_source": "class.shafer",
+      "names": [
+        "Eugenol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649B10"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "food_additive",
+      "class_shafer": null,
+      "dtxsid": "DTXSID9020663",
+      "family": "food_additive",
+      "family_source": "Class",
+      "names": [
+        "Glycerol"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649C06"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID9020790",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Malaoxon"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177B03"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": null,
+      "dtxsid": "DTXSID9020794",
+      "family": "pesticide",
+      "family_source": "Class",
+      "names": [
+        "Maneb"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000418"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": "organochlorine",
+      "dtxsid": "DTXSID9020827",
+      "family": "organochlorine",
+      "family_source": "class.shafer",
+      "names": [
+        "Methoxychlor"
+      ],
+      "neuro_class": "organochlorine",
+      "spids": [
+        "TP0001649E06"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pharmaceutical",
+      "class_shafer": null,
+      "dtxsid": "DTXSID9022524",
+      "family": "pharmaceutical",
+      "family_source": "Class",
+      "names": [
+        "Thalidomide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000440"
+      ],
+      "test_fold": 0
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID9023914",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Dicrotophos"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "TT0000177H03"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "industrial",
+      "class_shafer": "organophosphate",
+      "dtxsid": "DTXSID9026261",
+      "family": "organophosphate",
+      "family_source": "class.shafer",
+      "names": [
+        "Tris(1,3-dichloro-2-propyl) phosphate"
+      ],
+      "neuro_class": "acetylcholinesterase",
+      "spids": [
+        "EX000453"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID9027738",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "(Methylcyclopentadienyl)tricarbonylmanganese"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000341"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pbde",
+      "class_shafer": null,
+      "dtxsid": "DTXSID9030048",
+      "family": "pbde",
+      "family_source": "Class",
+      "names": [
+        "2,2',4,4',5-Pentabromodiphenyl ether"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000283"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "fungicide",
+      "dtxsid": "DTXSID9032113",
+      "family": "fungicide",
+      "family_source": "class.shafer",
+      "names": [
+        "Tebuconazole"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000389"
+      ],
+      "test_fold": 1
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": null,
+      "dtxsid": "DTXSID9032240",
+      "family": "metal",
+      "family_source": "Class",
+      "names": [
+        "Trimethyltin hydroxide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000419"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "organophosphate",
+      "class_shafer": "herbicide",
+      "dtxsid": "DTXSID9032329",
+      "family": "herbicide",
+      "family_source": "class.shafer",
+      "names": [
+        "Bensulide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TT0000177A03"
+      ],
+      "test_fold": 4
+    },
+    {
+      "class_general": "pesticide",
+      "class_shafer": "pyrethroid",
+      "dtxsid": "DTXSID9032610",
+      "family": "pyrethroid",
+      "family_source": "class.shafer",
+      "names": [
+        "Etofenprox"
+      ],
+      "neuro_class": "pyrethroid",
+      "spids": [
+        "TP0001649H10"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID9034232",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "2-(m-Chlorophenoxy)propionic acid"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649D06"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID9034286",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "5-Chloro-2-methyl-3(2H)-isothiazolone"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000517"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": "metal",
+      "dtxsid": "DTXSID9035204",
+      "family": "metal",
+      "family_source": "class.shafer",
+      "names": [
+        "Tributyltin methacrylate"
+      ],
+      "neuro_class": "metal",
+      "spids": [
+        "TP0001649D04"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": null,
+      "dtxsid": "DTXSID9040681",
+      "family": "metal",
+      "family_source": "Class",
+      "names": [
+        "Manganese dichloride"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000467"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": "metal",
+      "class_shafer": null,
+      "dtxsid": "DTXSID9040712",
+      "family": "metal",
+      "family_source": "Class",
+      "names": [
+        "Triethyltin bromide"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000473"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID9041150",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Valinomycin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000362"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": "gaba_r",
+      "dtxsid": "DTXSID9047330",
+      "family": "gaba_r",
+      "family_source": "class.shafer",
+      "names": [
+        "PharmaGSID_47330"
+      ],
+      "neuro_class": "gaba",
+      "spids": [
+        "TP0001649B06"
+      ],
+      "test_fold": 2
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID9047542",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "Picoxystrobin"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "TP0001649A07"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID9047889",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "1-Ethyl-3-methyl-1H-imidazol-3-ium diethyl phosphate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000278"
+      ],
+      "test_fold": null
+    },
+    {
+      "class_general": "pah",
+      "class_shafer": null,
+      "dtxsid": "DTXSID9049245",
+      "family": "pah",
+      "family_source": "Class",
+      "names": [
+        "Dibenz[a,c]anthracene"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000327"
+      ],
+      "test_fold": 3
+    },
+    {
+      "class_general": null,
+      "class_shafer": null,
+      "dtxsid": "DTXSID9052686",
+      "family": null,
+      "family_source": null,
+      "names": [
+        "2-Ethylhexyl 2,3,4,5-tetrabromobenzoate"
+      ],
+      "neuro_class": null,
+      "spids": [
+        "EX000281"
+      ],
+      "test_fold": null
+    }
+  ],
+  "family_to_fold": {
+    "antibacterial": 4,
+    "antineoplastic_(alkylating)": 2,
+    "avermectin": 2,
+    "carbamate": 4,
+    "carbamate?": 3,
+    "conazole": 3,
+    "ectoparasiticide": 1,
+    "flame_retardant": 4,
+    "flame_retardant_(brominated)": 4,
+    "food": 1,
+    "food_additive": 3,
+    "fungicide": 1,
+    "gaba-a_alpha5_selective_agonist": 3,
+    "gaba-a_receptor_partial_agonist": 4,
+    "gaba_a_r_ant": 2,
+    "gaba_r": 2,
+    "herbicide": 4,
+    "industrial": 4,
+    "insecticide": 4,
+    "metal": 2,
+    "neonicotinoid": 2,
+    "neurotoxin": 4,
+    "nsaid": 3,
+    "organochlorine": 4,
+    "organophosphate": 1,
+    "organophosphate_acetylcholinesterase_inhibitor": 0,
+    "organothiophosphate": 3,
+    "pah": 3,
+    "pbde": 2,
+    "pesticide": 3,
+    "pfas": 1,
+    "pharmaceutical": 0,
+    "phosphorothioate": 4,
+    "phthalate": 3,
+    "plasticizer": 3,
+    "plastics": 3,
+    "preservative": 1,
+    "produced_from_coal_tar": 2,
+    "pyrethroid": 2,
+    "research": 1,
+    "triazine": 2,
+    "vitamin": 1
+  },
+  "fold_chemical_counts": [
+    42,
+    41,
+    41,
+    41,
+    41
+  ],
+  "missing_class_policy": "Exclude unannotated chemicals from both train and test in this family extrapolation experiment.",
+  "n_chemicals": 243,
+  "n_eligible_chemicals": 206,
+  "n_excluded_chemicals": 37,
+  "n_families": 42,
+  "n_folds": 5,
+  "rdkit_note": "No SMILES column exists in the supplied annotation file; RDKit scaffolds are not inferred.",
+  "rule": "Prefer class.shafer, then neuro.class, then Class; normalize known synonyms and keep every annotated family wholly within one fold.",
+  "schema_version": 1,
+  "seed": 20260926
+}

@@ -1,0 +1,360 @@
+{
+  "description": "R7: conformal calibration of NeuroTrajectory predictive intervals, with Mondrian strata and abstention.",
+  "protocol": "R7: conformal calibration of NeuroTrajectory predictive intervals, with Mondrian strata and abstention.\n\nAll predictions are out-of-fold (a chemical is predicted only by models that never saw it).\nNonconformity score per held-out well entry: s = |y - mu| / scale (scale = ensemble predictive scale).\nCross-conformal: for each outer fold g, the quantile q_hat(1-alpha) is computed on the scores of the\nchemicals of the OTHER folds (finite-sample corrected), per Mondrian stratum\n(cytotoxicity regime x number of measured concentrations k), and applied to fold g.\nCytotoxicity regime (chemical level, never same well): 'cytotoxic' if the PubChem/invitrodb AlamarBlue\nor LDH call for the NFA assay is active, 'non-cytotoxic' if both are inactive, else 'indeterminate'.\nReported: observed coverage (mean over held-out chemicals, bootstrap 95 % CI by chemical) and mean\ninterval width at alpha = 0.2 / 0.1 / 0.05, before (parametric) and after conformal calibration, with N per stratum.\nAbstention: epistemic score = mean ensemble std of mu / mean predictive scale; threshold = 90th percentile\non the calibration folds; we report curve error and coverage for retained vs abstained predictions.",
+  "n_chemicals": 243,
+  "chemicals_per_regime": {
+    "non-cytotoxic": 117,
+    "cytotoxic": 107,
+    "indeterminate": 19
+  },
+  "results": {
+    "alpha_0.2": {
+      "nominal": 0.8,
+      "k1": {
+        "parametric": {
+          "coverage": 0.7827,
+          "ci95": [
+            0.7737,
+            0.7912
+          ],
+          "width": 5.537
+        },
+        "conformal": {
+          "coverage": 0.799,
+          "ci95": [
+            0.7887,
+            0.8086
+          ],
+          "width": 5.886
+        },
+        "by_regime": {
+          "cytotoxic": {
+            "n_chemicals": 107,
+            "conformal_coverage": 0.7983,
+            "width": 6.402
+          },
+          "indeterminate": {
+            "n_chemicals": 19,
+            "conformal_coverage": 0.8061,
+            "width": 6.308
+          },
+          "non-cytotoxic": {
+            "n_chemicals": 117,
+            "conformal_coverage": 0.7985,
+            "width": 5.347
+          }
+        }
+      },
+      "k2": {
+        "parametric": {
+          "coverage": 0.7893,
+          "ci95": [
+            0.7817,
+            0.7973
+          ],
+          "width": 5.296
+        },
+        "conformal": {
+          "coverage": 0.8001,
+          "ci95": [
+            0.7913,
+            0.8088
+          ],
+          "width": 5.55
+        },
+        "by_regime": {
+          "cytotoxic": {
+            "n_chemicals": 107,
+            "conformal_coverage": 0.8016,
+            "width": 6.037
+          },
+          "indeterminate": {
+            "n_chemicals": 19,
+            "conformal_coverage": 0.8098,
+            "width": 6.137
+          },
+          "non-cytotoxic": {
+            "n_chemicals": 117,
+            "conformal_coverage": 0.7972,
+            "width": 5.009
+          }
+        }
+      },
+      "k3": {
+        "parametric": {
+          "coverage": 0.7961,
+          "ci95": [
+            0.7891,
+            0.8034
+          ],
+          "width": 5.163
+        },
+        "conformal": {
+          "coverage": 0.7997,
+          "ci95": [
+            0.7906,
+            0.8076
+          ],
+          "width": 5.296
+        },
+        "by_regime": {
+          "cytotoxic": {
+            "n_chemicals": 107,
+            "conformal_coverage": 0.8011,
+            "width": 5.67
+          },
+          "indeterminate": {
+            "n_chemicals": 19,
+            "conformal_coverage": 0.8092,
+            "width": 5.968
+          },
+          "non-cytotoxic": {
+            "n_chemicals": 117,
+            "conformal_coverage": 0.7967,
+            "width": 4.844
+          }
+        }
+      }
+    },
+    "alpha_0.1": {
+      "nominal": 0.9,
+      "k1": {
+        "parametric": {
+          "coverage": 0.8693,
+          "ci95": [
+            0.8608,
+            0.877
+          ],
+          "width": 7.264
+        },
+        "conformal": {
+          "coverage": 0.898,
+          "ci95": [
+            0.8896,
+            0.9058
+          ],
+          "width": 8.322
+        },
+        "by_regime": {
+          "cytotoxic": {
+            "n_chemicals": 107,
+            "conformal_coverage": 0.8962,
+            "width": 9.186
+          },
+          "indeterminate": {
+            "n_chemicals": 19,
+            "conformal_coverage": 0.9031,
+            "width": 9.123
+          },
+          "non-cytotoxic": {
+            "n_chemicals": 117,
+            "conformal_coverage": 0.8988,
+            "width": 7.401
+          }
+        }
+      },
+      "k2": {
+        "parametric": {
+          "coverage": 0.8753,
+          "ci95": [
+            0.8677,
+            0.8826
+          ],
+          "width": 6.946
+        },
+        "conformal": {
+          "coverage": 0.8993,
+          "ci95": [
+            0.8913,
+            0.9067
+          ],
+          "width": 7.83
+        },
+        "by_regime": {
+          "cytotoxic": {
+            "n_chemicals": 107,
+            "conformal_coverage": 0.8999,
+            "width": 8.672
+          },
+          "indeterminate": {
+            "n_chemicals": 19,
+            "conformal_coverage": 0.9074,
+            "width": 8.699
+          },
+          "non-cytotoxic": {
+            "n_chemicals": 117,
+            "conformal_coverage": 0.8974,
+            "width": 6.92
+          }
+        }
+      },
+      "k3": {
+        "parametric": {
+          "coverage": 0.8824,
+          "ci95": [
+            0.8754,
+            0.8886
+          ],
+          "width": 6.77
+        },
+        "conformal": {
+          "coverage": 0.8989,
+          "ci95": [
+            0.8914,
+            0.906
+          ],
+          "width": 7.413
+        },
+        "by_regime": {
+          "cytotoxic": {
+            "n_chemicals": 107,
+            "conformal_coverage": 0.9,
+            "width": 8.053
+          },
+          "indeterminate": {
+            "n_chemicals": 19,
+            "conformal_coverage": 0.9045,
+            "width": 8.443
+          },
+          "non-cytotoxic": {
+            "n_chemicals": 117,
+            "conformal_coverage": 0.8969,
+            "width": 6.659
+          }
+        }
+      }
+    },
+    "alpha_0.05": {
+      "nominal": 0.95,
+      "k1": {
+        "parametric": {
+          "coverage": 0.9144,
+          "ci95": [
+            0.907,
+            0.9214
+          ],
+          "width": 8.822
+        },
+        "conformal": {
+          "coverage": 0.9473,
+          "ci95": [
+            0.941,
+            0.9535
+          ],
+          "width": 11.114
+        },
+        "by_regime": {
+          "cytotoxic": {
+            "n_chemicals": 107,
+            "conformal_coverage": 0.945,
+            "width": 12.46
+          },
+          "indeterminate": {
+            "n_chemicals": 19,
+            "conformal_coverage": 0.9523,
+            "width": 12.847
+          },
+          "non-cytotoxic": {
+            "n_chemicals": 117,
+            "conformal_coverage": 0.9487,
+            "width": 9.602
+          }
+        }
+      },
+      "k2": {
+        "parametric": {
+          "coverage": 0.9196,
+          "ci95": [
+            0.9131,
+            0.9256
+          ],
+          "width": 8.436
+        },
+        "conformal": {
+          "coverage": 0.9484,
+          "ci95": [
+            0.9421,
+            0.9542
+          ],
+          "width": 10.401
+        },
+        "by_regime": {
+          "cytotoxic": {
+            "n_chemicals": 107,
+            "conformal_coverage": 0.9485,
+            "width": 11.791
+          },
+          "indeterminate": {
+            "n_chemicals": 19,
+            "conformal_coverage": 0.9543,
+            "width": 11.77
+          },
+          "non-cytotoxic": {
+            "n_chemicals": 117,
+            "conformal_coverage": 0.9473,
+            "width": 8.906
+          }
+        }
+      },
+      "k3": {
+        "parametric": {
+          "coverage": 0.9258,
+          "ci95": [
+            0.92,
+            0.9315
+          ],
+          "width": 8.218
+        },
+        "conformal": {
+          "coverage": 0.949,
+          "ci95": [
+            0.9437,
+            0.9538
+          ],
+          "width": 9.717
+        },
+        "by_regime": {
+          "cytotoxic": {
+            "n_chemicals": 107,
+            "conformal_coverage": 0.9501,
+            "width": 10.694
+          },
+          "indeterminate": {
+            "n_chemicals": 19,
+            "conformal_coverage": 0.9518,
+            "width": 11.485
+          },
+          "non-cytotoxic": {
+            "n_chemicals": 117,
+            "conformal_coverage": 0.9476,
+            "width": 8.537
+          }
+        }
+      }
+    }
+  },
+  "abstention": {
+    "rule": "abstain if epistemic score > 90th percentile of calibration folds",
+    "abstention_rate": 0.107,
+    "curve_mae_retained": 1.2499,
+    "curve_mae_abstained": 1.6663,
+    "curve_mae_all": 1.2944,
+    "by_k": {
+      "1": {
+        "rate": 0.144,
+        "mae_retained": 1.3708,
+        "mae_abstained": 1.7138
+      },
+      "2": {
+        "rate": 0.0988,
+        "mae_retained": 1.239,
+        "mae_abstained": 1.6408
+      },
+      "3": {
+        "rate": 0.0782,
+        "mae_retained": 1.1482,
+        "mae_abstained": 1.6113
+      }
+    }
+  }
+}

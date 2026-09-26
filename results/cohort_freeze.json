@@ -1,0 +1,1977 @@
+{
+  "aliases": [
+    {
+      "collapse_identity": false,
+      "decision": "Keep distinct DTXSIDs; link for future analog leakage checks.",
+      "evidence": "dnt_ref_oecd_culbreth_curate.xlsx, DNT_ref_list_17sept2025.xlsx",
+      "group": "valproate_active_moiety",
+      "members": [
+        {
+          "dtxsid": "DTXSID5037072",
+          "in_nfa": true,
+          "name": "Sodium valproate"
+        },
+        {
+          "dtxsid": "DTXSID6023733",
+          "in_nfa": false,
+          "name": "Valproic acid"
+        }
+      ],
+      "relation": "salt and parent acid"
+    },
+    {
+      "collapse_identity": false,
+      "decision": "Do not treat as exact aliases; family holdout groups both as organochlorines.",
+      "evidence": "annotate_dnt_ref_chems.csv, dnt_ref_oecd_culbreth_curate.xlsx",
+      "group": "heptachlor_metabolite_pair",
+      "members": [
+        {
+          "dtxsid": "DTXSID1024126",
+          "in_nfa": true,
+          "name": "Heptachlor epoxide B"
+        },
+        {
+          "dtxsid": "DTXSID3020679",
+          "in_nfa": false,
+          "name": "Heptachlor"
+        }
+      ],
+      "relation": "parent pesticide and epoxide metabolite"
+    }
+  ],
+  "cohort": [
+    {
+      "chemical": "1-Ethyl-3-methyl-1H-imidazol-3-ium diethyl phosphate",
+      "dtxsid": "DTXSID9047889",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000278"
+    },
+    {
+      "chemical": "1-Methyl-4-phenylpyridinium iodide",
+      "dtxsid": "DTXSID40880040",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000279"
+    },
+    {
+      "chemical": "2-Ethylhexyl diphenyl phosphate",
+      "dtxsid": "DTXSID1025300",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000280"
+    },
+    {
+      "chemical": "2-Ethylhexyl 2,3,4,5-tetrabromobenzoate",
+      "dtxsid": "DTXSID9052686",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000281"
+    },
+    {
+      "chemical": "2-Methoxyethanol",
+      "dtxsid": "DTXSID5024182",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000282"
+    },
+    {
+      "chemical": "2,2',4,4',5-Pentabromodiphenyl ether",
+      "dtxsid": "DTXSID9030048",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000283"
+    },
+    {
+      "chemical": "2,2',4,4',5,5'-Hexabromodiphenyl ether",
+      "dtxsid": "DTXSID4030047",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000284"
+    },
+    {
+      "chemical": "2,2',4,4'-Tetrabromodiphenyl ether",
+      "dtxsid": "DTXSID3030056",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000285"
+    },
+    {
+      "chemical": "3,3'-Iminobispropanenitrile",
+      "dtxsid": "DTXSID2041464",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000287"
+    },
+    {
+      "chemical": "4H-Cyclopenta(def)phenanthrene",
+      "dtxsid": "DTXSID1024887",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000289"
+    },
+    {
+      "chemical": "Oxidopamine hydrochloride",
+      "dtxsid": "DTXSID0045838",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000291"
+    },
+    {
+      "chemical": "Manganese(II) acetate",
+      "dtxsid": "DTXSID5027279",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000296"
+    },
+    {
+      "chemical": "Aspirin",
+      "dtxsid": "DTXSID5020108",
+      "id_source": "exact_name_annotation",
+      "label": "Negative",
+      "spid": "EX000297"
+    },
+    {
+      "chemical": "Anthracene",
+      "dtxsid": "DTXSID0023878",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000301"
+    },
+    {
+      "chemical": "Auramine hydrochloride",
+      "dtxsid": "DTXSID9020114",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000302"
+    },
+    {
+      "chemical": "Benzo[a]pyrene",
+      "dtxsid": "DTXSID2020139",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000304"
+    },
+    {
+      "chemical": "Benzo[e]pyrene",
+      "dtxsid": "DTXSID3023764",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000306"
+    },
+    {
+      "chemical": "Benzo[k]fluoranthene",
+      "dtxsid": "DTXSID0023909",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000307"
+    },
+    {
+      "chemical": "Benzo[g,h,i]perylene",
+      "dtxsid": "DTXSID5023908",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000308"
+    },
+    {
+      "chemical": "Berberine chloride",
+      "dtxsid": "DTXSID8024602",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000309"
+    },
+    {
+      "chemical": "Bis(2-ethylhexyl) tetrabromophthalate",
+      "dtxsid": "DTXSID7027887",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000310"
+    },
+    {
+      "chemical": "Bisphenol AF",
+      "dtxsid": "DTXSID7037717",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000313"
+    },
+    {
+      "chemical": "4,4'-Sulfonyldiphenol",
+      "dtxsid": "DTXSID3022409",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000314"
+    },
+    {
+      "chemical": "Captan",
+      "dtxsid": "DTXSID9020243",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000316"
+    },
+    {
+      "chemical": "3-Iodo-2-propynyl-N-butylcarbamate",
+      "dtxsid": "DTXSID0028038",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000317"
+    },
+    {
+      "chemical": "Chrysene",
+      "dtxsid": "DTXSID0022432",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000320"
+    },
+    {
+      "chemical": "D-Glucitol",
+      "dtxsid": "DTXSID5023588",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000322"
+    },
+    {
+      "chemical": "Di(2-ethylhexyl) phthalate",
+      "dtxsid": "DTXSID5020607",
+      "id_source": "exact_name_annotation",
+      "label": "Positive",
+      "spid": "EX000324"
+    },
+    {
+      "chemical": "Dibenz[a,h]anthracene",
+      "dtxsid": "DTXSID9020409",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000326"
+    },
+    {
+      "chemical": "Dibenz[a,c]anthracene",
+      "dtxsid": "DTXSID9049245",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000327"
+    },
+    {
+      "chemical": "DDT",
+      "dtxsid": "DTXSID4020375",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000328"
+    },
+    {
+      "chemical": "17beta-Estradiol",
+      "dtxsid": "DTXSID0020573",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000331"
+    },
+    {
+      "chemical": "Firemaster 550",
+      "dtxsid": "DTXSID70880073",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000332"
+    },
+    {
+      "chemical": "Hexachlorophene",
+      "dtxsid": "DTXSID6020690",
+      "id_source": "exact_name_annotation",
+      "label": "Positive",
+      "spid": "EX000335"
+    },
+    {
+      "chemical": "Isodecyl diphenyl phosphate",
+      "dtxsid": "DTXSID3025465",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000337"
+    },
+    {
+      "chemical": "L-Ascorbic acid",
+      "dtxsid": "DTXSID5020106",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000338"
+    },
+    {
+      "chemical": "(Methylcyclopentadienyl)tricarbonylmanganese",
+      "dtxsid": "DTXSID9027738",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000341"
+    },
+    {
+      "chemical": "Naphthalene",
+      "dtxsid": "DTXSID8020913",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000344"
+    },
+    {
+      "chemical": "Parathion",
+      "dtxsid": "DTXSID7021100",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000345"
+    },
+    {
+      "chemical": "Permethrin",
+      "dtxsid": "DTXSID8022292",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000346"
+    },
+    {
+      "chemical": "Phenanthrene",
+      "dtxsid": "DTXSID6024254",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000347"
+    },
+    {
+      "chemical": "Phenobarbital",
+      "dtxsid": "DTXSID5021122",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000348"
+    },
+    {
+      "chemical": "Triphenyl phosphates isopropylated",
+      "dtxsid": "DTXSID4028880",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000350"
+    },
+    {
+      "chemical": "Pyrene",
+      "dtxsid": "DTXSID3024289",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000351"
+    },
+    {
+      "chemical": "Rotenone",
+      "dtxsid": "DTXSID6021248",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000352"
+    },
+    {
+      "chemical": "tert-Butylphenyl diphenyl phosphate",
+      "dtxsid": "DTXSID6024701",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000355"
+    },
+    {
+      "chemical": "Tetraethylthiuram disulfide",
+      "dtxsid": "DTXSID1021322",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000356"
+    },
+    {
+      "chemical": "Tris(methylphenyl) phosphate",
+      "dtxsid": "DTXSID4021391",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000359"
+    },
+    {
+      "chemical": "Triphenyl phosphate",
+      "dtxsid": "DTXSID1021952",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000360"
+    },
+    {
+      "chemical": "Tris(2-chloroethyl) phosphate",
+      "dtxsid": "DTXSID5021411",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000361"
+    },
+    {
+      "chemical": "Valinomycin",
+      "dtxsid": "DTXSID9041150",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000362"
+    },
+    {
+      "chemical": "Tris(2-chloroisopropyl)phosphate",
+      "dtxsid": "DTXSID5026259",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000364"
+    },
+    {
+      "chemical": "Chlorpyrifos oxon",
+      "dtxsid": "DTXSID1038666",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000378"
+    },
+    {
+      "chemical": "5,5-Diphenylhydantoin",
+      "dtxsid": "DTXSID8020541",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000381"
+    },
+    {
+      "chemical": "Cocaine",
+      "dtxsid": "DTXSID2038443",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000382"
+    },
+    {
+      "chemical": "Methylmercuric(II) chloride",
+      "dtxsid": "DTXSID5020813",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000383"
+    },
+    {
+      "chemical": "Chlorpyrifos",
+      "dtxsid": "DTXSID4020458",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000384"
+    },
+    {
+      "chemical": "Lead(II) acetate trihydrate",
+      "dtxsid": "DTXSID3031521",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000385"
+    },
+    {
+      "chemical": "Retinoic acid",
+      "dtxsid": "DTXSID7021239",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000386"
+    },
+    {
+      "chemical": "Cadmium(II) chloride hydrate (2:5)",
+      "dtxsid": "DTXSID4040183",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000388"
+    },
+    {
+      "chemical": "Tebuconazole",
+      "dtxsid": "DTXSID9032113",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000389"
+    },
+    {
+      "chemical": "Chlordiazepoxide hydrochloride",
+      "dtxsid": "DTXSID40880060",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000390"
+    },
+    {
+      "chemical": "Esketamine hydrochloride",
+      "dtxsid": "DTXSID601027734",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000391"
+    },
+    {
+      "chemical": "Hexachlorophene",
+      "dtxsid": "DTXSID6020690",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000392"
+    },
+    {
+      "chemical": "Terbutaline hemisulfate",
+      "dtxsid": "DTXSID3045437",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000393"
+    },
+    {
+      "chemical": "Dexamethasone",
+      "dtxsid": "DTXSID3020384",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000395"
+    },
+    {
+      "chemical": "Caffeine",
+      "dtxsid": "DTXSID0020232",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000396"
+    },
+    {
+      "chemical": "Amoxicillin",
+      "dtxsid": "DTXSID3037044",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000399"
+    },
+    {
+      "chemical": "D-Glucitol",
+      "dtxsid": "DTXSID5023588",
+      "id_source": "exact_name_annotation",
+      "label": "Negative",
+      "spid": "EX000400"
+    },
+    {
+      "chemical": "Dextroamphetamine sulfate",
+      "dtxsid": "DTXSID2057865",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000402"
+    },
+    {
+      "chemical": "Sodium saccharin hydrate",
+      "dtxsid": "DTXSID7021992",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000403"
+    },
+    {
+      "chemical": "Diazepam",
+      "dtxsid": "DTXSID4020406",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000409"
+    },
+    {
+      "chemical": "Haloperidol",
+      "dtxsid": "DTXSID4034150",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000410"
+    },
+    {
+      "chemical": "Loperamide",
+      "dtxsid": "DTXSID00880006",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000411"
+    },
+    {
+      "chemical": "5-Fluorouracil",
+      "dtxsid": "DTXSID2020634",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000412"
+    },
+    {
+      "chemical": "Cytarabine",
+      "dtxsid": "DTXSID3022877",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000413"
+    },
+    {
+      "chemical": "(-)-Nicotine",
+      "dtxsid": "DTXSID1020930",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000416"
+    },
+    {
+      "chemical": "Dieldrin",
+      "dtxsid": "DTXSID9020453",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000417"
+    },
+    {
+      "chemical": "Maneb",
+      "dtxsid": "DTXSID9020794",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000418"
+    },
+    {
+      "chemical": "Trimethyltin hydroxide",
+      "dtxsid": "DTXSID9032240",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000419"
+    },
+    {
+      "chemical": "Bisphenol A",
+      "dtxsid": "DTXSID7020182",
+      "id_source": "exact_name_annotation",
+      "label": "Positive",
+      "spid": "EX000420"
+    },
+    {
+      "chemical": "6-Propyl-2-thiouracil",
+      "dtxsid": "DTXSID5021209",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000421"
+    },
+    {
+      "chemical": "Di(2-ethylhexyl) phthalate",
+      "dtxsid": "DTXSID5020607",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000422"
+    },
+    {
+      "chemical": "Deltamethrin",
+      "dtxsid": "DTXSID8020381",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000423"
+    },
+    {
+      "chemical": "6-aminopyridine-3-carboxamide",
+      "dtxsid": "DTXSID5051446",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000424"
+    },
+    {
+      "chemical": "Acrylamide",
+      "dtxsid": "DTXSID5020027",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000427"
+    },
+    {
+      "chemical": "Aldicarb",
+      "dtxsid": "DTXSID0039223",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000429"
+    },
+    {
+      "chemical": "Colchicine",
+      "dtxsid": "DTXSID5024845",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000431"
+    },
+    {
+      "chemical": "Diethylstilbestrol",
+      "dtxsid": "DTXSID3020465",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000432"
+    },
+    {
+      "chemical": "Heptachlor epoxide B",
+      "dtxsid": "DTXSID1024126",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000437"
+    },
+    {
+      "chemical": "Sodium valproate",
+      "dtxsid": "DTXSID5037072",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000439"
+    },
+    {
+      "chemical": "Thalidomide",
+      "dtxsid": "DTXSID9022524",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000440"
+    },
+    {
+      "chemical": "Isoniazid",
+      "dtxsid": "DTXSID8020755",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000441"
+    },
+    {
+      "chemical": "Methotrexate",
+      "dtxsid": "DTXSID4020822",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000445"
+    },
+    {
+      "chemical": "Hydroxyurea",
+      "dtxsid": "DTXSID6025438",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000446"
+    },
+    {
+      "chemical": "Bis(tributyltin)oxide",
+      "dtxsid": "DTXSID9020166",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000447"
+    },
+    {
+      "chemical": "Phenobarbital sodium",
+      "dtxsid": "DTXSID0021123",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000449"
+    },
+    {
+      "chemical": "Tris(1,3-dichloro-2-propyl) phosphate",
+      "dtxsid": "DTXSID9026261",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000453"
+    },
+    {
+      "chemical": "3,3',5,5'-Tetrabromobisphenol A",
+      "dtxsid": "DTXSID1026081",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000454"
+    },
+    {
+      "chemical": "Phenol",
+      "dtxsid": "DTXSID5021124",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000455"
+    },
+    {
+      "chemical": "Captopril",
+      "dtxsid": "DTXSID1037197",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000456"
+    },
+    {
+      "chemical": "Diethylene glycol",
+      "dtxsid": "DTXSID8020462",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000457"
+    },
+    {
+      "chemical": "Sodium benzoate",
+      "dtxsid": "DTXSID1020140",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000458"
+    },
+    {
+      "chemical": "Cotinine",
+      "dtxsid": "DTXSID1047576",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000459"
+    },
+    {
+      "chemical": "Chloramben",
+      "dtxsid": "DTXSID2020262",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000460"
+    },
+    {
+      "chemical": "2,2',4,4'-Tetrabromodiphenyl ether",
+      "dtxsid": "DTXSID3030056",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000461"
+    },
+    {
+      "chemical": "Fluconazole",
+      "dtxsid": "DTXSID3020627",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000462"
+    },
+    {
+      "chemical": "Permethrin",
+      "dtxsid": "DTXSID8022292",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000463"
+    },
+    {
+      "chemical": "Paraquat dichloride",
+      "dtxsid": "DTXSID7024243",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000464"
+    },
+    {
+      "chemical": "Sodium arsenite",
+      "dtxsid": "DTXSID5020104",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000465"
+    },
+    {
+      "chemical": "Sodium fluoride",
+      "dtxsid": "DTXSID2020630",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000466"
+    },
+    {
+      "chemical": "Manganese dichloride",
+      "dtxsid": "DTXSID9040681",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000467"
+    },
+    {
+      "chemical": "Fluoxetine hydrochloride",
+      "dtxsid": "DTXSID7020635",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000468"
+    },
+    {
+      "chemical": "Chlorpromazine hydrochloride",
+      "dtxsid": "DTXSID7024827",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000469"
+    },
+    {
+      "chemical": "Carbamazepine",
+      "dtxsid": "DTXSID4022731",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000470"
+    },
+    {
+      "chemical": "Naloxone hydrochloride dihydrate",
+      "dtxsid": "DTXSID90199452",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000471"
+    },
+    {
+      "chemical": "Cyclophosphamide monohydrate",
+      "dtxsid": "DTXSID6024888",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000472"
+    },
+    {
+      "chemical": "Triethyltin bromide",
+      "dtxsid": "DTXSID9040712",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000473"
+    },
+    {
+      "chemical": "Bisindolylmaleimide I",
+      "dtxsid": "DTXSID50157932",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000475"
+    },
+    {
+      "chemical": "L-Domoic acid",
+      "dtxsid": "DTXSID20274180",
+      "id_source": "exact_name_annotation",
+      "label": "Positive",
+      "spid": "EX000487"
+    },
+    {
+      "chemical": "Mevastatin",
+      "dtxsid": "DTXSID4040684",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000498"
+    },
+    {
+      "chemical": "Sodium orthovanadate",
+      "dtxsid": "DTXSID2037269",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000499"
+    },
+    {
+      "chemical": "1,2-Propylene glycol",
+      "dtxsid": "DTXSID0021206",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "EX000516"
+    },
+    {
+      "chemical": "5-Chloro-2-methyl-3(2H)-isothiazolone",
+      "dtxsid": "DTXSID9034286",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000517"
+    },
+    {
+      "chemical": "Flusilazole",
+      "dtxsid": "DTXSID3024235",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000518"
+    },
+    {
+      "chemical": "Spiroxamine",
+      "dtxsid": "DTXSID1034212",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000519"
+    },
+    {
+      "chemical": "Lactofen",
+      "dtxsid": "DTXSID7024160",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000520"
+    },
+    {
+      "chemical": "Acetamiprid",
+      "dtxsid": "DTXSID0034300",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000521"
+    },
+    {
+      "chemical": "Carbaryl",
+      "dtxsid": "DTXSID9020247",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000522"
+    },
+    {
+      "chemical": "Cypermethrin",
+      "dtxsid": "DTXSID1023998",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000523"
+    },
+    {
+      "chemical": "Emamectin benzoate",
+      "dtxsid": "DTXSID0034566",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000524"
+    },
+    {
+      "chemical": "Fipronil",
+      "dtxsid": "DTXSID4034609",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000525"
+    },
+    {
+      "chemical": "Imidacloprid",
+      "dtxsid": "DTXSID5032442",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "EX000526"
+    },
+    {
+      "chemical": "Lindane",
+      "dtxsid": "DTXSID2020686",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "EX000527"
+    },
+    {
+      "chemical": "Bisindolylmaleimide I",
+      "dtxsid": "DTXSID50157932",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "MEA20201109A1"
+    },
+    {
+      "chemical": "Glyphosate",
+      "dtxsid": "DTXSID1024122",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "MEA20201109A11"
+    },
+    {
+      "chemical": "Bisindolylmaleimide I",
+      "dtxsid": "DTXSID50157932",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "MEA20201109A2"
+    },
+    {
+      "chemical": "Bisindolylmaleimide I",
+      "dtxsid": "DTXSID50157932",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "MEA20201109A3"
+    },
+    {
+      "chemical": "L-Domoic acid",
+      "dtxsid": "DTXSID20274180",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "MEA20201109A4"
+    },
+    {
+      "chemical": "Mevastatin",
+      "dtxsid": "DTXSID4040684",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "MEA20201109A5"
+    },
+    {
+      "chemical": "Acetaminophen",
+      "dtxsid": "DTXSID2020006",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "MEA20201109A6"
+    },
+    {
+      "chemical": "Acetaminophen",
+      "dtxsid": "DTXSID2020006",
+      "id_source": "exact_name_annotation",
+      "label": null,
+      "spid": "MEA20201109A7"
+    },
+    {
+      "chemical": "Perfluoroundecanoic acid",
+      "dtxsid": "DTXSID8047553",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001411E11"
+    },
+    {
+      "chemical": "1H,1H,2H,2H-Perfluorooctyl iodide",
+      "dtxsid": "DTXSID2047565",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001413A04"
+    },
+    {
+      "chemical": "Bisphenol AF",
+      "dtxsid": "DTXSID7037717",
+      "id_source": "exact_name_annotation",
+      "label": "Positive",
+      "spid": "TP0001649A01"
+    },
+    {
+      "chemical": "Mirex",
+      "dtxsid": "DTXSID7020895",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649A02"
+    },
+    {
+      "chemical": "Reserpine",
+      "dtxsid": "DTXSID7021237",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649A03"
+    },
+    {
+      "chemical": "S-Ethyl dipropylthiocarbamate",
+      "dtxsid": "DTXSID1024091",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649A04"
+    },
+    {
+      "chemical": "Busulfan",
+      "dtxsid": "DTXSID3020910",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649A05"
+    },
+    {
+      "chemical": "CP-409092",
+      "dtxsid": "DTXSID2047276",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649A06"
+    },
+    {
+      "chemical": "Picoxystrobin",
+      "dtxsid": "DTXSID9047542",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649A07"
+    },
+    {
+      "chemical": "Piperonyl butoxide",
+      "dtxsid": "DTXSID1021166",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649A08"
+    },
+    {
+      "chemical": "p,p'-DDD",
+      "dtxsid": "DTXSID4020373",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649A09"
+    },
+    {
+      "chemical": "Molinate",
+      "dtxsid": "DTXSID6024206",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649A10"
+    },
+    {
+      "chemical": "Tetramethrin",
+      "dtxsid": "DTXSID6032649",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649A11"
+    },
+    {
+      "chemical": "6-Methyl-2-thiouracil",
+      "dtxsid": "DTXSID2020890",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649A12"
+    },
+    {
+      "chemical": "S-Bioallethrin",
+      "dtxsid": "DTXSID2039336",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649B01"
+    },
+    {
+      "chemical": "Mancozeb",
+      "dtxsid": "DTXSID0034695",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649B02"
+    },
+    {
+      "chemical": "Tamoxifen",
+      "dtxsid": "DTXSID1034187",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649B03"
+    },
+    {
+      "chemical": "Benz(a)anthracene",
+      "dtxsid": "DTXSID5023902",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649B04"
+    },
+    {
+      "chemical": "Fenpropathrin",
+      "dtxsid": "DTXSID0024002",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649B05"
+    },
+    {
+      "chemical": "PharmaGSID_47330",
+      "dtxsid": "DTXSID9047330",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649B06"
+    },
+    {
+      "chemical": "6-Propyl-2-thiouracil",
+      "dtxsid": "DTXSID5021209",
+      "id_source": "exact_name_annotation",
+      "label": "Positive",
+      "spid": "TP0001649B07"
+    },
+    {
+      "chemical": "D-Mannitol",
+      "dtxsid": "DTXSID1023235",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "TP0001649B08"
+    },
+    {
+      "chemical": "Boscalid",
+      "dtxsid": "DTXSID6034392",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649B09"
+    },
+    {
+      "chemical": "Eugenol",
+      "dtxsid": "DTXSID9020617",
+      "id_source": "exact_name_annotation",
+      "label": null,
+      "spid": "TP0001649B10"
+    },
+    {
+      "chemical": "Parathion",
+      "dtxsid": "DTXSID7021100",
+      "id_source": "exact_name_annotation",
+      "label": "Positive",
+      "spid": "TP0001649B11"
+    },
+    {
+      "chemical": "Resmethrin",
+      "dtxsid": "DTXSID7022253",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649B12"
+    },
+    {
+      "chemical": "Clodinafop-propargyl",
+      "dtxsid": "DTXSID6032354",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649C01"
+    },
+    {
+      "chemical": "p,p'-DDE",
+      "dtxsid": "DTXSID9020374",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649C02"
+    },
+    {
+      "chemical": "tert-Butylhydroquinone",
+      "dtxsid": "DTXSID6020220",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649C03"
+    },
+    {
+      "chemical": "CP-457920",
+      "dtxsid": "DTXSID4047254",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649C04"
+    },
+    {
+      "chemical": "Octachloro-4,7-methanotetrahydroindane",
+      "dtxsid": "DTXSID7020267",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649C05"
+    },
+    {
+      "chemical": "Glycerol",
+      "dtxsid": "DTXSID9020663",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "TP0001649C06"
+    },
+    {
+      "chemical": "Fluoxastrobin",
+      "dtxsid": "DTXSID2034625",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649C07"
+    },
+    {
+      "chemical": "Simvastatin",
+      "dtxsid": "DTXSID0023581",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649C08"
+    },
+    {
+      "chemical": "Tributyltin chloride",
+      "dtxsid": "DTXSID3027403",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649C09"
+    },
+    {
+      "chemical": "Es-fenvalerate",
+      "dtxsid": "DTXSID4032667",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649C10"
+    },
+    {
+      "chemical": "Mercuric chloride",
+      "dtxsid": "DTXSID5020811",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649C11"
+    },
+    {
+      "chemical": "Enadoline",
+      "dtxsid": "DTXSID4047258",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649C12"
+    },
+    {
+      "chemical": "Methimazole",
+      "dtxsid": "DTXSID4020820",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649D01"
+    },
+    {
+      "chemical": "Phenanthrene",
+      "dtxsid": "DTXSID6024254",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649D02"
+    },
+    {
+      "chemical": "DDT",
+      "dtxsid": "DTXSID4020375",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649D03"
+    },
+    {
+      "chemical": "Tributyltin methacrylate",
+      "dtxsid": "DTXSID9035204",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649D04"
+    },
+    {
+      "chemical": "Fenamiphos",
+      "dtxsid": "DTXSID3024102",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649D05"
+    },
+    {
+      "chemical": "2-(m-Chlorophenoxy)propionic acid",
+      "dtxsid": "DTXSID9034232",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649D06"
+    },
+    {
+      "chemical": "Erythromycin",
+      "dtxsid": "DTXSID4022991",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "TP0001649D07"
+    },
+    {
+      "chemical": "Lovastatin",
+      "dtxsid": "DTXSID5020784",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649D08"
+    },
+    {
+      "chemical": "Acenaphthene",
+      "dtxsid": "DTXSID3021774",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649D09"
+    },
+    {
+      "chemical": "Methadone hydrochloride",
+      "dtxsid": "DTXSID2020501",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649D10"
+    },
+    {
+      "chemical": "Phenylmercuric acetate",
+      "dtxsid": "DTXSID7021150",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649D11"
+    },
+    {
+      "chemical": "Spirodiclofen",
+      "dtxsid": "DTXSID6034928",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649D12"
+    },
+    {
+      "chemical": "3-Iodo-2-propynyl-N-butylcarbamate",
+      "dtxsid": "DTXSID0028038",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E01"
+    },
+    {
+      "chemical": "Clove leaf oil",
+      "dtxsid": "DTXSID8044175",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E02"
+    },
+    {
+      "chemical": "Tetracycline",
+      "dtxsid": "DTXSID7023645",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "TP0001649E03"
+    },
+    {
+      "chemical": "Carbofuran",
+      "dtxsid": "DTXSID9020249",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E04"
+    },
+    {
+      "chemical": "Atrazine",
+      "dtxsid": "DTXSID9020112",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E05"
+    },
+    {
+      "chemical": "Methoxychlor",
+      "dtxsid": "DTXSID9020827",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E06"
+    },
+    {
+      "chemical": "Thiacloprid",
+      "dtxsid": "DTXSID7034961",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E07"
+    },
+    {
+      "chemical": "Tefluthrin",
+      "dtxsid": "DTXSID5032577",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E08"
+    },
+    {
+      "chemical": "Triphenyl phosphite",
+      "dtxsid": "DTXSID0026252",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E09"
+    },
+    {
+      "chemical": "Thiamethoxam",
+      "dtxsid": "DTXSID2034962",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E10"
+    },
+    {
+      "chemical": "Tetraethylthiuram disulfide",
+      "dtxsid": "DTXSID1021322",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E11"
+    },
+    {
+      "chemical": "Pravastatin sodium",
+      "dtxsid": "DTXSID6047525",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649E12"
+    },
+    {
+      "chemical": "Chlorendic acid",
+      "dtxsid": "DTXSID2020268",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F01"
+    },
+    {
+      "chemical": "Cyfluthrin",
+      "dtxsid": "DTXSID5035957",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F02"
+    },
+    {
+      "chemical": "2,2-Bis(4-hydroxyphenyl)-1,1,1-trichloroethane",
+      "dtxsid": "DTXSID8022325",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F03"
+    },
+    {
+      "chemical": "Flufenacet",
+      "dtxsid": "DTXSID2032552",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F04"
+    },
+    {
+      "chemical": "Boric acid (H3BO3)",
+      "dtxsid": "DTXSID1020194",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F05"
+    },
+    {
+      "chemical": "Disulfoton",
+      "dtxsid": "DTXSID0022018",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F06"
+    },
+    {
+      "chemical": "Clothianidin",
+      "dtxsid": "DTXSID2034465",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F07"
+    },
+    {
+      "chemical": "Fenitrothion",
+      "dtxsid": "DTXSID4032613",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F08"
+    },
+    {
+      "chemical": "Pyraclostrobin",
+      "dtxsid": "DTXSID7032638",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F09"
+    },
+    {
+      "chemical": "Prallethrin",
+      "dtxsid": "DTXSID0032572",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F10"
+    },
+    {
+      "chemical": "Captan",
+      "dtxsid": "DTXSID9020243",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649F11"
+    },
+    {
+      "chemical": "Allethrin",
+      "dtxsid": "DTXSID8035180",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649F12"
+    },
+    {
+      "chemical": "Diphenhydramine hydrochloride",
+      "dtxsid": "DTXSID4020537",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649G01"
+    },
+    {
+      "chemical": "Benzo(b)fluoranthene",
+      "dtxsid": "DTXSID0023907",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649G02"
+    },
+    {
+      "chemical": "o,p'-DDT",
+      "dtxsid": "DTXSID6022345",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649G03"
+    },
+    {
+      "chemical": "Aspirin",
+      "dtxsid": "DTXSID5020108",
+      "id_source": "spid_map",
+      "label": "Negative",
+      "spid": "TP0001649G04"
+    },
+    {
+      "chemical": "Azoxystrobin",
+      "dtxsid": "DTXSID0032520",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649G05"
+    },
+    {
+      "chemical": "Endosulfan",
+      "dtxsid": "DTXSID1020560",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649G06"
+    },
+    {
+      "chemical": "Cariporide mesylate",
+      "dtxsid": "DTXSID3047344",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649G07"
+    },
+    {
+      "chemical": "17beta-Estradiol",
+      "dtxsid": "DTXSID0020573",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649G08"
+    },
+    {
+      "chemical": "Endrin",
+      "dtxsid": "DTXSID6020561",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649G09"
+    },
+    {
+      "chemical": "Trifloxystrobin",
+      "dtxsid": "DTXSID4032580",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649G10"
+    },
+    {
+      "chemical": "Aldrin",
+      "dtxsid": "DTXSID8020040",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649G11"
+    },
+    {
+      "chemical": "Kepone",
+      "dtxsid": "DTXSID1020770",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649G12"
+    },
+    {
+      "chemical": "Rotenone",
+      "dtxsid": "DTXSID6021248",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H01"
+    },
+    {
+      "chemical": "Bisphenol B",
+      "dtxsid": "DTXSID4022442",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TP0001649H02"
+    },
+    {
+      "chemical": "Abamectin",
+      "dtxsid": "DTXSID8023892",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H03"
+    },
+    {
+      "chemical": "Fluorene",
+      "dtxsid": "DTXSID8024105",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H04"
+    },
+    {
+      "chemical": "Folic acid",
+      "dtxsid": "DTXSID0022519",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H05"
+    },
+    {
+      "chemical": "Difpas-pyrazole",
+      "dtxsid": "DTXSID6048175",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H06"
+    },
+    {
+      "chemical": "Bifenthrin",
+      "dtxsid": "DTXSID9020160",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H07"
+    },
+    {
+      "chemical": "Acenaphthylene",
+      "dtxsid": "DTXSID3023845",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H08"
+    },
+    {
+      "chemical": "Cymoxanil",
+      "dtxsid": "DTXSID6032358",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H09"
+    },
+    {
+      "chemical": "Etofenprox",
+      "dtxsid": "DTXSID9032610",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H10"
+    },
+    {
+      "chemical": "Octylbicycloheptenedicarboximide",
+      "dtxsid": "DTXSID6032562",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H11"
+    },
+    {
+      "chemical": "Triclosan",
+      "dtxsid": "DTXSID5032498",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TP0001649H12"
+    },
+    {
+      "chemical": "Profenofos",
+      "dtxsid": "DTXSID3032464",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177A01"
+    },
+    {
+      "chemical": "Coumaphos",
+      "dtxsid": "DTXSID2020347",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177A02"
+    },
+    {
+      "chemical": "Bensulide",
+      "dtxsid": "DTXSID9032329",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177A03"
+    },
+    {
+      "chemical": "Acephate",
+      "dtxsid": "DTXSID8023846",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177A04"
+    },
+    {
+      "chemical": "Z-Tetrachlorvinphos",
+      "dtxsid": "DTXSID1032648",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177B01"
+    },
+    {
+      "chemical": "Methamidophos",
+      "dtxsid": "DTXSID6024177",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177B02"
+    },
+    {
+      "chemical": "Malaoxon",
+      "dtxsid": "DTXSID9020790",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177B03"
+    },
+    {
+      "chemical": "Fosthiazate",
+      "dtxsid": "DTXSID0034930",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177B04"
+    },
+    {
+      "chemical": "Dichlorvos",
+      "dtxsid": "DTXSID5020449",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177C01"
+    },
+    {
+      "chemical": "Tebupirimfos",
+      "dtxsid": "DTXSID1032482",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177C02"
+    },
+    {
+      "chemical": "Phosmet",
+      "dtxsid": "DTXSID5024261",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177C03"
+    },
+    {
+      "chemical": "Omethoate",
+      "dtxsid": "DTXSID4037580",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177C04"
+    },
+    {
+      "chemical": "Ethoprop",
+      "dtxsid": "DTXSID4032611",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177D01"
+    },
+    {
+      "chemical": "Malathion",
+      "dtxsid": "DTXSID4020791",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177D02"
+    },
+    {
+      "chemical": "Pirimiphos-methyl",
+      "dtxsid": "DTXSID0024266",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177D03"
+    },
+    {
+      "chemical": "Terbufos",
+      "dtxsid": "DTXSID2022254",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177E01"
+    },
+    {
+      "chemical": "Chlorpyrifos",
+      "dtxsid": "DTXSID4020458",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TT0000177E02"
+    },
+    {
+      "chemical": "Naled",
+      "dtxsid": "DTXSID1024209",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177E03"
+    },
+    {
+      "chemical": "Trichlorfon",
+      "dtxsid": "DTXSID0021389",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TT0000177F01"
+    },
+    {
+      "chemical": "Phorate",
+      "dtxsid": "DTXSID4032459",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177F02"
+    },
+    {
+      "chemical": "Tribufos",
+      "dtxsid": "DTXSID1024174",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177F03"
+    },
+    {
+      "chemical": "Diazoxon",
+      "dtxsid": "DTXSID5037523",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177G01"
+    },
+    {
+      "chemical": "Chlorpyrifos oxon",
+      "dtxsid": "DTXSID1038666",
+      "id_source": "exact_name_annotation",
+      "label": "Positive",
+      "spid": "TT0000177G02"
+    },
+    {
+      "chemical": "Chlorethoxyfos",
+      "dtxsid": "DTXSID2032344",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177G03"
+    },
+    {
+      "chemical": "Diazinon",
+      "dtxsid": "DTXSID9020407",
+      "id_source": "spid_map",
+      "label": "Positive",
+      "spid": "TT0000177H01"
+    },
+    {
+      "chemical": "Dimethoate",
+      "dtxsid": "DTXSID7020479",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177H02"
+    },
+    {
+      "chemical": "Dicrotophos",
+      "dtxsid": "DTXSID9023914",
+      "id_source": "spid_map",
+      "label": null,
+      "spid": "TT0000177H03"
+    }
+  ],
+  "component_sha256": {
+    "aliases": "51692bc6b4165a2614d7d032cd64b8dfd57dd75fb8f188108d9bea058af27b95",
+    "cohort": "97110e816c39136c3a3a181baea94018d9467c2e853fdfbc467fff8d14128d63",
+    "normalization": "756ce126b5520e36cb87c09a3050e770ca094efddf0e73b69cb05cda101d5782",
+    "qc": "46cf3a2b6a01a7ad1cff8ecd78a646e7457897b41665d97ebbcf8b176194ee61"
+  },
+  "normalization": {
+    "epa_preprocessed_z_equivalence": false,
+    "formula": "z_vehicle_feature = (feature - vehicle_median_feature) / vehicle_mad_feature",
+    "group_by": [
+      "plate",
+      "date",
+      "div"
+    ],
+    "n_vehicle_source_rows": 4148,
+    "statistic": "median and 1.4826 * median absolute deviation of unique physical vehicle wells",
+    "use_labels": false,
+    "zero_mad": "z is missing; raw feature retained"
+  },
+  "qc": {
+    "concentration_unit": "uM",
+    "exclude_wllq_zero": true,
+    "imputed_policy": "Retain with was_imputed flag; analyze exclusion as sensitivity test.",
+    "missing_raw_features": {
+      "active_electrodes_number": 0,
+      "burst_duration_mean": 7834,
+      "burst_rate": 0,
+      "bursting_electrodes_number": 0,
+      "correlation_coefficient_mean": 0,
+      "firing_rate_mean": 0,
+      "inter_network_spike_interval_mean": 10677,
+      "interburst_interval_mean": 7834,
+      "mutual_information_norm": 0,
+      "network_spike_duration_std": 10677,
+      "network_spike_number": 0,
+      "network_spike_peak": 10308,
+      "per_burst_interspike_interval": 7834,
+      "per_burst_spike_percent": 0,
+      "per_network_spike_spike_number_mean": 10308,
+      "per_network_spike_spike_percent": 0,
+      "spike_duration_mean": 10308
+    },
+    "n_imputed_rows_retained": 73,
+    "n_rows_wllq_zero": 0,
+    "n_source_rows": 31756,
+    "observed_wllq_values": [
+      1
+    ],
+    "physical_duplicates": "Retain distinct source chemical records; count identical physical vehicle wells once in normalization.",
+    "valid_div": [
+      5,
+      7,
+      9,
+      12
+    ],
+    "vehicle_definition": "concentration_uM == 0"
+  },
+  "schema_version": 1,
+  "summary": {
+    "n_dtxsid": 243,
+    "n_names": 243,
+    "n_spids": 267,
+    "n_wells": 31756
+  }
+}

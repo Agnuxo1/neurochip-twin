@@ -1,0 +1,8927 @@
+{
+  "assignments": [
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0020232",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0020232",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0020232",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0020232",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0020232",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0020232",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID0020232",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID0020573",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0020573",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0020573",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0020573",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0020573",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0020573",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0020573",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0020573",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0021123",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0021123",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0021123",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0021123",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0021123",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0021123",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID0021123",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0021206",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0021206",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0021206",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0021206",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0021206",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0021206",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID0021206",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0021389",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0021389",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0021389",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0021389",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0021389",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID0021389",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID0021389",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0022018",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0022018",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0022018",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0022018",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0022018",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0022018",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0022018",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID0022432",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.05,
+      "dtxsid": "DTXSID0022432",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.15,
+      "dtxsid": "DTXSID0022432",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.49,
+      "dtxsid": "DTXSID0022432",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.46,
+      "dtxsid": "DTXSID0022432",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 4.85,
+      "dtxsid": "DTXSID0022432",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 9.7,
+      "dtxsid": "DTXSID0022432",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0022519",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0022519",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0022519",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0022519",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0022519",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0022519",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0022519",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID0023581",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID0023581",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0023581",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0023581",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0023581",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0023581",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0023581",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0023581",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0023581",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0023878",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0023878",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0023878",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0023878",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0023878",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0023878",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0023878",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0023907",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0023907",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0023907",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0023907",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0023907",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0023907",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0023907",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0023909",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0023909",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0023909",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0023909",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0023909",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0023909",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0023909",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0024002",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0024002",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0024002",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0024002",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0024002",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0024002",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0024002",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0024266",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0024266",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0024266",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0024266",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0024266",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID0024266",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID0024266",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0026252",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0026252",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0026252",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0026252",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0026252",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0026252",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0026252",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID0028038",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0028038",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0028038",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0028038",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0028038",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0028038",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0028038",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0028038",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID0032520",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID0032520",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0032520",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0032520",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0032520",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0032520",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0032520",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0032520",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0032520",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0032572",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0032572",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0032572",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0032572",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0032572",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0032572",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0032572",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0034300",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0034300",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0034300",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0034300",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0034300",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0034300",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID0034300",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.0001,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID0034566",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0034695",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0034695",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0034695",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0034695",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0034695",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0034695",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0034695",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0034930",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0034930",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0034930",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0034930",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0034930",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID0034930",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID0034930",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0039223",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0039223",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0039223",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0039223",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0039223",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0039223",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID0039223",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID0045838",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID0045838",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID0045838",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID0045838",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID0045838",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID0045838",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID0045838",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID0045838",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID00880006",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID00880006",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID00880006",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID00880006",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID00880006",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID00880006",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID00880006",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1020140",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1020140",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1020140",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1020140",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1020140",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1020140",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1020140",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1020194",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1020194",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1020194",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1020194",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1020194",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1020194",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID1020194",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1020560",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1020560",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1020560",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1020560",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1020560",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1020560",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID1020560",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1020770",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1020770",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1020770",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1020770",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1020770",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1020770",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID1020770",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1020930",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1020930",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1020930",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1020930",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1020930",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1020930",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1020930",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1021166",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1021166",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1021166",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1021166",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1021166",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1021166",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID1021166",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.0001,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID1021322",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1021952",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1021952",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1021952",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1021952",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1021952",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1021952",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1021952",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1023235",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1023235",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1023235",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1023235",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1023235",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1023235",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID1023235",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1023998",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1023998",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1023998",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1023998",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1023998",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1023998",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1023998",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1024091",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1024091",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1024091",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1024091",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1024091",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1024091",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID1024091",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1024122",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1024122",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1024122",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1024122",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1024122",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1024122",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1024122",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1024126",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1024126",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1024126",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1024126",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1024126",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1024126",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1024126",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1024174",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1024174",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1024174",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1024174",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1024174",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1024174",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID1024174",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1024209",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1024209",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1024209",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1024209",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1024209",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1024209",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID1024209",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1024887",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1024887",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1024887",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1024887",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1024887",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1024887",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID1024887",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1025300",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1025300",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1025300",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1025300",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1025300",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1025300",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID1025300",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1026081",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1026081",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1026081",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1026081",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1026081",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1026081",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1026081",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1032482",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1032482",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1032482",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1032482",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1032482",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1032482",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID1032482",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1032648",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1032648",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1032648",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1032648",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1032648",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1032648",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID1032648",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1034187",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1034187",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1034187",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1034187",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1034187",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1034187",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID1034187",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1034212",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1037197",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1037197",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1037197",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1037197",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1037197",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1037197",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1037197",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1038666",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1038666",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1038666",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1038666",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1038666",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1038666",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1038666",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID1038666",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID1047576",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID1047576",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID1047576",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID1047576",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID1047576",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID1047576",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID1047576",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2020006",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2020006",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2020006",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2020006",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2020006",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2020006",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2020006",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2020139",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2020139",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2020139",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2020139",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2020139",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2020139",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2020139",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2020262",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2020262",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2020262",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2020262",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2020262",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2020262",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2020262",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2020268",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2020268",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2020268",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2020268",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2020268",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2020268",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2020268",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2020347",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2020347",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2020347",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2020347",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2020347",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2020347",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID2020347",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2020501",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2020501",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2020501",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2020501",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2020501",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2020501",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2020501",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2020630",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2020630",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2020630",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2020630",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2020630",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2020630",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2020630",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2020634",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2020634",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2020634",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2020634",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2020634",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2020634",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2020634",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2020686",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2020686",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2020686",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2020686",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2020686",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2020686",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2020686",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2020890",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2020890",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2020890",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2020890",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2020890",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2020890",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2020890",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2022254",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2022254",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2022254",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2022254",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2022254",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2022254",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID2022254",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID20274180",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID20274180",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID20274180",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID20274180",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID20274180",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID20274180",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID20274180",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID20274180",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2032344",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2032344",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2032344",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2032344",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2032344",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2032344",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID2032344",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2032552",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2032552",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2032552",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2032552",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2032552",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2032552",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2032552",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2034465",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2034465",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2034465",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2034465",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2034465",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2034465",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2034465",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID2034625",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID2034625",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID2034625",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2034625",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2034625",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2034625",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2034625",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2034625",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2034625",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2034625",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2034962",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2034962",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2034962",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2034962",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2034962",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2034962",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2034962",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID2037269",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2037269",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2037269",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2037269",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2037269",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2037269",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2037269",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2037269",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2038443",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2038443",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2038443",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2038443",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2038443",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2038443",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2038443",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2039336",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2039336",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2039336",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2039336",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2039336",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2039336",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2039336",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2041464",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2041464",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2041464",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2041464",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2041464",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2041464",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2041464",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2047276",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2047276",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2047276",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2047276",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2047276",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2047276",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2047276",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2047565",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2047565",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2047565",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2047565",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2047565",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2047565",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID2047565",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID2057865",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID2057865",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID2057865",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID2057865",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID2057865",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID2057865",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID2057865",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3020384",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3020384",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3020384",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3020384",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3020384",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3020384",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID3020384",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3020465",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3020465",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3020465",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3020465",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3020465",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3020465",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID3020465",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3020627",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3020627",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3020627",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3020627",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3020627",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3020627",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID3020627",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3020910",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3020910",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3020910",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3020910",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3020910",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3020910",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3020910",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3021774",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3021774",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3021774",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3021774",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3021774",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3021774",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3021774",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3022409",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3022409",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3022409",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3022409",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3022409",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3022409",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3022409",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3022877",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3022877",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3022877",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3022877",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3022877",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3022877",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID3022877",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3023764",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3023764",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3023764",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3023764",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3023764",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3023764",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3023764",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3023845",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3023845",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3023845",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3023845",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3023845",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3023845",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3023845",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3024102",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3024102",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3024102",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3024102",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3024102",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3024102",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3024102",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3024235",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3024235",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3024235",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3024235",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3024235",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3024235",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID3024235",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3024289",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3024289",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3024289",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3024289",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3024289",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3024289",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3024289",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3025465",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3025465",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3025465",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3025465",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3025465",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3025465",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3025465",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3027403",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID3030056",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3030056",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3030056",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3030056",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3030056",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3030056",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3030056",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3030056",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3031521",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3031521",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3031521",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3031521",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3031521",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3031521",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID3031521",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID3032464",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3032464",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3032464",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3032464",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3032464",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3032464",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3032464",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3037044",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3037044",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3037044",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3037044",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3037044",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3037044",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID3037044",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3045437",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3045437",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3045437",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3045437",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3045437",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3045437",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID3045437",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID3047344",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID3047344",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID3047344",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID3047344",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID3047344",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID3047344",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID3047344",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4020373",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4020373",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4020373",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4020373",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4020373",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4020373",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4020373",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4020375",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4020375",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4020375",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4020375",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4020375",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4020375",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4020375",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4020406",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4020406",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4020406",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4020406",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4020406",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4020406",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4020406",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4020458",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4020458",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4020458",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4020458",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4020458",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4020458",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4020458",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID4020458",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4020537",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4020537",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4020537",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4020537",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4020537",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4020537",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4020537",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4020791",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4020791",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4020791",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4020791",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4020791",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4020791",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID4020791",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4020820",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4020820",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4020820",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4020820",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4020820",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4020820",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4020820",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4020822",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4020822",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4020822",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4020822",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4020822",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4020822",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4020822",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4021391",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4021391",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4021391",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4021391",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4021391",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4021391",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4021391",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4022442",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4022442",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4022442",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4022442",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4022442",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4022442",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4022442",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4022731",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4022731",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4022731",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4022731",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4022731",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4022731",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4022731",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4022991",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4022991",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4022991",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4022991",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4022991",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4022991",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4022991",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4028880",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4028880",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4028880",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4028880",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4028880",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4028880",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4028880",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.02,
+      "dtxsid": "DTXSID4030047",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.05,
+      "dtxsid": "DTXSID4030047",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.15,
+      "dtxsid": "DTXSID4030047",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.5,
+      "dtxsid": "DTXSID4030047",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.5,
+      "dtxsid": "DTXSID4030047",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 5.0,
+      "dtxsid": "DTXSID4030047",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4030047",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4032459",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4032459",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4032459",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4032459",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4032459",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4032459",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID4032459",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID4032580",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID4032580",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID4032580",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4032580",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4032580",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4032580",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4032580",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4032580",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4032580",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4032580",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4032611",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4032611",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4032611",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4032611",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4032611",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4032611",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID4032611",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4032613",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4032613",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4032613",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4032613",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4032613",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4032613",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4032613",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4032667",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4032667",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4032667",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4032667",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4032667",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4032667",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4032667",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4034150",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4034150",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4034150",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4034150",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4034150",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4034150",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4034150",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4034609",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4034609",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4034609",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4034609",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4034609",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4034609",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4034609",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4037580",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4037580",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4037580",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4037580",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4037580",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4037580",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID4037580",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4040183",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4040183",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4040183",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4040183",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4040183",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4040183",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4040183",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4040684",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4040684",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4040684",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4040684",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4040684",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4040684",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID4040684",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4047254",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4047254",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4047254",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4047254",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4047254",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4047254",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4047254",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID4047258",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID4047258",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID4047258",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID4047258",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID4047258",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID4047258",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID4047258",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID40880040",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID40880040",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID40880040",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID40880040",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID40880040",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID40880040",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID40880040",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID40880060",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID40880060",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID40880060",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID40880060",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID40880060",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID40880060",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID40880060",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID50157932",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID50157932",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID50157932",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID50157932",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID50157932",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID50157932",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID50157932",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5020027",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5020027",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5020027",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5020027",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5020027",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5020027",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5020027",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5020104",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5020104",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5020104",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5020104",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5020104",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5020104",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5020104",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5020106",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5020106",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5020106",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5020106",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5020106",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5020106",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5020106",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5020108",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5020108",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5020108",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5020108",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5020108",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5020108",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5020108",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID5020449",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5020449",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5020449",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5020449",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5020449",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5020449",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5020449",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5020607",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5020607",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5020607",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5020607",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5020607",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5020607",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5020607",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5020607",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID5020784",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID5020784",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5020784",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5020784",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5020784",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5020784",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5020784",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5020784",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5020784",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID5020811",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID5020811",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5020811",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5020811",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5020811",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5020811",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5020811",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5020811",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5020811",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID5020813",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5020813",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5020813",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5020813",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5020813",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5020813",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5020813",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5021122",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5021122",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5021122",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5021122",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5021122",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5021122",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5021122",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5021124",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5021124",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5021124",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5021124",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5021124",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5021124",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5021124",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5021209",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5021209",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5021209",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5021209",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5021209",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5021209",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5021209",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5021209",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5021411",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5021411",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5021411",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5021411",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5021411",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5021411",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5021411",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5023588",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5023588",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5023588",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5023588",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5023588",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5023588",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5023588",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5023588",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5023902",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5023902",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5023902",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5023902",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5023902",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5023902",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5023902",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.0012,
+      "dtxsid": "DTXSID5023908",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.004,
+      "dtxsid": "DTXSID5023908",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.012,
+      "dtxsid": "DTXSID5023908",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.04,
+      "dtxsid": "DTXSID5023908",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.12,
+      "dtxsid": "DTXSID5023908",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.4,
+      "dtxsid": "DTXSID5023908",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.8,
+      "dtxsid": "DTXSID5023908",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5024182",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5024182",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5024182",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5024182",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5024182",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5024182",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5024182",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5024261",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5024261",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5024261",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5024261",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5024261",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5024261",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID5024261",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5024845",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5024845",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5024845",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5024845",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5024845",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5024845",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5024845",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5026259",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5026259",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5026259",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5026259",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5026259",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5026259",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5026259",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5027279",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5027279",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5027279",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5027279",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5027279",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5027279",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5027279",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5032442",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5032442",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5032442",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5032442",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5032442",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5032442",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5032442",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5032498",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5032498",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5032498",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5032498",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5032498",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5032498",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5032498",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5032577",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5032577",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5032577",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5032577",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5032577",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5032577",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5032577",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5035957",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5035957",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5035957",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5035957",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5035957",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5035957",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID5035957",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5037072",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5037072",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5037072",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID5037072",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 300.0,
+      "dtxsid": "DTXSID5037072",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1000.0,
+      "dtxsid": "DTXSID5037072",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3000.0,
+      "dtxsid": "DTXSID5037072",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5037523",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5037523",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5037523",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5037523",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5037523",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5037523",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID5037523",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID5051446",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID5051446",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID5051446",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID5051446",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID5051446",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID5051446",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID5051446",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID601027734",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID601027734",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID601027734",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID601027734",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID601027734",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID601027734",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID601027734",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6020220",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6020220",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6020220",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6020220",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6020220",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6020220",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6020220",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6020561",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6020561",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6020561",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6020561",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6020561",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6020561",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6020561",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID6020690",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6020690",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6020690",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6020690",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6020690",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6020690",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6020690",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6020690",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID6020690",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3e-05,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.0001,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6021248",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6022345",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6022345",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6022345",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6022345",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6022345",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6022345",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6022345",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6024177",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6024177",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6024177",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6024177",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6024177",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID6024177",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID6024177",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6024206",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6024206",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6024206",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6024206",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6024206",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6024206",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6024206",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6024254",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6024254",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6024254",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6024254",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6024254",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6024254",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6024254",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6024701",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6024701",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6024701",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6024701",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6024701",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6024701",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6024701",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6024888",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6024888",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6024888",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6024888",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6024888",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6024888",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID6024888",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6025438",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6025438",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6025438",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6025438",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6025438",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6025438",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID6025438",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6032354",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6032354",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6032354",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6032354",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6032354",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6032354",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6032354",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6032358",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6032358",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6032358",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6032358",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6032358",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6032358",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6032358",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6032562",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6032562",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6032562",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6032562",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6032562",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6032562",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6032562",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6032649",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6032649",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6032649",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6032649",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6032649",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6032649",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6032649",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6034392",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6034392",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6034392",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6034392",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6034392",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6034392",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6034392",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6034928",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6034928",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6034928",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6034928",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6034928",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6034928",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6034928",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6047525",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6047525",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6047525",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6047525",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6047525",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6047525",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6047525",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID6048175",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID6048175",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID6048175",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID6048175",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID6048175",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID6048175",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID6048175",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7020182",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7020182",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7020182",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7020182",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7020182",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7020182",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID7020182",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7020267",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7020267",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7020267",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7020267",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7020267",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7020267",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7020267",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7020479",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7020479",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7020479",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7020479",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7020479",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID7020479",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID7020479",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7020635",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7020635",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7020635",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7020635",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7020635",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7020635",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID7020635",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7020895",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7020895",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7020895",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7020895",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7020895",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7020895",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7020895",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7021100",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7021100",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7021100",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7021100",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7021100",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7021100",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7021100",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7021150",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7021237",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7021237",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7021237",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7021237",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7021237",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7021237",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7021237",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7021239",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7021239",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7021239",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7021239",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7021239",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7021239",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID7021239",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7021992",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7021992",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7021992",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7021992",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7021992",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7021992",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID7021992",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7022253",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7022253",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7022253",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7022253",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7022253",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7022253",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7022253",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7023645",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7023645",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7023645",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7023645",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7023645",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7023645",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7023645",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7024160",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7024160",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7024160",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7024160",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7024160",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7024160",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID7024160",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7024243",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7024243",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7024243",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7024243",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7024243",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7024243",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID7024243",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7024827",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7024827",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7024827",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7024827",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7024827",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7024827",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID7024827",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7027887",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7027887",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7027887",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7027887",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7027887",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7027887",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7027887",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7032638",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7034961",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7034961",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7034961",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7034961",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7034961",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7034961",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7034961",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID7037717",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID7037717",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID7037717",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID7037717",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID7037717",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID7037717",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID7037717",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID70880073",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID70880073",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID70880073",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID70880073",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID70880073",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID70880073",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID70880073",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8020040",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8020040",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8020040",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8020040",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8020040",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8020040",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID8020040",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8020381",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8020381",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8020381",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8020381",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8020381",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8020381",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID8020381",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8020462",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8020462",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8020462",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8020462",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8020462",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8020462",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID8020462",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8020541",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8020541",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8020541",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8020541",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8020541",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8020541",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID8020541",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8020755",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8020755",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8020755",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8020755",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8020755",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8020755",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID8020755",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8020913",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8020913",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8020913",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8020913",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8020913",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8020913",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID8020913",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8022292",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8022292",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8022292",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8022292",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8022292",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8022292",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID8022292",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID8022292",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8022325",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8022325",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8022325",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8022325",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8022325",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8022325",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID8022325",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8023846",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8023846",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8023846",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8023846",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8023846",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID8023846",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID8023846",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID8023892",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8024105",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8024105",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8024105",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8024105",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8024105",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8024105",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID8024105",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.0001,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID8024602",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8035180",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8035180",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8035180",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8035180",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8035180",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8035180",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID8035180",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8044175",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8044175",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8044175",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8044175",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8044175",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8044175",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID8044175",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID8047553",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID8047553",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID8047553",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID8047553",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID8047553",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID8047553",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID8047553",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID90199452",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID90199452",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID90199452",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID90199452",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID90199452",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID90199452",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID90199452",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020112",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020112",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020112",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020112",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020112",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020112",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9020112",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020114",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020114",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020114",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020114",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020114",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020114",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9020114",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020160",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020160",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020160",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020160",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020160",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020160",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9020160",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID9020166",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID9020166",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID9020166",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020166",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020166",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020166",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020166",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020243",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020243",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020243",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020243",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020243",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020243",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9020243",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020247",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020247",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020247",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020247",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020247",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020247",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9020247",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020249",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020249",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020249",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020249",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020249",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020249",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9020249",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020374",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020374",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020374",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020374",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020374",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020374",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9020374",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020407",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020407",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020407",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020407",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020407",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9020407",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID9020407",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.02,
+      "dtxsid": "DTXSID9020409",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.05,
+      "dtxsid": "DTXSID9020409",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.15,
+      "dtxsid": "DTXSID9020409",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.5,
+      "dtxsid": "DTXSID9020409",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.5,
+      "dtxsid": "DTXSID9020409",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 5.0,
+      "dtxsid": "DTXSID9020409",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020409",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020453",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020453",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020453",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020453",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020453",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020453",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9020453",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020617",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020617",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020617",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020617",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020617",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020617",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9020617",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020663",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020663",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020663",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020663",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020663",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020663",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9020663",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020790",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020790",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020790",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020790",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020790",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9020790",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID9020790",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID9020794",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020794",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020794",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020794",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020794",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020794",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020794",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9020827",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9020827",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9020827",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9020827",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9020827",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9020827",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9020827",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9022524",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9022524",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9022524",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9022524",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9022524",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9022524",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9022524",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9023914",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9023914",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9023914",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9023914",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9023914",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9023914",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID9023914",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9026261",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9026261",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9026261",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9026261",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9026261",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9026261",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9026261",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9027738",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9027738",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9027738",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9027738",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9027738",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9027738",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9027738",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9030048",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9030048",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9030048",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9030048",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9030048",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9030048",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9030048",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9032113",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9032113",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9032113",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9032113",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9032113",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9032113",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9032113",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID9032240",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9032240",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9032240",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9032240",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9032240",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9032240",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9032240",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9032329",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9032329",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9032329",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9032329",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9032329",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9032329",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 100.0,
+      "dtxsid": "DTXSID9032329",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9032610",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9032610",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9032610",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9032610",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9032610",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9032610",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9032610",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9034232",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9034232",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9034232",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9034232",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9034232",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9034232",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9034232",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9034286",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9034286",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9034286",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9034286",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9034286",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9034286",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9034286",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9035204",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9040681",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9040681",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9040681",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9040681",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9040681",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9040681",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 30.0,
+      "dtxsid": "DTXSID9040681",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID9040712",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9040712",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9040712",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9040712",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9040712",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9040712",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9040712",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.0001,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9041150",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9047330",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9047330",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9047330",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9047330",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9047330",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9047330",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9047330",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.0003,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.001,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.003,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.01,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9047542",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9047889",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9047889",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9047889",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9047889",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9047889",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9047889",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9047889",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9049245",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9049245",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9049245",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9049245",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9049245",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9049245",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9049245",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 0.03,
+      "dtxsid": "DTXSID9052686",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.1,
+      "dtxsid": "DTXSID9052686",
+      "test_fold": 2
+    },
+    {
+      "concentration_uM": 0.3,
+      "dtxsid": "DTXSID9052686",
+      "test_fold": 0
+    },
+    {
+      "concentration_uM": 1.0,
+      "dtxsid": "DTXSID9052686",
+      "test_fold": 3
+    },
+    {
+      "concentration_uM": 3.0,
+      "dtxsid": "DTXSID9052686",
+      "test_fold": 1
+    },
+    {
+      "concentration_uM": 10.0,
+      "dtxsid": "DTXSID9052686",
+      "test_fold": 4
+    },
+    {
+      "concentration_uM": 20.0,
+      "dtxsid": "DTXSID9052686",
+      "test_fold": 3
+    }
+  ],
+  "n_chemicals": 243,
+  "n_folds": 5,
+  "n_levels": 1783,
+  "rule": "For each DTXSID, shuffle unique nonzero concentrations with a stable per-chemical seed and assign levels round-robin to held-out folds with a per-chemical starting offset.",
+  "schema_version": 1,
+  "seed": 20260926,
+  "test_unit": "Complete DTXSID x concentration level, across all plates, DIVs and SPIDs",
+  "vehicle_policy": "All zero-concentration wells remain available as controls in every fold; never scored as held-out dose."
+}

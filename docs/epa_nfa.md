@@ -1,0 +1,83 @@
+# EPA neural network formation assay (NFA)
+
+## Reproduce
+
+From the workspace root, install `pandas`, `numpy`, `pyarrow`, `rdata` (MIT),
+`openpyxl`, and `pytest`. The current workspace already has `rdata` (data/.pylibs_rdata) and
+`openpyxl` in `data/.pylibs`.
+
+```powershell
+$env:PYTHONPATH = "data/.pylibs;repo/src"
+python -m neurotwin.data.epa_nfa
+$env:PYTEST_DISABLE_PLUGIN_AUTOLOAD = "1"
+python -m pytest repo/tests/test_epa_nfa.py -q
+```
+
+The converter reads local `data/neurotox_probe/nfa_refine/All_DIV_Data.Rdata`
+and DNT reference lists. It downloads six small EPA tables into
+`data/processed/epa_nfa/upstream/` from pinned commit
+[`01adf3e`](https://github.com/USEPA/CompTox-DNT-NFA-Refinement/tree/01adf3e1a0068c87fe221d60df36b9f96c4b4b1d)
+and checks their SHA256 values before use. The local source hashes are recorded
+in `repo/results/epa_baseline_repro.json`.
+
+## Outputs
+
+- `data/processed/epa_nfa/wells.parquet`: 31,756 records, one source row per
+  chemical, plate, date, well, concentration and DIV (5, 7, 9, 12). It retains
+  17 MEA features, their vehicle-normalized `z_vehicle_*` values, concentration
+  in µM, chemical name, SPID, DTXSID, source file, and imputation note. A zero
+  concentration is a vehicle well. A few physical wells occur twice in the
+  source under different chemical records; these source rows remain separate.
+- `data/processed/epa_nfa/vehicle_stats.parquet`: vehicle count, median and
+  scaled MAD for each plate, date and DIV. Duplicate physical vehicle wells
+  with identical readouts count once. `z_vehicle = (value - vehicle median) /
+  (1.4826 × median absolute deviation)`. A missing raw value or zero MAD gives
+  a missing z-score. The raw feature remains available.
+
+The local Rdata has 7,939 DIV12 rows; EPA's `rval_zval_table.csv` has 7,256
+rows per DIV12 feature. Our plate vehicle medians equal EPA's in 2,161 of
+2,788 comparable plate-endpoint groups. The normalized output therefore uses
+one explicit rule across all four DIVs and should not be presented as EPA's
+exact preprocessing. The comparison counts are saved in the baseline JSON.
+- `data/processed/epa_nfa/dnt_labels.parquet`: one row per SPID with the EPA
+  reference label and separate provenance columns for the Shafer table, OECD
+  Appendix A, September 2025 list, and EFSA listing. EFSA presence is recorded
+  as evidence of inclusion, not as a positive or negative label. DTXSID comes
+  from the SPID map when possible, otherwise an exact chemical-name match to
+  the EPA reference or annotation tables.
+- `repo/results/epa_baseline_repro.json`: confusion counts, sensitivity,
+  specificity, balanced accuracy and published differences for DIV12,
+  AUC 1-hit/3-hit, and Top-1/2/3/5.
+- `repo/results/splits_epa_nfa.json`: five fixed held-out folds. All SPIDs
+  sharing a DTXSID or normalized chemical name are in one fold. The split is
+  stratified by positive, negative and unknown EPA reference status, with seed
+  `20260926`.
+
+## What the baseline reproduces
+
+The [EPA analysis script](https://github.com/USEPA/CompTox-DNT-NFA-Refinement/blob/01adf3e1a0068c87fe221d60df36b9f96c4b4b1d/Manuscript_April2026.Rmd)
+sums precomputed `hitc` values across endpoints for each chemical. DIV12 uses
+seven endpoint calls; AUC uses 17. The Top-k models use the first k endpoints
+in EPA's published random-forest importance ranking and call a chemical active
+when at least one selected endpoint is active. The published DNT reference set
+for the supplied `Results_sens_spec_BA_refine.csv` is the `dnt_ref_tbl2.xlsx`
+intersection with the 255 fitted SPIDs: 86 positives
+and 19 negatives. Our sums match all 255 rows of EPA's intermediate
+`Bioactivity_bin_tbl_comp_methods.csv`; the seven recomputed Table 3 metrics
+match `Results_sens_spec_BA_refine.csv` to its one-decimal precision.
+
+The pinned manuscript script has since switched its active Table 3 reference
+to `Compare_ref_chems_23mar26_edit.xlsx` and writes a separate `_ref2` result.
+We keep the earlier reference revision here because it matches the supplied
+EPA result and intermediate labels exactly. The two result revisions should
+not be pooled. As a sensitivity analysis, the revised intersection has 102
+positives and 18 negatives. With the same hit calls, DIV12 balanced accuracy is
+76.6% and Top-2 is 81.4%; both match EPA's `_ref2` CSV to one decimal place.
+
+This is a reproduction **from EPA's fitted endpoint hit calls**. The original
+tcplfit2 concentration-response fits are not rerun from wells. The 87.2% Top-2
+balanced accuracy is an in-sample published result: its feature ranking was
+selected using the full reference set. For honest evaluation of new models,
+select features and tune parameters within the training folds of the frozen
+split, then evaluate on their held-out chemicals. Different DNT reference
+lists or refitted endpoint calls can change the published figures.

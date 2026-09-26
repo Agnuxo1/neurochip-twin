@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install (CPU-only torch)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements.txt
+      - name: Unit tests
+        env:
+          PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
+        run: python -m pytest -q
+      - name: Bundle integrity (SHA-256 manifest)
+        run: python scripts/verify_bundle.py
+      - name: CPU demo (no network)
+        run: python demo.py --no-plots
+      - name: Every published number is traceable to results/*.json
+        run: |
+          python scripts/render_docs.py
+          git diff --exit-code -- README.md docs/ writeup/ || (echo "Rendered docs are stale: run scripts/render_docs.py" && exit 1)
+          python scripts/check_numbers.py

@@ -1,0 +1,109 @@
+{
+ "n_chemicals": 243,
+ "n_wells": 6902,
+ "files": {
+  "models/cnp_fold0_seed0.pt": {
+   "sha256": "fe580af73748baad008517512d97e0902e222dc35b7a1cbc15578177c3b647c6",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold0_seed1.pt": {
+   "sha256": "c5e8780dca024f5646d833f86db0e63a2df082f4b0bce07d0bce46345099423d",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold0_seed2.pt": {
+   "sha256": "88852d15a7b667be7979f647a54fe4d7937858cb8475e1781767b980aa226b92",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold1_seed0.pt": {
+   "sha256": "9ac7014403291cfc60638d8984b07af8ae9c6e85893936726f227de78bed02d9",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold1_seed1.pt": {
+   "sha256": "9e4e6a03611f796d517cfe30ef8494e3db149520beb3666444f90e5900bce7b9",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold1_seed2.pt": {
+   "sha256": "21d8c6a7e10844548c607531f53c031666773232317aaae38fed4caf3f8bc700",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold2_seed0.pt": {
+   "sha256": "0e3547894de65faee04051d483c570ebdeaee0575a08986d0835655b8172a195",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold2_seed1.pt": {
+   "sha256": "ea69b5bbdbfe0c70ca9e170a2b62e821652386cb6aef8904a93039b3c8d70f4f",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold2_seed2.pt": {
+   "sha256": "97ddc8543461a40a4ea53d32a7029b788e71fdc3d7d684f58942c86d1c3bc6fa",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold3_seed0.pt": {
+   "sha256": "74a04bedb79b3e43885a7116f4eb44ee713b19afeeb25cac949a122bd19252cc",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold3_seed1.pt": {
+   "sha256": "367bcf638600c648595005af72b61d4987c189ca855989c3afee7ad288d0eef9",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold3_seed2.pt": {
+   "sha256": "888852b947e6f49635ee4064157b2407fe17891d8b8e0abb073983a19a7bf7da",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold4_seed0.pt": {
+   "sha256": "bdfeaba88bbf8f8ebd574d85b9ba5ab1228fa598ae57c15ef9dab791015de94c",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold4_seed1.pt": {
+   "sha256": "9d49ff0b8e8a14f038f5a243e517fa328b13f9d59cc679e4a028ae098fafc4dc",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "models/cnp_fold4_seed2.pt": {
+   "sha256": "159bc2390ff24aac18fe1d40bd2ecce648c79f95342f680765dc4349fb365cd8",
+   "bytes": 2094983,
+   "source": "trained by scripts/run_trajectory_cv.py or scripts/train_full.py",
+   "licence": "MIT (this repository)"
+  },
+  "nfa_tasks.npz": {
+   "sha256": "e1f056ef33f568052fb8dfdba6e095f7b575c7f78d96768e34469918559008d2",
+   "bytes": 671009,
+   "source": "US EPA Network Formation Assay (NFA), All_DIV_Data.Rdata via USEPA/CompTox-DNT-NFA-Refinement (pinned commit 01adf3e); rat primary cortical neurons on 48-well MEA, DIV 5/7/9/12",
+   "licence": "US Government work (public domain, 17 U.S.C. 105); data only, EPA R code not redistributed",
+   "citation": "Shafer TJ et al.; Carstens KE et al. (EPA CCTE) - see docs/DATA.md"
+  },
+  "transform.json": {
+   "sha256": "4310262d918dbfb218458fa80f58fabaab1872d26c6fc3ee06dc1084b7ea6cae",
+   "bytes": 3585,
+   "source": "derived (vehicle wells only)",
+   "licence": "MIT (this repository)"
+  }
+ }
+}

@@ -1,0 +1,354 @@
+{
+  "description": "R4: chemical-level DNT hazard call from developmental trajectories vs the reproduced EPA rules.",
+  "protocol": "R4: chemical-level DNT hazard call from developmental trajectories vs the reproduced EPA rules.\n\nCohort: chemicals with an EPA reference label (dnt_ref_tbl2 intersection, as in\nresults/epa_baseline_repro.json). Features per chemical (from the developmental summary\nA_f(c) = mean over DIV of the normalised effect, see neurotwin.models.potency):\n  for each of the 17 features: max |A_f| over tested concentrations, signed A_f at the top\n  concentration, and the BMC (log10 uM; top tested concentration + 1 if inactive).\nClassifier: L2 logistic regression with balanced class weights, standardised features, C fixed\na priori (1.0); out-of-fold probabilities with the frozen chemical folds.\nVariants: (full) features from all measured concentrations; (few-shot, k=3) features from the\nNeuroTrajectory forecast given 3 spread concentrations (cross-validated models).\nComparators on the same chemicals: EPA DIV12 / AUC.3hit / Top2 hit-count rules (from the\nreproduction; note Top-k features were selected in-sample by EPA).\nStatistics: sensitivity/specificity with Clopper-Pearson 95 % CIs, balanced accuracy, AUROC with\nchemical bootstrap CI, exact McNemar test vs each EPA rule. N is small (19 negatives): no\nsuperiority claim is made unless the McNemar p < 0.05.",
+  "n_positive": 79,
+  "n_negative": 19,
+  "variants": {
+    "full": {
+      "rates": {
+        "tp": 64,
+        "fn": 15,
+        "tn": 13,
+        "fp": 6,
+        "sensitivity": 0.8101,
+        "sensitivity_ci95": [
+          0.7062,
+          0.8897
+        ],
+        "specificity": 0.6842,
+        "specificity_ci95": [
+          0.4345,
+          0.8742
+        ],
+        "balanced_accuracy": 0.7472
+      },
+      "auroc": 0.8708,
+      "auroc_ci95": [
+        0.7861,
+        0.9372
+      ],
+      "mcnemar_vs_epa": {
+        "DIV12": {
+          "n_chemicals": 97,
+          "ours": {
+            "tp": 63,
+            "fn": 15,
+            "tn": 13,
+            "fp": 6,
+            "sensitivity": 0.8077,
+            "sensitivity_ci95": [
+              0.7027,
+              0.8882
+            ],
+            "specificity": 0.6842,
+            "specificity_ci95": [
+              0.4345,
+              0.8742
+            ],
+            "balanced_accuracy": 0.746
+          },
+          "epa_rule_same_chemicals": {
+            "tp": 55,
+            "fn": 23,
+            "tn": 18,
+            "fp": 1,
+            "sensitivity": 0.7051,
+            "sensitivity_ci95": [
+              0.5911,
+              0.803
+            ],
+            "specificity": 0.9474,
+            "specificity_ci95": [
+              0.7397,
+              0.9987
+            ],
+            "balanced_accuracy": 0.8262
+          },
+          "only_ours_correct": 11,
+          "only_epa_correct": 8,
+          "exact_p": 0.6476
+        },
+        "AUC.3hit": {
+          "n_chemicals": 97,
+          "ours": {
+            "tp": 63,
+            "fn": 15,
+            "tn": 13,
+            "fp": 6,
+            "sensitivity": 0.8077,
+            "sensitivity_ci95": [
+              0.7027,
+              0.8882
+            ],
+            "specificity": 0.6842,
+            "specificity_ci95": [
+              0.4345,
+              0.8742
+            ],
+            "balanced_accuracy": 0.746
+          },
+          "epa_rule_same_chemicals": {
+            "tp": 52,
+            "fn": 26,
+            "tn": 19,
+            "fp": 0,
+            "sensitivity": 0.6667,
+            "sensitivity_ci95": [
+              0.5508,
+              0.7694
+            ],
+            "specificity": 1.0,
+            "specificity_ci95": [
+              0.8235,
+              1.0
+            ],
+            "balanced_accuracy": 0.8333
+          },
+          "only_ours_correct": 12,
+          "only_epa_correct": 7,
+          "exact_p": 0.3593
+        },
+        "Top2": {
+          "n_chemicals": 97,
+          "ours": {
+            "tp": 63,
+            "fn": 15,
+            "tn": 13,
+            "fp": 6,
+            "sensitivity": 0.8077,
+            "sensitivity_ci95": [
+              0.7027,
+              0.8882
+            ],
+            "specificity": 0.6842,
+            "specificity_ci95": [
+              0.4345,
+              0.8742
+            ],
+            "balanced_accuracy": 0.746
+          },
+          "epa_rule_same_chemicals": {
+            "tp": 56,
+            "fn": 22,
+            "tn": 19,
+            "fp": 0,
+            "sensitivity": 0.7179,
+            "sensitivity_ci95": [
+              0.6047,
+              0.8141
+            ],
+            "specificity": 1.0,
+            "specificity_ci95": [
+              0.8235,
+              1.0
+            ],
+            "balanced_accuracy": 0.859
+          },
+          "only_ours_correct": 9,
+          "only_epa_correct": 8,
+          "exact_p": 1.0
+        }
+      }
+    },
+    "k3": {
+      "rates": {
+        "tp": 66,
+        "fn": 13,
+        "tn": 17,
+        "fp": 2,
+        "sensitivity": 0.8354,
+        "sensitivity_ci95": [
+          0.7351,
+          0.9094
+        ],
+        "specificity": 0.8947,
+        "specificity_ci95": [
+          0.6686,
+          0.987
+        ],
+        "balanced_accuracy": 0.8651
+      },
+      "auroc": 0.9154,
+      "auroc_ci95": [
+        0.8529,
+        0.9646
+      ],
+      "mcnemar_vs_epa": {
+        "DIV12": {
+          "n_chemicals": 97,
+          "ours": {
+            "tp": 65,
+            "fn": 13,
+            "tn": 17,
+            "fp": 2,
+            "sensitivity": 0.8333,
+            "sensitivity_ci95": [
+              0.7319,
+              0.9082
+            ],
+            "specificity": 0.8947,
+            "specificity_ci95": [
+              0.6686,
+              0.987
+            ],
+            "balanced_accuracy": 0.864
+          },
+          "epa_rule_same_chemicals": {
+            "tp": 55,
+            "fn": 23,
+            "tn": 18,
+            "fp": 1,
+            "sensitivity": 0.7051,
+            "sensitivity_ci95": [
+              0.5911,
+              0.803
+            ],
+            "specificity": 0.9474,
+            "specificity_ci95": [
+              0.7397,
+              0.9987
+            ],
+            "balanced_accuracy": 0.8262
+          },
+          "only_ours_correct": 14,
+          "only_epa_correct": 5,
+          "exact_p": 0.0636
+        },
+        "AUC.3hit": {
+          "n_chemicals": 97,
+          "ours": {
+            "tp": 65,
+            "fn": 13,
+            "tn": 17,
+            "fp": 2,
+            "sensitivity": 0.8333,
+            "sensitivity_ci95": [
+              0.7319,
+              0.9082
+            ],
+            "specificity": 0.8947,
+            "specificity_ci95": [
+              0.6686,
+              0.987
+            ],
+            "balanced_accuracy": 0.864
+          },
+          "epa_rule_same_chemicals": {
+            "tp": 52,
+            "fn": 26,
+            "tn": 19,
+            "fp": 0,
+            "sensitivity": 0.6667,
+            "sensitivity_ci95": [
+              0.5508,
+              0.7694
+            ],
+            "specificity": 1.0,
+            "specificity_ci95": [
+              0.8235,
+              1.0
+            ],
+            "balanced_accuracy": 0.8333
+          },
+          "only_ours_correct": 14,
+          "only_epa_correct": 3,
+          "exact_p": 0.0127
+        },
+        "Top2": {
+          "n_chemicals": 97,
+          "ours": {
+            "tp": 65,
+            "fn": 13,
+            "tn": 17,
+            "fp": 2,
+            "sensitivity": 0.8333,
+            "sensitivity_ci95": [
+              0.7319,
+              0.9082
+            ],
+            "specificity": 0.8947,
+            "specificity_ci95": [
+              0.6686,
+              0.987
+            ],
+            "balanced_accuracy": 0.864
+          },
+          "epa_rule_same_chemicals": {
+            "tp": 56,
+            "fn": 22,
+            "tn": 19,
+            "fp": 0,
+            "sensitivity": 0.7179,
+            "sensitivity_ci95": [
+              0.6047,
+              0.8141
+            ],
+            "specificity": 1.0,
+            "specificity_ci95": [
+              0.8235,
+              1.0
+            ],
+            "balanced_accuracy": 0.859
+          },
+          "only_ours_correct": 11,
+          "only_epa_correct": 4,
+          "exact_p": 0.1185
+        }
+      }
+    }
+  },
+  "epa_reference_rules_published_on_their_cohort": {
+    "DIV12": {
+      "threshold_hits": 1,
+      "tp": 63,
+      "fn": 23,
+      "tn": 18,
+      "fp": 1,
+      "n_positive": 86,
+      "n_negative": 19,
+      "sensitivity_pct": 73.3,
+      "specificity_pct": 94.7,
+      "balanced_accuracy_pct": 84.0,
+      "published_delta_pp": {
+        "sensitivity_pp": 0.0,
+        "specificity_pp": 0.0,
+        "balanced_accuracy_pp": 0.0
+      }
+    },
+    "AUC.3hit": {
+      "threshold_hits": 3,
+      "tp": 60,
+      "fn": 26,
+      "tn": 19,
+      "fp": 0,
+      "n_positive": 86,
+      "n_negative": 19,
+      "sensitivity_pct": 69.8,
+      "specificity_pct": 100.0,
+      "balanced_accuracy_pct": 84.9,
+      "published_delta_pp": {
+        "sensitivity_pp": 0.0,
+        "specificity_pp": 0.0,
+        "balanced_accuracy_pp": 0.0
+      }
+    },
+    "Top2": {
+      "threshold_hits": 1,
+      "tp": 64,
+      "fn": 22,
+      "tn": 19,
+      "fp": 0,
+      "n_positive": 86,
+      "n_negative": 19,
+      "sensitivity_pct": 74.4,
+      "specificity_pct": 100.0,
+      "balanced_accuracy_pct": 87.2,
+      "published_delta_pp": {
+        "sensitivity_pp": 0.0,
+        "specificity_pp": 0.0,
+        "balanced_accuracy_pp": 0.0
+      }
+    }
+  },
+  "note": "EPA rule results are reproduced on their reference cohort (86 pos / 19 neg); our cohort is the subset of those chemicals present as tasks here. With 19 negatives no balanced-accuracy difference of a few points can be significant; see McNemar where per-chemical EPA calls are available."
+}

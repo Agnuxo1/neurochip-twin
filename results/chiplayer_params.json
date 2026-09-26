@@ -1,0 +1,2364 @@
+{
+  "source_cohort": "NoStim only, nine recordings; HFS excluded",
+  "units": {
+    "conduction": "ms",
+    "weight": "fraction of sorted axons"
+  },
+  "scope": "descriptive Brewer parameters; no causal or cross-platform calibration",
+  "fit_pair_edges": [
+    {
+      "pair": "EC-DG",
+      "n_axons_ff": 21,
+      "n_axons_fb": 10,
+      "observed_directionality_d": 0.3548387096774194,
+      "ff_weight": 0.6317016317016317,
+      "fb_weight": 0.36829836829836826,
+      "conduction": {
+        "n": 31,
+        "mean_ms": 0.44387096774193546,
+        "median_ms": 0.48,
+        "p10_ms": 0.24,
+        "p90_ms": 0.72,
+        "values_ms": [
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.6399999999999999,
+          0.6399999999999999,
+          0.6399999999999999,
+          0.6399999999999999,
+          0.72,
+          0.72,
+          0.7999999999999999,
+          0.7999999999999999,
+          0.88
+        ]
+      }
+    },
+    {
+      "pair": "DG-CA3",
+      "n_axons_ff": 15,
+      "n_axons_fb": 36,
+      "observed_directionality_d": -0.4117647058823529,
+      "ff_weight": 0.31587057010785824,
+      "fb_weight": 0.6841294298921418,
+      "conduction": {
+        "n": 51,
+        "mean_ms": 0.3905882352941176,
+        "median_ms": 0.3999999999999999,
+        "p10_ms": 0.24,
+        "p90_ms": 0.5599999999999999,
+        "values_ms": [
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.3999999999999999,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.5599999999999999,
+          0.5599999999999999,
+          0.5599999999999999,
+          0.5599999999999999,
+          0.6399999999999999,
+          0.6399999999999999,
+          0.72,
+          0.7999999999999999,
+          0.7999999999999999
+        ]
+      }
+    },
+    {
+      "pair": "CA3-CA1",
+      "n_axons_ff": 23,
+      "n_axons_fb": 31,
+      "observed_directionality_d": -0.14814814814814814,
+      "ff_weight": 0.42961876832844575,
+      "fb_weight": 0.5703812316715542,
+      "conduction": {
+        "n": 54,
+        "mean_ms": 0.4859259259259258,
+        "median_ms": 0.48,
+        "p10_ms": 0.24,
+        "p90_ms": 0.7999999999999999,
+        "values_ms": [
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.31999999999999995,
+          0.31999999999999995,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.5599999999999999,
+          0.6399999999999999,
+          0.6399999999999999,
+          0.6399999999999999,
+          0.6399999999999999,
+          0.7999999999999999,
+          0.7999999999999999,
+          0.7999999999999999,
+          0.7999999999999999,
+          0.7999999999999999,
+          0.7999999999999999,
+          0.7999999999999999,
+          0.7999999999999999,
+          0.7999999999999999
+        ]
+      }
+    },
+    {
+      "pair": "CA1-EC",
+      "n_axons_ff": 30,
+      "n_axons_fb": 30,
+      "observed_directionality_d": 0.0,
+      "ff_weight": 0.4946524064171123,
+      "fb_weight": 0.5053475935828877,
+      "conduction": {
+        "n": 60,
+        "mean_ms": 0.4346666666666666,
+        "median_ms": 0.3999999999999999,
+        "p10_ms": 0.24,
+        "p90_ms": 0.72,
+        "values_ms": [
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.31999999999999995,
+          0.31999999999999995,
+          0.31999999999999995,
+          0.31999999999999995,
+          0.31999999999999995,
+          0.31999999999999995,
+          0.31999999999999995,
+          0.31999999999999995,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.3999999999999999,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.48,
+          0.5599999999999999,
+          0.5599999999999999,
+          0.5599999999999999,
+          0.5599999999999999,
+          0.5599999999999999,
+          0.6399999999999999,
+          0.6399999999999999,
+          0.6399999999999999,
+          0.6399999999999999,
+          0.72,
+          0.72,
+          0.7999999999999999,
+          0.7999999999999999,
+          0.7999999999999999,
+          0.88,
+          0.88
+        ]
+      }
+    }
+  ],
+  "fit_tunnels": [
+    {
+      "orientation": "clockwise",
+      "tunnel": "A6-A7",
+      "pair": "EC-DG",
+      "predicted_ff_fraction": 0.6195086964317734,
+      "predicted_mean_conduction_ms": 0.42084367245657567
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "B6-B7",
+      "pair": "EC-DG",
+      "predicted_ff_fraction": 0.5038295038295039,
+      "predicted_mean_conduction_ms": 0.4764976958525346
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "C6-C7",
+      "pair": "EC-DG",
+      "predicted_ff_fraction": 0.5878010878010879,
+      "predicted_mean_conduction_ms": 0.429247311827957
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "D6-D7",
+      "pair": "EC-DG",
+      "predicted_ff_fraction": 0.6195086964317734,
+      "predicted_mean_conduction_ms": 0.5069975186104219
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "E6-E7",
+      "pair": "EC-DG",
+      "predicted_ff_fraction": 0.6317016317016317,
+      "predicted_mean_conduction_ms": 0.44387096774193546
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "F1-G1",
+      "pair": "CA1-EC",
+      "predicted_ff_fraction": 0.5351707116412998,
+      "predicted_mean_conduction_ms": 0.4644102564102564
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "F2-G2",
+      "pair": "CA1-EC",
+      "predicted_ff_fraction": 0.45824763471822294,
+      "predicted_mean_conduction_ms": 0.4582564102564103
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "F3-G3",
+      "pair": "CA1-EC",
+      "predicted_ff_fraction": 0.49572192513368984,
+      "predicted_mean_conduction_ms": 0.42773333333333335
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "F4-G4",
+      "pair": "CA1-EC",
+      "predicted_ff_fraction": 0.381324557795146,
+      "predicted_mean_conduction_ms": 0.44594871794871793
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "F5-G5",
+      "pair": "CA1-EC",
+      "predicted_ff_fraction": 0.45824763471822294,
+      "predicted_mean_conduction_ms": 0.40287179487179486
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "H6-H7",
+      "pair": "CA3-CA1",
+      "predicted_ff_fraction": 0.4291300097751711,
+      "predicted_mean_conduction_ms": 0.45116049382716045
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "J6-J7",
+      "pair": "CA3-CA1",
+      "predicted_ff_fraction": 0.6291300097751711,
+      "predicted_mean_conduction_ms": 0.4991604938271605
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "K6-K7",
+      "pair": "CA3-CA1",
+      "predicted_ff_fraction": 0.5312107247591119,
+      "predicted_mean_conduction_ms": 0.44910052910052906
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "L6-L7",
+      "pair": "CA3-CA1",
+      "predicted_ff_fraction": 0.5720730882021205,
+      "predicted_mean_conduction_ms": 0.495954415954416
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "M6-M7",
+      "pair": "CA3-CA1",
+      "predicted_ff_fraction": 0.45307917888563054,
+      "predicted_mean_conduction_ms": 0.4839506172839506
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "F8-G8",
+      "pair": "DG-CA3",
+      "predicted_ff_fraction": 0.4251511200663743,
+      "predicted_mean_conduction_ms": 0.35113122171945704
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "F9-G9",
+      "pair": "DG-CA3",
+      "predicted_ff_fraction": 0.3233546114902047,
+      "predicted_mean_conduction_ms": 0.4003361344537815
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "F10-G10",
+      "pair": "DG-CA3",
+      "predicted_ff_fraction": 0.22972405098753326,
+      "predicted_mean_conduction_ms": 0.34951871657754013
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "F11-G11",
+      "pair": "DG-CA3",
+      "predicted_ff_fraction": 0.4662117543473476,
+      "predicted_mean_conduction_ms": 0.40605042016806725
+    },
+    {
+      "orientation": "clockwise",
+      "tunnel": "F12-G12",
+      "pair": "DG-CA3",
+      "predicted_ff_fraction": 0.34822804314329736,
+      "predicted_mean_conduction_ms": 0.4065158371040724
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "A6-A7",
+      "pair": "CA1-EC",
+      "predicted_ff_fraction": 0.42551566080977843,
+      "predicted_mean_conduction_ms": 0.39695238095238095
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "B6-B7",
+      "pair": "CA1-EC",
+      "predicted_ff_fraction": 0.46807172066687636,
+      "predicted_mean_conduction_ms": 0.40690196078431373
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "C6-C7",
+      "pair": "CA1-EC",
+      "predicted_ff_fraction": 0.6223262032085561,
+      "predicted_mean_conduction_ms": 0.44233333333333336
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "D6-D7",
+      "pair": "CA1-EC",
+      "predicted_ff_fraction": 0.5304812834224599,
+      "predicted_mean_conduction_ms": 0.4078222222222222
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "E6-E7",
+      "pair": "CA1-EC",
+      "predicted_ff_fraction": 0.5598262032085561,
+      "predicted_mean_conduction_ms": 0.4923333333333333
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "F1-G1",
+      "pair": "EC-DG",
+      "predicted_ff_fraction": 0.6317016317016317,
+      "predicted_mean_conduction_ms": 0.44387096774193546
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "F2-G2",
+      "pair": "EC-DG",
+      "predicted_ff_fraction": 0.7321466412375504,
+      "predicted_mean_conduction_ms": 0.43190615835777124
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "F3-G3",
+      "pair": "EC-DG",
+      "predicted_ff_fraction": 0.6726236726236726,
+      "predicted_mean_conduction_ms": 0.42121863799283155
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "F4-G4",
+      "pair": "EC-DG",
+      "predicted_ff_fraction": 0.7321466412375504,
+      "predicted_mean_conduction_ms": 0.3882697947214076
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "F5-G5",
+      "pair": "EC-DG",
+      "predicted_ff_fraction": 0.7544677544677545,
+      "predicted_mean_conduction_ms": 0.4559139784946237
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "H6-H7",
+      "pair": "DG-CA3",
+      "predicted_ff_fraction": 0.23513097072419106,
+      "predicted_mean_conduction_ms": 0.416313725490196
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "J6-J7",
+      "pair": "DG-CA3",
+      "predicted_ff_fraction": 0.2105803800719055,
+      "predicted_mean_conduction_ms": 0.3603921568627451
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "K6-K7",
+      "pair": "DG-CA3",
+      "predicted_ff_fraction": 0.25192604006163327,
+      "predicted_mean_conduction_ms": 0.4117647058823529
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "L6-L7",
+      "pair": "DG-CA3",
+      "predicted_ff_fraction": 0.27130496622022043,
+      "predicted_mean_conduction_ms": 0.3942081447963801
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "M6-M7",
+      "pair": "DG-CA3",
+      "predicted_ff_fraction": 0.2939137134052388,
+      "predicted_mean_conduction_ms": 0.39372549019607844
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "F8-G8",
+      "pair": "CA3-CA1",
+      "predicted_ff_fraction": 0.28641251221896386,
+      "predicted_mean_conduction_ms": 0.45728395061728394
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "F9-G9",
+      "pair": "CA3-CA1",
+      "predicted_ff_fraction": 0.38835358190196906,
+      "predicted_mean_conduction_ms": 0.5291005291005291
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "F10-G10",
+      "pair": "CA3-CA1",
+      "predicted_ff_fraction": 0.28641251221896386,
+      "predicted_mean_conduction_ms": 0.4906172839506172
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "F11-G11",
+      "pair": "CA3-CA1",
+      "predicted_ff_fraction": 0.2643807805098128,
+      "predicted_mean_conduction_ms": 0.5021082621082621
+    },
+    {
+      "orientation": "counterclockwise",
+      "tunnel": "F12-G12",
+      "pair": "CA3-CA1",
+      "predicted_ff_fraction": 0.38835358190196906,
+      "predicted_mean_conduction_ms": 0.5005291005291005
+    }
+  ],
+  "observed_per_recording": [
+    {
+      "condition": "NoStim",
+      "fid": 1,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 4,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.8,
+          "directionality_d": 0.6,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6290777486661951,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 2,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.4,
+          "directionality_d": -0.2,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6230308785497107,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 7,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.875,
+          "directionality_d": 0.75,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.49653392664949,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 3,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.75,
+          "directionality_d": 0.5,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.449768059230064,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "NoStim",
+      "fid": 2,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 2,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.6666666666666666,
+          "directionality_d": 0.3333333333333333,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.34530771795730486,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 3,
+          "n_axons_fb": 6,
+          "ff_fraction": 0.3333333333333333,
+          "directionality_d": -0.3333333333333333,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.7923836783026496,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 6,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.5454545454545454,
+          "directionality_d": 0.09090909090909091,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.24044492561255332,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 3,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.5,
+          "directionality_d": 0.0,
+          "burst_propagation": {
+            "lag_ms": 100,
+            "correlation": 0.03948377024953438,
+            "p_shift": 0.56,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "NoStim",
+      "fid": 3,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 4,
+          "n_axons_fb": 7,
+          "ff_fraction": 0.36363636363636365,
+          "directionality_d": -0.2727272727272727,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.7812860548688905,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 3,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.375,
+          "directionality_d": -0.25,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.67972222669534,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 6,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.8571428571428571,
+          "directionality_d": 0.7142857142857143,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.04880300366284226,
+            "p_shift": 0.25,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 2,
+          "n_axons_fb": 6,
+          "ff_fraction": 0.25,
+          "directionality_d": -0.5,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.08749300741110465,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "NoStim",
+      "fid": 4,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 0,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.8314522221564375,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 3,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.08941593685677604,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 0,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.2285708574520809,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 1,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.25,
+          "directionality_d": -0.5,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.36443738370156636,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "NoStim",
+      "fid": 5,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 1,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 200,
+            "correlation": 0.09290784083254976,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 0,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.1348107465109744,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 0,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 1200,
+            "correlation": 0.054687583187171214,
+            "p_shift": 0.18,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 2,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.2857142857142857,
+          "directionality_d": -0.42857142857142855,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.50413575535433,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "NoStim",
+      "fid": 6,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 1,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.08252558822985726,
+            "p_shift": 0.03,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 0,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.40250908657974854,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 1,
+          "n_axons_fb": 8,
+          "ff_fraction": 0.1111111111111111,
+          "directionality_d": -0.7777777777777778,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.5551296817138455,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 6,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.8571428571428571,
+          "directionality_d": 0.7142857142857143,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.8863186791128198,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "NoStim",
+      "fid": 7,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 3,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6510395338156861,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 1,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.5,
+          "directionality_d": 0.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.7060140180201525,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 0,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.4347156019381445,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 5,
+          "n_axons_fb": 2,
+          "ff_fraction": 0.7142857142857143,
+          "directionality_d": 0.42857142857142855,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.49976322923868,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "NoStim",
+      "fid": 8,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 2,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.7668492826486284,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 2,
+          "n_axons_fb": 7,
+          "ff_fraction": 0.2222222222222222,
+          "directionality_d": -0.5555555555555556,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6737060080762404,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 2,
+          "n_axons_fb": 2,
+          "ff_fraction": 0.5,
+          "directionality_d": 0.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6714473460042047,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 4,
+          "n_axons_fb": 4,
+          "ff_fraction": 0.5,
+          "directionality_d": 0.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.8317386802516122,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "NoStim",
+      "fid": 9,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 4,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.4208894285075969,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 1,
+          "n_axons_fb": 4,
+          "ff_fraction": 0.2,
+          "directionality_d": -0.6,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.40106259831316715,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 1,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.25,
+          "directionality_d": -0.5,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.5431568490617642,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 4,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.4444444444444444,
+          "directionality_d": -0.1111111111111111,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.8085527853923877,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS5",
+      "fid": 1,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 2,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.4873589729881976,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 3,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.5,
+          "directionality_d": 0.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.5940502339670074,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 8,
+          "n_axons_fb": 2,
+          "ff_fraction": 0.8,
+          "directionality_d": 0.6,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.49158224549552193,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 5,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.4818669056239757,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS5",
+      "fid": 2,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 2,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.6666666666666666,
+          "directionality_d": 0.3333333333333333,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.42763910905868346,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 5,
+          "n_axons_fb": 10,
+          "ff_fraction": 0.3333333333333333,
+          "directionality_d": -0.3333333333333333,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.5027505001083514,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 5,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.5,
+          "directionality_d": 0.0,
+          "burst_propagation": {
+            "lag_ms": 1500,
+            "correlation": 0.05722728796186485,
+            "p_shift": 0.34,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 2,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.4,
+          "directionality_d": -0.2,
+          "burst_propagation": {
+            "lag_ms": 100,
+            "correlation": 0.07570143606676026,
+            "p_shift": 0.1,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS5",
+      "fid": 3,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 1,
+          "n_axons_fb": 6,
+          "ff_fraction": 0.14285714285714285,
+          "directionality_d": -0.7142857142857143,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6804758342180707,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 2,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.6666666666666666,
+          "directionality_d": 0.3333333333333333,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.14230262081940023,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 1,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.5,
+          "directionality_d": 0.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.017623725667684262,
+            "p_shift": 0.47,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 0,
+          "n_axons_fb": 7,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.09351881360258195,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS5",
+      "fid": 4,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 1,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6249705267027368,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 0,
+          "n_axons_fb": 2,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.2515633950132784,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 0,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.21503132524812033,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 4,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.5714285714285714,
+          "directionality_d": 0.14285714285714285,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.4363634890561376,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS5",
+      "fid": 5,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 2,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": -100,
+            "correlation": 0.17807962282332163,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 0,
+          "n_axons_fb": 4,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.2796611073142812,
+            "p_shift": 0.07,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 2,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.2857142857142857,
+          "directionality_d": -0.42857142857142855,
+          "burst_propagation": {
+            "lag_ms": 1900,
+            "correlation": -0.12939307656536922,
+            "p_shift": 0.93,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 2,
+          "n_axons_fb": 4,
+          "ff_fraction": 0.3333333333333333,
+          "directionality_d": -0.3333333333333333,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6081915654044752,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS5",
+      "fid": 6,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 3,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.45609067679914184,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 3,
+          "n_axons_fb": 4,
+          "ff_fraction": 0.42857142857142855,
+          "directionality_d": -0.14285714285714285,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.4740089458488103,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 1,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.25,
+          "directionality_d": -0.5,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6383401963059367,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 5,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.5,
+          "directionality_d": 0.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.8097975325093627,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS40",
+      "fid": 1,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 4,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.46729326630898727,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 2,
+          "n_axons_fb": 4,
+          "ff_fraction": 0.3333333333333333,
+          "directionality_d": -0.3333333333333333,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6188586197769389,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 7,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.875,
+          "directionality_d": 0.75,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.3924482978002285,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 3,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.75,
+          "directionality_d": 0.5,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.525513387454584,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS40",
+      "fid": 2,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 1,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.5,
+          "directionality_d": 0.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.3457439631436343,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 2,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.2857142857142857,
+          "directionality_d": -0.42857142857142855,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.48060027128154303,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 6,
+          "n_axons_fb": 4,
+          "ff_fraction": 0.6,
+          "directionality_d": 0.2,
+          "burst_propagation": {
+            "lag_ms": 700,
+            "correlation": 0.051963175770502065,
+            "p_shift": 0.39,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 1,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.25,
+          "directionality_d": -0.5,
+          "burst_propagation": {
+            "lag_ms": 100,
+            "correlation": 0.07117451959451938,
+            "p_shift": 0.04,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS40",
+      "fid": 3,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 5,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.8333333333333334,
+          "directionality_d": 0.6666666666666666,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.8321479729893034,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 4,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.8,
+          "directionality_d": 0.6,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.3100887517960957,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 0,
+          "n_axons_fb": 1,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 200,
+            "correlation": 0.13862687094362744,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 0,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.11216236310226128,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS40",
+      "fid": 4,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 2,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6992830166814269,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 0,
+          "n_axons_fb": 2,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.20425961383271896,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 0,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.3936947915783877,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 1,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.25,
+          "directionality_d": -0.5,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.4217043731277159,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS40",
+      "fid": 5,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 2,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": -1600,
+            "correlation": -0.026246041993455874,
+            "p_shift": 0.76,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 0,
+          "n_axons_fb": 4,
+          "ff_fraction": 0.0,
+          "directionality_d": -1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.3482595444479422,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 2,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.2857142857142857,
+          "directionality_d": -0.42857142857142855,
+          "burst_propagation": {
+            "lag_ms": 100,
+            "correlation": -0.09605989566951456,
+            "p_shift": 0.83,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 2,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.4,
+          "directionality_d": -0.2,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6265604526779688,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "HFS40",
+      "fid": 6,
+      "edges": [
+        {
+          "pair": "EC-DG",
+          "source": "EC",
+          "target": "DG",
+          "n_axons_ff": 3,
+          "n_axons_fb": 0,
+          "ff_fraction": 1.0,
+          "directionality_d": 1.0,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.4880024737211958,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "DG-CA3",
+          "source": "DG",
+          "target": "CA3",
+          "n_axons_ff": 1,
+          "n_axons_fb": 5,
+          "ff_fraction": 0.16666666666666666,
+          "directionality_d": -0.6666666666666666,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.6018578066693077,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA3-CA1",
+          "source": "CA3",
+          "target": "CA1",
+          "n_axons_ff": 1,
+          "n_axons_fb": 3,
+          "ff_fraction": 0.25,
+          "directionality_d": -0.5,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.7209709803021632,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        },
+        {
+          "pair": "CA1-EC",
+          "source": "CA1",
+          "target": "EC",
+          "n_axons_ff": 5,
+          "n_axons_fb": 4,
+          "ff_fraction": 0.5555555555555556,
+          "directionality_d": 0.1111111111111111,
+          "burst_propagation": {
+            "lag_ms": 0,
+            "correlation": 0.761792924781486,
+            "p_shift": 0.01,
+            "n_null": 99,
+            "lag_window_ms": [
+              -2000,
+              2000
+            ],
+            "interpretation": "population association; not axonal conduction or causality"
+          }
+        }
+      ]
+    }
+  ]
+}

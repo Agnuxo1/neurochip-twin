@@ -1,0 +1,310 @@
+{
+  "method": "Sum EPA tcplfit2 endpoint hitc by SPID, then threshold chemical hit count",
+  "endpoint_fit_stage": "precomputed by EPA; concentration-response fitting not rerun",
+  "reference_revision": "dnt_ref_tbl2",
+  "reference_source": "USEPA/source_files/dnt_ref_tbl2.xlsx; DTXSID intersection with 255 fitted SPIDs",
+  "reference_revision_note": "The pinned manuscript script now reads Compare_ref_chems_23mar26_edit.xlsx and writes Results_sens_spec_BA_refine_ref2.csv. The supplied Results_sens_spec_BA_refine.csv and Bioactivity_bin_tbl_comp_methods.csv match the earlier dnt_ref_tbl2 intersection used here.",
+  "published_comparison": "data/neurotox_probe/nfa_refine/Results_sens_spec_BA_refine.csv",
+  "upstream_commit": "01adf3e1a0068c87fe221d60df36b9f96c4b4b1d",
+  "n_fitted": 255,
+  "n_reference": 105,
+  "n_positive": 86,
+  "n_negative": 19,
+  "hit_sum_mismatches": {
+    "div12.hitsum": 0,
+    "auc.hitsum": 0,
+    "top1.feature.hitsum": 0,
+    "top2.feature.hitsum": 0,
+    "top3.feature.hitsum": 0,
+    "top5.feature.hitsum": 0
+  },
+  "top_features": {
+    "Top1": [
+      "CCTE_Shafer_MEA_dev_per_network_spike_spike_number_mean"
+    ],
+    "Top2": [
+      "CCTE_Shafer_MEA_dev_per_network_spike_spike_number_mean",
+      "CCTE_Shafer_MEA_dev_bursting_electrodes_number"
+    ],
+    "Top3": [
+      "CCTE_Shafer_MEA_dev_per_network_spike_spike_number_mean",
+      "CCTE_Shafer_MEA_dev_bursting_electrodes_number",
+      "CCTE_Shafer_MEA_dev_active_electrodes_number"
+    ],
+    "Top5": [
+      "CCTE_Shafer_MEA_dev_per_network_spike_spike_number_mean",
+      "CCTE_Shafer_MEA_dev_bursting_electrodes_number",
+      "CCTE_Shafer_MEA_dev_active_electrodes_number",
+      "CCTE_Shafer_MEA_dev_per_network_spike_spike_percent",
+      "CCTE_Shafer_MEA_dev_correlation_coefficient_mean"
+    ]
+  },
+  "models": {
+    "DIV12": {
+      "threshold_hits": 1,
+      "tp": 63,
+      "fn": 23,
+      "tn": 18,
+      "fp": 1,
+      "n_positive": 86,
+      "n_negative": 19,
+      "sensitivity_pct": 73.3,
+      "specificity_pct": 94.7,
+      "balanced_accuracy_pct": 84.0,
+      "published_delta_pp": {
+        "sensitivity_pp": 0.0,
+        "specificity_pp": 0.0,
+        "balanced_accuracy_pp": 0.0
+      }
+    },
+    "AUC.3hit": {
+      "threshold_hits": 3,
+      "tp": 60,
+      "fn": 26,
+      "tn": 19,
+      "fp": 0,
+      "n_positive": 86,
+      "n_negative": 19,
+      "sensitivity_pct": 69.8,
+      "specificity_pct": 100.0,
+      "balanced_accuracy_pct": 84.9,
+      "published_delta_pp": {
+        "sensitivity_pp": 0.0,
+        "specificity_pp": 0.0,
+        "balanced_accuracy_pp": 0.0
+      }
+    },
+    "AUC.1hit": {
+      "threshold_hits": 1,
+      "tp": 66,
+      "fn": 20,
+      "tn": 14,
+      "fp": 5,
+      "n_positive": 86,
+      "n_negative": 19,
+      "sensitivity_pct": 76.7,
+      "specificity_pct": 73.7,
+      "balanced_accuracy_pct": 75.2,
+      "published_delta_pp": {
+        "sensitivity_pp": 0.0,
+        "specificity_pp": 0.0,
+        "balanced_accuracy_pp": 0.0
+      }
+    },
+    "Top1": {
+      "threshold_hits": 1,
+      "tp": 59,
+      "fn": 27,
+      "tn": 19,
+      "fp": 0,
+      "n_positive": 86,
+      "n_negative": 19,
+      "sensitivity_pct": 68.6,
+      "specificity_pct": 100.0,
+      "balanced_accuracy_pct": 84.3,
+      "published_delta_pp": {
+        "sensitivity_pp": 0.0,
+        "specificity_pp": 0.0,
+        "balanced_accuracy_pp": 0.0
+      }
+    },
+    "Top2": {
+      "threshold_hits": 1,
+      "tp": 64,
+      "fn": 22,
+      "tn": 19,
+      "fp": 0,
+      "n_positive": 86,
+      "n_negative": 19,
+      "sensitivity_pct": 74.4,
+      "specificity_pct": 100.0,
+      "balanced_accuracy_pct": 87.2,
+      "published_delta_pp": {
+        "sensitivity_pp": 0.0,
+        "specificity_pp": 0.0,
+        "balanced_accuracy_pp": 0.0
+      }
+    },
+    "Top3": {
+      "threshold_hits": 1,
+      "tp": 64,
+      "fn": 22,
+      "tn": 19,
+      "fp": 0,
+      "n_positive": 86,
+      "n_negative": 19,
+      "sensitivity_pct": 74.4,
+      "specificity_pct": 100.0,
+      "balanced_accuracy_pct": 87.2,
+      "published_delta_pp": {
+        "sensitivity_pp": 0.0,
+        "specificity_pp": 0.0,
+        "balanced_accuracy_pp": 0.0
+      }
+    },
+    "Top5": {
+      "threshold_hits": 1,
+      "tp": 64,
+      "fn": 22,
+      "tn": 19,
+      "fp": 0,
+      "n_positive": 86,
+      "n_negative": 19,
+      "sensitivity_pct": 74.4,
+      "specificity_pct": 100.0,
+      "balanced_accuracy_pct": 87.2,
+      "published_delta_pp": {
+        "sensitivity_pp": 0.0,
+        "specificity_pp": 0.0,
+        "balanced_accuracy_pp": 0.0
+      }
+    }
+  },
+  "reference_sensitivity": {
+    "revision": "Compare_ref_chems_23mar26_edit",
+    "published_comparison": "USEPA/output/Results_sens_spec_BA_refine_ref2.csv",
+    "n_reference": 120,
+    "n_positive": 102,
+    "n_negative": 18,
+    "models": {
+      "DIV12": {
+        "threshold_hits": 1,
+        "tp": 60,
+        "fn": 42,
+        "tn": 17,
+        "fp": 1,
+        "n_positive": 102,
+        "n_negative": 18,
+        "sensitivity_pct": 58.8,
+        "specificity_pct": 94.4,
+        "balanced_accuracy_pct": 76.6,
+        "published_delta_pp": {
+          "sensitivity_pp": 0.0,
+          "specificity_pp": 0.0,
+          "balanced_accuracy_pp": 0.0
+        }
+      },
+      "AUC.3hit": {
+        "threshold_hits": 3,
+        "tp": 56,
+        "fn": 46,
+        "tn": 18,
+        "fp": 0,
+        "n_positive": 102,
+        "n_negative": 18,
+        "sensitivity_pct": 54.9,
+        "specificity_pct": 100.0,
+        "balanced_accuracy_pct": 77.5,
+        "published_delta_pp": {
+          "sensitivity_pp": 0.0,
+          "specificity_pp": 0.0,
+          "balanced_accuracy_pp": 0.0
+        }
+      },
+      "AUC.1hit": {
+        "threshold_hits": 1,
+        "tp": 67,
+        "fn": 35,
+        "tn": 13,
+        "fp": 5,
+        "n_positive": 102,
+        "n_negative": 18,
+        "sensitivity_pct": 65.7,
+        "specificity_pct": 72.2,
+        "balanced_accuracy_pct": 69.0,
+        "published_delta_pp": {
+          "sensitivity_pp": 0.0,
+          "specificity_pp": 0.0,
+          "balanced_accuracy_pp": 0.0
+        }
+      },
+      "Top1": {
+        "threshold_hits": 1,
+        "tp": 55,
+        "fn": 47,
+        "tn": 18,
+        "fp": 0,
+        "n_positive": 102,
+        "n_negative": 18,
+        "sensitivity_pct": 53.9,
+        "specificity_pct": 100.0,
+        "balanced_accuracy_pct": 77.0,
+        "published_delta_pp": {
+          "sensitivity_pp": 0.0,
+          "specificity_pp": 0.0,
+          "balanced_accuracy_pp": 0.0
+        }
+      },
+      "Top2": {
+        "threshold_hits": 1,
+        "tp": 64,
+        "fn": 38,
+        "tn": 18,
+        "fp": 0,
+        "n_positive": 102,
+        "n_negative": 18,
+        "sensitivity_pct": 62.7,
+        "specificity_pct": 100.0,
+        "balanced_accuracy_pct": 81.4,
+        "published_delta_pp": {
+          "sensitivity_pp": 0.0,
+          "specificity_pp": 0.0,
+          "balanced_accuracy_pp": 0.0
+        }
+      },
+      "Top3": {
+        "threshold_hits": 1,
+        "tp": 64,
+        "fn": 38,
+        "tn": 18,
+        "fp": 0,
+        "n_positive": 102,
+        "n_negative": 18,
+        "sensitivity_pct": 62.7,
+        "specificity_pct": 100.0,
+        "balanced_accuracy_pct": 81.4,
+        "published_delta_pp": {
+          "sensitivity_pp": 0.0,
+          "specificity_pp": 0.0,
+          "balanced_accuracy_pp": 0.0
+        }
+      },
+      "Top5": {
+        "threshold_hits": 1,
+        "tp": 65,
+        "fn": 37,
+        "tn": 18,
+        "fp": 0,
+        "n_positive": 102,
+        "n_negative": 18,
+        "sensitivity_pct": 63.7,
+        "specificity_pct": 100.0,
+        "balanced_accuracy_pct": 81.9,
+        "published_delta_pp": {
+          "sensitivity_pp": 0.0,
+          "specificity_pp": 0.0,
+          "balanced_accuracy_pp": 0.0
+        }
+      }
+    }
+  },
+  "comparison_explanation": "All selected published differences are 0.0 percentage points: the same EPA endpoint calls, RF ranking, and dnt_ref_tbl2 reference intersection are used. Other reference lists or refitted concentration-response curves can change these metrics.",
+  "interpretation": "Published Table 3 is in-sample. EPA RF feature ranking was not reselected within held-out folds.",
+  "normalization_comparison": {
+    "raw_div12_rows": 7939,
+    "epa_z_rows_per_feature": 7256,
+    "raw_div12_plate_date_groups": 169,
+    "epa_z_plate_date_groups": 164,
+    "endpoint_plate_medians_compared": 2788,
+    "endpoint_plate_medians_equal": 2161,
+    "note": "Our vehicle medians use all raw wells, with duplicate physical vehicles counted once; EPA's z table has fewer DIV12 rows and groups."
+  },
+  "local_input_sha256": {
+    "All_DIV_Data.Rdata": "fe8015c789770092b485fb63dd8aa0f643120e366df73c5624665454ee982af6",
+    "dnt_ref_tbl.xlsx": "177a1b8319490cd6889fcad4b1048c5223c9e45191c006d48ee4bced9ad184f7",
+    "dnt_ref_oecd_culbreth_curate.xlsx": "244c019745477bbb7b0fe1557bae171c413cb9aac8d96c551fbd76d54f43e751",
+    "DNT_ref_list_17sept2025.xlsx": "4eaf0740024d90c9007a79552fc01ce56676435a4c8d5f0a1c9dc246bd05cf95",
+    "EFSA_Mundy_2024_list_DNT%20IVB.xlsx": "f80b7b715eadfc9b5f2c88b8d9b6c71e0b3565e19e8e3740e79e64526132b2b7",
+    "Results_sens_spec_BA_refine.csv": "d50df1e2dff9e9266bccd670360eb68472a05f6669f6d41c1ef78e0185edd2ab"
+  }
+}

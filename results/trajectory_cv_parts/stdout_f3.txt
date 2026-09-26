@@ -1,0 +1,7 @@
+  inner fold 4: {'likelihood': 'gaussian', 'steps': 4000, 'use_interp': False} -> curve MAE 1.3511
+  inner fold 4: {'likelihood': 'laplace', 'steps': 4000, 'use_interp': False} -> curve MAE 1.3575
+  inner fold 4: {'likelihood': 'gaussian', 'steps': 4000, 'use_interp': True} -> curve MAE 1.3014
+  inner fold 4: {'likelihood': 'laplace', 'steps': 4000, 'use_interp': True} -> curve MAE 1.3079
+fold 3: config {'likelihood': 'gaussian', 'steps': 4000, 'use_interp': True}; 3 models trained (1249s)
+fold 3: evaluated 49 chemicals (1320s)
+fold part f3 done

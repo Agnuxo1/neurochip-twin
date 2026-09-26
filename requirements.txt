@@ -1,0 +1,11 @@
+# Core (CPU is enough for the demo, tests and inference; a CUDA GPU only speeds up training)
+numpy>=1.26,<2.6
+pandas>=2.1
+scipy>=1.11
+torch>=2.2
+matplotlib>=3.8
+pyarrow>=14
+h5py>=3.9          # Brewer MATLAB v7.3 ingestion
+rdata>=1.0          # EPA NFA .Rdata ingestion (MIT; replaces AGPL pyreadr)
+openpyxl>=3.1      # EPA spreadsheets
+pytest>=8

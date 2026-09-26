@@ -1,0 +1,21 @@
+{
+  "amendment_id": "G0-A001",
+  "date_utc": "2026-09-26",
+  "author": "claude (reviewer: codex, pending)",
+  "reason": "Licence hygiene: EPA .Rdata ingestion switched from pyreadr (AGPL-3.0-or-later) to rdata (MIT); documentation updated accordingly. No cohort, QC rule, split or data file changes.",
+  "evidence": "load_wells() output with rdata equals the frozen wells.parquet: 31,756 rows, identical chemical/plate/well/dtxsid text, max absolute numeric difference 0.0 (see colab/decisions.md ADR-005). All data files and split files keep their frozen hashes.",
+  "files": {
+    "repo/docs/epa_nfa.md": {
+      "old_sha256": "d9214b40d8e3c95679e3ccb9b7955b73e6cbbc1da6c568702233c89417b78765",
+      "new_sha256": "623438b1a83a4008fb057782db63c2e85674780de83cfab9b3af83907da03852"
+    },
+    "repo/scripts/check_freeze_g0.py": {
+      "old_sha256": "67d9531125ea4897ca48acb609890aa4db54946be349cd3f361d5d83aa8ea980",
+      "new_sha256": "8e933827ed5d7b7c38fc09142fffec3f1745ece225e7f4a225ae94e85b759f1f"
+    },
+    "repo/src/neurotwin/data/epa_nfa.py": {
+      "old_sha256": "b189ef12148815c885560229629391d7cd8151ba690ce526fe735fcb547c517d",
+      "new_sha256": "a7a8545c0a1b09979c0a87f9fc0f4f78a796101f82d8c0d4f4b1f3683f4abcaf"
+    }
+  }
+}

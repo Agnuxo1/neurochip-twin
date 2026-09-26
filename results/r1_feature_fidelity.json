@@ -1,0 +1,23 @@
+{
+  "status": "not_estimable",
+  "r1_optional_gate": "closed_without_fidelity_metrics",
+  "reason": "No matched plate/date/DIV keys between public Brown/Cotterill HDF5 spike files and local NFA raw-feature wells",
+  "source": "https://github.com/sje30/EPAmeadev/tree/master/allH5Files",
+  "source_study": "Cotterill et al. 2016; Ball et al. 2017 uses a subset of Brown et al. 2016 spike recordings",
+  "source_data_permission": "EPAmeadev README permits use of data/resources with paper citation",
+  "github_tree_sha": "a120e8982a6e4d0ab616c5d9e444ad4b1457e5a1",
+  "github_tree_json_sha256": "9a422e07e970e2598403901863966334a17b8a2c4eb5410d5a41e025b831d83c",
+  "source_h5_files": 107,
+  "source_h5_total_bytes": 307383784,
+  "source_plate_date_div_keys": 106,
+  "nfa_plate_date_div_keys": 676,
+  "source_plates": 9,
+  "nfa_plates": 163,
+  "plate_overlap": 0,
+  "plate_date_div_overlap": 0,
+  "overlap_keys": [],
+  "downloaded_spike_files": 0,
+  "download_note": "Full spike payload omitted after metadata proved zero shared plates; no file SHA256 can be reported for absent payloads",
+  "metrics": null,
+  "fallback": "Use the published EPA NFA 17 endpoint values for modeling; label Brewer extraction as unvalidated cross-platform analogs"
+}
