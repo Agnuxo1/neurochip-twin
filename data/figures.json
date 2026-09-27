@@ -1,0 +1,54 @@
+{
+ "graphical_abstract.png": {
+  "source": "report/figures/visuals/graphical_abstract.png",
+  "sha256": "260e91d22e986aa0ae7104523b4ace7894cf8c4972190db54c320414693ea83b"
+ },
+ "graphical_abstract_16x9.png": {
+  "source": "report/figures/visuals/graphical_abstract_16x9.png",
+  "sha256": "d0146dc243f4b03d330a5de6da9b15b9234fb6c3020a90561c8c1393663a990e"
+ },
+ "real_network_raster.png": {
+  "source": "report/figures/visuals/real_network_raster.png",
+  "sha256": "5c3bdf934f66679384a25badcf568503fe9f382cf4872a527dc562338229a8d7"
+ },
+ "network_development.png": {
+  "source": "report/figures/visuals/network_development.png",
+  "sha256": "2952c0b117eedcd19c8d718b485a6ed969a3f2ecff2676c6a3d2fec9869cc65f"
+ },
+ "twin_in_action.png": {
+  "source": "report/figures/visuals/twin_in_action.png",
+  "sha256": "13bb3772a14afa12dcb82b920dab5665fd8a2e57ef93e592fe39920034aedfa9"
+ },
+ "fig1_system.png": {
+  "source": "report/figures/fig1_system.png",
+  "sha256": "ab2824d44eca8d786ca7a3923dd1a5845e10f244de9f354cc6cfa0359a305e75"
+ },
+ "fig2_data.png": {
+  "source": "report/figures/fig2_data.png",
+  "sha256": "2d14d5b5a968ecf89751c2b030a138cc2a2a8df9579242d403bf05d6fda3479c"
+ },
+ "fig3_forecast_main.png": {
+  "source": "report/figures/fig3_forecast_main.png",
+  "sha256": "d4418cb47883fbb85e304b98ecc62ac4840fd9f711ad2354e2bdce4bb9f67fad"
+ },
+ "fig5_calibration.png": {
+  "source": "report/figures/fig5_calibration.png",
+  "sha256": "42b501cb0fa314ed782695972512140bccdd36315e1903f7baf36c2275ba26ac"
+ },
+ "fig6_hazard.png": {
+  "source": "report/figures/fig6_hazard.png",
+  "sha256": "afbfe43562f20312d56a3f7f8b7d988ef930b099aaa1a9f891be89fe40eb2386"
+ },
+ "fig7_dosecompass.png": {
+  "source": "report/figures/fig7_dosecompass.png",
+  "sha256": "0b90ecfeca345dd3787c54f744c36eaac3cdfea4e6fb5e431e12a3bbee6fd125"
+ },
+ "fig8_chip.png": {
+  "source": "report/figures/fig8_chip.png",
+  "sha256": "c1d02e2a8164cdfef8345e7aa323cc85a94874aeae4f699ba5ece0a5b2aac580"
+ },
+ "fig10_ablations_failures.png": {
+  "source": "report/figures/fig10_ablations_failures.png",
+  "sha256": "5318930ce5c8f2f02a37fa8d9c08d30004b929b6e12432e87f05e7634a6e29dc"
+ }
+}
