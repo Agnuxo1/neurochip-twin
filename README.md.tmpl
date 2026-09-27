@@ -13,7 +13,7 @@ a real 4-compartment neural chip.*
 
 ![Graphical abstract](report/figures/visuals/graphical_abstract.png)
 
-**Links:** [Technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf) · [Video](<!-- LINK:video -->) · [Interactive demo](https://agnuxo1.github.io/neurochip-twin/) · [Kaggle notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo)
+**Links:** [Technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf) · [Video](https://youtu.be/yLzpvGqP_2A) · [Interactive demo](https://agnuxo1.github.io/neurochip-twin/) · [Kaggle notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo)
 
 ## Why
 

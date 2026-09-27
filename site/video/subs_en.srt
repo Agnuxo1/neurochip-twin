@@ -1,0 +1,294 @@
+1
+00:00:01,200 --> 00:00:03,395
+This is a living network.
+
+2
+00:00:03,435 --> 00:00:08,018
+Neurons from a rat brain, grown on
+a chip in four linked compartments,
+
+3
+00:00:08,058 --> 00:00:11,138
+fire together, fall
+silent, and fire again.
+
+4
+00:00:11,178 --> 00:00:15,992
+Every mark is a real spike, heard
+by an electrode beneath the cells.
+
+5
+00:00:16,032 --> 00:00:19,365
+Networks like this let
+us ask a hard question:
+
+6
+00:00:19,405 --> 00:00:23,342
+does a chemical disturb a brain
+while it is still being built?
+
+7
+00:00:26,650 --> 00:00:29,598
+Today, the answer is slow and costly.
+
+8
+00:00:29,638 --> 00:00:32,899
+In the US EPA's network formation assay,
+
+9
+00:00:32,939 --> 00:00:39,253
+212 of 243 chemicals were tested at
+seven concentrations, in replicate wells,
+
+10
+00:00:39,293 --> 00:00:43,576
+and followed for twelve
+days as the network grew.
+
+11
+00:00:43,616 --> 00:00:45,873
+Each compound is analysed on its own,
+
+12
+00:00:45,913 --> 00:00:49,764
+and nothing learned from the
+last one helps with the next.
+
+13
+00:00:50,483 --> 00:00:54,466
+NeuroChip Twin treats each
+chemical as a few-shot task.
+
+14
+00:00:54,506 --> 00:01:01,424
+Its core, NeuroTrajectory, is a neural
+process meta-learned across 243 chemicals.
+
+15
+00:01:01,464 --> 00:01:05,884
+Give it three measured concentrations
+of a compound it has never seen,
+
+16
+00:01:05,924 --> 00:01:08,170
+and it returns the whole response:
+
+17
+00:01:08,210 --> 00:01:13,833
+all seventeen network features, at every
+concentration and every recording day,
+
+18
+00:01:13,873 --> 00:01:16,837
+with a calibrated band of uncertainty.
+
+19
+00:01:16,877 --> 00:01:19,401
+And when it is unsure, it says so.
+
+20
+00:01:20,417 --> 00:01:22,838
+Here is the system at work.
+
+21
+00:01:22,878 --> 00:01:25,409
+The demo chemical follows a rule:
+
+22
+00:01:25,449 --> 00:01:30,186
+DDT, the median-gain chemical
+of Figure 4 in our report.
+
+23
+00:01:30,226 --> 00:01:32,260
+The model never saw it.
+
+24
+00:01:32,300 --> 00:01:35,270
+We enter three measured concentrations,
+
+25
+00:01:35,310 --> 00:01:41,569
+and in seconds the twin forecasts every
+other dose and day, inside a 90% band.
+
+26
+00:01:41,609 --> 00:01:44,145
+Then we reveal the real wells.
+
+27
+00:01:44,185 --> 00:01:49,048
+The abstention flag stays
+clear, and the error is 0.61,
+
+28
+00:01:49,088 --> 00:01:52,102
+against 0.90 for interpolation.
+
+29
+00:01:53,417 --> 00:01:55,414
+Then come the decisions.
+
+30
+00:01:55,454 --> 00:01:56,630
+Hazard call:
+
+31
+00:01:56,670 --> 00:02:01,024
+a developmental neurotoxicant,
+matching its reference label.
+
+32
+00:02:01,064 --> 00:02:04,619
+The DIV 7 gate says keep recording:
+
+33
+00:02:04,659 --> 00:02:07,465
+this network is already changing.
+
+34
+00:02:07,505 --> 00:02:12,425
+And with the top dose measured first,
+DoseCompass picks the lowest dose next.
+
+35
+00:02:13,350 --> 00:02:15,493
+Across all 243 chemicals,
+
+36
+00:02:15,533 --> 00:02:21,973
+forecasts from three doses have 11%
+lower error than the best baseline.
+
+37
+00:02:22,013 --> 00:02:26,823
+Nominal 90% intervals cover 89.9%.
+
+38
+00:02:26,863 --> 00:02:32,167
+From three concentrations, the hazard
+call finds 65 known neurotoxicants;
+
+39
+00:02:32,207 --> 00:02:37,626
+EPA's rules, using every
+concentration, find 52 to 56.
+
+40
+00:02:37,666 --> 00:02:41,224
+That is 57% fewer treated wells.
+
+41
+00:02:41,264 --> 00:02:46,644
+At DIV 7, 26% of chemicals
+can stop recording.
+
+42
+00:02:46,684 --> 00:02:50,156
+DoseCompass only ties a log-spaced design,
+
+43
+00:02:50,196 --> 00:02:56,549
+but measuring the top dose first lifts
+activity detection from 88 to 91%.
+
+44
+00:02:58,050 --> 00:03:01,841
+The same readout lives on
+compartmentalised chips.
+
+45
+00:03:01,881 --> 00:03:06,143
+On a public four-compartment
+chip with 440 sorted axons,
+
+46
+00:03:06,183 --> 00:03:09,644
+the chip layer learns
+directed connectivity:
+
+47
+00:03:09,684 --> 00:03:13,104
+how much activity flows
+forward, and how fast.
+
+48
+00:03:13,144 --> 00:03:20,390
+Axon direction checks out
+for 437/437 measurable axons.
+
+49
+00:03:20,430 --> 00:03:24,791
+Bursts that coincide, we read
+as synchrony, not propagation.
+
+50
+00:03:25,517 --> 00:03:28,204
+What we do not claim matters as much.
+
+51
+00:03:28,244 --> 00:03:31,961
+These are rat cortical
+cultures, not human tissue.
+
+52
+00:03:32,001 --> 00:03:37,316
+Dose planning was tested retrospectively,
+on wells already recorded.
+
+53
+00:03:37,356 --> 00:03:43,383
+Model-derived potency lost to plain
+interpolation, so we report interpolation.
+
+54
+00:03:43,423 --> 00:03:48,667
+And with only 19 negative chemicals,
+the hazard comparison is underpowered:
+
+55
+00:03:48,707 --> 00:03:52,473
+we claim no superiority over EPA's rules.
+
+56
+00:03:53,383 --> 00:03:58,480
+For a neural organ-on-a-chip lab, this
+means fewer wells, earlier decisions,
+
+57
+00:03:58,520 --> 00:04:02,545
+and recordings that become a
+reusable, predictive asset.
+
+58
+00:04:02,585 --> 00:04:07,226
+Map your chips to our schema, anchor
+on the top dose, forecast the rest,
+
+59
+00:04:07,266 --> 00:04:12,122
+stop early where it is safe, and let
+every experiment improve the next.
+
+60
+00:04:12,162 --> 00:04:13,358
+The next step:
+
+61
+00:04:13,398 --> 00:04:16,716
+a prospective test on
+a sponsor's own chips.
+
+62
+00:04:17,417 --> 00:04:20,676
+From a few wells, the
+whole developing network.
+
+63
+00:04:20,716 --> 00:04:22,366
+NeuroChip Twin.
+
+64
+00:04:22,406 --> 00:04:26,283
+The code, the report and the
+live demo are listed here.

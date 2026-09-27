@@ -10,11 +10,11 @@
 const CONFIG = {
   REPORT_URL: "https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf",          // technical report (PDF)
   REPO_URL: "https://github.com/Agnuxo1/neurochip-twin",              // public code repository
-  VIDEO_URL: "VIDEO_URL",            // hosted demo video page
+  VIDEO_URL: "https://youtu.be/yLzpvGqP_2A",            // hosted demo video page
   KAGGLE_URL: "https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo",          // Kaggle Writeup / notebook
   // VIDEO SLOT: once the demo video is at site/video/teaser.mp4, set VIDEO_FILE to "video/teaser.mp4".
   // While it is empty the page shows a placeholder and makes no request for the file (clean console).
-  VIDEO_FILE: "",
+  VIDEO_FILE: "video/teaser.mp4",
   VIDEO_CAPTIONS: ""                 // optional WebVTT captions, e.g. "video/teaser.en.vtt"
 };
 
