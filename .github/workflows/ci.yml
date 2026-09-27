@@ -35,5 +35,5 @@ jobs:
       - name: Every published number is traceable to results/*.json
         run: |
           python scripts/render_docs.py
-          git diff --exit-code -- README.md docs/ writeup/ || (echo "Rendered docs are stale: run scripts/render_docs.py" && exit 1)
+          git diff --exit-code -- README.md docs/ writeup/ report/ || (echo "Rendered docs are stale: run scripts/render_docs.py" && exit 1)
           python scripts/check_numbers.py

@@ -1,0 +1,300 @@
+{
+  "description": "R3b (secondary, registered after R3 v2): potency from the model-completed concentration series.",
+  "protocol": "R3b (secondary, registered after R3 v2): potency from the model-completed concentration series.\n\nEstimator 'neurotrajectory_fill': at the measured levels use the observed level means; at the tested\nlevels that were NOT measured use the NeuroTrajectory forecast (ensemble of the chemical's own fold);\nlinear interpolation in log dose between levels; then the same potency rule as R3 v2. Same references\n(EPA tcplfit2 AUC fits; replicate-split internal reference), same designs (k = 2, 3, 4), same baselines.\nRationale recorded before running (colab/decisions.md): the dense-grid estimator of R3 v2 can create\nspurious benchmark crossings between tested concentrations. R3 v2 is reported regardless.",
+  "by_k": {
+    "2": {
+      "vs_epa": {
+        "analog_knn": {
+          "activity_accuracy": 0.8033,
+          "activity_kappa": 0.5877,
+          "spearman_potency": 0.6982,
+          "n_active_both": 123
+        },
+        "hill_per_endpoint": {
+          "activity_accuracy": 0.7657,
+          "activity_kappa": 0.52,
+          "spearman_potency": 0.5397,
+          "n_active_both": 113
+        },
+        "loglinear_interp": {
+          "activity_accuracy": 0.7657,
+          "activity_kappa": 0.52,
+          "spearman_potency": 0.5397,
+          "n_active_both": 113
+        },
+        "neurotrajectory_fill": {
+          "activity_accuracy": 0.8075,
+          "activity_kappa": 0.561,
+          "spearman_potency": 0.6633,
+          "n_active_both": 138
+        },
+        "neurotrajectory_grid": {
+          "activity_accuracy": 0.7866,
+          "activity_kappa": 0.4887,
+          "spearman_potency": 0.6265,
+          "n_active_both": 144
+        }
+      },
+      "vs_replicate_split": {
+        "analog_knn": {
+          "composite_mean": 1.0386,
+          "activity_kappa": 0.1294
+        },
+        "hill_per_endpoint": {
+          "composite_mean": 0.8836,
+          "activity_kappa": 0.1339
+        },
+        "loglinear_interp": {
+          "composite_mean": 0.8836,
+          "activity_kappa": 0.1339
+        },
+        "neurotrajectory_fill": {
+          "composite_mean": 0.9614,
+          "activity_kappa": 0.2195
+        },
+        "neurotrajectory_grid": {
+          "composite_mean": 0.9603,
+          "activity_kappa": 0.1667
+        }
+      },
+      "fill_paired_vs": {
+        "analog_knn": {
+          "mean_diff": -0.0772,
+          "ci95": [
+            -0.1363,
+            -0.0188
+          ],
+          "rel_change_pct": -7.43,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.494
+        },
+        "hill_per_endpoint": {
+          "mean_diff": 0.0778,
+          "ci95": [
+            0.0142,
+            0.1414
+          ],
+          "rel_change_pct": 8.8,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.373
+        },
+        "loglinear_interp": {
+          "mean_diff": 0.0778,
+          "ci95": [
+            0.0142,
+            0.1414
+          ],
+          "rel_change_pct": 8.8,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.373
+        },
+        "neurotrajectory_grid": {
+          "mean_diff": 0.0011,
+          "ci95": [
+            -0.0352,
+            0.0376
+          ],
+          "rel_change_pct": 0.11,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.394
+        }
+      }
+    },
+    "3": {
+      "vs_epa": {
+        "analog_knn": {
+          "activity_accuracy": 0.8326,
+          "activity_kappa": 0.6572,
+          "spearman_potency": 0.7398,
+          "n_active_both": 122
+        },
+        "hill_per_endpoint": {
+          "activity_accuracy": 0.8326,
+          "activity_kappa": 0.6049,
+          "spearman_potency": 0.7777,
+          "n_active_both": 147
+        },
+        "loglinear_interp": {
+          "activity_accuracy": 0.8117,
+          "activity_kappa": 0.5766,
+          "spearman_potency": 0.7054,
+          "n_active_both": 136
+        },
+        "neurotrajectory_fill": {
+          "activity_accuracy": 0.8159,
+          "activity_kappa": 0.5679,
+          "spearman_potency": 0.6581,
+          "n_active_both": 144
+        },
+        "neurotrajectory_grid": {
+          "activity_accuracy": 0.8033,
+          "activity_kappa": 0.5202,
+          "spearman_potency": 0.6532,
+          "n_active_both": 149
+        }
+      },
+      "vs_replicate_split": {
+        "analog_knn": {
+          "composite_mean": 0.9679,
+          "activity_kappa": 0.1863
+        },
+        "hill_per_endpoint": {
+          "composite_mean": 0.8979,
+          "activity_kappa": 0.2397
+        },
+        "loglinear_interp": {
+          "composite_mean": 0.8609,
+          "activity_kappa": 0.2137
+        },
+        "neurotrajectory_fill": {
+          "composite_mean": 0.9301,
+          "activity_kappa": 0.2701
+        },
+        "neurotrajectory_grid": {
+          "composite_mean": 0.9666,
+          "activity_kappa": 0.2235
+        }
+      },
+      "fill_paired_vs": {
+        "analog_knn": {
+          "mean_diff": -0.0378,
+          "ci95": [
+            -0.1092,
+            0.0351
+          ],
+          "rel_change_pct": -3.9,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.502
+        },
+        "hill_per_endpoint": {
+          "mean_diff": 0.0322,
+          "ci95": [
+            -0.0198,
+            0.0839
+          ],
+          "rel_change_pct": 3.59,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.444
+        },
+        "loglinear_interp": {
+          "mean_diff": 0.0692,
+          "ci95": [
+            0.0265,
+            0.1112
+          ],
+          "rel_change_pct": 8.04,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.357
+        },
+        "neurotrajectory_grid": {
+          "mean_diff": -0.0365,
+          "ci95": [
+            -0.0744,
+            -0.0002
+          ],
+          "rel_change_pct": -3.78,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.456
+        }
+      }
+    },
+    "4": {
+      "vs_epa": {
+        "analog_knn": {
+          "activity_accuracy": 0.8494,
+          "activity_kappa": 0.6915,
+          "spearman_potency": 0.749,
+          "n_active_both": 124
+        },
+        "hill_per_endpoint": {
+          "activity_accuracy": 0.8536,
+          "activity_kappa": 0.6631,
+          "spearman_potency": 0.7574,
+          "n_active_both": 145
+        },
+        "loglinear_interp": {
+          "activity_accuracy": 0.8117,
+          "activity_kappa": 0.5669,
+          "spearman_potency": 0.6663,
+          "n_active_both": 140
+        },
+        "neurotrajectory_fill": {
+          "activity_accuracy": 0.8243,
+          "activity_kappa": 0.5899,
+          "spearman_potency": 0.6526,
+          "n_active_both": 144
+        },
+        "neurotrajectory_grid": {
+          "activity_accuracy": 0.7866,
+          "activity_kappa": 0.4825,
+          "spearman_potency": 0.6198,
+          "n_active_both": 146
+        }
+      },
+      "vs_replicate_split": {
+        "analog_knn": {
+          "composite_mean": 0.9456,
+          "activity_kappa": 0.1745
+        },
+        "hill_per_endpoint": {
+          "composite_mean": 0.8565,
+          "activity_kappa": 0.2463
+        },
+        "loglinear_interp": {
+          "composite_mean": 0.8469,
+          "activity_kappa": 0.2381
+        },
+        "neurotrajectory_fill": {
+          "composite_mean": 0.8983,
+          "activity_kappa": 0.2921
+        },
+        "neurotrajectory_grid": {
+          "composite_mean": 0.9196,
+          "activity_kappa": 0.2368
+        }
+      },
+      "fill_paired_vs": {
+        "analog_knn": {
+          "mean_diff": -0.0473,
+          "ci95": [
+            -0.1274,
+            0.0312
+          ],
+          "rel_change_pct": -5.0,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.469
+        },
+        "hill_per_endpoint": {
+          "mean_diff": 0.0418,
+          "ci95": [
+            -0.0104,
+            0.0924
+          ],
+          "rel_change_pct": 4.89,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.39
+        },
+        "loglinear_interp": {
+          "mean_diff": 0.0514,
+          "ci95": [
+            0.0196,
+            0.0851
+          ],
+          "rel_change_pct": 6.07,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.328
+        },
+        "neurotrajectory_grid": {
+          "mean_diff": -0.0213,
+          "ci95": [
+            -0.0643,
+            0.0215
+          ],
+          "rel_change_pct": -2.32,
+          "n_chemicals": 241,
+          "frac_chem_improved": 0.44
+        }
+      }
+    }
+  }
+}

@@ -161,3 +161,96 @@ def test_results_json_consistent():
     for row in d["per_chemical"]:
         assert row["dosecompass_order_idx"][0] == (row["n_levels"] - 1) // 2
         assert len(set(row["dosecompass_order_idx"])) == len(row["dosecompass_order_idx"]) == 4
+
+
+# ---------------------------------------------------------------- R6b DoseCompass-anchored
+def _r6b():
+    sys.path.insert(0, str(ROOT / "repo" / "scripts"))
+    import run_dosecompass_anchored as r6b
+    return r6b
+
+
+def test_r6b_anchor_always_included():
+    r6b = _r6b()
+    from run_dosecompass import fixed_design
+    for L in range(4, 14):
+        for B in (2, 3, 4):
+            assert L - 1 in fixed_design(L, B)                       # comparator (a) already contains the top
+            subs = r6b.anchored_subsets(L, B)
+            assert subs and all(L - 1 in s and len(set(s)) == B for s in subs)
+        orders = r6b.random_anchored_orders("chem-x", L, n=50)
+        assert all(o[0] == L - 1 and sorted(o) == list(range(L)) for o in orders)
+        v1o = r6b.random_v1_orders("chem-x", L, n=5)
+        assert all(o[0] == (L - 1) // 2 for o in v1o)                # comparator (c) = v1 random (median first)
+    t = make_task(noise=0.3)
+    seq, steps = r6b.anchored_design([FakeCNP()], t, 4, "cpu", tau=0.5, ell=0.5, n_samples=500)
+    assert seq[0] == float(LEVELS[-1]) and len(set(seq)) == 4 and len(steps) == 4
+    assert all(float(LEVELS[-1]) in seq[:B] for B in (2, 3, 4))
+
+
+def test_r6b_anchored_design_never_reads_hidden_wells():
+    r6b = _r6b()
+    t = make_task(noise=0.5)
+    seq, st = r6b.anchored_design([FakeCNP()], t, 3, "cpu", tau=0.5, ell=0.5, n_samples=800)
+    y = t.y.copy()
+    y[~np.isin(t.logc, np.asarray(seq, np.float32))] = 9.0          # corrupt every well never measured
+    t2 = ChemTask(t.chem, t.fold, t.logc, y, t.m, t.plate)
+    seq2, st2 = r6b.anchored_design([FakeCNP()], t2, 3, "cpu", tau=0.5, ell=0.5, n_samples=800)
+    assert seq == seq2
+    assert all(a.eig_bits == b.eig_bits and a.p_active == b.p_active for a, b in zip(st, st2))
+
+
+def test_r6b_real_chemical_no_hidden_wells():
+    _need_data()
+    r6b = _r6b()
+    from neurotwin.planner import load_fold_models
+    tasks, _ = pickle.load(open(DATA / "processed/epa_nfa/tasks_cache.pkl", "rb"))
+    t = sorted([x for x in tasks if x.fold == 1], key=lambda x: x.chem)[0]
+    models = load_fold_models(DATA / "processed/models", t.fold, "cpu")
+    seq, _ = r6b.anchored_design(models, t, 3, "cpu", tau=0.5, ell=1.0, n_samples=500)
+    y = t.y.copy()
+    y[~np.isin(t.logc, np.asarray(seq, np.float32))] *= -3.0
+    t2 = ChemTask(t.chem, t.fold, t.logc, y, t.m, t.plate, t.label)
+    seq2, _ = r6b.anchored_design(models, t2, 3, "cpu", tau=0.5, ell=1.0, n_samples=500)
+    assert seq == seq2 and seq[0] == float(t.levels[-1])
+
+
+def test_r6b_results_json_consistent():
+    p = ROOT / "repo/results/r6b_dosecompass_anchored.json"
+    if not p.exists():
+        pytest.skip("run repo/scripts/run_dosecompass_anchored.py to create R6b evidence")
+    d = json.loads(p.read_text(encoding="utf-8"))
+    if d.get("status") != "complete":
+        pytest.skip("R6b registered but results pending")
+    import hashlib
+    r6b = _r6b()
+    assert d["protocol"] == r6b.PROTOCOL
+    assert hashlib.sha256(d["protocol"].encode()).hexdigest() == d["protocol_sha256"]
+    assert d["protocol_registered_utc"] <= d.get("run_started_utc", d["protocol_registered_utc"])
+    assert "second DoseCompass protocol" in d["multiplicity"] and "v1" in d["multiplicity"]
+    assert d["v1_reference"]["unchanged_during_run"]
+    v1p = ROOT / "repo/results/r6_dosecompass.json"
+    if v1p.exists():
+        assert hashlib.sha256(v1p.read_bytes()).hexdigest() == d["v1_reference"]["file_sha256_at_start"]
+    prim = d["primary_endpoint"]
+    r3 = d["results"]["B=3"]["neurotrajectory"]
+    assert prim["dosecompass_anchored"] == r3["strategies"]["dosecompass_anchored"]["composite_error_mean"]
+    assert prim["fixed_logspaced"] == r3["strategies"]["fixed_logspaced"]["composite_error_mean"]
+    assert prim["paired_bootstrap"] == r3["paired_bootstrap_composite"]["dosecompass_anchored_minus_fixed_logspaced"]
+    assert (d["secondary_endpoints"]["dosecompass_anchored_minus_random_anchored"]
+            == r3["paired_bootstrap_composite"]["dosecompass_anchored_minus_random_anchored"])
+    for B in ("B=2", "B=3", "B=4"):
+        for est in ("neurotrajectory", "loglinear_interp"):
+            s = d["results"][B][est]["strategies"]
+            orc = s["oracle_anchored_upper_bound"]["composite_error_mean"]
+            assert orc <= s["dosecompass_anchored"]["composite_error_mean"]
+            assert orc <= s["fixed_logspaced"]["composite_error_mean"]
+            assert orc <= s["random_anchored"]["expected_composite_error_mean"] + 1e-4
+    for row in d["per_chemical"]:
+        o = row["dosecompass_anchored_order_idx"]
+        assert o[0] == row["anchor_idx"] == row["n_levels"] - 1
+        assert len(set(o)) == len(o) == 4
+    assert len(d["per_chemical"]) == d["n_chemicals"]
+    means = np.mean([[row["composite_B3"]["neurotrajectory"][k] for k in ("dosecompass_anchored", "fixed_logspaced")]
+                     for row in d["per_chemical"]], 0)
+    assert abs(means[0] - prim["dosecompass_anchored"]) < 1e-3 and abs(means[1] - prim["fixed_logspaced"]) < 1e-3

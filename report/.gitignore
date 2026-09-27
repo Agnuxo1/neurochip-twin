@@ -1,0 +1,2 @@
+# LaTeX auxiliary files (scripts/build_report.py compiles with -output-directory=_build)
+_build/

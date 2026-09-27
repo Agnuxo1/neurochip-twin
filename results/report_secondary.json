@@ -1,0 +1,278 @@
+{
+  "description": "Post-hoc secondary analyses requested by the internal scientific and jury reviews (2026-09-26).",
+  "status": "post hoc, secondary, not preregistered",
+  "r11_epa_labels": {
+    "positive": {
+      "n": 63,
+      "persistence_vs_twin_upper90": {
+        "n": 63,
+        "events_a": 13,
+        "events_b": 3,
+        "only_a": 11,
+        "only_b": 1,
+        "exact_p": 0.0063
+      },
+      "persistence_vs_twin": {
+        "n": 63,
+        "events_a": 13,
+        "events_b": 6,
+        "only_a": 8,
+        "only_b": 1,
+        "exact_p": 0.0391
+      }
+    },
+    "negative": {
+      "n": 15,
+      "persistence_vs_twin_upper90": {
+        "n": 15,
+        "events_a": 8,
+        "events_b": 7,
+        "only_a": 2,
+        "only_b": 1,
+        "exact_p": 1.0
+      },
+      "persistence_vs_twin": {
+        "n": 15,
+        "events_a": 8,
+        "events_b": 9,
+        "only_a": 1,
+        "only_b": 2,
+        "exact_p": 1.0
+      }
+    },
+    "reading": "events = chemicals exiting at DIV 7; for positives an exit is a missed neurotoxicant, for negatives an exit is a saving"
+  },
+  "r4_by_cytotoxicity": {
+    "definition": "cytotoxic = any active, non-conflicting PubChem AlamarBlue (viability) or LDH (membrane damage) call of the NFA assay (same rule as R5)",
+    "strata": {
+      "all": {
+        "n": 98,
+        "n_positive": 79,
+        "n_negative": 19,
+        "twin_k3": {
+          "tp": 66,
+          "fn": 13,
+          "tn": 17,
+          "fp": 2,
+          "sensitivity": 0.8354,
+          "sensitivity_ci95": [
+            0.7351,
+            0.9094
+          ],
+          "specificity": 0.8947,
+          "specificity_ci95": [
+            0.6686,
+            0.987
+          ],
+          "balanced_accuracy": 0.8651
+        },
+        "epa_DIV12": {
+          "tp": 55,
+          "fn": 23,
+          "tn": 18,
+          "fp": 1,
+          "sensitivity": 0.7051,
+          "sensitivity_ci95": [
+            0.5911,
+            0.803
+          ],
+          "specificity": 0.9474,
+          "specificity_ci95": [
+            0.7397,
+            0.9987
+          ],
+          "balanced_accuracy": 0.8262,
+          "n": 97
+        },
+        "epa_AUC.3hit": {
+          "tp": 52,
+          "fn": 26,
+          "tn": 19,
+          "fp": 0,
+          "sensitivity": 0.6667,
+          "sensitivity_ci95": [
+            0.5508,
+            0.7694
+          ],
+          "specificity": 1.0,
+          "specificity_ci95": [
+            0.8235,
+            1.0
+          ],
+          "balanced_accuracy": 0.8333,
+          "n": 97
+        },
+        "epa_Top2": {
+          "tp": 56,
+          "fn": 22,
+          "tn": 19,
+          "fp": 0,
+          "sensitivity": 0.7179,
+          "sensitivity_ci95": [
+            0.6047,
+            0.8141
+          ],
+          "specificity": 1.0,
+          "specificity_ci95": [
+            0.8235,
+            1.0
+          ],
+          "balanced_accuracy": 0.859,
+          "n": 97
+        }
+      },
+      "not_cytotoxic": {
+        "n": 53,
+        "n_positive": 35,
+        "n_negative": 18,
+        "twin_k3": {
+          "tp": 24,
+          "fn": 11,
+          "tn": 16,
+          "fp": 2,
+          "sensitivity": 0.6857,
+          "sensitivity_ci95": [
+            0.5071,
+            0.8315
+          ],
+          "specificity": 0.8889,
+          "specificity_ci95": [
+            0.6529,
+            0.9862
+          ],
+          "balanced_accuracy": 0.7873
+        },
+        "epa_DIV12": {
+          "tp": 13,
+          "fn": 21,
+          "tn": 17,
+          "fp": 1,
+          "sensitivity": 0.3824,
+          "sensitivity_ci95": [
+            0.2217,
+            0.5644
+          ],
+          "specificity": 0.9444,
+          "specificity_ci95": [
+            0.7271,
+            0.9986
+          ],
+          "balanced_accuracy": 0.6634,
+          "n": 52
+        },
+        "epa_AUC.3hit": {
+          "tp": 11,
+          "fn": 23,
+          "tn": 18,
+          "fp": 0,
+          "sensitivity": 0.3235,
+          "sensitivity_ci95": [
+            0.1739,
+            0.5053
+          ],
+          "specificity": 1.0,
+          "specificity_ci95": [
+            0.8147,
+            1.0
+          ],
+          "balanced_accuracy": 0.6618,
+          "n": 52
+        },
+        "epa_Top2": {
+          "tp": 15,
+          "fn": 19,
+          "tn": 18,
+          "fp": 0,
+          "sensitivity": 0.4412,
+          "sensitivity_ci95": [
+            0.2719,
+            0.6211
+          ],
+          "specificity": 1.0,
+          "specificity_ci95": [
+            0.8147,
+            1.0
+          ],
+          "balanced_accuracy": 0.7206,
+          "n": 52
+        }
+      },
+      "cytotoxic": {
+        "n": 45,
+        "n_positive": 44,
+        "n_negative": 1,
+        "twin_k3": {
+          "tp": 42,
+          "fn": 2,
+          "tn": 1,
+          "fp": 0,
+          "sensitivity": 0.9545,
+          "sensitivity_ci95": [
+            0.8453,
+            0.9944
+          ],
+          "specificity": 1.0,
+          "specificity_ci95": [
+            0.025,
+            1.0
+          ],
+          "balanced_accuracy": 0.9773
+        },
+        "epa_DIV12": {
+          "tp": 42,
+          "fn": 2,
+          "tn": 1,
+          "fp": 0,
+          "sensitivity": 0.9545,
+          "sensitivity_ci95": [
+            0.8453,
+            0.9944
+          ],
+          "specificity": 1.0,
+          "specificity_ci95": [
+            0.025,
+            1.0
+          ],
+          "balanced_accuracy": 0.9773,
+          "n": 45
+        },
+        "epa_AUC.3hit": {
+          "tp": 41,
+          "fn": 3,
+          "tn": 1,
+          "fp": 0,
+          "sensitivity": 0.9318,
+          "sensitivity_ci95": [
+            0.8134,
+            0.9857
+          ],
+          "specificity": 1.0,
+          "specificity_ci95": [
+            0.025,
+            1.0
+          ],
+          "balanced_accuracy": 0.9659,
+          "n": 45
+        },
+        "epa_Top2": {
+          "tp": 41,
+          "fn": 3,
+          "tn": 1,
+          "fp": 0,
+          "sensitivity": 0.9318,
+          "sensitivity_ci95": [
+            0.8134,
+            0.9857
+          ],
+          "specificity": 1.0,
+          "specificity_ci95": [
+            0.025,
+            1.0
+          ],
+          "balanced_accuracy": 0.9659,
+          "n": 45
+        }
+      }
+    }
+  }
+}

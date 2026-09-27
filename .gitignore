@@ -5,3 +5,5 @@ outputs/
 .pytest_tmp/
 *.log
 site/data/chem/*.tmp
+results/logs/
+report/_build/

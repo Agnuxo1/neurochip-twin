@@ -1,0 +1,226 @@
+# NeuroChip Twin v2
+
+*Few-shot, uncertainty-aware forecasting of neural-network formation under chemical exposure — trained and
+validated on real MEA electrophysiology (rat cortical cultures), with a directed-propagation layer fitted on
+a real 4-compartment neural chip.*
+
+![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)
+![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)
+![Tests: pytest](https://img.shields.io/badge/tests-pytest-blue.svg)
+![CI: GitHub Actions](https://img.shields.io/badge/CI-GitHub%20Actions-blue.svg)
+
+**Submission category: End-to-End System**
+
+![Graphical abstract](report/figures/visuals/graphical_abstract.png)
+
+**Links:** [Technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf) · [Video](<!-- LINK:video -->) · [Interactive demo](https://agnuxo1.github.io/neurochip-twin/) · [Kaggle notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo)
+
+## Why
+
+Neural organ-on-a-chip labs screen compounds by recording network activity for days at up to seven
+concentrations in triplicate. Most of that budget goes into concentrations that turn out to be
+uninformative, and the readout is analysed one endpoint at a time, with no uncertainty and no memory of the
+other compounds already measured.
+
+## What it does
+
+1. **A chemical is a few-shot task.** One model, meta-learned across {{ trajectory_cv.json : n_chemicals }}
+   chemicals of the EPA Network Formation Assay (NFA), forecasts the full dose x DIV 5, 7, 9 and 12
+   trajectory of the 17 network features of a chemical it has never seen, from as few as one to four
+   measured concentrations (NeuroTrajectory).
+2. **An interpolation-informed gated decoder** with dose-local attention, which learns per feature and day
+   how far to trust the measured neighbouring concentrations.
+3. **A toxicology-specific trust layer:** cross-conformal intervals stratified by cytotoxicity and by the
+   number of measured doses, with epistemic abstention on out-of-domain forecasts.
+4. **A closed decision loop for the lab:** a hazard call, the next concentration to measure (DoseCompass) and
+   a DIV 7 exit gate, each validated on real wells against exactly reproduced EPA rules, plus a directed
+   chip layer fitted on axon-resolved recordings of a real four-compartment hippocampal MEA.
+
+## How it works
+
+![System overview](report/figures/fig1_system.png)
+
+Public, licensed inputs are unified into a single frozen, provenance-tracked data asset (chemical x dose x
+DIV x well x feature). NeuroTrajectory forecasts the dose x DIV x feature response of an unseen chemical from
+k measured concentrations; calibration and abstention wrap every forecast; the decision layer turns that
+forecast into a hazard call, a potency estimate and the next concentration to measure, closing the
+laboratory loop. The chip layer is fitted separately on axon-resolved recordings of a four-compartment
+hippocampal chip and is descriptive (no cross-platform calibration is claimed).
+
+## Key numbers
+
+All numbers below are rendered from `results/*.json` and checked by `scripts/check_numbers.py` — nothing in
+this table is hand-typed.
+
+| ID | Question | Result | Verdict |
+|---|---|---|---|
+| R2 | Forecast unseen chemicals from k = 3 doses? | curve MAE {{ trajectory_cv.json : by_k.3.curve_mae.mean.neurotrajectory | .3f }} vs {{ trajectory_cv.json : by_k.3.curve_mae.mean.loglinear_interp | .3f }} (best baseline); {{ trajectory_cv.json : by_k.3.curve_mae.paired_vs_best.mean_diff | .3f }} [{{ trajectory_cv.json : by_k.3.curve_mae.paired_vs_best.ci95.0 | .3f }}, {{ trajectory_cv.json : by_k.3.curve_mae.paired_vs_best.ci95.1 | .3f }}]; folds 1-4: {{ trajectory_cv.json : by_k_folds_1to4.3.paired_vs_best.rel_change_pct | abs .1f }}% lower | positive |
+| R7 | Are 90% intervals calibrated? | coverage {{ conformal_r7.json : results.alpha_0.1.k3.conformal.coverage | .3f }} [{{ conformal_r7.json : results.alpha_0.1.k3.conformal.ci95.0 | .3f }}, {{ conformal_r7.json : results.alpha_0.1.k3.conformal.ci95.1 | .3f }}] after conformal ({{ conformal_r7.json : results.alpha_0.1.k3.parametric.coverage | .3f }} before); abstention {{ conformal_r7.json : abstention.abstention_rate | pct .1f }}% | positive |
+| R4 | Hazard call from three doses? | BA {{ dnt_r4.json : variants.k3.mcnemar_vs_epa.DIV12.ours.balanced_accuracy | pct .1f }}% vs {{ dnt_r4.json : variants.k3.mcnemar_vs_epa.DIV12.epa_rule_same_chemicals.balanced_accuracy | pct .1f }}-{{ dnt_r4.json : variants.k3.mcnemar_vs_epa.Top2.epa_rule_same_chemicals.balanced_accuracy | pct .1f }}% (EPA rules, same {{ dnt_r4.json : variants.k3.mcnemar_vs_epa.DIV12.n_chemicals }} chemicals); McNemar significant in one of three | modest |
+| R3 | Potency from the model? | model-derived BMC worse than interpolation of measured doses at every k | negative |
+| R6 | Choose the next dose? | ties log-spaced ({{ r6_dosecompass.json : primary_endpoint.paired_bootstrap.mean_diff | .3f }} [{{ r6_dosecompass.json : primary_endpoint.paired_bootstrap.ci95.0 | .3f }}, {{ r6_dosecompass.json : primary_endpoint.paired_bootstrap.ci95.1 | .3f }}]); {{ r6_dosecompass.json : results.B=3.neurotrajectory.paired_bootstrap_composite.dosecompass_minus_random.rel_change_pct | abs .1f }}% better than random | tie |
+| R8 | Directed chip connectivity? | feed-forward fraction MAE {{ r8_chiplayer.json : cv.comparisons.tunnel_mean.ff_fraction_mae.difference_model_minus_baseline | .3f }} vs tunnel means; conduction: no gain | modest |
+| R9 | Do the components matter? | removing the interpolation-informed decoder: +{{ r9_ablations.json : by_k.3.no_interp_decoder_minus_full.rel_change_pct | .1f }}% error at k = 3 | positive |
+| R5 | Specific vs cytotoxic disruption? | selectivity index AUROC {{ r5_selectivity.json : auroc_selectivity_index | .2f }}, no better than chance | negative |
+
+Full evidence, protocols and negative results (R1, R3b, R6b, R10, R11, R11b, X2, X3 and Appendix A) are in
+the [technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf), Table 4 and Sections 5-6.
+
+## Quickstart
+
+CPU only, no network access, under one minute:
+
+```bash
+pip install -r requirements.txt
+python demo.py
+```
+
+`demo.py` loads the NeuroTrajectory models of the cross-validation fold that never saw the chosen chemical,
+forecasts its trajectory from k measured concentrations, then reveals the held-out wells and scores the
+forecast against the same baselines used in the report. Verified on CPU: `python demo.py` runs well under a
+minute end to end, interpreter start-up included.
+
+```text
+python demo.py --chemical "Deltamethrin" --k 2   # choose a chemical and how many doses are "measured"
+python demo.py --list                            # chemicals available in the shipped bundle
+```
+
+## Interactive app
+
+A Gradio app over the same shipped bundle, with a forecast-and-reveal panel, a results tab read live from
+`results/*.json`, the chip layer, and an about/limits tab. See [`app/README.md`](app/README.md) for the full
+walkthrough (tabs, screenshots, deployment to a free Hugging Face Space).
+
+```bash
+pip install -r requirements-app.txt
+python app/app.py        # http://127.0.0.1:7860
+```
+
+## Reproduce everything
+
+Every number in this README, the docs and the technical report is produced by one script per result, which
+writes exactly one JSON file under `results/`; nothing else is a source of numbers.
+
+| Result | Script | Output (`results/`) |
+|---|---|---|
+| R2 — forecast unseen chemicals | `scripts/run_trajectory_cv.py` | `trajectory_cv.json` |
+| R3 / R3b — potency from the model vs. interpolation | `scripts/run_potency.py`, `scripts/run_potency_fill.py` | `potency_r3.json`, `potency_r3b.json` |
+| R4 — hazard call from three doses | `scripts/run_dnt_r4.py` | `dnt_r4.json` |
+| R5 — specific vs. cytotoxic selectivity | `scripts/run_selectivity_failures.py` | `r5_selectivity.json` |
+| R6 / R6b — DoseCompass, and anchored on the top dose | `scripts/run_dosecompass.py`, `scripts/run_dosecompass_anchored.py` | `r6_dosecompass.json`, `r6b_dosecompass_anchored.json` |
+| R7 — calibrated intervals and abstention | `scripts/run_conformal.py` | `conformal_r7.json` |
+| R8 — chip layer, real 4-compartment MEA | `scripts/run_chiplayer.py` | `r8_chiplayer.json`, `chiplayer_params.json` |
+| R9 — ablations | `scripts/run_ablations.py` | `r9_ablations.json` |
+| R10 audit — where the model fails, and viability value of information | `scripts/run_residual_audit.py` | `r10_failures.json`, `r10_residual_audit.json`, `r10_viability_voi.json` |
+| R11 — early exit at DIV 7 | `scripts/run_early_exit.py` | `r11_early_exit.json` |
+| R11b — retrained twin, DIV 9/12-masked context | `scripts/train_r11b.py`, `scripts/run_early_exit_r11b.py` | `r11b_early_exit.json` |
+| X2 / X3 — cross-assay corroboration and contrast | `scripts/run_crossassay.py` | `x2_harrill.json`, `x3_kosnik.json` |
+| Appendix A — own-architecture probes | `scripts/appendix_own_architectures.py` | `appendix_own_arch.json` |
+
+Ingestion and the frozen cohort/splits come first (`scripts/download_brewer.py`, `src/neurotwin/data/*.py`,
+which write `freeze_g0.json`, `cohort_freeze.json`, `splits_*.json` and `data_audit_brewer.json`); then run
+any script above (each is independent given the frozen inputs; an RTX-class GPU speeds up training, CPU
+works); then:
+
+```bash
+python scripts/render_docs.py     # fills every template token from results/*.json
+python scripts/check_numbers.py   # fails on any number not traced to a result or the allowlist
+python scripts/verify_bundle.py   # checks the shipped model bundle against its SHA-256 manifest
+python scripts/build_report.py    # rebuilds report/neurochip_twin_v2.pdf
+```
+
+### Brewer 4-compartment MEA ingestion
+
+The chip layer (R8) is fitted on the [Brewer hippocampal MEA dataset](https://zenodo.org/records/10257483)
+(Dryad, doi:10.5061/dryad.7h44j1013, CC0 1.0): 9 unstimulated and 6 recordings for each HFS condition, each
+logical spike train sampled at 25 kHz for 300 seconds.
+
+```powershell
+python scripts/download_brewer.py --verify-only
+$env:PYTHONPATH = "src"
+python -m neurotwin.data.brewer
+python -m pytest tests/test_brewer.py -q
+```
+
+The downloader verifies every MAT file against `scripts/brewer_sha256sums.txt` and, once fetched, the
+converter writes `data/processed/brewer/wells.parquet`, `axons.parquet`, `recordings.csv` and
+`results/data_audit_brewer.json` (`.npz` tables if `pyarrow` is unavailable).
+
+## Repository map
+
+```text
+repo/
+  app/            Gradio app (compute core shared with demo.py) — see app/README.md
+  data_bundle/    shipped cross-validated model weights and normalised tasks, SHA-256 manifest
+  demo.py         CPU, offline, < 1 min demo entry point
+  docs/           FEATURES.md, NUMBERS.md (numbers ledger), PROVENANCE.md, prereg/, number_allowlist.txt
+  notebooks/      Kaggle submission notebook
+  outputs/        run artefacts (demo, app, kaggle package) — not source
+  report/         neurochip_twin_v2.pdf/.tex, figures/, refs.bib
+  results/        one JSON per result (R1-R11b, X2, X3, appendix), the only source of numbers
+  scripts/        one script per pipeline step or result (ingestion, training, evaluation, docs, report)
+  site/           static project page
+  src/neurotwin/  the package: data/, features/, models/, chip/, planner/, audit/
+  tests/          pytest suite (unit tests, bundle integrity, number-tracing)
+```
+
+## Data sources and licences
+
+| Source | Role | Licence / terms |
+|---|---|---|
+| EPA Network Formation Assay (NFA), 48-well MEA | primary training and evaluation asset | US Government work; data only, analysis code not redistributed |
+| EPA DNT reference labels | hazard evaluation (R4) | US Government work |
+| EPA tcplfit2 NFA fits | independent potency reference (R3), EPA-rule reproduction (R4) | US Government work; not redistributed |
+| PubChem / invitrodb published endpoint fits | potency reference (R3), EPA-rule reproduction (R4) | US Government work |
+| NTP DNT-DIVER viability/LDH calls | calibration strata (R7), selectivity (R5) | US Government work; not redistributed |
+| [Brewer 4-compartment hippocampal MEA](https://zenodo.org/records/10257483) (doi:10.5061/dryad.7h44j1013) | chip layer (R8), viability-join audit | CC0 1.0; derived tables redistributed, raw files by checksum-verified download |
+| Harrill high-content imaging | unpaired corroboration (X2) | US Government work; not redistributed |
+| Kosnik acute MEA | unpaired contrast (X3) | US Government work; not redistributed |
+
+All sources are public and licensed for reuse; none contains personal or clinical data. The full inventory,
+including datasets evaluated and not used, is in Appendix E of the [technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf)
+and `docs/PROVENANCE.md`. Code is released under the MIT licence; dependencies are all under permissive
+licences (see `LICENSES/`).
+
+## What we do not claim
+
+- **Not human, not clinical.** All training data are rat primary cortical (and hippocampal) cultures.
+  Nothing here predicts human developmental outcomes.
+- **Not a validated twin of any commercial chip.** The public chip data are undosed rat hippocampal
+  sub-networks; compartment-specific dosing scenarios are labelled simulations.
+- **Coverage inside the calibration domain only.** Conformal coverage is measured on held-out NFA chemicals
+  and is not transferred to other species, cell sources, assays or chips.
+- **No superiority claimed over EPA's rules.** With only {{ dnt_r4.json : n_negative }} reference negatives
+  the hazard comparison is underpowered; one of three paired tests reaches significance.
+- **No model-derived potency.** It lost to interpolation (R3/R3b); potency (BMC) is reported by
+  interpolating the measured doses, not by the model.
+
+## Team and AI-tools disclosure
+
+Francisco Angulo de Lafuente (ORCID [0009-0001-1634-7063](https://orcid.org/0009-0001-1634-7063)) is the
+sole human team member and designed and verified the system. The system was built with two AI coding
+assistants working as a pair through an auditable gateway that records every exchange, decision and file
+lock: **Claude Code** (Anthropic) and **OpenAI Codex**, declared as tools, not team members. Every reported
+number was independently recomputed by a verification agent from the result files; the human team lead
+takes responsibility for every claim. No generative model is part of the delivered scientific pipeline.
+
+## How to cite
+
+```bibtex
+@software{angulodelafuente_neurochip_twin_v2,
+  author  = {Angulo de Lafuente, Francisco},
+  title   = {{NeuroChip Twin v2}: Few-shot, Uncertainty-aware Forecasting of Neural-network Formation
+             under Chemical Exposure},
+  year    = {2026},
+  url     = {https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf},
+  license = {MIT}
+}
+```
+
+Related preprints by the team lead: arXiv:2601.01916, arXiv:2601.09557, arXiv:2601.12032,
+arXiv:2604.19792.
+
+## Licence
+
+Code: [MIT](LICENSE). Data: see [Data sources and licences](#data-sources-and-licences) above and
+`LICENSES/` for third-party dependency licences.

@@ -80,7 +80,7 @@ with the local NFA plate/date/DIV keys. That archive's README explicitly permits
 use of its data/resources with attribution. Its HDF5 recordings have no
 overlapping plate with the local NFA endpoint table, so a three-plate matched
 Pearson/ICC/relative-error fidelity test is not estimable. The script does not
-download 307 MB of unmatched spikes. The audit JSON records the remote Git
+download 307,383,784 bytes of unmatched spikes. The audit JSON records the remote Git
 tree SHA and metadata-body SHA256. Neither is a checksum for undownloaded
 HDF5 payloads. If a matched raw-spike archive later appears, R1 must be run
 per physical well and only then may these analogs be described as EPA-faithful.

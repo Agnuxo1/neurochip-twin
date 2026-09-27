@@ -1,0 +1,45 @@
+{
+ "graphical_abstract": {
+  "conformal_coverage_alpha0.1_k3": 0.8989,
+  "dnt_tp_epa_rule_DIV12": 55,
+  "dnt_tp_ours_DIV12_k3": 65,
+  "early_exit_overall_rate": 0.2629,
+  "rel_curve_mae_change_pct_k3": -10.96,
+  "wells_saved_median_pct_k3": 57.1
+ },
+ "network_development": {
+  "chemical": "Dieldrin",
+  "features_shown": [
+   "network_spike_number",
+   "mutual_information_norm",
+   "bursting_electrodes_number",
+   "inter_network_spike_interval_mean",
+   "per_network_spike_spike_percent",
+   "burst_rate"
+  ],
+  "fold": 4,
+  "n_levels": 7,
+  "selection_rule": "positive reference chemical, fold in 1-4, largest |mean level effect| below the +-10 SD clip"
+ },
+ "real_network_raster": {
+  "condition": "NoStim",
+  "fid": 1,
+  "n_electrodes": 76,
+  "n_spikes_window": 6921,
+  "window_s": [
+   60.0,
+   90.0
+  ]
+ },
+ "twin_in_action": {
+  "chemical": "Dieldrin",
+  "context_log10_conc_uM": [
+   -1.523,
+   0.477,
+   1.0
+  ],
+  "feature": "network_spike_number",
+  "fold": 4,
+  "k": 3
+ }
+}

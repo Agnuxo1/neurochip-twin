@@ -1,0 +1,203 @@
+{
+  "description": "R11: early-exit triage from DIV 5/7 recordings (preregistered: docs/prereg/r11_early_exit.md).",
+  "protocol_file": "docs/prereg/r11_early_exit.md",
+  "protocol_sha256": "c92b9476be82b0a8b2d29556e096047edc8ff314505b4658b7f02c5ecabbf159",
+  "protocol_registered_utc": "2026-09-26T13:03:27Z",
+  "computed_utc": "2026-09-26T13:05:00+00:00",
+  "antecedent": "Angulo de Lafuente, Veselov & Goodman, Speaking to Silicon, arXiv:2601.12032 (2026) - early-rejection filter (conceptual)",
+  "models": "v1 cross-validated NeuroTrajectory (data/processed/models), ensemble mean, own held-out fold only",
+  "n_chemicals": 194,
+  "n_reference_active": 146,
+  "n_reference_inactive": 48,
+  "underpowered": false,
+  "methods": {
+    "twin": {
+      "thresholds_by_fold": {
+        "1": 0.5852,
+        "2": 0.5852,
+        "3": 0.6751,
+        "4": 0.591
+      },
+      "sensitivity": 0.9452,
+      "sensitivity_ci95": [
+        0.8949,
+        0.976
+      ],
+      "inactive_exit_rate": 0.4583,
+      "inactive_exit_ci95": [
+        0.3137,
+        0.6083
+      ],
+      "tp": 138,
+      "fn": 8,
+      "tn": 22,
+      "fp": 26,
+      "overall_exit_rate": 0.1546,
+      "auroc": 0.8974,
+      "auroc_ci95": [
+        0.8484,
+        0.9403
+      ]
+    },
+    "twin_upper90": {
+      "thresholds_by_fold": {
+        "1": 1.3382,
+        "2": 1.2736,
+        "3": 1.3754,
+        "4": 1.3314
+      },
+      "sensitivity": 0.9384,
+      "sensitivity_ci95": [
+        0.8862,
+        0.9714
+      ],
+      "inactive_exit_rate": 0.4167,
+      "inactive_exit_ci95": [
+        0.2761,
+        0.5679
+      ],
+      "tp": 137,
+      "fn": 9,
+      "tn": 20,
+      "fp": 28,
+      "overall_exit_rate": 0.1495,
+      "auroc": 0.8332,
+      "auroc_ci95": [
+        0.7647,
+        0.8927
+      ]
+    },
+    "early_raw": {
+      "thresholds_by_fold": {
+        "1": 1.1439,
+        "2": 1.148,
+        "3": 1.2118,
+        "4": 1.2331
+      },
+      "sensitivity": 0.9452,
+      "sensitivity_ci95": [
+        0.8949,
+        0.976
+      ],
+      "inactive_exit_rate": 0.5,
+      "inactive_exit_ci95": [
+        0.3523,
+        0.6477
+      ],
+      "tp": 138,
+      "fn": 8,
+      "tn": 24,
+      "fp": 24,
+      "overall_exit_rate": 0.1649,
+      "auroc": 0.9201,
+      "auroc_ci95": [
+        0.8788,
+        0.9526
+      ]
+    },
+    "persistence": {
+      "thresholds_by_fold": {
+        "1": 1.3836,
+        "2": 1.3253,
+        "3": 1.3836,
+        "4": 1.4098
+      },
+      "sensitivity": 0.9521,
+      "sensitivity_ci95": [
+        0.9037,
+        0.9805
+      ],
+      "inactive_exit_rate": 0.9167,
+      "inactive_exit_ci95": [
+        0.8002,
+        0.9768
+      ],
+      "tp": 139,
+      "fn": 7,
+      "tn": 44,
+      "fp": 4,
+      "overall_exit_rate": 0.2629,
+      "auroc": 0.9866,
+      "auroc_ci95": [
+        0.9726,
+        0.9964
+      ]
+    }
+  },
+  "primary": {
+    "comparison": "twin vs best baseline (persistence)",
+    "diff_inactive_exit_rate": -0.4583,
+    "ci95": [
+      -0.6154,
+      -0.3043
+    ],
+    "n_boot": 10000,
+    "safety_sensitivity_ci_lower_ge_0.85": true,
+    "twin_better": false
+  },
+  "secondary_twin_upper90_vs_best": {
+    "diff_inactive_exit_rate": -0.5,
+    "ci95": [
+      -0.6487,
+      -0.3478
+    ],
+    "n_boot": 10000
+  },
+  "secondary_epa_labels": {
+    "n_chemicals": 78,
+    "n_positive": 63,
+    "n_negative": 15,
+    "methods": {
+      "twin": {
+        "positives_continuing": 57,
+        "positives_exited": 6,
+        "sensitivity_ci95": [
+          0.8041,
+          0.9642
+        ],
+        "negatives_exited": 9,
+        "negatives_continuing": 6
+      },
+      "twin_upper90": {
+        "positives_continuing": 60,
+        "positives_exited": 3,
+        "sensitivity_ci95": [
+          0.8671,
+          0.9901
+        ],
+        "negatives_exited": 7,
+        "negatives_continuing": 8
+      },
+      "early_raw": {
+        "positives_continuing": 57,
+        "positives_exited": 6,
+        "sensitivity_ci95": [
+          0.8041,
+          0.9642
+        ],
+        "negatives_exited": 8,
+        "negatives_continuing": 7
+      },
+      "persistence": {
+        "positives_continuing": 50,
+        "positives_exited": 13,
+        "sensitivity_ci95": [
+          0.673,
+          0.8853
+        ],
+        "negatives_exited": 8,
+        "negatives_continuing": 7
+      }
+    }
+  },
+  "operational_saving_assumptions": {
+    "chemicals_exiting_at_DIV7_twin": 30,
+    "fraction": 0.1546,
+    "recording_days_saved_per_exit": 2,
+    "recording_days_per_full_assay": 4,
+    "culture_days_saved_per_exit": 5,
+    "culture_days_per_full_assay": 12,
+    "recording_sessions_saved_pct": 7.73,
+    "note": "Assumptions, not measured costs: an exiting chemical skips the DIV 9 and DIV 12 recordings and 5 of 12 culture days."
+  }
+}

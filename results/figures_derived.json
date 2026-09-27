@@ -1,0 +1,1220 @@
+{
+ "fig1": {
+  "median_levels_per_chemical": 7,
+  "n_chemicals": 243,
+  "n_wells": 6902
+ },
+ "fig10": {
+  "class_min_n": 5,
+  "classes_hidden_n_lt_min": [
+   "Drug",
+   "Food Additive",
+   "Neurotoxin",
+   "PBDE",
+   "Phthalate",
+   "Research",
+   "Vitamin",
+   "avermectin",
+   "carbamate",
+   "gaba",
+   "metal"
+  ],
+  "classes_shown": [
+   "organochlorine",
+   "pyrethroid",
+   "acetylcholinesterase",
+   "unannotated",
+   "OP",
+   "Metal",
+   "PAH",
+   "Pesticide",
+   "neonicotinoid",
+   "Industrial",
+   "Pharmaceutical",
+   "Food additive"
+  ]
+ },
+ "fig2": {
+  "availability_median_pct": 100.0,
+  "availability_min_cell": [
+   "inter_network_spike_interval_mean",
+   5
+  ],
+  "availability_min_pct": 20.0,
+  "chip_recording_shown": {
+   "condition": "NoStim",
+   "fid": 1,
+   "orientation": "clockwise"
+  },
+  "electrodes_per_compartment": {
+   "CA1": 19,
+   "CA3": 19,
+   "DG": 19,
+   "EC": 19
+  },
+  "levels_per_chemical": {
+   "10": 2,
+   "11": 7,
+   "12": 4,
+   "13": 1,
+   "7": 212,
+   "8": 12,
+   "9": 5
+  },
+  "median_levels_per_chemical": 7.0,
+  "median_replicate_wells_per_level": 3.0,
+  "n_chemical_levels": 1783,
+  "n_chemicals": 243,
+  "n_tunnels_shown": 20,
+  "n_wells": 6902,
+  "replicate_wells_per_level": {
+   "10": 6,
+   "11": 5,
+   "12": 9,
+   "14": 1,
+   "16": 6,
+   "18": 6,
+   "2": 44,
+   "3": 1329,
+   "4": 2,
+   "5": 42,
+   "6": 268,
+   "7": 9,
+   "8": 7,
+   "9": 49
+  },
+  "tunnels_per_pair": {
+   "CA1_EC": 5,
+   "CA3_CA1": 5,
+   "DG_CA3": 5,
+   "EC_DG": 5
+  }
+ },
+ "fig3": {
+  "curve_mae_bootstrap": {
+   "by_method_k0to4": {
+    "analog_knn": {
+     "ci95": [
+      [
+       1.615,
+       1.8016
+      ],
+      [
+       1.4316,
+       1.5611
+      ],
+      [
+       1.3307,
+       1.4516
+      ],
+      [
+       1.2761,
+       1.3801
+      ],
+      [
+       1.2534,
+       1.3715
+      ]
+     ],
+     "mean": [
+      1.7025,
+      1.4944,
+      1.3929,
+      1.3272,
+      1.3109
+     ]
+    },
+    "context_mean": {
+     "ci95": [
+      [
+       1.6455,
+       1.9052
+      ],
+      [
+       1.773,
+       1.977
+      ],
+      [
+       1.5947,
+       1.8023
+      ],
+      [
+       1.5094,
+       1.7084
+      ],
+      [
+       1.491,
+       1.6974
+      ]
+     ],
+     "mean": [
+      1.7688,
+      1.875,
+      1.6973,
+      1.6075,
+      1.5903
+     ]
+    },
+    "hill_per_endpoint": {
+     "ci95": [
+      [
+       1.6434,
+       1.9045
+      ],
+      [
+       1.7715,
+       1.9804
+      ],
+      [
+       1.4532,
+       1.6152
+      ],
+      [
+       1.3793,
+       1.4924
+      ],
+      [
+       1.256,
+       1.3593
+      ]
+     ],
+     "mean": [
+      1.7688,
+      1.875,
+      1.5331,
+      1.4352,
+      1.3078
+     ]
+    },
+    "loglinear_interp": {
+     "ci95": [
+      [
+       1.6445,
+       1.9016
+      ],
+      [
+       1.7692,
+       1.9863
+      ],
+      [
+       1.4525,
+       1.6129
+      ],
+      [
+       1.2672,
+       1.3833
+      ],
+      [
+       1.1872,
+       1.2905
+      ]
+     ],
+     "mean": [
+      1.7688,
+      1.875,
+      1.5331,
+      1.3249,
+      1.2387
+     ]
+    },
+    "neurotrajectory": {
+     "ci95": [
+      [
+       1.5979,
+       1.7918
+      ],
+      [
+       1.3517,
+       1.4825
+      ],
+      [
+       1.2207,
+       1.3406
+      ],
+      [
+       1.131,
+       1.2296
+      ],
+      [
+       1.089,
+       1.1877
+      ]
+     ],
+     "mean": [
+      1.6889,
+      1.4149,
+      1.2794,
+      1.1797,
+      1.1382
+     ]
+    },
+    "zero": {
+     "ci95": [
+      [
+       1.6447,
+       1.905
+      ],
+      [
+       1.6457,
+       1.9032
+      ],
+      [
+       1.6506,
+       1.9074
+      ],
+      [
+       1.6531,
+       1.9194
+      ],
+      [
+       1.677,
+       1.9587
+      ]
+     ],
+     "mean": [
+      1.7688,
+      1.7705,
+      1.7734,
+      1.7827,
+      1.8099
+     ]
+    }
+   },
+   "n_boot": 4000,
+   "seed": 20260926,
+   "unit": "chemical"
+  }
+ },
+ "fig4": {
+  "band": "conformal 90% (pooled across Mondrian strata, k = 3)",
+  "best_baseline": "loglinear_interp",
+  "conformal_halfwidth_vehicle_sd": 3.7065,
+  "frac_model_worse": 0.2268,
+  "median": {
+   "chemical": "DDT",
+   "curve_mae_baseline_mean5designs": 1.3894,
+   "curve_mae_neurotrajectory_mean5designs": 1.2415,
+   "design_curve_mae_nt_all5": [
+    0.5186,
+    0.5178,
+    0.6121,
+    2.3107,
+    2.2482
+   ],
+   "design_index": 2,
+   "design_shown": "seeded design of run_trajectory_cv.designs(task, 3) with the median curve MAE among its 5 designs",
+   "design_shown_curve_mae_baseline": 0.8973,
+   "design_shown_curve_mae_neurotrajectory": 0.6121,
+   "dnt_label": "positive",
+   "epa_label": "positive",
+   "feature_rule": "fixed across the three chemicals (mean firing rate, burst rate, network spikes)",
+   "features_shown": [
+    "firing_rate_mean",
+    "burst_rate",
+    "network_spike_number"
+   ],
+   "fold": 3,
+   "improvement": 0.148,
+   "likelihood": "gaussian",
+   "measured_concentrations_uM": [
+    0.03,
+    1.0,
+    10.0
+   ],
+   "n_ensemble": 3,
+   "n_levels": 7,
+   "preferred_labeled_chemical_used": true,
+   "quantile": 0.5,
+   "quantile_value": 0.1496,
+   "recomputed_mean5_baseline": 1.3894,
+   "recomputed_mean5_neurotrajectory": 1.2415
+  },
+  "n_chemicals": 194,
+  "p10": {
+   "chemical": "Retinoic acid",
+   "curve_mae_baseline_mean5designs": 1.7933,
+   "curve_mae_neurotrajectory_mean5designs": 1.9137,
+   "design_curve_mae_nt_all5": [
+    1.0539,
+    1.3195,
+    2.4709,
+    2.3316,
+    2.3928
+   ],
+   "design_index": 3,
+   "design_shown": "seeded design of run_trajectory_cv.designs(task, 3) with the median curve MAE among its 5 designs",
+   "design_shown_curve_mae_baseline": 2.121,
+   "design_shown_curve_mae_neurotrajectory": 2.3316,
+   "dnt_label": "positive",
+   "epa_label": "positive",
+   "feature_rule": "fixed across the three chemicals (mean firing rate, burst rate, network spikes)",
+   "features_shown": [
+    "firing_rate_mean",
+    "burst_rate",
+    "network_spike_number"
+   ],
+   "fold": 4,
+   "improvement": -0.1204,
+   "likelihood": "gaussian",
+   "measured_concentrations_uM": [
+    0.03,
+    0.1,
+    1.0
+   ],
+   "n_ensemble": 3,
+   "n_levels": 7,
+   "preferred_labeled_chemical_used": true,
+   "quantile": 0.1,
+   "quantile_value": -0.121,
+   "recomputed_mean5_baseline": 1.7934,
+   "recomputed_mean5_neurotrajectory": 1.9137
+  },
+  "p90": {
+   "chemical": "Heptachlor epoxide B",
+   "curve_mae_baseline_mean5designs": 2.213,
+   "curve_mae_neurotrajectory_mean5designs": 1.7414,
+   "design_curve_mae_nt_all5": [
+    1.7855,
+    2.033,
+    2.0812,
+    0.954,
+    1.8532
+   ],
+   "design_index": 4,
+   "design_shown": "seeded design of run_trajectory_cv.designs(task, 3) with the median curve MAE among its 5 designs",
+   "design_shown_curve_mae_baseline": 2.0889,
+   "design_shown_curve_mae_neurotrajectory": 1.8532,
+   "dnt_label": "positive",
+   "epa_label": "positive",
+   "feature_rule": "fixed across the three chemicals (mean firing rate, burst rate, network spikes)",
+   "features_shown": [
+    "firing_rate_mean",
+    "burst_rate",
+    "network_spike_number"
+   ],
+   "fold": 4,
+   "improvement": 0.4716,
+   "likelihood": "gaussian",
+   "measured_concentrations_uM": [
+    0.1,
+    1.0,
+    30.0
+   ],
+   "n_ensemble": 3,
+   "n_levels": 7,
+   "preferred_labeled_chemical_used": true,
+   "quantile": 0.9,
+   "quantile_value": 0.4973,
+   "recomputed_mean5_baseline": 2.213,
+   "recomputed_mean5_neurotrajectory": 1.7414
+  },
+  "rule": "folds 1-4, k = 3; improvement = best-baseline minus NeuroTrajectory curve MAE per chemical (mean over the 5 seeded designs); for each of the 90th/50th/10th percentiles, the chemical within +/-2 percentile points of that quantile with a reference EPA label (preferred) closest to the quantile value, else the closest chemical in the window, else the closest overall"
+ },
+ "fig5": {
+  "by_nominal": {
+   "nominal80": {
+    "k1": {
+     "by_regime": {
+      "cytotoxic": {
+       "conformal_coverage": 0.7983,
+       "n_chemicals": 107,
+       "width": 6.402
+      },
+      "indeterminate": {
+       "conformal_coverage": 0.8061,
+       "n_chemicals": 19,
+       "width": 6.308
+      },
+      "non_cytotoxic": {
+       "conformal_coverage": 0.7985,
+       "n_chemicals": 117,
+       "width": 5.347
+      }
+     },
+     "conformal_ci95": [
+      0.7887,
+      0.8086
+     ],
+     "conformal_coverage": 0.799,
+     "conformal_width": 5.886,
+     "parametric_ci95": [
+      0.7737,
+      0.7912
+     ],
+     "parametric_coverage": 0.7827,
+     "parametric_width": 5.537
+    },
+    "k2": {
+     "by_regime": {
+      "cytotoxic": {
+       "conformal_coverage": 0.8016,
+       "n_chemicals": 107,
+       "width": 6.037
+      },
+      "indeterminate": {
+       "conformal_coverage": 0.8098,
+       "n_chemicals": 19,
+       "width": 6.137
+      },
+      "non_cytotoxic": {
+       "conformal_coverage": 0.7972,
+       "n_chemicals": 117,
+       "width": 5.009
+      }
+     },
+     "conformal_ci95": [
+      0.7913,
+      0.8088
+     ],
+     "conformal_coverage": 0.8001,
+     "conformal_width": 5.55,
+     "parametric_ci95": [
+      0.7817,
+      0.7973
+     ],
+     "parametric_coverage": 0.7893,
+     "parametric_width": 5.296
+    },
+    "k3": {
+     "by_regime": {
+      "cytotoxic": {
+       "conformal_coverage": 0.8011,
+       "n_chemicals": 107,
+       "width": 5.67
+      },
+      "indeterminate": {
+       "conformal_coverage": 0.8092,
+       "n_chemicals": 19,
+       "width": 5.968
+      },
+      "non_cytotoxic": {
+       "conformal_coverage": 0.7967,
+       "n_chemicals": 117,
+       "width": 4.844
+      }
+     },
+     "conformal_ci95": [
+      0.7906,
+      0.8076
+     ],
+     "conformal_coverage": 0.7997,
+     "conformal_width": 5.296,
+     "parametric_ci95": [
+      0.7891,
+      0.8034
+     ],
+     "parametric_coverage": 0.7961,
+     "parametric_width": 5.163
+    }
+   },
+   "nominal90": {
+    "k1": {
+     "by_regime": {
+      "cytotoxic": {
+       "conformal_coverage": 0.8962,
+       "n_chemicals": 107,
+       "width": 9.186
+      },
+      "indeterminate": {
+       "conformal_coverage": 0.9031,
+       "n_chemicals": 19,
+       "width": 9.123
+      },
+      "non_cytotoxic": {
+       "conformal_coverage": 0.8988,
+       "n_chemicals": 117,
+       "width": 7.401
+      }
+     },
+     "conformal_ci95": [
+      0.8896,
+      0.9058
+     ],
+     "conformal_coverage": 0.898,
+     "conformal_width": 8.322,
+     "parametric_ci95": [
+      0.8608,
+      0.877
+     ],
+     "parametric_coverage": 0.8693,
+     "parametric_width": 7.264
+    },
+    "k2": {
+     "by_regime": {
+      "cytotoxic": {
+       "conformal_coverage": 0.8999,
+       "n_chemicals": 107,
+       "width": 8.672
+      },
+      "indeterminate": {
+       "conformal_coverage": 0.9074,
+       "n_chemicals": 19,
+       "width": 8.699
+      },
+      "non_cytotoxic": {
+       "conformal_coverage": 0.8974,
+       "n_chemicals": 117,
+       "width": 6.92
+      }
+     },
+     "conformal_ci95": [
+      0.8913,
+      0.9067
+     ],
+     "conformal_coverage": 0.8993,
+     "conformal_width": 7.83,
+     "parametric_ci95": [
+      0.8677,
+      0.8826
+     ],
+     "parametric_coverage": 0.8753,
+     "parametric_width": 6.946
+    },
+    "k3": {
+     "by_regime": {
+      "cytotoxic": {
+       "conformal_coverage": 0.9,
+       "n_chemicals": 107,
+       "width": 8.053
+      },
+      "indeterminate": {
+       "conformal_coverage": 0.9045,
+       "n_chemicals": 19,
+       "width": 8.443
+      },
+      "non_cytotoxic": {
+       "conformal_coverage": 0.8969,
+       "n_chemicals": 117,
+       "width": 6.659
+      }
+     },
+     "conformal_ci95": [
+      0.8914,
+      0.906
+     ],
+     "conformal_coverage": 0.8989,
+     "conformal_width": 7.413,
+     "parametric_ci95": [
+      0.8754,
+      0.8886
+     ],
+     "parametric_coverage": 0.8824,
+     "parametric_width": 6.77
+    }
+   },
+   "nominal95": {
+    "k1": {
+     "by_regime": {
+      "cytotoxic": {
+       "conformal_coverage": 0.945,
+       "n_chemicals": 107,
+       "width": 12.46
+      },
+      "indeterminate": {
+       "conformal_coverage": 0.9523,
+       "n_chemicals": 19,
+       "width": 12.847
+      },
+      "non_cytotoxic": {
+       "conformal_coverage": 0.9487,
+       "n_chemicals": 117,
+       "width": 9.602
+      }
+     },
+     "conformal_ci95": [
+      0.941,
+      0.9535
+     ],
+     "conformal_coverage": 0.9473,
+     "conformal_width": 11.114,
+     "parametric_ci95": [
+      0.907,
+      0.9214
+     ],
+     "parametric_coverage": 0.9144,
+     "parametric_width": 8.822
+    },
+    "k2": {
+     "by_regime": {
+      "cytotoxic": {
+       "conformal_coverage": 0.9485,
+       "n_chemicals": 107,
+       "width": 11.791
+      },
+      "indeterminate": {
+       "conformal_coverage": 0.9543,
+       "n_chemicals": 19,
+       "width": 11.77
+      },
+      "non_cytotoxic": {
+       "conformal_coverage": 0.9473,
+       "n_chemicals": 117,
+       "width": 8.906
+      }
+     },
+     "conformal_ci95": [
+      0.9421,
+      0.9542
+     ],
+     "conformal_coverage": 0.9484,
+     "conformal_width": 10.401,
+     "parametric_ci95": [
+      0.9131,
+      0.9256
+     ],
+     "parametric_coverage": 0.9196,
+     "parametric_width": 8.436
+    },
+    "k3": {
+     "by_regime": {
+      "cytotoxic": {
+       "conformal_coverage": 0.9501,
+       "n_chemicals": 107,
+       "width": 10.694
+      },
+      "indeterminate": {
+       "conformal_coverage": 0.9518,
+       "n_chemicals": 19,
+       "width": 11.485
+      },
+      "non_cytotoxic": {
+       "conformal_coverage": 0.9476,
+       "n_chemicals": 117,
+       "width": 8.537
+      }
+     },
+     "conformal_ci95": [
+      0.9437,
+      0.9538
+     ],
+     "conformal_coverage": 0.949,
+     "conformal_width": 9.717,
+     "parametric_ci95": [
+      0.92,
+      0.9315
+     ],
+     "parametric_coverage": 0.9258,
+     "parametric_width": 8.218
+    }
+   }
+  },
+  "source": "conformal_r7.json results[alpha_*]"
+ },
+ "fig6": {
+  "mcnemar_full": {
+   "AUC3hit": {
+    "epa_rule_same_chemicals": {
+     "balanced_accuracy": 0.8333,
+     "fn": 26,
+     "fp": 0,
+     "sensitivity": 0.6667,
+     "sensitivity_ci95": [
+      0.5508,
+      0.7694
+     ],
+     "specificity": 1.0,
+     "specificity_ci95": [
+      0.8235,
+      1.0
+     ],
+     "tn": 19,
+     "tp": 52
+    },
+    "exact_p": 0.3593,
+    "n_chemicals": 97,
+    "only_epa_correct": 7,
+    "only_ours_correct": 12,
+    "ours": {
+     "balanced_accuracy": 0.746,
+     "fn": 15,
+     "fp": 6,
+     "sensitivity": 0.8077,
+     "sensitivity_ci95": [
+      0.7027,
+      0.8882
+     ],
+     "specificity": 0.6842,
+     "specificity_ci95": [
+      0.4345,
+      0.8742
+     ],
+     "tn": 13,
+     "tp": 63
+    }
+   },
+   "DIV12": {
+    "epa_rule_same_chemicals": {
+     "balanced_accuracy": 0.8262,
+     "fn": 23,
+     "fp": 1,
+     "sensitivity": 0.7051,
+     "sensitivity_ci95": [
+      0.5911,
+      0.803
+     ],
+     "specificity": 0.9474,
+     "specificity_ci95": [
+      0.7397,
+      0.9987
+     ],
+     "tn": 18,
+     "tp": 55
+    },
+    "exact_p": 0.6476,
+    "n_chemicals": 97,
+    "only_epa_correct": 8,
+    "only_ours_correct": 11,
+    "ours": {
+     "balanced_accuracy": 0.746,
+     "fn": 15,
+     "fp": 6,
+     "sensitivity": 0.8077,
+     "sensitivity_ci95": [
+      0.7027,
+      0.8882
+     ],
+     "specificity": 0.6842,
+     "specificity_ci95": [
+      0.4345,
+      0.8742
+     ],
+     "tn": 13,
+     "tp": 63
+    }
+   },
+   "Top2": {
+    "epa_rule_same_chemicals": {
+     "balanced_accuracy": 0.859,
+     "fn": 22,
+     "fp": 0,
+     "sensitivity": 0.7179,
+     "sensitivity_ci95": [
+      0.6047,
+      0.8141
+     ],
+     "specificity": 1.0,
+     "specificity_ci95": [
+      0.8235,
+      1.0
+     ],
+     "tn": 19,
+     "tp": 56
+    },
+    "exact_p": 1.0,
+    "n_chemicals": 97,
+    "only_epa_correct": 8,
+    "only_ours_correct": 9,
+    "ours": {
+     "balanced_accuracy": 0.746,
+     "fn": 15,
+     "fp": 6,
+     "sensitivity": 0.8077,
+     "sensitivity_ci95": [
+      0.7027,
+      0.8882
+     ],
+     "specificity": 0.6842,
+     "specificity_ci95": [
+      0.4345,
+      0.8742
+     ],
+     "tn": 13,
+     "tp": 63
+    }
+   }
+  },
+  "mcnemar_k3": {
+   "AUC3hit": {
+    "epa_rule_same_chemicals": {
+     "balanced_accuracy": 0.8333,
+     "fn": 26,
+     "fp": 0,
+     "sensitivity": 0.6667,
+     "sensitivity_ci95": [
+      0.5508,
+      0.7694
+     ],
+     "specificity": 1.0,
+     "specificity_ci95": [
+      0.8235,
+      1.0
+     ],
+     "tn": 19,
+     "tp": 52
+    },
+    "exact_p": 0.0127,
+    "n_chemicals": 97,
+    "only_epa_correct": 3,
+    "only_ours_correct": 14,
+    "ours": {
+     "balanced_accuracy": 0.864,
+     "fn": 13,
+     "fp": 2,
+     "sensitivity": 0.8333,
+     "sensitivity_ci95": [
+      0.7319,
+      0.9082
+     ],
+     "specificity": 0.8947,
+     "specificity_ci95": [
+      0.6686,
+      0.987
+     ],
+     "tn": 17,
+     "tp": 65
+    }
+   },
+   "DIV12": {
+    "epa_rule_same_chemicals": {
+     "balanced_accuracy": 0.8262,
+     "fn": 23,
+     "fp": 1,
+     "sensitivity": 0.7051,
+     "sensitivity_ci95": [
+      0.5911,
+      0.803
+     ],
+     "specificity": 0.9474,
+     "specificity_ci95": [
+      0.7397,
+      0.9987
+     ],
+     "tn": 18,
+     "tp": 55
+    },
+    "exact_p": 0.0636,
+    "n_chemicals": 97,
+    "only_epa_correct": 5,
+    "only_ours_correct": 14,
+    "ours": {
+     "balanced_accuracy": 0.864,
+     "fn": 13,
+     "fp": 2,
+     "sensitivity": 0.8333,
+     "sensitivity_ci95": [
+      0.7319,
+      0.9082
+     ],
+     "specificity": 0.8947,
+     "specificity_ci95": [
+      0.6686,
+      0.987
+     ],
+     "tn": 17,
+     "tp": 65
+    }
+   },
+   "Top2": {
+    "epa_rule_same_chemicals": {
+     "balanced_accuracy": 0.859,
+     "fn": 22,
+     "fp": 0,
+     "sensitivity": 0.7179,
+     "sensitivity_ci95": [
+      0.6047,
+      0.8141
+     ],
+     "specificity": 1.0,
+     "specificity_ci95": [
+      0.8235,
+      1.0
+     ],
+     "tn": 19,
+     "tp": 56
+    },
+    "exact_p": 0.1185,
+    "n_chemicals": 97,
+    "only_epa_correct": 4,
+    "only_ours_correct": 11,
+    "ours": {
+     "balanced_accuracy": 0.864,
+     "fn": 13,
+     "fp": 2,
+     "sensitivity": 0.8333,
+     "sensitivity_ci95": [
+      0.7319,
+      0.9082
+     ],
+     "specificity": 0.8947,
+     "specificity_ci95": [
+      0.6686,
+      0.987
+     ],
+     "tn": 17,
+     "tp": 65
+    }
+   }
+  },
+  "n_chemicals_mcnemar": 97,
+  "source": "dnt_r4.json variants.*.mcnemar_vs_epa[rule]"
+ },
+ "fig7": {
+  "B3_activity": {
+   "dosecompass_r6b": {
+    "activity_accuracy": 0.9095,
+    "activity_kappa": 0.7566
+   },
+   "dosecompass_v1": {
+    "activity_accuracy": 0.8395,
+    "activity_kappa": 0.566
+   },
+   "fixed_logspaced": {
+    "activity_accuracy": 0.8807,
+    "activity_kappa": 0.6773
+   }
+  },
+  "B3_r6b_paired": {
+   "NONPREREGISTERED_dosecompass_anchored_minus_dosecompass_v1_median_first": {
+    "ci95": [
+     -0.0761,
+     0.0455
+    ],
+    "frac_chem_improved": 0.317,
+    "mean_diff": -0.0134,
+    "n_chemicals": 243,
+    "rel_change_pct": -3.01
+   },
+   "dosecompass_anchored_minus_fixed_logspaced": {
+    "ci95": [
+     -0.0731,
+     0.0327
+    ],
+    "frac_chem_improved": 0.362,
+    "mean_diff": -0.0194,
+    "n_chemicals": 243,
+    "rel_change_pct": -4.3
+   },
+   "dosecompass_anchored_minus_oracle_anchored_upper_bound": {
+    "ci95": [
+     0.2497,
+     0.3547
+    ],
+    "frac_chem_improved": 0.0,
+    "mean_diff": 0.3007,
+    "n_chemicals": 243,
+    "rel_change_pct": 229.72
+   },
+   "dosecompass_anchored_minus_random_anchored": {
+    "ci95": [
+     -0.0654,
+     0.0133
+    ],
+    "frac_chem_improved": 0.428,
+    "mean_diff": -0.0242,
+    "n_chemicals": 243,
+    "rel_change_pct": -5.3
+   },
+   "dosecompass_anchored_minus_random_v1_median_first": {
+    "ci95": [
+     -0.11,
+     -0.0093
+    ],
+    "frac_chem_improved": 0.523,
+    "mean_diff": -0.0579,
+    "n_chemicals": 243,
+    "rel_change_pct": -11.83
+   }
+  },
+  "B3_v1_paired": {
+   "dosecompass_div5to9_minus_dosecompass": {
+    "ci95": [
+     -0.044,
+     0.0453
+    ],
+    "frac_chem_improved": 0.206,
+    "mean_diff": -0.0012,
+    "n_chemicals": 243,
+    "rel_change_pct": -0.26
+   },
+   "dosecompass_div5to9_minus_fixed_logspaced": {
+    "ci95": [
+     -0.0608,
+     0.0476
+    ],
+    "frac_chem_improved": 0.416,
+    "mean_diff": -0.0072,
+    "n_chemicals": 243,
+    "rel_change_pct": -1.6
+   },
+   "dosecompass_minus_fixed_logspaced": {
+    "ci95": [
+     -0.0602,
+     0.053
+    ],
+    "frac_chem_improved": 0.383,
+    "mean_diff": -0.006,
+    "n_chemicals": 243,
+    "rel_change_pct": -1.34
+   },
+   "dosecompass_minus_oracle_upper_bound": {
+    "ci95": [
+     0.2441,
+     0.3562
+    ],
+    "frac_chem_improved": 0.0,
+    "mean_diff": 0.2976,
+    "n_chemicals": 243,
+    "rel_change_pct": 201.91
+   },
+   "dosecompass_minus_random": {
+    "ci95": [
+     -0.0879,
+     -0.0021
+    ],
+    "frac_chem_improved": 0.547,
+    "mean_diff": -0.0446,
+    "n_chemicals": 243,
+    "rel_change_pct": -9.1
+   }
+  },
+  "composite_by_budget": {
+   "B2": {
+    "dosecompass_r6b": 0.5122,
+    "dosecompass_v1": 0.5368,
+    "fixed_logspaced": 0.5031,
+    "oracle_v1": 0.2182,
+    "random_v1": {
+     "mean": 0.5691,
+     "p2.5": 0.5264,
+     "p50": 0.5692,
+     "p97.5": 0.6063
+    }
+   },
+   "B3": {
+    "dosecompass_r6b": 0.4316,
+    "dosecompass_v1": 0.4449,
+    "fixed_logspaced": 0.451,
+    "oracle_v1": 0.1474,
+    "random_v1": {
+     "mean": 0.4895,
+     "p2.5": 0.4498,
+     "p50": 0.4885,
+     "p97.5": 0.5299
+    }
+   },
+   "B4": {
+    "dosecompass_r6b": 0.3787,
+    "dosecompass_v1": 0.3825,
+    "fixed_logspaced": 0.405,
+    "oracle_v1": 0.1471,
+    "random_v1": {
+     "mean": 0.4262,
+     "p2.5": 0.3871,
+     "p50": 0.4259,
+     "p97.5": 0.4656
+    }
+   }
+  },
+  "example_chemical": "(-)-Nicotine",
+  "example_eig_bits_chosen": 0.6846,
+  "example_first_uM": 1.0,
+  "example_proposed_uM": 0.3,
+  "source": "r6_dosecompass.json / r6b_dosecompass_anchored.json results[B=*].neurotrajectory"
+ },
+ "fig8": {
+  "burst_corr_median": 0.4529,
+  "burst_edges_n": 84,
+  "burst_lag_zero_n": 72,
+  "pooled_nostim_ff_fraction_wilson": {
+   "CA1-EC": {
+    "ff_fraction": 0.5,
+    "n_axons": 60,
+    "wilson95": [
+     0.3774,
+     0.6226
+    ]
+   },
+   "CA3-CA1": {
+    "ff_fraction": 0.4259,
+    "n_axons": 54,
+    "wilson95": [
+     0.3033,
+     0.5584
+    ]
+   },
+   "DG-CA3": {
+    "ff_fraction": 0.2941,
+    "n_axons": 51,
+    "wilson95": [
+     0.1871,
+     0.43
+    ]
+   },
+   "EC-DG": {
+    "ff_fraction": 0.6774,
+    "n_axons": 31,
+    "wilson95": [
+     0.5014,
+     0.8143
+    ]
+   }
+  }
+ },
+ "figA2": {
+  "darwin_vs_generic_k": {
+   "1": {
+    "darwin_mean_diff": 0.0238,
+    "generic_mean_diff": -0.0057
+   },
+   "2": {
+    "darwin_mean_diff": 0.0214,
+    "generic_mean_diff": 0.0018
+   },
+   "3": {
+    "darwin_mean_diff": 0.0265,
+    "generic_mean_diff": 0.0061
+   },
+   "4": {
+    "darwin_mean_diff": 0.0212,
+    "generic_mean_diff": 0.0071
+   }
+  },
+  "mde_power0.8_search_exact": 0.005668212129951114,
+  "n_confirmed_by_fold": {
+   "1": 1107,
+   "2": 1020,
+   "3": 605,
+   "4": 926
+  }
+ },
+ "figA3": {
+  "all_chemicals_n": 194,
+  "leakage_caveat": "PubChem AB/LDH calls (AIDs 2284083, 2284068) are measured at DIV12 on the same NFA plates and aggregated over all concentrations, including the concentrations the forecast hides. Arms V1 and V2 therefore emulate a prior viability screen and are NOT evidence that viability improves the forecast. Arm V3 uses only the wells at the measured context concentrations.",
+  "ntp_subset_n": 51,
+  "v1_vs_v0_k3": {
+   "ci95": [
+    -0.0654,
+    -0.0294
+   ],
+   "curve_mae_after": 1.1536,
+   "curve_mae_reference": 1.2001,
+   "frac_chem_improved": 0.649,
+   "mean_diff": -0.0465,
+   "n_chemicals": 194,
+   "rel_change_pct": -3.88
+  }
+ },
+ "generated_by": "scripts/make_figures.py",
+ "inputs_sha256": {
+  "../data_bundle/nfa_tasks.npz": "e1f056ef33f568052fb8dfdba6e095f7b575c7f78d96768e34469918559008d2",
+  "chiplayer_params.json": "039df2f7a8c106f542e19aa81f76d04b1cd5ff9f1fb933e8d1a1a74871cafa28",
+  "conformal_r7.json": "4235a5cc2c83120c8be82d4d94fd9ed9b39630704365e2c1b919441e4ddd28b8",
+  "data_audit_brewer.json": "8455801dd8944814cc4de8adf24785ccee8fbbe458b18264399280246c4ec163",
+  "dnt_r4.json": "24cd32c809f81dedeebe6bc2fe026d5b8efb3b7e07dd327bd586084337d9eb5c",
+  "potency_r3.json": "47186257042e98e829d0853d52112deb2606ed9c06632fb81978167591f138d6",
+  "potency_r3b.json": "e18999f0b767ff056501ede8d54540fe81dee0c864bbc6563d149b4cd515fac2",
+  "r10_failures.json": "905edfaa22f857901deb51a39447879942b8b60711f4b785103484e57696ce34",
+  "r10_residual_audit.json": "a79b3d94e674030d8d670dd4f1650318168fc667452bbf5e821764363faee452",
+  "r10_viability_voi.json": "1d9073b4b5628b58d8c84146786f826a4b41985d0a8a2995588d96a80b0cc46b",
+  "r5_selectivity.json": "4d1161af851df2d660b564725de69806ffff143735ee2e0135726d4e60b1c288",
+  "r6_dosecompass.json": "4ef5a1fb1670310dc9fa9c444872568b3542c8ab7948b6bfa0b3f284c2a49967",
+  "r6b_dosecompass_anchored.json": "737bd911878b3a52ab5754827b6d20977addd5c0ed1b0803acbeb900c6de68cb",
+  "r8_chiplayer.json": "533a991e64db6a35805fe23e932dc39fa44a26b720cb65b9860436499b9c8eb1",
+  "r9_ablations.json": "d865be282b2e86bc655e3ff62bcd75eeff59b2b130075d6ae701ce25643ac640",
+  "trajectory_cv.json": "ce6b2e1b9e8cdf212c7b0d4fe0d881a24e34a4a6f29cf3caa5b48c643929cc49",
+  "trajectory_cv_per_chemical.csv": "90697a8fefa0c0d259f06529a46f7324f1b199e9cd5a0fbd892d8fabc2f0d157",
+  "trajectory_cv_v2.json": "563d391d4a2a9de1e6747319dd9ef75624a65f29c877bc6911f81610c8c4d159",
+  "x2_harrill.json": "fc1dd748f117c15e2523b46d62e3313818d054fdd1aa3fdd5489facc1eb7e9bc",
+  "x3_kosnik.json": "112462b6c3e4b2b1a38cdd3c12da9c6432d50a75075dba4a6d96f6434c1436c5"
+ }
+}

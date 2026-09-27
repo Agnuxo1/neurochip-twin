@@ -1,0 +1,12 @@
+NeuroChip Twin v2
+Copyright (c) 2026 Francisco Angulo de Lafuente. Licensed under the MIT License (see LICENSE).
+
+Third-party code included in this repository
+---------------------------------------------
+* src/neurotwin/audit/darwin.py is a port of the Darwin-Cage residual search, module honest_ceiling/darwin.py of
+  the team lead's Darwin-Cage search (s6e9-honest-ceiling, Apache-2.0), Copyright 2026 Francisco Angulo de Lafuente.
+  Licensed under the Apache License, Version 2.0; a copy is in LICENSES/Apache-2.0.txt.
+  Modifications (2026-09-26): the search alphabet became a parameter restricted by the caller to information
+  available at prediction time; a quantile-bin atom was added; confirmation adds a cluster (chemical) sign-flip
+  randomisation test and a max-T family-wise p-value; a continuous plant for residuals was added; atom codes are
+  cached. The engine, fitness, confirmation fold and evolutionary loop are otherwise the original ones.

@@ -1,0 +1,93 @@
+# Numbers in rendered documents that are NOT results: structural constants, identifiers and notation.
+# Format: regex<TAB>justification[<TAB>scope glob]. A rule accepts a number only if one of its matches
+# on the line covers that number (see scripts/check_numbers.py). Never add a rule for a result:
+# results must come from results/*.json through a template token (scripts/render_docs.py).
+
+# --- identifiers and dates
+\b\d{4}-\d{4}-\d{4}-\d{3}[\dX]\b	ORCID identifier of the team lead	*
+AIDs?\s+(?:\*\*)?\d+(?:\*\*)?(?:,\s*(?:\*\*)?\d+(?:\*\*)?)*	PubChem assay identifiers (AIDs) of the data sources, incl. Markdown-bold in docs/viability_potency.md	*
+doi:10\.\d{4,9}/\S+	DOI of a dataset or publication	*
+arXiv:\d{4}\.\d{4,5}(?:,\s*\d{4}\.\d{4,5})*	arXiv identifiers of the team lead's preprints	*
+ISBN\s+[\d-]+[\dX]	ISBN of a published book	*
+Zenodo\s+(?:record\s+)?\d+	Zenodo record identifier of the Brewer dataset	*
+SHA-256	name of the hash algorithm	*
+(?:CC0|CC-BY|AGPL|LGPL|GPL|Apache|MPL)[- ]\d(?:\.\d)?	licence name and version	*
+(?:Opus|Sonnet|Haiku)(?:~|\s)\d\.\d|GPT-\d(?:\.\d)?(?:-[A-Za-z]+)?	AI model version identifiers (disclosure)	*
+(?:filed|granted)\s+(?:19|20)\d\d|\((?:19|20)\d\d,\s*ISBN	filing, grant and publication years (dates)	*
+\b(?:19|20)\d\d-\d\d-\d\d\b	calendar dates (release tag, registration)	*
+seed[- ]\d+	random-seed identifier	*
+(?:Fig\.|Figure)\s*\d+	figure numbering	*
+\bTable\s*\d+\b	table numbering (e.g. EPA manuscript Table 3)	*
+\bSections?\s*\d+(?:\s*(?:and|,|--|–|-)\s*\d+)*\b	section numbering of a cited method paper	*
+folds?\s+\d(?:\s*(?:--|–|-)\s*\d)?	identifiers of the frozen outer folds (results/splits_epa_nfa.json)	*
+\(\d\)~|^\s*\d\.\s	enumeration labels	*
+Version\s+\d\b|\bv\d\b	software version of NeuroChip Twin	*
+AUC\\?,?\s?\d-hit|Top-\d|\bTop\d\b	names of EPA's published hit-count rules (AUC 3-hit, Top-2)	*
+AUC\s+\d(?:-hit)?(?:\s*/\s*\d(?:-hit)?)*|Top-\d(?:\s*/\s*\d)*	list form of EPA's published hit-count rules (AUC 1-hit/3-hit, Top-1/2/3/5)	*
+et al\.\s+(?:19|20)\d\d	citation year of a cited method paper (Cotterill/Ball/Frank et al.)	*
+\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:19|20)\d\d\b	dataset/list revision month and year (e.g. OECD Appendix A, September 2025 list)	*
+DNT-DIVER\s+(?:19|20)\d\d	release year of the NTP DNT-DIVER dataset name	*
+
+# --- assay design (EPA NFA) and notation fixed before any result
+48-well	plate format of the EPA Network Formation Assay	*
+\b17\b(?=\s+(?:network\s+|NFA\s+|MEA\s+)?(?:features|names|endpoints)\b)|\buses\s+17\b|\b7\s+and\s+17\s+NFA endpoints\b	the NFA defines 17 network features / endpoints, DIV12 uses 7 (docs/FEATURES.md, docs/epa_nfa.md, docs/viability_potency.md)	*
+4(?:\\,|\\\(|\\\)|\s)*\\times(?:\\,|\\\(|\\\)|\s)*17\b	trajectory shape: 4 DIV x 17 features	*
+DIV(?:\\,|~|\s|\(|\)|\\\))*\d+(?:\s*(?:,|/|and|--|–)\s*\d+)*\)?	recording days in vitro of the NFA schedule (DIV 5, 7, 9, 12)	*
+\bk\s*(?:=|\{=\}|\\le|\\ge|\\in)\s*\\?\{?\s*\d(?:\s*(?:,|\\dots|--|–)+\s*\d)*	k = number of measured concentrations: design grid {0,...,4} fixed by the protocols	*
+^\s*\d\s*&	row label k (number of measured concentrations) in the results tables	report/*.tex
+\b4-compartment|\b4\s+subregions\b	chip design: four compartments/subregions (Brewer MEA)	*
+\b1 on activity(?: disagreement)?(?: and 0 if)?	definition of the composite potency error (R3 protocol)	*
+\(\\le\\\)\\,\d+ min	video length limit set by the competition rules	report/*.tex
+\bB\s*(?:=|\{=\})\s*\d	B = DoseCompass measurement budget: grid {2, 3, 4} fixed in the registered R6 protocol	*
+\b51(?=\s+(?:trajectory\s+)?summaries)	hazard-call inputs: 17 features x 3 summaries per feature (scripts/run_dnt_r4.py)	*
+\b16\b(?=\s+(?:established measures|electrodes)\b)	Frank et al.'s 16 established MEA measures / Ball's caution about networks larger than 16 electrodes (published method constants)	docs/*.md
+\b3\s*ms\b	published burst/network-spike bin width (Cotterill/Ball method constant)	docs/*.md
+\b50\s*ms\b	published STTC correlation window (Cotterill method constant)	docs/*.md
+\b0\.01%	Ball et al.'s published electrode-inclusion occupancy threshold	docs/FEATURES.md
+base-10\b	units convention: base-10 logarithm (docs/viability_potency.md)	docs/*.md
+\bbase-2 logarithms\b	units convention: base-2 (Shannon) logarithm for the information feature	docs/FEATURES.md
+An electrode is active at ≥5 spikes/minute	MaxInterval active-electrode threshold, our stated convention (docs/FEATURES.md)	docs/FEATURES.md
+ISI ≤0\.1 s, extends over ISIs ≤0\.25 s, and contains ≥6 spikes over ≥0\.05 s	MaxInterval burst-detection thresholds, our stated convention (docs/FEATURES.md)	docs/FEATURES.md
+separated by <0\.8 s are merged	MaxInterval candidate-merge threshold, our stated convention (docs/FEATURES.md)	docs/FEATURES.md
+has ≥1 accepted burst/minute|with ≥1 burst/min	bursting-electrode threshold, our stated convention (docs/FEATURES.md)	docs/FEATURES.md
+percentages are 0–100	units convention: percentage range (docs/FEATURES.md)	docs/FEATURES.md
+≥5 distinct\b|with ≥5 spikes/min	network-event / active-electrode spike-count thresholds, our stated convention (docs/FEATURES.md)	docs/FEATURES.md
+fraction of spikes inside bursts ×100	percent conversion of a fraction, notation not data (docs/FEATURES.md)	docs/FEATURES.md
+is 1 when channel.*?≥1 spike	binary indicator variable definition, notation not data (docs/FEATURES.md)	docs/FEATURES.md
+3 ms bin; otherwise 0	binary indicator variable definition, notation not data (docs/FEATURES.md)	docs/FEATURES.md
+
+# --- statistical conventions and protocol constants fixed a priori
+\b95\\?%(?=\s*(?:CIs?|confidence|intervals?|bootstrap)\b)|(?:Clopper(?:--|–|-)Pearson|Wilson|bootstrap)\s+95\\?%	confidence level of every reported interval	*
+nominal\s+(?:0\.(?:80|90|95)|(?:80|90|95)\\?%)|\b(?:80|90|95)\\?%(?=\s*(?:$|nominal|intervals?|predictive|band))|nominal\s+80,\s*90\s*and	nominal coverage levels of the conformal protocol (alpha = 0.2, 0.1, 0.05)	*
+2\.5\s*(?:--|–|-)\s*97\.5\\?%	percentiles of a central 95% band	*
+p\s*(?:<|\\le|\\leq)\s*0\.05	conventional significance threshold	*
+\b200(?=\s+(?:seeded\s+)?random\s+orders|\s+replicates)|mean of 200	number of random orders fixed in the registered R6 protocol (r6_dosecompass.json: protocol, protocol_sha256)	*
+batches of 32	training batch size, fixed a priori (src/neurotwin/models/cnp.py TrainConfig.batch)	*
+\(4000 resamples\)	paired-bootstrap resamples fixed in code (scripts/run_trajectory_cv.py paired_boot n=4000; run_potency.py, run_ablations.py)	*
+clipped at ±10|\\operatorname\{clip\}_\{\\pm\s*10\}	target clipping at +-10 vehicle SD (src/neurotwin/models/trajectory.py CLIP)	*
+1\.4826	fixed MAD-to-SD scaling constant used in the z_vehicle normalization (docs/epa_nfa.md)	docs/*.md
+\b100 ms bins	population-burst bin width of the chip layer (r8_chiplayer.json: burst_method)	*
+
+# --- equations (report): constants of the model definition in src/neurotwin/models/cnp.py
+z=\(\\ell\+0\.5\)/1\.5	dose normalisation of the positional embedding (z = (x + 0.5) / 1.5)	report/*.tex
+\\omega_j=0\.5\\cdot 2\^\{j\}	embedding frequencies 0.5 * 2^j (DoseEmbedding.freq)	report/*.tex
+0\.02\+\\operatorname\{softplus\}	predictive-scale floor sigma = 0.02 + softplus(s)	report/*.tex
+A value of \\\(-3\\\)	illustrative value explaining the units of the target (vehicle SD)	report/*.tex
+_\{i=1\}|_\{10\}|j=0,\\dots,n_\\omega-1|\\t?frac\{1\}|\\tfrac1[34]|\^2|\(n\+1\)\(1-\\alpha\)|\\equiv 0|\bB-1\b	mathematical notation (indices, logarithm base, fractions, exponents), not data	report/*.tex
+C=1\\\) fixed a priori	L2 regularisation strength fixed a priori (scripts/run_dnt_r4.py LogisticRegression(C=1.0))	report/*.tex
+\\kappa=8	shrinkage strength fixed a priori (src/neurotwin/chip/propagation.py _fit(strength=8.0))	report/*.tex
+
+# --- report layout: rubric weights (official rules) and figure file format
+(?:importance|innovation|validation|Reproducibility|Presentation|bonus|\\zh\{[^}]*\})\s\(\+?\d+(?:\.\d+)?\)	evaluation-criterion weights announced by Kaggle and Pazhou (rubric table)	report/*.tex
+\(\d+ dpi\)|\d+(?:\.\d+)? in wide	figure file format (scripts/make_figures.py)	report/figures/*.md
+
+# --- R11 early exit and appendix A (protocol constants fixed before any result)
+95\\?%(?=\s*of the active chemicals|-sensitivity)	R11 sensitivity target fixed in the registered protocol (docs/prereg/r11_early_exit.md)	report/*
+\\\(h=[14]\\\)	forecast horizons (bins ahead) of appendix candidate B, fixed in scripts/appendix_own_architectures.py	report/*
+(?:with|at) power 0\.8	conventional power target for the minimum detectable effect (scripts/run_residual_audit.py, fixed a priori)	report/*
+
+# --- README-only structural constants (badges, dataset acquisition parameters carried from the data source)
+[Pp]ython[- ]3\.12	Python version pinned in .github/workflows/ci.yml, shown as the README badge	README.md
+\b9 unstimulated and 6\b	Brewer dataset recording-condition counts (dataset acquisition design, not a result)	README.md
+\b25 kHz\b	Brewer dataset sampling rate (dataset acquisition constant)	README.md
+\bfor 300 seconds\b	Brewer dataset recording duration (dataset acquisition constant)	README.md

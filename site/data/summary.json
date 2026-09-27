@@ -1,13 +1,124 @@
 {
  "generated_by": "scripts/precompute_site.py",
- "generated_utc": "2026-09-26T09:07:37Z",
+ "generated_utc": "2026-09-26T16:21:38Z",
  "sources": {
   "trajectory_cv.json": "ce6b2e1b9e8cdf212c7b0d4fe0d881a24e34a4a6f29cf3caa5b48c643929cc49",
   "conformal_r7.json": "4235a5cc2c83120c8be82d4d94fd9ed9b39630704365e2c1b919441e4ddd28b8",
   "r8_chiplayer.json": "533a991e64db6a35805fe23e932dc39fa44a26b720cb65b9860436499b9c8eb1",
-  "chiplayer_params.json": "039df2f7a8c106f542e19aa81f76d04b1cd5ff9f1fb933e8d1a1a74871cafa28",
   "epa_baseline_repro.json": "1f4e07911a8b8054fe45950e6726b47306d12839c9edbc84306e22c9d856c8d4",
+  "dnt_r4.json": "24cd32c809f81dedeebe6bc2fe026d5b8efb3b7e07dd327bd586084337d9eb5c",
+  "dnt_r4_calls.csv": "deb42dc48c32fddae60ca87e3b0e8fe2e6970a0c0ffa01f8d6008a4a135fda1f",
+  "r11_early_exit.json": "8703a4b88410b7a57d0540735a001cdda2c7fcb12b3098aca527286e8cb1df4c",
+  "r11_early_exit_rows.csv": "cc39435d94b6770b66d38ab4b0032e59d7c3c0a163d6708ec81d64b9fbc44bdd",
+  "report_secondary.json": "f063d0ff96ed799d898cafe879153a77453eb6462225912cb4bf37ce1f4d771a",
+  "potency_r3.json": "47186257042e98e829d0853d52112deb2606ed9c06632fb81978167591f138d6",
+  "data_audit_brewer.json": "8455801dd8944814cc4de8adf24785ccee8fbbe458b18264399280246c4ec163",
+  "figures_derived.json": "f7ba3ea4271c1cbdc714c08fc0d24155416f590b5e4315b823d64cef6a5ccfe0",
   "data_bundle/nfa_tasks.npz": "e1f056ef33f568052fb8dfdba6e095f7b575c7f78d96768e34469918559008d2"
+ },
+ "key_numbers": [
+  {
+   "id": "forecast",
+   "value": "11%",
+   "title": "lower forecast error from 3 measured doses",
+   "detail": "Than the best of five executed baselines (log-linear interpolation); paired 95 % CI of the difference [-0.188, -0.099] SD units. Better for 77 % of 243 unseen chemicals; 11.2 % on the four never-inspected folds.",
+   "sources": [
+    "trajectory_cv.json:by_k.3.curve_mae.paired_vs_best.rel_change_pct",
+    "trajectory_cv.json:by_k.3.curve_mae.paired_vs_best.ci95",
+    "trajectory_cv.json:by_k.3.curve_mae.paired_vs_best.frac_chem_improved",
+    "trajectory_cv.json:by_k.3.curve_mae.paired_vs_best.n_chemicals",
+    "trajectory_cv.json:by_k.3.curve_mae.best_baseline",
+    "trajectory_cv.json:by_k_folds_1to4.3.paired_vs_best.rel_change_pct"
+   ]
+  },
+  {
+   "id": "hazard",
+   "value": "65 vs 52–56",
+   "title": "known neurotoxicants flagged from 3 doses, vs EPA rules on all doses",
+   "detail": "Same 97 reference chemicals. Balanced accuracy 86.4 % vs 82.6–85.9 % for the exactly reproduced EPA hit-count rules; AUROC 0.915.",
+   "sources": [
+    "dnt_r4.json:variants.k3.mcnemar_vs_epa.DIV12.ours.tp",
+    "dnt_r4.json:variants.k3.mcnemar_vs_epa.DIV12.n_chemicals",
+    "dnt_r4.json:variants.k3.mcnemar_vs_epa.DIV12.epa_rule_same_chemicals.tp",
+    "dnt_r4.json:variants.k3.mcnemar_vs_epa.AUC.3hit.epa_rule_same_chemicals.tp",
+    "dnt_r4.json:variants.k3.mcnemar_vs_epa.Top2.epa_rule_same_chemicals.tp",
+    "dnt_r4.json:variants.k3.mcnemar_vs_epa.DIV12.ours.balanced_accuracy",
+    "dnt_r4.json:variants.k3.mcnemar_vs_epa.DIV12.epa_rule_same_chemicals.balanced_accuracy",
+    "dnt_r4.json:variants.k3.mcnemar_vs_epa.AUC.3hit.epa_rule_same_chemicals.balanced_accuracy",
+    "dnt_r4.json:variants.k3.mcnemar_vs_epa.Top2.epa_rule_same_chemicals.balanced_accuracy",
+    "dnt_r4.json:variants.k3.auroc"
+   ]
+  },
+  {
+   "id": "coverage",
+   "value": "89.9%",
+   "title": "observed coverage of the nominal 90 % band",
+   "detail": "Cross-conformal, Mondrian by cytotoxicity × k; 95 % CI 89.1–90.6 % (parametric band before calibration: 88.2 %).",
+   "sources": [
+    "conformal_r7.json:results.alpha_0.1.k3.conformal.coverage",
+    "conformal_r7.json:results.alpha_0.1.k3.conformal.ci95",
+    "conformal_r7.json:results.alpha_0.1.k3.parametric.coverage"
+   ]
+  },
+  {
+   "id": "abstain",
+   "value": "10.7%",
+   "title": "forecasts flagged “I don’t know”",
+   "detail": "Abstained forecasts are the least reliable: curve error 1.67 vs 1.25 for the retained ones.",
+   "sources": [
+    "conformal_r7.json:abstention.abstention_rate",
+    "conformal_r7.json:abstention.curve_mae_retained",
+    "conformal_r7.json:abstention.curve_mae_abstained"
+   ]
+  },
+  {
+   "id": "wells",
+   "value": "57%",
+   "title": "fewer treated wells per chemical (median, 3 doses)",
+   "detail": "Measuring 3 of the tested concentrations instead of the full series; potency is still taken by interpolation of the measured doses (R3, a negative result for model-derived potency).",
+   "sources": [
+    "potency_r3.json:by_k.3.wells_saved_median_pct"
+   ]
+  },
+  {
+   "id": "gate",
+   "value": "26%",
+   "title": "of chemicals can stop at DIV 7 (throughput gate)",
+   "detail": "Persistence gate, 2 of 4 recordings. The twin’s safety gate stops 15 % and lets 3 of 63 known neurotoxicants exit instead of 13 (secondary, post-hoc test).",
+   "sources": [
+    "r11_early_exit.json:methods.persistence.overall_exit_rate",
+    "r11_early_exit.json:methods.twin_upper90.overall_exit_rate",
+    "report_secondary.json:r11_epa_labels.positive.persistence_vs_twin_upper90.events_a",
+    "report_secondary.json:r11_epa_labels.positive.persistence_vs_twin_upper90.events_b",
+    "report_secondary.json:r11_epa_labels.positive.n"
+   ]
+  }
+ ],
+ "scale": {
+  "chemicals": 243,
+  "axons": 440,
+  "recordings": 21,
+  "sources": [
+   "trajectory_cv.json:n_chemicals",
+   "data_audit_brewer.json:n_axons",
+   "data_audit_brewer.json:n_recordings"
+  ],
+  "wells": 6902,
+  "features": 17,
+  "divs": [
+   5,
+   7,
+   9,
+   12
+  ]
+ },
+ "method_labels": {
+  "neurotrajectory": "NeuroTrajectory",
+  "loglinear_interp": "Log-linear interpolation",
+  "analog_knn": "Analog kNN",
+  "hill_per_endpoint": "Hill per endpoint",
+  "context_mean": "Context mean",
+  "zero": "Zero effect"
  },
  "trajectory": {
   "description": "R2: few-shot dose x DIV trajectory forecasting on unseen chemicals (EPA NFA), 5-fold chemical CV.",
@@ -25,8 +136,6 @@
    2
   ],
   "designs_per_k": 5,
-  "target_units": "asinh(x/c_f) minus plate/date/DIV vehicle median, divided by pooled within-plate vehicle robust SD; clipped to +-10",
-  "development_note": "During development one smoke run (800 steps, 1 seed) was evaluated on outer fold 0 and motivated adding the interpolation-informed decoder as a candidate; the final choice is nested. 'by_k_folds_1to4' excludes fold 0 entirely.",
   "by_k": {
    "0": {
     "curve_mae": {
@@ -47,42 +156,6 @@
      "rel_change_pct": -0.8,
      "n_chemicals": 243,
      "frac_chem_improved": 0.58
-    },
-    "paired_vs": {
-     "loglinear_interp": {
-      "mean_diff": -0.0799,
-      "ci95": [
-       -0.1364,
-       -0.0219
-      ],
-      "rel_change_pct": -4.52,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.564
-     },
-     "analog_knn": {
-      "mean_diff": -0.0135,
-      "ci95": [
-       -0.0272,
-       0.0002
-      ],
-      "rel_change_pct": -0.8,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.58
-     },
-     "hill_per_endpoint": {
-      "mean_diff": -0.0799,
-      "ci95": [
-       -0.1364,
-       -0.0219
-      ],
-      "rel_change_pct": -4.52,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.564
-     }
-    },
-    "well_interval90": {
-     "coverage_mean": 0.8998,
-     "width_mean": 9.5765
     }
    },
    "1": {
@@ -104,42 +177,6 @@
      "rel_change_pct": -5.32,
      "n_chemicals": 243,
      "frac_chem_improved": 0.671
-    },
-    "paired_vs": {
-     "loglinear_interp": {
-      "mean_diff": -0.4601,
-      "ci95": [
-       -0.5446,
-       -0.3695
-      ],
-      "rel_change_pct": -24.54,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.761
-     },
-     "analog_knn": {
-      "mean_diff": -0.0795,
-      "ci95": [
-       -0.1151,
-       -0.0402
-      ],
-      "rel_change_pct": -5.32,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.671
-     },
-     "hill_per_endpoint": {
-      "mean_diff": -0.4601,
-      "ci95": [
-       -0.5446,
-       -0.3695
-      ],
-      "rel_change_pct": -24.54,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.761
-     }
-    },
-    "well_interval90": {
-     "coverage_mean": 0.8688,
-     "width_mean": 7.2529
     }
    },
    "2": {
@@ -161,42 +198,6 @@
      "rel_change_pct": -8.15,
      "n_chemicals": 243,
      "frac_chem_improved": 0.749
-    },
-    "paired_vs": {
-     "loglinear_interp": {
-      "mean_diff": -0.2538,
-      "ci95": [
-       -0.3144,
-       -0.1878
-      ],
-      "rel_change_pct": -16.55,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.79
-     },
-     "analog_knn": {
-      "mean_diff": -0.1135,
-      "ci95": [
-       -0.1467,
-       -0.0783
-      ],
-      "rel_change_pct": -8.15,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.749
-     },
-     "hill_per_endpoint": {
-      "mean_diff": -0.2538,
-      "ci95": [
-       -0.3144,
-       -0.1878
-      ],
-      "rel_change_pct": -16.55,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.79
-     }
-    },
-    "well_interval90": {
-     "coverage_mean": 0.876,
-     "width_mean": 6.9482
     }
    },
    "3": {
@@ -218,42 +219,6 @@
      "rel_change_pct": -10.96,
      "n_chemicals": 243,
      "frac_chem_improved": 0.77
-    },
-    "paired_vs": {
-     "loglinear_interp": {
-      "mean_diff": -0.1452,
-      "ci95": [
-       -0.1882,
-       -0.0988
-      ],
-      "rel_change_pct": -10.96,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.77
-     },
-     "analog_knn": {
-      "mean_diff": -0.1475,
-      "ci95": [
-       -0.1774,
-       -0.1166
-      ],
-      "rel_change_pct": -11.11,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.815
-     },
-     "hill_per_endpoint": {
-      "mean_diff": -0.2554,
-      "ci95": [
-       -0.2999,
-       -0.2057
-      ],
-      "rel_change_pct": -17.8,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.893
-     }
-    },
-    "well_interval90": {
-     "coverage_mean": 0.8828,
-     "width_mean": 6.7723
     }
    },
    "4": {
@@ -275,131 +240,12 @@
      "rel_change_pct": -8.11,
      "n_chemicals": 243,
      "frac_chem_improved": 0.77
-    },
-    "paired_vs": {
-     "loglinear_interp": {
-      "mean_diff": -0.1004,
-      "ci95": [
-       -0.1357,
-       -0.0608
-      ],
-      "rel_change_pct": -8.11,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.77
-     },
-     "analog_knn": {
-      "mean_diff": -0.1726,
-      "ci95": [
-       -0.205,
-       -0.1422
-      ],
-      "rel_change_pct": -13.17,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.815
-     },
-     "hill_per_endpoint": {
-      "mean_diff": -0.1696,
-      "ci95": [
-       -0.2084,
-       -0.1269
-      ],
-      "rel_change_pct": -12.97,
-      "n_chemicals": 243,
-      "frac_chem_improved": 0.827
-     }
-    },
-    "well_interval90": {
-     "coverage_mean": 0.8853,
-     "width_mean": 6.6835
-    }
-   }
-  },
-  "by_k_folds_1to4": {
-   "0": {
-    "best_baseline": "analog_knn",
-    "neurotrajectory": 1.7073,
-    "baseline": 1.7138,
-    "paired_vs_best": {
-     "mean_diff": -0.0065,
-     "ci95": [
-      -0.0122,
-      -0.0005
-     ],
-     "rel_change_pct": -0.38,
-     "n_chemicals": 194,
-     "frac_chem_improved": 0.577
-    }
-   },
-   "1": {
-    "best_baseline": "analog_knn",
-    "neurotrajectory": 1.4206,
-    "baseline": 1.5076,
-    "paired_vs_best": {
-     "mean_diff": -0.087,
-     "ci95": [
-      -0.13,
-      -0.0416
-     ],
-     "rel_change_pct": -5.77,
-     "n_chemicals": 194,
-     "frac_chem_improved": 0.68
-    }
-   },
-   "2": {
-    "best_baseline": "analog_knn",
-    "neurotrajectory": 1.2827,
-    "baseline": 1.4061,
-    "paired_vs_best": {
-     "mean_diff": -0.1235,
-     "ci95": [
-      -0.1596,
-      -0.0847
-     ],
-     "rel_change_pct": -8.78,
-     "n_chemicals": 194,
-     "frac_chem_improved": 0.768
-    }
-   },
-   "3": {
-    "best_baseline": "loglinear_interp",
-    "neurotrajectory": 1.194,
-    "baseline": 1.3453,
-    "paired_vs_best": {
-     "mean_diff": -0.1513,
-     "ci95": [
-      -0.1992,
-      -0.1
-     ],
-     "rel_change_pct": -11.25,
-     "n_chemicals": 194,
-     "frac_chem_improved": 0.773
-    }
-   },
-   "4": {
-    "best_baseline": "loglinear_interp",
-    "neurotrajectory": 1.1427,
-    "baseline": 1.2537,
-    "paired_vs_best": {
-     "mean_diff": -0.111,
-     "ci95": [
-      -0.1492,
-      -0.0694
-     ],
-     "rel_change_pct": -8.85,
-     "n_chemicals": 194,
-     "frac_chem_improved": 0.784
     }
    }
   }
  },
  "conformal": {
-  "description": "R7: conformal calibration of NeuroTrajectory predictive intervals, with Mondrian strata and abstention.",
   "n_chemicals": 243,
-  "chemicals_per_regime": {
-   "non-cytotoxic": 117,
-   "cytotoxic": 107,
-   "indeterminate": 19
-  },
   "results": {
    "alpha_0.2": {
     "nominal": 0.8,
@@ -599,1215 +445,18 @@
   }
  },
  "chip": {
-  "title": "Propagation fitted and evaluated on Brewer",
-  "source": "https://zenodo.org/records/10257483",
-  "license": "CC0-1.0",
   "n_recordings": 21,
   "n_axons": 440,
-  "conditions": {
-   "NoStim": 9,
-   "HFS5": 6,
-   "HFS40": 6
-  },
-  "graph_description": "four directed pairs; FF follows EC-DG-CA3-CA1-EC; feedback is reverse",
-  "burst_interpretation": "zero-lag correlation is synchronous activity, not evidence of directed propagation; lag associations are exploratory",
-  "cv": {
-   "protocol": "leave-one-recording-out over nine NoStim recordings",
-   "model": "pair/tunnel empirical Bayes shrinkage, strength=8 axons",
-   "baseline_tunnel": "pooled physical tunnel mean over eight training recordings",
-   "baseline_direction_null": "permutation of training axon direction labels across the eight recordings; fixed per fold",
-   "summary": {
-    "model": {
-     "ff_fraction_mae": 0.3625478584621897,
-     "conduction_mae_ms": 0.1542703999389656,
-     "conduction_nll_nats": 2.368860627728017
-    },
-    "tunnel_mean": {
-     "ff_fraction_mae": 0.3985692364640804,
-     "conduction_mae_ms": 0.16096655229635132,
-     "conduction_nll_nats": 2.198991744380286
-    },
-    "permuted_direction": {
-     "ff_fraction_mae": 0.4029416171580122,
-     "conduction_mae_ms": 0.1542703999389656
-    }
-   },
-   "comparisons": {
-    "tunnel_mean": {
-     "ff_fraction_mae": {
-      "difference_model_minus_baseline": -0.03602137800189071,
-      "ci95": [
-       -0.056033500904379176,
-       -0.018218666241575726
-      ],
-      "p_bootstrap_no_improvement": 0.0,
-      "unit": "recording",
-      "n_resamples": 10000
-     },
-     "conduction_mae_ms": {
-      "difference_model_minus_baseline": -0.006696152357385737,
-      "ci95": [
-       -0.014731978616434646,
-       0.001210452694215931
-      ],
-      "p_bootstrap_no_improvement": 0.0519,
-      "unit": "recording",
-      "n_resamples": 10000
-     },
-     "conduction_nll_nats": {
-      "difference_model_minus_baseline": 0.16986888334773065,
-      "ci95": [
-       -0.39197031128776166,
-       0.9920355258100688
-      ],
-      "p_bootstrap_no_improvement": 0.6542,
-      "unit": "recording",
-      "n_resamples": 10000
-     }
-    },
-    "permuted_direction": {
-     "ff_fraction_mae": {
-      "difference_model_minus_baseline": -0.04039375869582249,
-      "ci95": [
-       -0.09565159279287352,
-       0.014395136436768602
-      ],
-      "p_bootstrap_no_improvement": 0.0765,
-      "unit": "recording",
-      "n_resamples": 10000
-     },
-     "conduction_mae_ms": {
-      "difference_model_minus_baseline": 0.0,
-      "ci95": [
-       0.0,
-       0.0
-      ],
-      "p_bootstrap_no_improvement": 1.0,
-      "unit": "recording",
-      "n_resamples": 10000
-     }
-    }
-   },
-   "folds": [
-    {
-     "condition": "NoStim",
-     "fid": 1,
-     "n_axons": 22,
-     "n_observed_tunnels": 15,
-     "scores": {
-      "model": {
-       "ff_fraction_mae": 0.3946552460545331,
-       "conduction_mae_ms": 0.12164705123598402,
-       "conduction_nll_nats": 1.4645437087649675
-      },
-      "tunnel_mean": {
-       "ff_fraction_mae": 0.41980537980537985,
-       "conduction_mae_ms": 0.1321201021201021,
-       "conduction_nll_nats": 1.8466229387709339
-      },
-      "permuted_direction": {
-       "ff_fraction_mae": 0.40549563720538173,
-       "conduction_mae_ms": 0.12164705123598402
-      }
-     }
-    },
-    {
-     "condition": "NoStim",
-     "fid": 2,
-     "n_axons": 29,
-     "n_observed_tunnels": 18,
-     "scores": {
-      "model": {
-       "ff_fraction_mae": 0.36900039911043353,
-       "conduction_mae_ms": 0.17977072349307932,
-       "conduction_nll_nats": 1.8709739487934651
-      },
-      "tunnel_mean": {
-       "ff_fraction_mae": 0.3741301907968575,
-       "conduction_mae_ms": 0.20695188336567644,
-       "conduction_nll_nats": 2.1072851354296454
-      },
-      "permuted_direction": {
-       "ff_fraction_mae": 0.39191717434495643,
-       "conduction_mae_ms": 0.17977072349307932
-      }
-     }
-    },
-    {
-     "condition": "NoStim",
-     "fid": 3,
-     "n_axons": 34,
-     "n_observed_tunnels": 19,
-     "scores": {
-      "model": {
-       "ff_fraction_mae": 0.35989642277870026,
-       "conduction_mae_ms": 0.18571856135830872,
-       "conduction_nll_nats": 5.773315702512875
-      },
-      "tunnel_mean": {
-       "ff_fraction_mae": 0.40627136021872867,
-       "conduction_mae_ms": 0.18394643918173326,
-       "conduction_nll_nats": 2.656584991804532
-      },
-      "permuted_direction": {
-       "ff_fraction_mae": 0.30016353340476554,
-       "conduction_mae_ms": 0.18571856135830872
-      }
-     }
-    },
-    {
-     "condition": "NoStim",
-     "fid": 4,
-     "n_axons": 11,
-     "n_observed_tunnels": 9,
-     "scores": {
-      "model": {
-       "ff_fraction_mae": 0.5713714418646273,
-       "conduction_mae_ms": 0.15823540452417462,
-       "conduction_nll_nats": 2.2151966065097004
-      },
-      "tunnel_mean": {
-       "ff_fraction_mae": 0.5811336811336811,
-       "conduction_mae_ms": 0.1444689855598947,
-       "conduction_nll_nats": 2.5254849486247157
-      },
-      "permuted_direction": {
-       "ff_fraction_mae": 0.47090766075856255,
-       "conduction_mae_ms": 0.15823540452417462
-      }
-     }
-    },
-    {
-     "condition": "NoStim",
-     "fid": 5,
-     "n_axons": 18,
-     "n_observed_tunnels": 15,
-     "scores": {
-      "model": {
-       "ff_fraction_mae": 0.33206875596048896,
-       "conduction_mae_ms": 0.13278253921380603,
-       "conduction_nll_nats": 3.2858741885844824
-      },
-      "tunnel_mean": {
-       "ff_fraction_mae": 0.3736245236245236,
-       "conduction_mae_ms": 0.14342462475795803,
-       "conduction_nll_nats": 2.325592751844315
-      },
-      "permuted_direction": {
-       "ff_fraction_mae": 0.448512097129168,
-       "conduction_mae_ms": 0.13278253921380603
-      }
-     }
-    },
-    {
-     "condition": "NoStim",
-     "fid": 6,
-     "n_axons": 22,
-     "n_observed_tunnels": 14,
-     "scores": {
-      "model": {
-       "ff_fraction_mae": 0.34465453315161204,
-       "conduction_mae_ms": 0.16911444518723215,
-       "conduction_nll_nats": 1.922664791024763
-      },
-      "tunnel_mean": {
-       "ff_fraction_mae": 0.3580930973788116,
-       "conduction_mae_ms": 0.18707398661944116,
-       "conduction_nll_nats": 2.4844810821613463
-      },
-      "permuted_direction": {
-       "ff_fraction_mae": 0.5206048672366891,
-       "conduction_mae_ms": 0.16911444518723215
-      }
-     }
-    },
-    {
-     "condition": "NoStim",
-     "fid": 7,
-     "n_axons": 15,
-     "n_observed_tunnels": 12,
-     "scores": {
-      "model": {
-       "ff_fraction_mae": 0.3400172138886289,
-       "conduction_mae_ms": 0.1701968925270563,
-       "conduction_nll_nats": 1.4427008097335576
-      },
-      "tunnel_mean": {
-       "ff_fraction_mae": 0.3517727642727642,
-       "conduction_mae_ms": 0.1720500388500388,
-       "conduction_nll_nats": 1.6505990009832419
-      },
-      "permuted_direction": {
-       "ff_fraction_mae": 0.4772958466301886,
-       "conduction_mae_ms": 0.1701968925270563
-      }
-     }
-    },
-    {
-     "condition": "NoStim",
-     "fid": 8,
-     "n_axons": 23,
-     "n_observed_tunnels": 13,
-     "scores": {
-      "model": {
-       "ff_fraction_mae": 0.2719800517989226,
-       "conduction_mae_ms": 0.13329823162981308,
-       "conduction_nll_nats": 1.4717556571131252
-      },
-      "tunnel_mean": {
-       "ff_fraction_mae": 0.36184840800225415,
-       "conduction_mae_ms": 0.1490470109600544,
-       "conduction_nll_nats": 1.8278187697660702
-      },
-      "permuted_direction": {
-       "ff_fraction_mae": 0.3005811429676531,
-       "conduction_mae_ms": 0.13329823162981308
-      }
-     }
-    },
-    {
-     "condition": "NoStim",
-     "fid": 9,
-     "n_axons": 22,
-     "n_observed_tunnels": 14,
-     "scores": {
-      "model": {
-       "ff_fraction_mae": 0.2792866615517606,
-       "conduction_mae_ms": 0.13766975028123596,
-       "conduction_nll_nats": 1.8727202365152147
-      },
-      "tunnel_mean": {
-       "ff_fraction_mae": 0.3604437229437229,
-       "conduction_mae_ms": 0.1296158992522629,
-       "conduction_nll_nats": 2.3664560800377745
-      },
-      "permuted_direction": {
-       "ff_fraction_mae": 0.31099659474474467,
-       "conduction_mae_ms": 0.13766975028123596
-      }
-     }
-    }
-   ]
-  },
-  "params": {
-   "source_cohort": "NoStim only, nine recordings; HFS excluded",
-   "scope": "descriptive Brewer parameters; no causal or cross-platform calibration",
-   "units": {
-    "conduction": "ms",
-    "weight": "fraction of sorted axons"
-   },
-   "pair_edges": [
-    {
-     "pair": "EC-DG",
-     "n_axons_ff": 21,
-     "n_axons_fb": 10,
-     "observed_directionality_d": 0.3548387096774194,
-     "ff_weight": 0.6317016317016317,
-     "fb_weight": 0.36829836829836826,
-     "conduction": {
-      "n": 31,
-      "mean_ms": 0.44387096774193546,
-      "median_ms": 0.48,
-      "p10_ms": 0.24,
-      "p90_ms": 0.72
-     }
-    },
-    {
-     "pair": "DG-CA3",
-     "n_axons_ff": 15,
-     "n_axons_fb": 36,
-     "observed_directionality_d": -0.4117647058823529,
-     "ff_weight": 0.31587057010785824,
-     "fb_weight": 0.6841294298921418,
-     "conduction": {
-      "n": 51,
-      "mean_ms": 0.3905882352941176,
-      "median_ms": 0.3999999999999999,
-      "p10_ms": 0.24,
-      "p90_ms": 0.5599999999999999
-     }
-    },
-    {
-     "pair": "CA3-CA1",
-     "n_axons_ff": 23,
-     "n_axons_fb": 31,
-     "observed_directionality_d": -0.14814814814814814,
-     "ff_weight": 0.42961876832844575,
-     "fb_weight": 0.5703812316715542,
-     "conduction": {
-      "n": 54,
-      "mean_ms": 0.4859259259259258,
-      "median_ms": 0.48,
-      "p10_ms": 0.24,
-      "p90_ms": 0.7999999999999999
-     }
-    },
-    {
-     "pair": "CA1-EC",
-     "n_axons_ff": 30,
-     "n_axons_fb": 30,
-     "observed_directionality_d": 0.0,
-     "ff_weight": 0.4946524064171123,
-     "fb_weight": 0.5053475935828877,
-     "conduction": {
-      "n": 60,
-      "mean_ms": 0.4346666666666666,
-      "median_ms": 0.3999999999999999,
-      "p10_ms": 0.24,
-      "p90_ms": 0.72
-     }
-    }
-   ],
-   "n_tunnels": 40
-  },
-  "observed": [
-   {
-    "condition": "NoStim",
-    "fid": 1,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 4,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.8,
-      "directionality_d": 0.6
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 2,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.4,
-      "directionality_d": -0.2
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 7,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.875,
-      "directionality_d": 0.75
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 3,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.75,
-      "directionality_d": 0.5
-     }
-    ]
-   },
-   {
-    "condition": "NoStim",
-    "fid": 2,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 2,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.6666666666666666,
-      "directionality_d": 0.3333333333333333
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 3,
-      "n_axons_fb": 6,
-      "ff_fraction": 0.3333333333333333,
-      "directionality_d": -0.3333333333333333
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 6,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.5454545454545454,
-      "directionality_d": 0.09090909090909091
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 3,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.5,
-      "directionality_d": 0.0
-     }
-    ]
-   },
-   {
-    "condition": "NoStim",
-    "fid": 3,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 4,
-      "n_axons_fb": 7,
-      "ff_fraction": 0.36363636363636365,
-      "directionality_d": -0.2727272727272727
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 3,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.375,
-      "directionality_d": -0.25
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 6,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.8571428571428571,
-      "directionality_d": 0.7142857142857143
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 2,
-      "n_axons_fb": 6,
-      "ff_fraction": 0.25,
-      "directionality_d": -0.5
-     }
-    ]
-   },
-   {
-    "condition": "NoStim",
-    "fid": 4,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 0,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 3,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 0,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 1,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.25,
-      "directionality_d": -0.5
-     }
-    ]
-   },
-   {
-    "condition": "NoStim",
-    "fid": 5,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 1,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 0,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 0,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 2,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.2857142857142857,
-      "directionality_d": -0.42857142857142855
-     }
-    ]
-   },
-   {
-    "condition": "NoStim",
-    "fid": 6,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 1,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 0,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 1,
-      "n_axons_fb": 8,
-      "ff_fraction": 0.1111111111111111,
-      "directionality_d": -0.7777777777777778
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 6,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.8571428571428571,
-      "directionality_d": 0.7142857142857143
-     }
-    ]
-   },
-   {
-    "condition": "NoStim",
-    "fid": 7,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 3,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 1,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.5,
-      "directionality_d": 0.0
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 0,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 5,
-      "n_axons_fb": 2,
-      "ff_fraction": 0.7142857142857143,
-      "directionality_d": 0.42857142857142855
-     }
-    ]
-   },
-   {
-    "condition": "NoStim",
-    "fid": 8,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 2,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 2,
-      "n_axons_fb": 7,
-      "ff_fraction": 0.2222222222222222,
-      "directionality_d": -0.5555555555555556
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 2,
-      "n_axons_fb": 2,
-      "ff_fraction": 0.5,
-      "directionality_d": 0.0
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 4,
-      "n_axons_fb": 4,
-      "ff_fraction": 0.5,
-      "directionality_d": 0.0
-     }
-    ]
-   },
-   {
-    "condition": "NoStim",
-    "fid": 9,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 4,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 1,
-      "n_axons_fb": 4,
-      "ff_fraction": 0.2,
-      "directionality_d": -0.6
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 1,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.25,
-      "directionality_d": -0.5
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 4,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.4444444444444444,
-      "directionality_d": -0.1111111111111111
-     }
-    ]
-   },
-   {
-    "condition": "HFS5",
-    "fid": 1,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 2,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 3,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.5,
-      "directionality_d": 0.0
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 8,
-      "n_axons_fb": 2,
-      "ff_fraction": 0.8,
-      "directionality_d": 0.6
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 5,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     }
-    ]
-   },
-   {
-    "condition": "HFS5",
-    "fid": 2,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 2,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.6666666666666666,
-      "directionality_d": 0.3333333333333333
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 5,
-      "n_axons_fb": 10,
-      "ff_fraction": 0.3333333333333333,
-      "directionality_d": -0.3333333333333333
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 5,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.5,
-      "directionality_d": 0.0
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 2,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.4,
-      "directionality_d": -0.2
-     }
-    ]
-   },
-   {
-    "condition": "HFS5",
-    "fid": 3,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 1,
-      "n_axons_fb": 6,
-      "ff_fraction": 0.14285714285714285,
-      "directionality_d": -0.7142857142857143
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 2,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.6666666666666666,
-      "directionality_d": 0.3333333333333333
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 1,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.5,
-      "directionality_d": 0.0
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 0,
-      "n_axons_fb": 7,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     }
-    ]
-   },
-   {
-    "condition": "HFS5",
-    "fid": 4,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 1,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 0,
-      "n_axons_fb": 2,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 0,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 4,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.5714285714285714,
-      "directionality_d": 0.14285714285714285
-     }
-    ]
-   },
-   {
-    "condition": "HFS5",
-    "fid": 5,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 2,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 0,
-      "n_axons_fb": 4,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 2,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.2857142857142857,
-      "directionality_d": -0.42857142857142855
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 2,
-      "n_axons_fb": 4,
-      "ff_fraction": 0.3333333333333333,
-      "directionality_d": -0.3333333333333333
-     }
-    ]
-   },
-   {
-    "condition": "HFS5",
-    "fid": 6,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 3,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 3,
-      "n_axons_fb": 4,
-      "ff_fraction": 0.42857142857142855,
-      "directionality_d": -0.14285714285714285
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 1,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.25,
-      "directionality_d": -0.5
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 5,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.5,
-      "directionality_d": 0.0
-     }
-    ]
-   },
-   {
-    "condition": "HFS40",
-    "fid": 1,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 4,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 2,
-      "n_axons_fb": 4,
-      "ff_fraction": 0.3333333333333333,
-      "directionality_d": -0.3333333333333333
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 7,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.875,
-      "directionality_d": 0.75
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 3,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.75,
-      "directionality_d": 0.5
-     }
-    ]
-   },
-   {
-    "condition": "HFS40",
-    "fid": 2,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 1,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.5,
-      "directionality_d": 0.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 2,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.2857142857142857,
-      "directionality_d": -0.42857142857142855
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 6,
-      "n_axons_fb": 4,
-      "ff_fraction": 0.6,
-      "directionality_d": 0.2
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 1,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.25,
-      "directionality_d": -0.5
-     }
-    ]
-   },
-   {
-    "condition": "HFS40",
-    "fid": 3,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 5,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.8333333333333334,
-      "directionality_d": 0.6666666666666666
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 4,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.8,
-      "directionality_d": 0.6
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 0,
-      "n_axons_fb": 1,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 0,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     }
-    ]
-   },
-   {
-    "condition": "HFS40",
-    "fid": 4,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 2,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 0,
-      "n_axons_fb": 2,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 0,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 1,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.25,
-      "directionality_d": -0.5
-     }
-    ]
-   },
-   {
-    "condition": "HFS40",
-    "fid": 5,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 2,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 0,
-      "n_axons_fb": 4,
-      "ff_fraction": 0.0,
-      "directionality_d": -1.0
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 2,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.2857142857142857,
-      "directionality_d": -0.42857142857142855
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 2,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.4,
-      "directionality_d": -0.2
-     }
-    ]
-   },
-   {
-    "condition": "HFS40",
-    "fid": 6,
-    "edges": [
-     {
-      "pair": "EC-DG",
-      "n_axons_ff": 3,
-      "n_axons_fb": 0,
-      "ff_fraction": 1.0,
-      "directionality_d": 1.0
-     },
-     {
-      "pair": "DG-CA3",
-      "n_axons_ff": 1,
-      "n_axons_fb": 5,
-      "ff_fraction": 0.16666666666666666,
-      "directionality_d": -0.6666666666666666
-     },
-     {
-      "pair": "CA3-CA1",
-      "n_axons_ff": 1,
-      "n_axons_fb": 3,
-      "ff_fraction": 0.25,
-      "directionality_d": -0.5
-     },
-     {
-      "pair": "CA1-EC",
-      "n_axons_ff": 5,
-      "n_axons_fb": 4,
-      "ff_fraction": 0.5555555555555556,
-      "directionality_d": 0.1111111111111111
-     }
-    ]
-   }
-  ]
+  "license": "CC0-1.0",
+  "source": "https://zenodo.org/records/10257483"
  },
  "epa_baseline": {
-  "method": "Sum EPA tcplfit2 endpoint hitc by SPID, then threshold chemical hit count",
   "n_reference": 105,
   "n_positive": 86,
-  "n_negative": 19,
-  "models": {
-   "DIV12": {
-    "threshold_hits": 1,
-    "tp": 63,
-    "fn": 23,
-    "tn": 18,
-    "fp": 1,
-    "n_positive": 86,
-    "n_negative": 19,
-    "sensitivity_pct": 73.3,
-    "specificity_pct": 94.7,
-    "balanced_accuracy_pct": 84.0,
-    "published_delta_pp": {
-     "sensitivity_pp": 0.0,
-     "specificity_pp": 0.0,
-     "balanced_accuracy_pp": 0.0
-    }
-   },
-   "AUC.3hit": {
-    "threshold_hits": 3,
-    "tp": 60,
-    "fn": 26,
-    "tn": 19,
-    "fp": 0,
-    "n_positive": 86,
-    "n_negative": 19,
-    "sensitivity_pct": 69.8,
-    "specificity_pct": 100.0,
-    "balanced_accuracy_pct": 84.9,
-    "published_delta_pp": {
-     "sensitivity_pp": 0.0,
-     "specificity_pp": 0.0,
-     "balanced_accuracy_pp": 0.0
-    }
-   },
-   "AUC.1hit": {
-    "threshold_hits": 1,
-    "tp": 66,
-    "fn": 20,
-    "tn": 14,
-    "fp": 5,
-    "n_positive": 86,
-    "n_negative": 19,
-    "sensitivity_pct": 76.7,
-    "specificity_pct": 73.7,
-    "balanced_accuracy_pct": 75.2,
-    "published_delta_pp": {
-     "sensitivity_pp": 0.0,
-     "specificity_pp": 0.0,
-     "balanced_accuracy_pp": 0.0
-    }
-   },
-   "Top1": {
-    "threshold_hits": 1,
-    "tp": 59,
-    "fn": 27,
-    "tn": 19,
-    "fp": 0,
-    "n_positive": 86,
-    "n_negative": 19,
-    "sensitivity_pct": 68.6,
-    "specificity_pct": 100.0,
-    "balanced_accuracy_pct": 84.3,
-    "published_delta_pp": {
-     "sensitivity_pp": 0.0,
-     "specificity_pp": 0.0,
-     "balanced_accuracy_pp": 0.0
-    }
-   },
-   "Top2": {
-    "threshold_hits": 1,
-    "tp": 64,
-    "fn": 22,
-    "tn": 19,
-    "fp": 0,
-    "n_positive": 86,
-    "n_negative": 19,
-    "sensitivity_pct": 74.4,
-    "specificity_pct": 100.0,
-    "balanced_accuracy_pct": 87.2,
-    "published_delta_pp": {
-     "sensitivity_pp": 0.0,
-     "specificity_pp": 0.0,
-     "balanced_accuracy_pp": 0.0
-    }
-   },
-   "Top3": {
-    "threshold_hits": 1,
-    "tp": 64,
-    "fn": 22,
-    "tn": 19,
-    "fp": 0,
-    "n_positive": 86,
-    "n_negative": 19,
-    "sensitivity_pct": 74.4,
-    "specificity_pct": 100.0,
-    "balanced_accuracy_pct": 87.2,
-    "published_delta_pp": {
-     "sensitivity_pp": 0.0,
-     "specificity_pp": 0.0,
-     "balanced_accuracy_pp": 0.0
-    }
-   },
-   "Top5": {
-    "threshold_hits": 1,
-    "tp": 64,
-    "fn": 22,
-    "tn": 19,
-    "fp": 0,
-    "n_positive": 86,
-    "n_negative": 19,
-    "sensitivity_pct": 74.4,
-    "specificity_pct": 100.0,
-    "balanced_accuracy_pct": 87.2,
-    "published_delta_pp": {
-     "sensitivity_pp": 0.0,
-     "specificity_pp": 0.0,
-     "balanced_accuracy_pp": 0.0
-    }
-   }
-  },
-  "comparison_explanation": "All selected published differences are 0.0 percentage points: the same EPA endpoint calls, RF ranking, and dnt_ref_tbl2 reference intersection are used. Other reference lists or refitted concentration-response curves can change these metrics.",
-  "interpretation": "Published Table 3 is in-sample. EPA RF feature ranking was not reselected within held-out folds."
+  "n_negative": 19
  },
  "site_design_check": {
-  "note": "Explorer uses one evenly spread design per k; the paper averages 5 seeded random designs per k, so these means differ slightly from trajectory_cv.json.",
+  "note": "The explorer uses one evenly spread design per k; the report averages seeded random designs per k, so these means differ slightly from trajectory_cv.json.",
   "by_k": {
    "1": {
     "n_chemicals": 243,
@@ -1816,7 +465,7 @@
      "loglinear_interp": 1.8747,
      "analog_knn": 1.7833
     },
-    "coverage90_mean": 0.8585,
+    "coverage90_mean": 0.8993,
     "frac_better_than_interp": 0.679,
     "frac_better_than_knn": 0.65
    },
@@ -1827,7 +476,7 @@
      "loglinear_interp": 1.4916,
      "analog_knn": 1.4035
     },
-    "coverage90_mean": 0.8884,
+    "coverage90_mean": 0.9005,
     "frac_better_than_interp": 0.831,
     "frac_better_than_knn": 0.765
    },
@@ -1838,7 +487,7 @@
      "loglinear_interp": 1.1729,
      "analog_knn": 1.2484
     },
-    "coverage90_mean": 0.8947,
+    "coverage90_mean": 0.9004,
     "frac_better_than_interp": 0.761,
     "frac_better_than_knn": 0.852
    }

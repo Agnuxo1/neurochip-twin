@@ -1,0 +1,1244 @@
+{
+ "description": "Viability value of information: nested chemical-grouped residual corrector with vs without viability information (R10, option D, part 3).",
+ "models": "v1 (primary; data/processed/models; nested selection of results/trajectory_cv.json)",
+ "pilot_models_note": "exploratory pilots in colab/research/fran/_pilot used models_v2; not used here",
+ "residual_definition": "ensemble mean prediction minus observed level mean (units: vehicle robust SD)",
+ "n_residual_rows": 1124784,
+ "n_chemicals": 194,
+ "rows_by_k": {
+  "1": 369037,
+  "2": 310388,
+  "3": 251919,
+  "4": 193440
+ },
+ "chemicals_by_fold": {
+  "1": 49,
+  "2": 49,
+  "3": 49,
+  "4": 47
+ },
+ "integrity_vs_trajectory_cv": {
+  "1": {
+   "curve_mae_regenerated": 1.4206,
+   "trajectory_cv_json": 1.4206,
+   "abs_diff": 2.8e-05,
+   "n_chemicals": 194
+  },
+  "2": {
+   "curve_mae_regenerated": 1.2827,
+   "trajectory_cv_json": 1.2827,
+   "abs_diff": 2.7e-05,
+   "n_chemicals": 194
+  },
+  "3": {
+   "curve_mae_regenerated": 1.194,
+   "trajectory_cv_json": 1.194,
+   "abs_diff": 4.6e-05,
+   "n_chemicals": 194
+  },
+  "4": {
+   "curve_mae_regenerated": 1.1427,
+   "trajectory_cv_json": 1.1427,
+   "abs_diff": 1.3e-05,
+   "n_chemicals": 194
+  },
+  "all_match_1e-3": true
+ },
+ "scenario_label": "prior viability screening scenario",
+ "leakage_caveat": "PubChem AB/LDH calls (AIDs 2284083, 2284068) are measured at DIV12 on the same NFA plates and aggregated over all concentrations, including the concentrations the forecast hides. Arms V1 and V2 therefore emulate a prior viability screen and are NOT evidence that viability improves the forecast. Arm V3 uses only the wells at the measured context concentrations.",
+ "ntp_independence_audit": {
+  "n_ntp_chemicals_in_cohort": 64,
+  "n_identical_concentration_sets": 60,
+  "n_identical_replicates_per_concentration": 46,
+  "ntp_plate_ids": [
+   "ShaferViaPlate"
+  ],
+  "nfa_source_files_note": "NFA wells of these chemicals come from the NTP91 / Frank2017 / ToxCast2016 NFA source files (wells.parquet: source_file)",
+  "per_chemical": [
+   {
+    "chem": "(Methylcyclopentadienyl)tricarbonylmanganese",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "1-Ethyl-3-methyl-1H-imidazol-3-ium diethyl phosphate",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "1-Methyl-4-phenylpyridinium iodide",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "17beta-Estradiol",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "2-Methoxyethanol",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "3,3'-Iminobispropanenitrile",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "3-Iodo-2-propynyl-N-butylcarbamate",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "4,4'-Sulfonyldiphenol",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "4H-Cyclopenta(def)phenanthrene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "5-Fluorouracil",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "6-Propyl-2-thiouracil",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Acenaphthene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Acenaphthylene",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Acetaminophen",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Acrylamide",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Aldicarb",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Amoxicillin",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Anthracene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Aspirin",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Auramine hydrochloride",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Benz(a)anthracene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Benzo(b)fluoranthene",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Benzo[a]pyrene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Benzo[e]pyrene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Benzo[g,h,i]perylene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Benzo[k]fluoranthene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Berberine chloride",
+    "same_concentrations": false,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Bis(tributyltin)oxide",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Bisphenol A",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Bisphenol AF",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Captan",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Carbaryl",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Chlorpyrifos",
+    "same_concentrations": false,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Chrysene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Colchicine",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "D-Glucitol",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "DDT",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Deltamethrin",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Di(2-ethylhexyl) phthalate",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Diazepam",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Dibenz[a,c]anthracene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Dibenz[a,h]anthracene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Dieldrin",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Diethylstilbestrol",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Fluorene",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Hexachlorophene",
+    "same_concentrations": false,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Hydroxyurea",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "L-Ascorbic acid",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Lead(II) acetate trihydrate",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Lindane",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Manganese(II) acetate",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Naphthalene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Oxidopamine hydrochloride",
+    "same_concentrations": false,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Parathion",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Permethrin",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Phenanthrene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Phenobarbital",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Phenobarbital sodium",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Pyrene",
+    "same_concentrations": true,
+    "same_replicate_counts": true
+   },
+   {
+    "chem": "Rotenone",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Sodium saccharin hydrate",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Tebuconazole",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Tetraethylthiuram disulfide",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   },
+   {
+    "chem": "Triphenyl phosphate",
+    "same_concentrations": true,
+    "same_replicate_counts": false
+   }
+  ]
+ },
+ "ntp_label": "NTP DNT-DIVER 2018 'USEPA 91 neuron firing' per-well viability: an independent source file, but most likely the viability readout of the same NFA plates (see ntp_independence_audit); treated as a same-plate replication, not an independent experiment.",
+ "corrector": {
+  "candidates": [
+   "identity",
+   "hgb_l2",
+   "hgb_l1"
+  ],
+  "selection": "leave-one-fold-out over the three training folds (chemical-grouped), criterion = curve MAE after correction",
+  "max_train_rows": 200000,
+  "base_features": [
+   "k",
+   "logc",
+   "div",
+   "feat",
+   "dist",
+   "extrap",
+   "above_min",
+   "above_max",
+   "pred",
+   "pred_scale",
+   "nrep",
+   "veh_z",
+   "cls_code"
+  ]
+ },
+ "arms": {
+  "V0_prediction_time": "prediction-time covariates only (no viability)",
+  "V1_pubchem_AB_LDH_calls": "V0 + PubChem AB/LDH chemical-level hit calls (scenario, leaky)",
+  "V2_ntp_chemical_summary": "V0 + NTP per-well viability, min over all concentrations of the median normalised response (scenario, leaky)",
+  "V3_ntp_context_only": "V0 + NTP per-well viability at the measured context concentrations only (min over context levels, value at the context level nearest to the query); no hidden-concentration information",
+  "C_ntp_indicator_only": "control: V0 + an indicator of NTP data availability (checks that V2/V3 gains are not a subset effect of the missing-value pattern)"
+ },
+ "nested_choice": {
+  "V0_prediction_time": {
+   "1": {
+    "inner_curve_mae": {
+     "identity": 1.25021,
+     "hgb_l2": 1.32814,
+     "hgb_l1": 1.26494
+    },
+    "chosen": "identity"
+   },
+   "2": {
+    "inner_curve_mae": {
+     "identity": 1.25447,
+     "hgb_l2": 1.32936,
+     "hgb_l1": 1.26549
+    },
+    "chosen": "identity"
+   },
+   "3": {
+    "inner_curve_mae": {
+     "identity": 1.27794,
+     "hgb_l2": 1.33827,
+     "hgb_l1": 1.28113
+    },
+    "chosen": "identity"
+   },
+   "4": {
+    "inner_curve_mae": {
+     "identity": 1.25759,
+     "hgb_l2": 1.29462,
+     "hgb_l1": 1.25227
+    },
+    "chosen": "hgb_l1"
+   }
+  },
+  "V1_pubchem_AB_LDH_calls": {
+   "1": {
+    "inner_curve_mae": {
+     "identity": 1.25021,
+     "hgb_l2": 1.25799,
+     "hgb_l1": 1.21422
+    },
+    "chosen": "hgb_l1"
+   },
+   "2": {
+    "inner_curve_mae": {
+     "identity": 1.25447,
+     "hgb_l2": 1.24238,
+     "hgb_l1": 1.19795
+    },
+    "chosen": "hgb_l1"
+   },
+   "3": {
+    "inner_curve_mae": {
+     "identity": 1.27794,
+     "hgb_l2": 1.24134,
+     "hgb_l1": 1.20935
+    },
+    "chosen": "hgb_l1"
+   },
+   "4": {
+    "inner_curve_mae": {
+     "identity": 1.25759,
+     "hgb_l2": 1.21658,
+     "hgb_l1": 1.19631
+    },
+    "chosen": "hgb_l1"
+   }
+  },
+  "V2_ntp_chemical_summary": {
+   "1": {
+    "inner_curve_mae": {
+     "identity": 1.25021,
+     "hgb_l2": 1.30926,
+     "hgb_l1": 1.25705
+    },
+    "chosen": "identity"
+   },
+   "2": {
+    "inner_curve_mae": {
+     "identity": 1.25447,
+     "hgb_l2": 1.31475,
+     "hgb_l1": 1.25869
+    },
+    "chosen": "identity"
+   },
+   "3": {
+    "inner_curve_mae": {
+     "identity": 1.27794,
+     "hgb_l2": 1.33576,
+     "hgb_l1": 1.26991
+    },
+    "chosen": "hgb_l1"
+   },
+   "4": {
+    "inner_curve_mae": {
+     "identity": 1.25759,
+     "hgb_l2": 1.26973,
+     "hgb_l1": 1.24492
+    },
+    "chosen": "hgb_l1"
+   }
+  },
+  "V3_ntp_context_only": {
+   "1": {
+    "inner_curve_mae": {
+     "identity": 1.25021,
+     "hgb_l2": 1.31779,
+     "hgb_l1": 1.26816
+    },
+    "chosen": "identity"
+   },
+   "2": {
+    "inner_curve_mae": {
+     "identity": 1.25447,
+     "hgb_l2": 1.32615,
+     "hgb_l1": 1.26342
+    },
+    "chosen": "identity"
+   },
+   "3": {
+    "inner_curve_mae": {
+     "identity": 1.27794,
+     "hgb_l2": 1.35054,
+     "hgb_l1": 1.2893
+    },
+    "chosen": "identity"
+   },
+   "4": {
+    "inner_curve_mae": {
+     "identity": 1.25759,
+     "hgb_l2": 1.29215,
+     "hgb_l1": 1.25321
+    },
+    "chosen": "hgb_l1"
+   }
+  },
+  "C_ntp_indicator_only": {
+   "1": {
+    "inner_curve_mae": {
+     "identity": 1.25021,
+     "hgb_l2": 1.33357,
+     "hgb_l1": 1.27415
+    },
+    "chosen": "identity"
+   },
+   "2": {
+    "inner_curve_mae": {
+     "identity": 1.25447,
+     "hgb_l2": 1.33314,
+     "hgb_l1": 1.26148
+    },
+    "chosen": "identity"
+   },
+   "3": {
+    "inner_curve_mae": {
+     "identity": 1.27794,
+     "hgb_l2": 1.35187,
+     "hgb_l1": 1.28276
+    },
+    "chosen": "identity"
+   },
+   "4": {
+    "inner_curve_mae": {
+     "identity": 1.25759,
+     "hgb_l2": 1.30113,
+     "hgb_l1": 1.25428
+    },
+    "chosen": "hgb_l1"
+   }
+  }
+ },
+ "all_chemicals": {
+  "n_chemicals": 194,
+  "V0_vs_uncorrected": {
+   "1": {
+    "curve_mae_after": 1.4149,
+    "curve_mae_reference": 1.4206,
+    "mean_diff": -0.0057,
+    "ci95": [
+     -0.0179,
+     0.0062
+    ],
+    "rel_change_pct": -0.4,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.134
+   },
+   "2": {
+    "curve_mae_after": 1.2845,
+    "curve_mae_reference": 1.2827,
+    "mean_diff": 0.0018,
+    "ci95": [
+     -0.0064,
+     0.0118
+    ],
+    "rel_change_pct": 0.14,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.124
+   },
+   "3": {
+    "curve_mae_after": 1.2001,
+    "curve_mae_reference": 1.194,
+    "mean_diff": 0.0061,
+    "ci95": [
+     -0.0047,
+     0.0183
+    ],
+    "rel_change_pct": 0.51,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.108
+   },
+   "4": {
+    "curve_mae_after": 1.1498,
+    "curve_mae_reference": 1.1427,
+    "mean_diff": 0.0071,
+    "ci95": [
+     -0.0019,
+     0.0182
+    ],
+    "rel_change_pct": 0.62,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.103
+   }
+  },
+  "V1_vs_uncorrected": {
+   "1": {
+    "curve_mae_after": 1.3023,
+    "curve_mae_reference": 1.4206,
+    "mean_diff": -0.1183,
+    "ci95": [
+     -0.1453,
+     -0.0929
+    ],
+    "rel_change_pct": -8.33,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.768
+   },
+   "2": {
+    "curve_mae_after": 1.2116,
+    "curve_mae_reference": 1.2827,
+    "mean_diff": -0.0711,
+    "ci95": [
+     -0.0908,
+     -0.0529
+    ],
+    "rel_change_pct": -5.54,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.716
+   },
+   "3": {
+    "curve_mae_after": 1.1536,
+    "curve_mae_reference": 1.194,
+    "mean_diff": -0.0404,
+    "ci95": [
+     -0.0573,
+     -0.024
+    ],
+    "rel_change_pct": -3.38,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.634
+   },
+   "4": {
+    "curve_mae_after": 1.1148,
+    "curve_mae_reference": 1.1427,
+    "mean_diff": -0.0279,
+    "ci95": [
+     -0.0455,
+     -0.0109
+    ],
+    "rel_change_pct": -2.44,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.598
+   }
+  },
+  "V1_vs_V0": {
+   "1": {
+    "curve_mae_after": 1.3023,
+    "curve_mae_reference": 1.4149,
+    "mean_diff": -0.1127,
+    "ci95": [
+     -0.1388,
+     -0.0878
+    ],
+    "rel_change_pct": -7.96,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.784
+   },
+   "2": {
+    "curve_mae_after": 1.2116,
+    "curve_mae_reference": 1.2845,
+    "mean_diff": -0.073,
+    "ci95": [
+     -0.0933,
+     -0.0547
+    ],
+    "rel_change_pct": -5.68,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.727
+   },
+   "3": {
+    "curve_mae_after": 1.1536,
+    "curve_mae_reference": 1.2001,
+    "mean_diff": -0.0465,
+    "ci95": [
+     -0.0654,
+     -0.0294
+    ],
+    "rel_change_pct": -3.88,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.649
+   },
+   "4": {
+    "curve_mae_after": 1.1148,
+    "curve_mae_reference": 1.1498,
+    "mean_diff": -0.035,
+    "ci95": [
+     -0.0561,
+     -0.0166
+    ],
+    "rel_change_pct": -3.05,
+    "n_chemicals": 194,
+    "frac_chem_improved": 0.613
+   }
+  }
+ },
+ "ntp_subset": {
+  "n_chemicals": 51,
+  "chemicals": [
+   "(Methylcyclopentadienyl)tricarbonylmanganese",
+   "1-Methyl-4-phenylpyridinium iodide",
+   "17beta-Estradiol",
+   "3-Iodo-2-propynyl-N-butylcarbamate",
+   "4,4'-Sulfonyldiphenol",
+   "5-Fluorouracil",
+   "Acenaphthene",
+   "Acenaphthylene",
+   "Acetaminophen",
+   "Aldicarb",
+   "Amoxicillin",
+   "Anthracene",
+   "Aspirin",
+   "Auramine hydrochloride",
+   "Benzo(b)fluoranthene",
+   "Benzo[a]pyrene",
+   "Benzo[e]pyrene",
+   "Benzo[k]fluoranthene",
+   "Berberine chloride",
+   "Bis(tributyltin)oxide",
+   "Bisphenol A",
+   "Bisphenol AF",
+   "Captan",
+   "Carbaryl",
+   "Chrysene",
+   "Colchicine",
+   "D-Glucitol",
+   "DDT",
+   "Deltamethrin",
+   "Di(2-ethylhexyl) phthalate",
+   "Diazepam",
+   "Dibenz[a,c]anthracene",
+   "Dieldrin",
+   "Diethylstilbestrol",
+   "Fluorene",
+   "Hexachlorophene",
+   "L-Ascorbic acid",
+   "Lead(II) acetate trihydrate",
+   "Lindane",
+   "Manganese(II) acetate",
+   "Oxidopamine hydrochloride",
+   "Parathion",
+   "Permethrin",
+   "Phenanthrene",
+   "Phenobarbital",
+   "Pyrene",
+   "Rotenone",
+   "Sodium saccharin hydrate",
+   "Tebuconazole",
+   "Tetraethylthiuram disulfide",
+   "Triphenyl phosphate"
+  ],
+  "V0_prediction_time_vs_uncorrected": {
+   "1": {
+    "curve_mae_after": 1.4543,
+    "curve_mae_reference": 1.4607,
+    "mean_diff": -0.0063,
+    "ci95": [
+     -0.0456,
+     0.0311
+    ],
+    "rel_change_pct": -0.43,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.078
+   },
+   "2": {
+    "curve_mae_after": 1.2862,
+    "curve_mae_reference": 1.2842,
+    "mean_diff": 0.002,
+    "ci95": [
+     -0.0272,
+     0.0397
+    ],
+    "rel_change_pct": 0.16,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.118
+   },
+   "3": {
+    "curve_mae_after": 1.1747,
+    "curve_mae_reference": 1.1758,
+    "mean_diff": -0.001,
+    "ci95": [
+     -0.0358,
+     0.0373
+    ],
+    "rel_change_pct": -0.09,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.078
+   },
+   "4": {
+    "curve_mae_after": 1.09,
+    "curve_mae_reference": 1.0923,
+    "mean_diff": -0.0023,
+    "ci95": [
+     -0.0249,
+     0.0222
+    ],
+    "rel_change_pct": -0.21,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.078
+   }
+  },
+  "V1_pubchem_AB_LDH_calls_vs_uncorrected": {
+   "1": {
+    "curve_mae_after": 1.3494,
+    "curve_mae_reference": 1.4607,
+    "mean_diff": -0.1112,
+    "ci95": [
+     -0.1776,
+     -0.0497
+    ],
+    "rel_change_pct": -7.61,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.725
+   },
+   "2": {
+    "curve_mae_after": 1.227,
+    "curve_mae_reference": 1.2842,
+    "mean_diff": -0.0572,
+    "ci95": [
+     -0.0953,
+     -0.0206
+    ],
+    "rel_change_pct": -4.46,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.588
+   },
+   "3": {
+    "curve_mae_after": 1.1355,
+    "curve_mae_reference": 1.1758,
+    "mean_diff": -0.0403,
+    "ci95": [
+     -0.0839,
+     -0.0015
+    ],
+    "rel_change_pct": -3.42,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.608
+   },
+   "4": {
+    "curve_mae_after": 1.0754,
+    "curve_mae_reference": 1.0923,
+    "mean_diff": -0.0169,
+    "ci95": [
+     -0.058,
+     0.0243
+    ],
+    "rel_change_pct": -1.55,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.588
+   }
+  },
+  "V1_pubchem_AB_LDH_calls_vs_V0": {
+   "1": {
+    "curve_mae_after": 1.3494,
+    "curve_mae_reference": 1.4543,
+    "mean_diff": -0.1049,
+    "ci95": [
+     -0.1644,
+     -0.049
+    ],
+    "rel_change_pct": -7.21,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.765
+   },
+   "2": {
+    "curve_mae_after": 1.227,
+    "curve_mae_reference": 1.2862,
+    "mean_diff": -0.0592,
+    "ci95": [
+     -0.1016,
+     -0.0198
+    ],
+    "rel_change_pct": -4.6,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.569
+   },
+   "3": {
+    "curve_mae_after": 1.1355,
+    "curve_mae_reference": 1.1747,
+    "mean_diff": -0.0392,
+    "ci95": [
+     -0.0775,
+     -0.0033
+    ],
+    "rel_change_pct": -3.34,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.627
+   },
+   "4": {
+    "curve_mae_after": 1.0754,
+    "curve_mae_reference": 1.09,
+    "mean_diff": -0.0147,
+    "ci95": [
+     -0.0513,
+     0.0237
+    ],
+    "rel_change_pct": -1.35,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.588
+   }
+  },
+  "V2_ntp_chemical_summary_vs_uncorrected": {
+   "1": {
+    "curve_mae_after": 1.4283,
+    "curve_mae_reference": 1.4607,
+    "mean_diff": -0.0324,
+    "ci95": [
+     -0.0769,
+     0.007
+    ],
+    "rel_change_pct": -2.22,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.275
+   },
+   "2": {
+    "curve_mae_after": 1.2702,
+    "curve_mae_reference": 1.2842,
+    "mean_diff": -0.0141,
+    "ci95": [
+     -0.0482,
+     0.0212
+    ],
+    "rel_change_pct": -1.09,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.275
+   },
+   "3": {
+    "curve_mae_after": 1.164,
+    "curve_mae_reference": 1.1758,
+    "mean_diff": -0.0118,
+    "ci95": [
+     -0.0459,
+     0.0228
+    ],
+    "rel_change_pct": -1.0,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.216
+   },
+   "4": {
+    "curve_mae_after": 1.0977,
+    "curve_mae_reference": 1.0923,
+    "mean_diff": 0.0054,
+    "ci95": [
+     -0.0273,
+     0.0422
+    ],
+    "rel_change_pct": 0.5,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.196
+   }
+  },
+  "V2_ntp_chemical_summary_vs_V0": {
+   "1": {
+    "curve_mae_after": 1.4283,
+    "curve_mae_reference": 1.4543,
+    "mean_diff": -0.0261,
+    "ci95": [
+     -0.0573,
+     0.0026
+    ],
+    "rel_change_pct": -1.79,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.275
+   },
+   "2": {
+    "curve_mae_after": 1.2702,
+    "curve_mae_reference": 1.2862,
+    "mean_diff": -0.0161,
+    "ci95": [
+     -0.0477,
+     0.0161
+    ],
+    "rel_change_pct": -1.25,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.314
+   },
+   "3": {
+    "curve_mae_after": 1.164,
+    "curve_mae_reference": 1.1747,
+    "mean_diff": -0.0108,
+    "ci95": [
+     -0.0344,
+     0.0155
+    ],
+    "rel_change_pct": -0.92,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.255
+   },
+   "4": {
+    "curve_mae_after": 1.0977,
+    "curve_mae_reference": 1.09,
+    "mean_diff": 0.0077,
+    "ci95": [
+     -0.0187,
+     0.0406
+    ],
+    "rel_change_pct": 0.71,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.235
+   }
+  },
+  "V3_ntp_context_only_vs_uncorrected": {
+   "1": {
+    "curve_mae_after": 1.4545,
+    "curve_mae_reference": 1.4607,
+    "mean_diff": -0.0061,
+    "ci95": [
+     -0.0476,
+     0.0315
+    ],
+    "rel_change_pct": -0.42,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.078
+   },
+   "2": {
+    "curve_mae_after": 1.2808,
+    "curve_mae_reference": 1.2842,
+    "mean_diff": -0.0034,
+    "ci95": [
+     -0.0293,
+     0.0232
+    ],
+    "rel_change_pct": -0.27,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.098
+   },
+   "3": {
+    "curve_mae_after": 1.1687,
+    "curve_mae_reference": 1.1758,
+    "mean_diff": -0.0071,
+    "ci95": [
+     -0.0401,
+     0.0231
+    ],
+    "rel_change_pct": -0.6,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.078
+   },
+   "4": {
+    "curve_mae_after": 1.0868,
+    "curve_mae_reference": 1.0923,
+    "mean_diff": -0.0055,
+    "ci95": [
+     -0.0269,
+     0.0145
+    ],
+    "rel_change_pct": -0.5,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.078
+   }
+  },
+  "V3_ntp_context_only_vs_V0": {
+   "1": {
+    "curve_mae_after": 1.4545,
+    "curve_mae_reference": 1.4543,
+    "mean_diff": 0.0002,
+    "ci95": [
+     -0.0055,
+     0.0063
+    ],
+    "rel_change_pct": 0.01,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.118
+   },
+   "2": {
+    "curve_mae_after": 1.2808,
+    "curve_mae_reference": 1.2862,
+    "mean_diff": -0.0054,
+    "ci95": [
+     -0.0176,
+     0.002
+    ],
+    "rel_change_pct": -0.42,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.098
+   },
+   "3": {
+    "curve_mae_after": 1.1687,
+    "curve_mae_reference": 1.1747,
+    "mean_diff": -0.0061,
+    "ci95": [
+     -0.0185,
+     0.0022
+    ],
+    "rel_change_pct": -0.52,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.098
+   },
+   "4": {
+    "curve_mae_after": 1.0868,
+    "curve_mae_reference": 1.09,
+    "mean_diff": -0.0032,
+    "ci95": [
+     -0.0118,
+     0.0038
+    ],
+    "rel_change_pct": -0.29,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.098
+   }
+  },
+  "C_ntp_indicator_only_vs_uncorrected": {
+   "1": {
+    "curve_mae_after": 1.4516,
+    "curve_mae_reference": 1.4607,
+    "mean_diff": -0.0091,
+    "ci95": [
+     -0.0479,
+     0.0243
+    ],
+    "rel_change_pct": -0.62,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.078
+   },
+   "2": {
+    "curve_mae_after": 1.2827,
+    "curve_mae_reference": 1.2842,
+    "mean_diff": -0.0016,
+    "ci95": [
+     -0.0287,
+     0.0309
+    ],
+    "rel_change_pct": -0.12,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.078
+   },
+   "3": {
+    "curve_mae_after": 1.1711,
+    "curve_mae_reference": 1.1758,
+    "mean_diff": -0.0046,
+    "ci95": [
+     -0.0378,
+     0.0292
+    ],
+    "rel_change_pct": -0.39,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.098
+   },
+   "4": {
+    "curve_mae_after": 1.0878,
+    "curve_mae_reference": 1.0923,
+    "mean_diff": -0.0045,
+    "ci95": [
+     -0.0264,
+     0.0172
+    ],
+    "rel_change_pct": -0.41,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.078
+   }
+  },
+  "C_ntp_indicator_only_vs_V0": {
+   "1": {
+    "curve_mae_after": 1.4516,
+    "curve_mae_reference": 1.4543,
+    "mean_diff": -0.0028,
+    "ci95": [
+     -0.0106,
+     0.0046
+    ],
+    "rel_change_pct": -0.19,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.098
+   },
+   "2": {
+    "curve_mae_after": 1.2827,
+    "curve_mae_reference": 1.2862,
+    "mean_diff": -0.0036,
+    "ci95": [
+     -0.0104,
+     0.0016
+    ],
+    "rel_change_pct": -0.28,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.078
+   },
+   "3": {
+    "curve_mae_after": 1.1711,
+    "curve_mae_reference": 1.1747,
+    "mean_diff": -0.0036,
+    "ci95": [
+     -0.0121,
+     0.004
+    ],
+    "rel_change_pct": -0.31,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.098
+   },
+   "4": {
+    "curve_mae_after": 1.0878,
+    "curve_mae_reference": 1.09,
+    "mean_diff": -0.0022,
+    "ci95": [
+     -0.0087,
+     0.0044
+    ],
+    "rel_change_pct": -0.2,
+    "n_chemicals": 51,
+    "frac_chem_improved": 0.098
+   }
+  }
+ },
+ "elapsed_s": 6188.7
+}

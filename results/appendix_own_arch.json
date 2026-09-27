@@ -1,0 +1,1487 @@
+{
+  "title": "Own prior architectures, evaluated on real data",
+  "status": "APPENDIX - parity and negative results for the team lead's earlier architectures; exploratory tests, not part of the headline; C is on the development fold 0 only",
+  "generated_by": "repo/scripts/appendix_own_architectures.py",
+  "created_utc": "2026-09-26T12:40:29+00:00",
+  "reference_models": "NeuroTrajectory v1 cross-validated models (data/processed/models), the primary models; the exploratory pilot of C used the v2 fold-0 configuration (n_freq 3) and is superseded here",
+  "verdict_vocabulary": [
+    "matches but does not beat",
+    "worse",
+    "no gain; worse at some k",
+    "no gain over interpolation",
+    "better",
+    "mixed"
+  ],
+  "environment_note": "A and B were run with the libraries the pilots used (numpy 2.2.6, pandas 2.2.3) so that byte identity with the pilot outputs can be checked; the same code was rerun with the project's data/.pylibs (see each provenance.environment_check). C was run with the project's data/.pylibs (numpy 2.5.3, torch 2.6.0+cu124, device cuda).",
+  "runtime_note": "B reuses the pilot's per-recording numbers (a full rerun takes about b_full_rerun_cpu_min_estimate minutes of CPU; use --b-mode full) after the ported code reproduced recordings 1, 2 byte-identically; A and C are complete reruns.",
+  "b_full_rerun_cpu_min_estimate": 23.8,
+  "language_rules": [
+    "QESN is described as a classical, Schrodinger-inspired lattice reservoir (corrected to a unitary step); nothing quantum is computed",
+    "Brewer burst-latency maps are not called propagation velocity: they correlate with firing rate",
+    "no component in this appendix is used by the headline model"
+  ],
+  "summary_table": [
+    {
+      "architecture": "A_eikonal_latency",
+      "comparison": "chip_eik_c minus idw_comp",
+      "metric": "held-out latency MAE (ms)",
+      "chip_model_mae_ms": 12.55,
+      "baseline_mae_ms": {
+        "comp_mean": 12.18,
+        "idw": 11.98,
+        "idw_comp": 12.34,
+        "free_eik": 12.76
+      },
+      "effect_ms": 0.21,
+      "ci95_ms": [
+        -0.21,
+        0.65
+      ],
+      "n_better": 3,
+      "n": 9,
+      "verdict": "no gain over interpolation"
+    },
+    {
+      "architecture": "A_eikonal_latency",
+      "comparison": "chip_eik_c minus free_eik (geometry ablation)",
+      "metric": "held-out latency MAE (ms)",
+      "effect_ms": -0.21,
+      "ci95_ms": [
+        -1.57,
+        1.01
+      ],
+      "n_better": 6,
+      "n": 9,
+      "verdict": "no gain over interpolation"
+    },
+    {
+      "architecture": "B_qesn_chip_lattice",
+      "comparison": "h1|lattice_chip_vs_var_ridge",
+      "metric": "test MSE, relative change (%)",
+      "effect_pct": 2.1,
+      "ci95_pct": [
+        -2.36,
+        6.26
+      ],
+      "n_better": 5,
+      "n": 9,
+      "verdict": "matches but does not beat"
+    },
+    {
+      "architecture": "B_qesn_chip_lattice",
+      "comparison": "h1|lattice_chip_vs_esn_nonspatial",
+      "metric": "test MSE, relative change (%)",
+      "effect_pct": 1.31,
+      "ci95_pct": [
+        -2.9,
+        5.59
+      ],
+      "n_better": 1,
+      "n": 9,
+      "verdict": "matches but does not beat"
+    },
+    {
+      "architecture": "B_qesn_chip_lattice",
+      "comparison": "h4|lattice_chip_vs_var_ridge",
+      "metric": "test MSE, relative change (%)",
+      "effect_pct": -0.75,
+      "ci95_pct": [
+        -6.71,
+        3.12
+      ],
+      "n_better": 4,
+      "n": 9,
+      "verdict": "matches but does not beat"
+    },
+    {
+      "architecture": "B_qesn_chip_lattice",
+      "comparison": "h4|lattice_chip_vs_esn_nonspatial",
+      "metric": "test MSE, relative change (%)",
+      "effect_pct": -1.79,
+      "ci95_pct": [
+        -7.49,
+        3.03
+      ],
+      "n_better": 2,
+      "n": 9,
+      "verdict": "matches but does not beat"
+    },
+    {
+      "architecture": "B_qesn_chip_lattice",
+      "comparison": "h1|lattice_chip_vs_lattice_full (geometry ablation)",
+      "metric": "test MSE, relative change (%)",
+      "effect_pct": -0.18,
+      "ci95_pct": [
+        -0.56,
+        0.25
+      ],
+      "n_better": 6,
+      "n": 9,
+      "n_within_1pct": 8,
+      "verdict": "matches but does not beat"
+    },
+    {
+      "architecture": "B_qesn_chip_lattice",
+      "comparison": "h1|lattice_chip_vs_lattice_walls (geometry ablation)",
+      "metric": "test MSE, relative change (%)",
+      "effect_pct": -4.37,
+      "ci95_pct": [
+        -13.82,
+        0.55
+      ],
+      "n_better": 3,
+      "n": 9,
+      "n_within_1pct": 7,
+      "verdict": "matches but does not beat"
+    },
+    {
+      "architecture": "B_qesn_chip_lattice",
+      "comparison": "h1|lattice_chip_vs_lattice_chip_shuffled (geometry ablation)",
+      "metric": "test MSE, relative change (%)",
+      "effect_pct": 0.6,
+      "ci95_pct": [
+        -0.96,
+        2.63
+      ],
+      "n_better": 5,
+      "n": 9,
+      "n_within_1pct": 5,
+      "verdict": "matches but does not beat"
+    },
+    {
+      "architecture": "B_qesn_chip_lattice",
+      "comparison": "h4|lattice_chip_vs_lattice_full (geometry ablation)",
+      "metric": "test MSE, relative change (%)",
+      "effect_pct": 1.16,
+      "ci95_pct": [
+        -0.21,
+        3.04
+      ],
+      "n_better": 6,
+      "n": 9,
+      "n_within_1pct": 6,
+      "verdict": "matches but does not beat"
+    },
+    {
+      "architecture": "B_qesn_chip_lattice",
+      "comparison": "h4|lattice_chip_vs_lattice_walls (geometry ablation)",
+      "metric": "test MSE, relative change (%)",
+      "effect_pct": 1.44,
+      "ci95_pct": [
+        0.25,
+        3.05
+      ],
+      "n_better": 2,
+      "n": 9,
+      "n_within_1pct": 7,
+      "verdict": "matches but does not beat"
+    },
+    {
+      "architecture": "B_qesn_chip_lattice",
+      "comparison": "h4|lattice_chip_vs_lattice_chip_shuffled (geometry ablation)",
+      "metric": "test MSE, relative change (%)",
+      "effect_pct": 1.89,
+      "ci95_pct": [
+        0.36,
+        3.62
+      ],
+      "n_better": 4,
+      "n": 9,
+      "n_within_1pct": 4,
+      "verdict": "matches but does not beat"
+    },
+    {
+      "architecture": "C_doselattice_encoder",
+      "comparison": "k=1|doselattice_vs_neurotrajectory_v1_saved",
+      "metric": "curve MAE, relative change (%)",
+      "effect_pct": 0.57,
+      "ci95_pct": [
+        -0.91,
+        2.03
+      ],
+      "effect_abs": 0.0079,
+      "ci95_abs": [
+        -0.0127,
+        0.0282
+      ],
+      "n_better": 26,
+      "n": 49,
+      "verdict": "no gain; worse at some k"
+    },
+    {
+      "architecture": "C_doselattice_encoder",
+      "comparison": "k=2|doselattice_vs_neurotrajectory_v1_saved",
+      "metric": "curve MAE, relative change (%)",
+      "effect_pct": 0.93,
+      "ci95_pct": [
+        -0.7,
+        2.5
+      ],
+      "effect_abs": 0.0118,
+      "ci95_abs": [
+        -0.0089,
+        0.0316
+      ],
+      "n_better": 20,
+      "n": 49,
+      "verdict": "no gain; worse at some k"
+    },
+    {
+      "architecture": "C_doselattice_encoder",
+      "comparison": "k=3|doselattice_vs_neurotrajectory_v1_saved",
+      "metric": "curve MAE, relative change (%)",
+      "effect_pct": 1.95,
+      "ci95_pct": [
+        -0.12,
+        4.27
+      ],
+      "effect_abs": 0.0219,
+      "ci95_abs": [
+        -0.0013,
+        0.048
+      ],
+      "n_better": 18,
+      "n": 49,
+      "verdict": "no gain; worse at some k"
+    },
+    {
+      "architecture": "C_doselattice_encoder",
+      "comparison": "k=4|doselattice_vs_neurotrajectory_v1_saved",
+      "metric": "curve MAE, relative change (%)",
+      "effect_pct": 3.74,
+      "ci95_pct": [
+        0.87,
+        7.47
+      ],
+      "effect_abs": 0.0419,
+      "ci95_abs": [
+        0.0097,
+        0.0837
+      ],
+      "n_better": 18,
+      "n": 49,
+      "verdict": "no gain; worse at some k"
+    }
+  ],
+  "architectures": {
+    "A_eikonal_latency": {
+      "architecture": "Eikonal (geodesic arrival-time) propagation model on the chip geometry",
+      "source": {
+        "author": "Francisco Angulo de Lafuente",
+        "repo": "Agnuxo1/Optical-Neuromorphic-Computing-for-Real-Time-Pathfinding-A-GPU-Accelerated-Eikonal-Solver",
+        "licence": "MIT",
+        "archive": "Zenodo record 17583729",
+        "what_is_reused": "the model class only: constant-speed eikonal arrival times on the device mask, which equal geodesic distance divided by speed; solved here with 8-neighbour Dijkstra on a 48 x 48 lattice. The repository's GPU relaxation solver is not executed."
+      },
+      "what_was_tested": "Whether a chip-geodesic arrival-time model (homogeneous speed inside the device mask, walls and the 20 tunnels exactly as on the chip, one source cell, a tunnel-crossing term and per-compartment offsets; model 'chip_eik_c') predicts the median network-burst latency of held-out electrodes better than spatial interpolation.",
+      "data": "Brewer 4-compartment hippocampal MEA (CC0): 9 NoStim recordings, 76 well electrodes, 300 s. Per-electrode median burst latency: 5 ms population bins, bursts above mean + 4 SD merged within 0.5 s, first spike in [onset - 20 ms, onset + 150 ms]; electrodes with >= 10 bursts.",
+      "split": "5-fold leave-electrodes-out inside each recording (seed = recording id); every model is fitted on the training electrodes only.",
+      "baselines": [
+        "comp_mean: mean latency of the training electrodes of the same compartment",
+        "idw: inverse-distance weighting (power 2) over all training electrodes",
+        "idw_comp: inverse-distance weighting within the same compartment",
+        "free_eik: eikonal model in free space, no walls (geometry ablation)"
+      ],
+      "metric": "MAE (ms) of held-out electrode latency; contrast = chip_eik_c minus baseline, averaged per recording; 95 % CI by bootstrap over recordings (4000 resamples).",
+      "result": {
+        "primary_contrast": "chip_eik_c_minus_idw_comp_ms",
+        "mean_mae_ms": {
+          "chip_eik": 13.711760272365714,
+          "chip_eik_c": 12.551606940075452,
+          "comp_mean": 12.176115964821374,
+          "free_eik": 12.75835195148729,
+          "idw": 11.978141868471608,
+          "idw_comp": 12.339289906221275
+        },
+        "chip_eik_c_minus_idw_comp_ms": {
+          "mean": 0.2123170338541765,
+          "ci95": [
+            -0.2120723322410099,
+            0.6452148067054808
+          ],
+          "recordings_improved": 3,
+          "n": 9
+        },
+        "chip_eik_c_minus_idw_ms": {
+          "mean": 0.5734650716038416,
+          "ci95": [
+            -0.035585454981194815,
+            1.2805016079202831
+          ],
+          "recordings_improved": 3,
+          "n": 9
+        },
+        "chip_eik_c_minus_free_eik_ms": {
+          "mean": -0.20674501141184176,
+          "ci95": [
+            -1.5728449748803528,
+            1.013057146243015
+          ],
+          "recordings_improved": 6,
+          "n": 9
+        },
+        "chip_eik_c_minus_comp_mean_ms": {
+          "mean": 0.3754909752540748,
+          "ci95": [
+            -0.15584205756706496,
+            0.8975486780983749
+          ],
+          "recordings_improved": 3,
+          "n": 9
+        },
+        "chip_eik_minus_idw_comp_ms": {
+          "mean": 1.3724703661444402,
+          "ci95": [
+            0.21079206625803676,
+            2.8230045825375982
+          ],
+          "recordings_improved": 3,
+          "n": 9
+        },
+        "preregistered_success": {
+          "criterion": "fit.md section 4.A: chip eikonal MAE below idw_comp with a recording-clustered bootstrap CI excluding 0, and below the free-space eikonal",
+          "met": false
+        },
+        "precondition_latency_maps": {
+          "split_half_spearman_median": 0.93138203515562,
+          "split_half_spearman_min": 0.7895439377085651,
+          "n_recordings_CA3_earliest": 7,
+          "n_recordings": 9,
+          "latency_vs_log_spike_count_spearman_median": -0.7212072155411656,
+          "compartment_lead_vs_axon_directionality": {
+            "n": 34,
+            "spearman": 0.07395023816808874,
+            "perm_p": 0.6778
+          }
+        }
+      },
+      "verdict": "no gain over interpolation",
+      "verdict_detail": "Latency maps are reproducible (median split-half Spearman above 0.9) but track electrode firing rate; the chip-geodesic model does not beat compartment means or inverse-distance interpolation on held-out electrodes; the compartment lead order does not follow axon directionality.",
+      "provenance": {
+        "mode": "full rerun of the ported code",
+        "env": {
+          "python": "3.13.7",
+          "numpy": "2.2.6",
+          "scipy": "1.15.1",
+          "pandas": "2.2.3",
+          "platform": "Windows-10-10.0.19045-SP0",
+          "torch": "2.6.0+cu124",
+          "cuda": true
+        },
+        "pilot_byte_identical": {
+          "pilot_geodesic.json": true,
+          "pilot_latency.json": true,
+          "pilot_latency_extra.json": true
+        },
+        "pilot_max_rel_diff": {
+          "pilot_geodesic.json": 0.0,
+          "pilot_latency.json": 0.0,
+          "pilot_latency_extra.json": 0.0
+        },
+        "environment_check": {
+          "env": {
+            "python": "3.13.7",
+            "numpy": "2.5.3",
+            "scipy": "1.15.1",
+            "pandas": "3.0.6",
+            "platform": "Windows-10-10.0.19045-SP0",
+            "torch": "2.6.0+cu124",
+            "cuda": true
+          },
+          "note": "same ported code rerun with the project's data/.pylibs libraries",
+          "pilot_byte_identical": {
+            "pilot_geodesic.json": false,
+            "pilot_latency.json": true,
+            "pilot_latency_extra.json": true
+          },
+          "pilot_max_rel_diff": {
+            "pilot_geodesic.json": 8.423672447273781e-14,
+            "pilot_latency.json": 0.0,
+            "pilot_latency_extra.json": 0.0
+          },
+          "max_rel_diff_vs_primary_run": 8.423672447273781e-14
+        },
+        "elapsed_s": 14.9
+      }
+    },
+    "B_qesn_chip_lattice": {
+      "architecture": "QESN lattice reservoir on the chip geometry (classical, Schrodinger-inspired lattice reservoir corrected to an exactly unitary Crank-Nicolson step, leak and Kerr-type phase nonlinearity; 480 lattice cells, 1440 readout features [Re psi, Im psi, |psi|^2])",
+      "source": {
+        "author": "Francisco Angulo de Lafuente",
+        "repo": "Agnuxo1/QESN_MABe_V2_REPO",
+        "licence": "Apache-2.0",
+        "archive": "Zenodo record 17266084; PyPI qesn-mabe",
+        "what_is_reused": "the 2-D complex lattice reservoir with a linear readout, corrected: an exactly unitary Crank-Nicolson step replaces the original 5-point update (which does not conserve sum |psi|^2), plus explicit leak and a Kerr-type phase nonlinearity. Classical, Schrodinger-inspired; nothing quantum is computed."
+      },
+      "what_was_tested": "Whether the chip-geometry lattice reservoir forecasts the square-root spike counts of all 76 electrodes 25 ms (h=1) and 100 ms (h=4) ahead better than linear and non-spatial reservoir baselines, and whether the chip geometry matters (ablations).",
+      "data": "Brewer 4-compartment MEA (CC0): 9 NoStim recordings x 76 well electrodes x 300 s; 25 ms bins, sqrt counts.",
+      "split": "per recording, time-ordered: train 60 %, validation 10 % (hyper-parameters and ridge alpha), test 30 % (refit on train + validation). Every model sees the same inputs.",
+      "baselines": [
+        "persistence (last bin)",
+        "var_ridge: ridge VAR with L in {1, 2, 4, 8} lags chosen on validation",
+        "esn_nonspatial: sparse leaky echo-state network with 1440 nodes (same number of readout features)",
+        "geometry ablations: lattice_full (no walls), lattice_walls (compartments isolated), lattice_chip_shuffled (electrode positions permuted)"
+      ],
+      "metric": "test MSE of sqrt counts (mean over electrodes); relative change (%) per recording, mean over the 9 recordings, 95 % CI by bootstrap over recordings (4000 resamples); n_better = recordings where the lattice has lower MSE.",
+      "result": {
+        "primary_contrasts": [
+          "h1|lattice_chip_vs_var_ridge",
+          "h4|lattice_chip_vs_var_ridge",
+          "h1|lattice_chip_vs_esn_nonspatial",
+          "h4|lattice_chip_vs_esn_nonspatial"
+        ],
+        "h1|lattice_chip_vs_var_ridge": {
+          "mean_rel_pct": 2.1,
+          "median": -0.13,
+          "ci95": [
+            -2.36,
+            6.26
+          ],
+          "n_better": 5,
+          "n": 9
+        },
+        "h4|lattice_chip_vs_var_ridge": {
+          "mean_rel_pct": -0.75,
+          "median": 0.85,
+          "ci95": [
+            -6.71,
+            3.12
+          ],
+          "n_better": 4,
+          "n": 9
+        },
+        "h1|lattice_chip_vs_esn_nonspatial": {
+          "mean_rel_pct": 1.31,
+          "median": 0.65,
+          "ci95": [
+            -2.9,
+            5.59
+          ],
+          "n_better": 1,
+          "n": 9
+        },
+        "h4|lattice_chip_vs_esn_nonspatial": {
+          "mean_rel_pct": -1.79,
+          "median": 1.09,
+          "ci95": [
+            -7.49,
+            3.03
+          ],
+          "n_better": 2,
+          "n": 9
+        },
+        "h1|lattice_chip_vs_persistence": {
+          "mean_rel_pct": -27.52,
+          "median": -32.94,
+          "ci95": [
+            -34.04,
+            -19.88
+          ],
+          "n_better": 9,
+          "n": 9
+        },
+        "h4|lattice_chip_vs_persistence": {
+          "mean_rel_pct": -30.28,
+          "median": -33.38,
+          "ci95": [
+            -37.78,
+            -22.36
+          ],
+          "n_better": 9,
+          "n": 9
+        },
+        "geometry_ablations": {
+          "h1|lattice_chip_vs_lattice_full": {
+            "mean_rel_pct": -0.18,
+            "median": -0.4,
+            "ci95": [
+              -0.56,
+              0.25
+            ],
+            "n_better": 6,
+            "n": 9,
+            "n_within_1pct": 8
+          },
+          "h1|lattice_chip_vs_lattice_walls": {
+            "mean_rel_pct": -4.37,
+            "median": 0.15,
+            "ci95": [
+              -13.82,
+              0.55
+            ],
+            "n_better": 3,
+            "n": 9,
+            "n_within_1pct": 7
+          },
+          "h1|lattice_chip_vs_lattice_chip_shuffled": {
+            "mean_rel_pct": 0.6,
+            "median": -0.07,
+            "ci95": [
+              -0.96,
+              2.63
+            ],
+            "n_better": 5,
+            "n": 9,
+            "n_within_1pct": 5
+          },
+          "h4|lattice_chip_vs_lattice_full": {
+            "mean_rel_pct": 1.16,
+            "median": -0.04,
+            "ci95": [
+              -0.21,
+              3.04
+            ],
+            "n_better": 6,
+            "n": 9,
+            "n_within_1pct": 6
+          },
+          "h4|lattice_chip_vs_lattice_walls": {
+            "mean_rel_pct": 1.44,
+            "median": 0.51,
+            "ci95": [
+              0.25,
+              3.05
+            ],
+            "n_better": 2,
+            "n": 9,
+            "n_within_1pct": 7
+          },
+          "h4|lattice_chip_vs_lattice_chip_shuffled": {
+            "mean_rel_pct": 1.89,
+            "median": 1.17,
+            "ci95": [
+              0.36,
+              3.62
+            ],
+            "n_better": 4,
+            "n": 9,
+            "n_within_1pct": 4
+          }
+        },
+        "mean_test_mse": {
+          "h1": {
+            "persistence": 0.07980088703334332,
+            "var_ridge": 0.05579198199433254,
+            "esn_nonspatial": 0.05599848113454586,
+            "lattice_chip": 0.05758205128241789,
+            "lattice_full": 0.05765042851000646,
+            "lattice_walls": 0.05837084203072026,
+            "lattice_chip_shuffled": 0.05670996303086381
+          },
+          "h4": {
+            "persistence": 0.11865338207119042,
+            "var_ridge": 0.08434685268241443,
+            "esn_nonspatial": 0.0834844194104227,
+            "lattice_chip": 0.08179529724253298,
+            "lattice_full": 0.08145111709248767,
+            "lattice_walls": 0.08092480450758852,
+            "lattice_chip_shuffled": 0.0798650192336082
+          }
+        },
+        "crank_nicolson_norm_ratio": 1.0000000000000002,
+        "all_contrasts": {
+          "h1|lattice_chip_vs_var_ridge": {
+            "mean_rel_pct": 2.1,
+            "median": -0.13,
+            "ci95": [
+              -2.36,
+              6.26
+            ],
+            "n_better": 5,
+            "n": 9
+          },
+          "h1|lattice_full_vs_var_ridge": {
+            "mean_rel_pct": 2.26,
+            "median": 0.49,
+            "ci95": [
+              -1.85,
+              6.11
+            ],
+            "n_better": 4,
+            "n": 9
+          },
+          "h1|lattice_walls_vs_var_ridge": {
+            "mean_rel_pct": 10.34,
+            "median": -0.52,
+            "ci95": [
+              -2.16,
+              29.69
+            ],
+            "n_better": 5,
+            "n": 9
+          },
+          "h1|lattice_chip_shuffled_vs_var_ridge": {
+            "mean_rel_pct": 1.43,
+            "median": 0.39,
+            "ci95": [
+              -1.68,
+              4.4
+            ],
+            "n_better": 4,
+            "n": 9
+          },
+          "h1|esn_nonspatial_vs_var_ridge": {
+            "mean_rel_pct": 0.85,
+            "median": -1.34,
+            "ci95": [
+              -1.67,
+              3.57
+            ],
+            "n_better": 5,
+            "n": 9
+          },
+          "h1|lattice_chip_vs_esn_nonspatial": {
+            "mean_rel_pct": 1.31,
+            "median": 0.65,
+            "ci95": [
+              -2.9,
+              5.59
+            ],
+            "n_better": 1,
+            "n": 9
+          },
+          "h1|lattice_full_vs_esn_nonspatial": {
+            "mean_rel_pct": 1.47,
+            "median": 0.58,
+            "ci95": [
+              -2.47,
+              5.44
+            ],
+            "n_better": 1,
+            "n": 9
+          },
+          "h1|lattice_walls_vs_esn_nonspatial": {
+            "mean_rel_pct": 9.21,
+            "median": 0.83,
+            "ci95": [
+              -2.2,
+              27.4
+            ],
+            "n_better": 2,
+            "n": 9
+          },
+          "h1|lattice_chip_shuffled_vs_esn_nonspatial": {
+            "mean_rel_pct": 0.63,
+            "median": 1.25,
+            "ci95": [
+              -2.16,
+              2.8
+            ],
+            "n_better": 2,
+            "n": 9
+          },
+          "h1|lattice_chip_vs_persistence": {
+            "mean_rel_pct": -27.52,
+            "median": -32.94,
+            "ci95": [
+              -34.04,
+              -19.88
+            ],
+            "n_better": 9,
+            "n": 9
+          },
+          "h1|lattice_full_vs_persistence": {
+            "mean_rel_pct": -27.44,
+            "median": -32.46,
+            "ci95": [
+              -33.93,
+              -19.87
+            ],
+            "n_better": 9,
+            "n": 9
+          },
+          "h1|lattice_walls_vs_persistence": {
+            "mean_rel_pct": -21.63,
+            "median": -33.2,
+            "ci95": [
+              -33.67,
+              -6.45
+            ],
+            "n_better": 8,
+            "n": 9
+          },
+          "h1|lattice_chip_shuffled_vs_persistence": {
+            "mean_rel_pct": -28.11,
+            "median": -31.05,
+            "ci95": [
+              -33.81,
+              -21.58
+            ],
+            "n_better": 9,
+            "n": 9
+          },
+          "h1|esn_nonspatial_vs_persistence": {
+            "mean_rel_pct": -28.51,
+            "median": -30.98,
+            "ci95": [
+              -34.28,
+              -22.36
+            ],
+            "n_better": 9,
+            "n": 9
+          },
+          "h4|lattice_chip_vs_var_ridge": {
+            "mean_rel_pct": -0.75,
+            "median": 0.85,
+            "ci95": [
+              -6.71,
+              3.12
+            ],
+            "n_better": 4,
+            "n": 9
+          },
+          "h4|lattice_full_vs_var_ridge": {
+            "mean_rel_pct": -1.9,
+            "median": 0.07,
+            "ci95": [
+              -7.41,
+              1.84
+            ],
+            "n_better": 3,
+            "n": 9
+          },
+          "h4|lattice_walls_vs_var_ridge": {
+            "mean_rel_pct": -2.16,
+            "median": -0.11,
+            "ci95": [
+              -7.82,
+              1.59
+            ],
+            "n_better": 5,
+            "n": 9
+          },
+          "h4|lattice_chip_shuffled_vs_var_ridge": {
+            "mean_rel_pct": -2.59,
+            "median": -0.05,
+            "ci95": [
+              -8.16,
+              0.69
+            ],
+            "n_better": 6,
+            "n": 9
+          },
+          "h4|esn_nonspatial_vs_var_ridge": {
+            "mean_rel_pct": 1.24,
+            "median": -1.18,
+            "ci95": [
+              -2.11,
+              5.62
+            ],
+            "n_better": 6,
+            "n": 9
+          },
+          "h4|lattice_chip_vs_esn_nonspatial": {
+            "mean_rel_pct": -1.79,
+            "median": 1.09,
+            "ci95": [
+              -7.49,
+              3.03
+            ],
+            "n_better": 2,
+            "n": 9
+          },
+          "h4|lattice_full_vs_esn_nonspatial": {
+            "mean_rel_pct": -2.8,
+            "median": 0.25,
+            "ci95": [
+              -9.05,
+              2.74
+            ],
+            "n_better": 4,
+            "n": 9
+          },
+          "h4|lattice_walls_vs_esn_nonspatial": {
+            "mean_rel_pct": -3.1,
+            "median": 0.94,
+            "ci95": [
+              -9.33,
+              2.24
+            ],
+            "n_better": 4,
+            "n": 9
+          },
+          "h4|lattice_chip_shuffled_vs_esn_nonspatial": {
+            "mean_rel_pct": -3.58,
+            "median": 0.16,
+            "ci95": [
+              -9.46,
+              1.12
+            ],
+            "n_better": 4,
+            "n": 9
+          },
+          "h4|lattice_chip_vs_persistence": {
+            "mean_rel_pct": -30.28,
+            "median": -33.38,
+            "ci95": [
+              -37.78,
+              -22.36
+            ],
+            "n_better": 9,
+            "n": 9
+          },
+          "h4|lattice_full_vs_persistence": {
+            "mean_rel_pct": -31.12,
+            "median": -35.57,
+            "ci95": [
+              -38.18,
+              -23.25
+            ],
+            "n_better": 9,
+            "n": 9
+          },
+          "h4|lattice_walls_vs_persistence": {
+            "mean_rel_pct": -31.29,
+            "median": -36.5,
+            "ci95": [
+              -38.39,
+              -23.52
+            ],
+            "n_better": 9,
+            "n": 9
+          },
+          "h4|lattice_chip_shuffled_vs_persistence": {
+            "mean_rel_pct": -31.68,
+            "median": -36.04,
+            "ci95": [
+              -38.55,
+              -24.65
+            ],
+            "n_better": 9,
+            "n": 9
+          },
+          "h4|esn_nonspatial_vs_persistence": {
+            "mean_rel_pct": -27.76,
+            "median": -34.12,
+            "ci95": [
+              -38.16,
+              -15.05
+            ],
+            "n_better": 8,
+            "n": 9
+          }
+        }
+      },
+      "verdict": "matches but does not beat",
+      "verdict_detail": "Beats persistence (as the ridge VAR and the ESN also do), but ties the ridge VAR and the matched non-spatial reservoir at both horizons; removing walls, isolating compartments or shuffling electrode positions does not make it worse (the true chip geometry is even slightly worse at h=4 than isolated compartments and shuffled electrode positions), so the chip geometry adds nothing measurable.",
+      "provenance": {
+        "mode": "reuse: per-recording numbers taken from the pilot run after the reduced check below (ported code rerun on recordings [1, 2] in a fresh process, i.e. the pilot's first recordings in the pilot's order, so that process-level random state such as the ARPACK start vectors of the ESN spectral-radius estimate is the same)",
+        "env": {
+          "python": "3.13.7",
+          "numpy": "2.2.6",
+          "scipy": "1.15.1",
+          "pandas": "2.2.3",
+          "platform": "Windows-10-10.0.19045-SP0",
+          "torch": "2.6.0+cu124",
+          "cuda": true
+        },
+        "reduced_check": [
+          {
+            "fid": 1,
+            "byte_identical_excluding_elapsed_s": true,
+            "ported_sha256": "6749836674caac3f70f2d9ee2461893310b66027d5a3501046a090d1641ede2a",
+            "pilot_sha256": "6749836674caac3f70f2d9ee2461893310b66027d5a3501046a090d1641ede2a",
+            "max_rel_diff": 0.0,
+            "elapsed_s": 179.5
+          },
+          {
+            "fid": 2,
+            "byte_identical_excluding_elapsed_s": true,
+            "ported_sha256": "d70a180ea4a6afc4ed74a9bca9bbaaf7c396e9547a4e93209ce96b2f7ee888ee",
+            "pilot_sha256": "d70a180ea4a6afc4ed74a9bca9bbaaf7c396e9547a4e93209ce96b2f7ee888ee",
+            "max_rel_diff": 0.0,
+            "elapsed_s": 175.1
+          }
+        ],
+        "summary_check": {
+          "ported_file_sha256": "c056a1d42b09243fc25f62f1d98a28da1452d1d7c8f6c268fe0b55a491e57bef",
+          "pilot_file_sha256": "c056a1d42b09243fc25f62f1d98a28da1452d1d7c8f6c268fe0b55a491e57bef",
+          "byte_identical": true
+        },
+        "pilot_file": {
+          "path": "colab/research/fran/_pilot/pilot_chiplattice.json (private working notes)",
+          "sha256": "b4bfd5648a887ca133701627b98264f08504e03c610ab6a5945e14856817b5fa"
+        },
+        "environment_check": {
+          "env": {
+            "python": "3.13.7",
+            "numpy": "2.5.3",
+            "scipy": "1.15.1",
+            "pandas": "3.0.6",
+            "platform": "Windows-10-10.0.19045-SP0",
+            "torch": "2.6.0+cu124",
+            "cuda": true
+          },
+          "note": "same reduced check rerun with the project's data/.pylibs libraries",
+          "reduced_check": [
+            {
+              "fid": 1,
+              "byte_identical_excluding_elapsed_s": true,
+              "ported_sha256": "6749836674caac3f70f2d9ee2461893310b66027d5a3501046a090d1641ede2a",
+              "pilot_sha256": "6749836674caac3f70f2d9ee2461893310b66027d5a3501046a090d1641ede2a",
+              "max_rel_diff": 0.0,
+              "elapsed_s": 244.4
+            },
+            {
+              "fid": 2,
+              "byte_identical_excluding_elapsed_s": true,
+              "ported_sha256": "d70a180ea4a6afc4ed74a9bca9bbaaf7c396e9547a4e93209ce96b2f7ee888ee",
+              "pilot_sha256": "d70a180ea4a6afc4ed74a9bca9bbaaf7c396e9547a4e93209ce96b2f7ee888ee",
+              "max_rel_diff": 0.0,
+              "elapsed_s": 226.0
+            }
+          ],
+          "summary_check": {
+            "ported_file_sha256": "c056a1d42b09243fc25f62f1d98a28da1452d1d7c8f6c268fe0b55a491e57bef",
+            "pilot_file_sha256": "c056a1d42b09243fc25f62f1d98a28da1452d1d7c8f6c268fe0b55a491e57bef",
+            "byte_identical": true
+          }
+        },
+        "elapsed_s": 363.2
+      }
+    },
+    "C_doselattice_encoder": {
+      "architecture": "DoseLattice: fixed 1-D diffusion lattice over log10 concentration (QESN mass-conserving stencil, 64 sites, 3 bandwidths, masked Nadaraya-Watson readout) added as an extra context encoder to the NeuroTrajectory decoder",
+      "source": {
+        "author": "Francisco Angulo de Lafuente",
+        "repo": "Agnuxo1/QESN_MABe_V2_REPO",
+        "licence": "Apache-2.0",
+        "archive": "Zenodo record 17266084; PyPI qesn-mabe",
+        "what_is_reused": "the mass-conserving diffusion stencil of src/qesn/diffusion.py, in 1-D over log10 concentration, as a fixed (parameter-free) encoder of the context wells."
+      },
+      "what_was_tested": "Whether adding the DoseLattice encoder to NeuroTrajectory lowers the curve MAE of the forecast at unmeasured concentrations for unseen chemicals, with k = 1-4 measured levels.",
+      "data": "EPA NFA (public domain): 49 held-out chemicals of outer fold 0; training on the other 194 chemicals (folds 1-4). DEVELOPMENT FOLD 0 ONLY: fold 0 is excluded from the reported folds 1-4, which are not evaluated here.",
+      "split": "chemical-level 5-fold split (repo/results/splits_epa_nfa.json), outer fold 0 as test; 5 seeded context designs per chemical and k (same designs as trajectory_cv).",
+      "baselines": [
+        "neurotrajectory_v1_saved: the primary v1 fold-0 NeuroTrajectory ensemble (3 seeds, laplace, interpolation-informed decoder, n_freq 8), loaded from data/processed/models",
+        "neurotrajectory_retrained: the same configuration and seeds retrained in this run (training-noise control)",
+        "best simple baseline per k among zero, context_mean, loglinear_interp, hill_per_endpoint, analog_knn"
+      ],
+      "metric": "curve MAE (vehicle-normalised units) per chemical, averaged over designs; paired bootstrap over chemicals (run_trajectory_cv.paired_boot, 4000 resamples, seed 0) of DoseLattice minus reference; ci95_rel_pct = CI divided by the reference mean.",
+      "result": {
+        "primary_contrast": "doselattice_vs_neurotrajectory_v1_saved",
+        "by_k": {
+          "1": {
+            "n_chemicals": 49,
+            "mean_curve_mae": {
+              "analog_knn": 1.4422,
+              "context_mean": 1.8045,
+              "doselattice": 1.4003,
+              "hill_per_endpoint": 1.8045,
+              "loglinear_interp": 1.8045,
+              "neurotrajectory_retrained": 1.3924,
+              "neurotrajectory_v1_saved": 1.3924,
+              "zero": 1.7615
+            },
+            "best_baseline": "analog_knn",
+            "doselattice_vs_neurotrajectory_v1_saved": {
+              "mean_diff": 0.0079,
+              "ci95": [
+                -0.0127,
+                0.0282
+              ],
+              "rel_change_pct": 0.57,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.531,
+              "ci95_rel_pct": [
+                -0.91,
+                2.03
+              ],
+              "n_chem_improved": 26
+            },
+            "doselattice_vs_neurotrajectory_retrained": {
+              "mean_diff": 0.0079,
+              "ci95": [
+                -0.0127,
+                0.0282
+              ],
+              "rel_change_pct": 0.57,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.531,
+              "ci95_rel_pct": [
+                -0.91,
+                2.03
+              ],
+              "n_chem_improved": 26
+            },
+            "neurotrajectory_retrained_vs_v1_saved": {
+              "mean_diff": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "rel_change_pct": 0.0,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.0,
+              "ci95_rel_pct": [
+                0.0,
+                0.0
+              ],
+              "n_chem_improved": 0
+            },
+            "doselattice_vs_best_baseline": {
+              "mean_diff": -0.0418,
+              "ci95": [
+                -0.1014,
+                0.0202
+              ],
+              "rel_change_pct": -2.9,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.612,
+              "ci95_rel_pct": [
+                -7.03,
+                1.4
+              ],
+              "n_chem_improved": 30
+            },
+            "neurotrajectory_v1_saved_vs_best_baseline": {
+              "mean_diff": -0.0497,
+              "ci95": [
+                -0.1088,
+                0.0154
+              ],
+              "rel_change_pct": -3.45,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.633,
+              "ci95_rel_pct": [
+                -7.54,
+                1.07
+              ],
+              "n_chem_improved": 31
+            }
+          },
+          "2": {
+            "n_chemicals": 49,
+            "mean_curve_mae": {
+              "analog_knn": 1.3403,
+              "context_mean": 1.6069,
+              "doselattice": 1.278,
+              "hill_per_endpoint": 1.4699,
+              "loglinear_interp": 1.4699,
+              "neurotrajectory_retrained": 1.2662,
+              "neurotrajectory_v1_saved": 1.2662,
+              "zero": 1.7675
+            },
+            "best_baseline": "analog_knn",
+            "doselattice_vs_neurotrajectory_v1_saved": {
+              "mean_diff": 0.0118,
+              "ci95": [
+                -0.0089,
+                0.0316
+              ],
+              "rel_change_pct": 0.93,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.408,
+              "ci95_rel_pct": [
+                -0.7,
+                2.5
+              ],
+              "n_chem_improved": 20
+            },
+            "doselattice_vs_neurotrajectory_retrained": {
+              "mean_diff": 0.0118,
+              "ci95": [
+                -0.0089,
+                0.0316
+              ],
+              "rel_change_pct": 0.93,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.408,
+              "ci95_rel_pct": [
+                -0.7,
+                2.5
+              ],
+              "n_chem_improved": 20
+            },
+            "neurotrajectory_retrained_vs_v1_saved": {
+              "mean_diff": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "rel_change_pct": 0.0,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.0,
+              "ci95_rel_pct": [
+                0.0,
+                0.0
+              ],
+              "n_chem_improved": 0
+            },
+            "doselattice_vs_best_baseline": {
+              "mean_diff": -0.0623,
+              "ci95": [
+                -0.1413,
+                0.0225
+              ],
+              "rel_change_pct": -4.65,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.653,
+              "ci95_rel_pct": [
+                -10.54,
+                1.68
+              ],
+              "n_chem_improved": 32
+            },
+            "neurotrajectory_v1_saved_vs_best_baseline": {
+              "mean_diff": -0.0741,
+              "ci95": [
+                -0.1502,
+                0.0077
+              ],
+              "rel_change_pct": -5.53,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.673,
+              "ci95_rel_pct": [
+                -11.21,
+                0.57
+              ],
+              "n_chem_improved": 33
+            }
+          },
+          "3": {
+            "n_chemicals": 49,
+            "mean_curve_mae": {
+              "analog_knn": 1.241,
+              "context_mean": 1.5179,
+              "doselattice": 1.1453,
+              "hill_per_endpoint": 1.3501,
+              "loglinear_interp": 1.2443,
+              "neurotrajectory_retrained": 1.1233,
+              "neurotrajectory_v1_saved": 1.1233,
+              "zero": 1.7589
+            },
+            "best_baseline": "analog_knn",
+            "doselattice_vs_neurotrajectory_v1_saved": {
+              "mean_diff": 0.0219,
+              "ci95": [
+                -0.0013,
+                0.048
+              ],
+              "rel_change_pct": 1.95,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.367,
+              "ci95_rel_pct": [
+                -0.12,
+                4.27
+              ],
+              "n_chem_improved": 18
+            },
+            "doselattice_vs_neurotrajectory_retrained": {
+              "mean_diff": 0.0219,
+              "ci95": [
+                -0.0013,
+                0.048
+              ],
+              "rel_change_pct": 1.95,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.367,
+              "ci95_rel_pct": [
+                -0.12,
+                4.27
+              ],
+              "n_chem_improved": 18
+            },
+            "neurotrajectory_retrained_vs_v1_saved": {
+              "mean_diff": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "rel_change_pct": 0.0,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.0,
+              "ci95_rel_pct": [
+                0.0,
+                0.0
+              ],
+              "n_chem_improved": 0
+            },
+            "doselattice_vs_best_baseline": {
+              "mean_diff": -0.0957,
+              "ci95": [
+                -0.1649,
+                -0.0308
+              ],
+              "rel_change_pct": -7.71,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.755,
+              "ci95_rel_pct": [
+                -13.29,
+                -2.48
+              ],
+              "n_chem_improved": 37
+            },
+            "neurotrajectory_v1_saved_vs_best_baseline": {
+              "mean_diff": -0.1176,
+              "ci95": [
+                -0.1752,
+                -0.0665
+              ],
+              "rel_change_pct": -9.48,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.796,
+              "ci95_rel_pct": [
+                -14.12,
+                -5.36
+              ],
+              "n_chem_improved": 39
+            }
+          },
+          "4": {
+            "n_chemicals": 49,
+            "mean_curve_mae": {
+              "analog_knn": 1.242,
+              "context_mean": 1.5153,
+              "doselattice": 1.1624,
+              "hill_per_endpoint": 1.2647,
+              "loglinear_interp": 1.1791,
+              "neurotrajectory_retrained": 1.1205,
+              "neurotrajectory_v1_saved": 1.1205,
+              "zero": 1.7982
+            },
+            "best_baseline": "loglinear_interp",
+            "doselattice_vs_neurotrajectory_v1_saved": {
+              "mean_diff": 0.0419,
+              "ci95": [
+                0.0097,
+                0.0837
+              ],
+              "rel_change_pct": 3.74,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.367,
+              "ci95_rel_pct": [
+                0.87,
+                7.47
+              ],
+              "n_chem_improved": 18
+            },
+            "doselattice_vs_neurotrajectory_retrained": {
+              "mean_diff": 0.0419,
+              "ci95": [
+                0.0097,
+                0.0837
+              ],
+              "rel_change_pct": 3.74,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.367,
+              "ci95_rel_pct": [
+                0.87,
+                7.47
+              ],
+              "n_chem_improved": 18
+            },
+            "neurotrajectory_retrained_vs_v1_saved": {
+              "mean_diff": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "rel_change_pct": 0.0,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.0,
+              "ci95_rel_pct": [
+                0.0,
+                0.0
+              ],
+              "n_chem_improved": 0
+            },
+            "doselattice_vs_best_baseline": {
+              "mean_diff": -0.0167,
+              "ci95": [
+                -0.1284,
+                0.1385
+              ],
+              "rel_change_pct": -1.42,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.653,
+              "ci95_rel_pct": [
+                -10.89,
+                11.75
+              ],
+              "n_chem_improved": 32
+            },
+            "neurotrajectory_v1_saved_vs_best_baseline": {
+              "mean_diff": -0.0586,
+              "ci95": [
+                -0.147,
+                0.0621
+              ],
+              "rel_change_pct": -4.97,
+              "n_chemicals": 49,
+              "frac_chem_improved": 0.714,
+              "ci95_rel_pct": [
+                -12.47,
+                5.27
+              ],
+              "n_chem_improved": 35
+            }
+          }
+        },
+        "retrained_vs_saved_max_abs_diff_curve_mae": 0.0,
+        "integrity_vs_trajectory_cv_csv": {
+          "neurotrajectory_v1_saved": {
+            "n_matched": 196,
+            "max_abs_diff_vs_trajectory_cv_csv": 4.440892098500626e-16
+          },
+          "zero": {
+            "n_matched": 196,
+            "max_abs_diff_vs_trajectory_cv_csv": 4.440892098500626e-16
+          },
+          "context_mean": {
+            "n_matched": 196,
+            "max_abs_diff_vs_trajectory_cv_csv": 4.440892098500626e-16
+          },
+          "loglinear_interp": {
+            "n_matched": 196,
+            "max_abs_diff_vs_trajectory_cv_csv": 4.440892098500626e-16
+          },
+          "hill_per_endpoint": {
+            "n_matched": 196,
+            "max_abs_diff_vs_trajectory_cv_csv": 4.440892098500626e-16
+          },
+          "analog_knn": {
+            "n_matched": 196,
+            "max_abs_diff_vs_trajectory_cv_csv": 8.881784197001252e-16
+          }
+        },
+        "port_fidelity": {
+          "available": true,
+          "pilot_sha256": "5567815d845a9d7ff7c355bfacb4dee0aae12192e627a002e2597adacf1f2349",
+          "identical_parameters_after_seeded_init": true,
+          "identical_forward_outputs": true,
+          "n_parameters": 563852
+        }
+      },
+      "verdict": "no gain; worse at some k",
+      "verdict_detail": "Adding the diffusion encoder never improves NeuroTrajectory (the point estimate is worse at every k); the CI excludes 0 only at k = 4. Likely redundant, because the model already interpolates in log-dose and attends locally in dose.",
+      "label": "development fold 0 only; not a headline result",
+      "provenance": {
+        "mode": "full rerun with the v1 fold-0 configuration",
+        "env": {
+          "python": "3.13.7",
+          "numpy": "2.5.3",
+          "scipy": "1.15.1",
+          "pandas": "3.0.6",
+          "platform": "Windows-10-10.0.19045-SP0",
+          "torch": "2.6.0+cu124",
+          "cuda": true
+        },
+        "config": {
+          "steps": 4000,
+          "likelihood": "laplace",
+          "use_interp": true,
+          "n_freq": 8,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "designs_per_k": 5,
+          "ks": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "device": "cuda",
+        "timing": {
+          "neurotrajectory_retrained_train_s": 510.6,
+          "doselattice_train_s": 622.4
+        },
+        "elapsed_s": 1459.9,
+        "pilot_reference": {
+          "note": "exploratory pilot, superseded by this run: v2 fold-0 configuration (n_freq 3), 2 seeds, both arms retrained; bootstrap CI on the absolute difference",
+          "sha256": "734979f43e30c184f9d9b47a541d156db03da29490c4e652d5b4536cbeeddeb6",
+          "seeds": [
+            0,
+            1
+          ],
+          "config": "laplace, use_interp, n_freq 3, 4000 steps",
+          "by_k": {
+            "1": {
+              "n": 49,
+              "neurotrajectory": 1.3831813963092106,
+              "doselattice": 1.4185717974390304,
+              "rel_change_pct": 2.558623274160085,
+              "ci95": [
+                0.010859578823556723,
+                0.06291516766864425
+              ],
+              "frac_improved": 0.30612244897959184
+            },
+            "2": {
+              "n": 49,
+              "neurotrajectory": 1.2648534684765096,
+              "doselattice": 1.3023587910496461,
+              "rel_change_pct": 2.965191107734455,
+              "ci95": [
+                0.009231348554698756,
+                0.07024525421614548
+              ],
+              "frac_improved": 0.4489795918367347
+            },
+            "3": {
+              "n": 49,
+              "neurotrajectory": 1.1255342651386653,
+              "doselattice": 1.1613371965836505,
+              "rel_change_pct": 3.180972143977741,
+              "ci95": [
+                0.006263892237020973,
+                0.07589005951370512
+              ],
+              "frac_improved": 0.40816326530612246
+            },
+            "4": {
+              "n": 49,
+              "neurotrajectory": 1.1173609678842582,
+              "doselattice": 1.1843447587927993,
+              "rel_change_pct": 5.994821085917824,
+              "ci95": [
+                0.018548051003290694,
+                0.13394906951152552
+              ],
+              "frac_improved": 0.32653061224489793
+            }
+          }
+        },
+        "pilot_vs_this_run": {
+          "note": "The exploratory pilot (v2 fold-0 configuration, n_freq 3, 2 seeds) found DoseLattice worse with the CI above 0 at the k listed below; with the primary v1 configuration (this run) the effect is smaller.",
+          "pilot_k_ci_above_0": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "pilot_rel_change_pct": {
+            "1": 2.56,
+            "2": 2.97,
+            "3": 3.18,
+            "4": 5.99
+          },
+          "this_run_k_ci_above_0": [
+            4
+          ],
+          "this_run_rel_change_pct": {
+            "1": 0.57,
+            "2": 0.93,
+            "3": 1.95,
+            "4": 3.74
+          }
+        }
+      }
+    }
+  },
+  "parts": {
+    "A": {
+      "sha256": "1f285dcea9469dc9747ddc6c02b47d3030415d8dabb2e263c46fd97fb4f5644e"
+    },
+    "B": {
+      "sha256": "2128e04091e05e3391e4d2bf0faf5ba21462c2bef3e1fd51658fcf8e5440c08e"
+    },
+    "C": {
+      "sha256": "1c5c3f9e87712d04494ab9325f65f61d5c1b1d2470dfec2d60bec380402b1b47"
+    }
+  }
+}

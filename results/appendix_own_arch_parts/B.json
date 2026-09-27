@@ -1,0 +1,856 @@
+{
+ "part": "B",
+ "created_utc": "2026-09-26T11:59:02+00:00",
+ "crank_nicolson_norm_ratio": 1.0000000000000002,
+ "env": {
+  "python": "3.13.7",
+  "numpy": "2.2.6",
+  "scipy": "1.15.1",
+  "pandas": "2.2.3",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "torch": "2.6.0+cu124",
+  "cuda": true
+ },
+ "mode": "reuse: per-recording numbers taken from the pilot run after the reduced check below (ported code rerun on recordings [1, 2] in a fresh process, i.e. the pilot's first recordings in the pilot's order, so that process-level random state such as the ARPACK start vectors of the ESN spectral-radius estimate is the same)",
+ "per_recording": [
+  {
+   "fid": 1,
+   "n_bins": 12000,
+   "n_lattice_cells": 480,
+   "test_var": 0.047073084861040115,
+   "h1": {
+    "persistence": 0.05405418947339058,
+    "var_ridge": 0.03521851856317102,
+    "var_L": 1,
+    "esn_nonspatial": 0.03470527282595109,
+    "esn_cfg": {
+     "rho": 0.8,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.034719876203027605,
+    "lattice_cfg": {
+     "c": 2.0,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.034858980586616545,
+    "lattice_walls": 0.03480499784671954,
+    "lattice_chip_shuffled": 0.03513815566654915
+   },
+   "h4": {
+    "persistence": 0.08236610144376755,
+    "var_ridge": 0.04661709740487468,
+    "var_L": 8,
+    "esn_nonspatial": 0.04600153452518399,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.046502252058932485,
+    "lattice_cfg": {
+     "c": 0.5,
+     "gamma": 0.05,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.046648249269624534,
+    "lattice_walls": 0.0465681328438938,
+    "lattice_chip_shuffled": 0.04653810941553719
+   },
+   "elapsed_s": 175.2
+  },
+  {
+   "fid": 2,
+   "n_bins": 12000,
+   "n_lattice_cells": 480,
+   "test_var": 0.045188724994659424,
+   "h1": {
+    "persistence": 0.042701467871665955,
+    "var_ridge": 0.032041453650972884,
+    "var_L": 4,
+    "esn_nonspatial": 0.03235595806434664,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.028557116505497793,
+    "lattice_cfg": {
+     "c": 2.0,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.028838892216266728,
+    "lattice_walls": 0.028526086296481165,
+    "lattice_chip_shuffled": 0.029441685301843382
+   },
+   "h4": {
+    "persistence": 0.048407696187496185,
+    "var_ridge": 0.03893543306114559,
+    "var_L": 1,
+    "esn_nonspatial": 0.04537195846948658,
+    "esn_cfg": {
+     "rho": 0.8,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.03974498262845966,
+    "lattice_cfg": {
+     "c": 0.5,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.03702086598426007,
+    "lattice_walls": 0.037729971400827414,
+    "lattice_chip_shuffled": 0.03832289339670467
+   },
+   "elapsed_s": 165.4
+  },
+  {
+   "fid": 3,
+   "n_bins": 12000,
+   "n_lattice_cells": 480,
+   "test_var": 0.02614513598382473,
+   "h1": {
+    "persistence": 0.01686372607946396,
+    "var_ridge": 0.012053288049331236,
+    "var_L": 2,
+    "esn_nonspatial": 0.012528557511275264,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.012933138508569964,
+    "lattice_cfg": {
+     "c": 2.0,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.012802955143876235,
+    "lattice_walls": 0.02214330321325053,
+    "lattice_chip_shuffled": 0.012719082702138777
+   },
+   "h4": {
+    "persistence": 0.027321649715304375,
+    "var_ridge": 0.019652684647621942,
+    "var_L": 2,
+    "esn_nonspatial": 0.0202090258731408,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.020366110247116397,
+    "lattice_cfg": {
+     "c": 0.5,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.020079369100549988,
+    "lattice_walls": 0.020407010366719595,
+    "lattice_chip_shuffled": 0.020129643968101747
+   },
+   "elapsed_s": 168.9
+  },
+  {
+   "fid": 4,
+   "n_bins": 12000,
+   "n_lattice_cells": 480,
+   "test_var": 0.15076392889022827,
+   "h1": {
+    "persistence": 0.21884657442569733,
+    "var_ridge": 0.13273500516793635,
+    "var_L": 2,
+    "esn_nonspatial": 0.13043650596307238,
+    "esn_cfg": {
+     "rho": 0.8,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.13048231505443814,
+    "lattice_cfg": {
+     "c": 2.0,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.13119555157714938,
+    "lattice_walls": 0.12982952187577784,
+    "lattice_chip_shuffled": 0.13105389288032276
+   },
+   "h4": {
+    "persistence": 0.27680808305740356,
+    "var_ridge": 0.1501231907622892,
+    "var_L": 2,
+    "esn_nonspatial": 0.14980391914558414,
+    "esn_cfg": {
+     "rho": 0.8,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.14996029629365037,
+    "lattice_cfg": {
+     "c": 0.5,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.15017998291547258,
+    "lattice_walls": 0.1489140559320159,
+    "lattice_chip_shuffled": 0.1500413516060617
+   },
+   "elapsed_s": 155.3
+  },
+  {
+   "fid": 5,
+   "n_bins": 12000,
+   "n_lattice_cells": 480,
+   "test_var": 0.07652140408754349,
+   "h1": {
+    "persistence": 0.08154726028442383,
+    "var_ridge": 0.05395240048316154,
+    "var_L": 2,
+    "esn_nonspatial": 0.053231222140539346,
+    "esn_cfg": {
+     "rho": 0.8,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.053879855474460815,
+    "lattice_cfg": {
+     "c": 2.0,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.054214749338121246,
+    "lattice_walls": 0.05367183350697628,
+    "lattice_chip_shuffled": 0.05416493128082119
+   },
+   "h4": {
+    "persistence": 0.12426910549402237,
+    "var_ridge": 0.07289019427555984,
+    "var_L": 2,
+    "esn_nonspatial": 0.07203121365654296,
+    "esn_cfg": {
+     "rho": 0.8,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.07350984031021446,
+    "lattice_cfg": {
+     "c": 2.0,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.07376513603645456,
+    "lattice_walls": 0.07317138511720137,
+    "lattice_chip_shuffled": 0.07401606768011096
+   },
+   "elapsed_s": 155.6
+  },
+  {
+   "fid": 6,
+   "n_bins": 12000,
+   "n_lattice_cells": 480,
+   "test_var": 0.08591695874929428,
+   "h1": {
+    "persistence": 0.06368548423051834,
+    "var_ridge": 0.041507715114877705,
+    "var_L": 2,
+    "esn_nonspatial": 0.04395846719202953,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 1.0,
+     "a": 0.5
+    },
+    "lattice_chip": 0.04404960300135235,
+    "lattice_cfg": {
+     "c": 0.5,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.044188235397966985,
+    "lattice_walls": 0.04398175403263518,
+    "lattice_chip_shuffled": 0.0440789119760579
+   },
+   "h4": {
+    "persistence": 0.0878947451710701,
+    "var_ridge": 0.05537233541437576,
+    "var_L": 2,
+    "esn_nonspatial": 0.057909354770377904,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.0585553587573855,
+    "lattice_cfg": {
+     "c": 2.0,
+     "gamma": 0.05,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.056627865203874986,
+    "lattice_walls": 0.0556071563407212,
+    "lattice_chip_shuffled": 0.05535271135746148
+   },
+   "elapsed_s": 153.2
+  },
+  {
+   "fid": 7,
+   "n_bins": 12000,
+   "n_lattice_cells": 480,
+   "test_var": 0.25592127442359924,
+   "h1": {
+    "persistence": 0.13845819234848022,
+    "var_ridge": 0.11299519939481995,
+    "var_L": 1,
+    "esn_nonspatial": 0.11029373466248897,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.12609064495277933,
+    "lattice_cfg": {
+     "c": 0.5,
+     "gamma": 0.05,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.12520480918657392,
+    "lattice_walls": 0.12445615419300955,
+    "lattice_chip_shuffled": 0.11684650623801492
+   },
+   "h4": {
+    "persistence": 0.24942009150981903,
+    "var_ridge": 0.1946026579570073,
+    "var_L": 1,
+    "esn_nonspatial": 0.18510063521408265,
+    "esn_cfg": {
+     "rho": 0.8,
+     "leak": 1.0,
+     "a": 0.5
+    },
+    "lattice_chip": 0.20312494444216375,
+    "lattice_cfg": {
+     "c": 0.5,
+     "gamma": 0.05,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.20321519289235312,
+    "lattice_walls": 0.20245801786693765,
+    "lattice_chip_shuffled": 0.19156060542545408
+   },
+   "elapsed_s": 145.6
+  },
+  {
+   "fid": 8,
+   "n_bins": 12000,
+   "n_lattice_cells": 480,
+   "test_var": 0.19978733360767365,
+   "h1": {
+    "persistence": 0.07802165299654007,
+    "var_ridge": 0.06529557246216733,
+    "var_L": 1,
+    "esn_nonspatial": 0.0709529373465785,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 1.0,
+     "a": 0.5
+    },
+    "lattice_chip": 0.07141198129367266,
+    "lattice_cfg": {
+     "c": 0.5,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.07133981086368353,
+    "lattice_walls": 0.0719285262735379,
+    "lattice_chip_shuffled": 0.07087008653673714
+   },
+   "h4": {
+    "persistence": 0.13809515535831451,
+    "var_ridge": 0.159632997502753,
+    "var_L": 8,
+    "esn_nonspatial": 0.1539845052904265,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.12313991606318152,
+    "lattice_cfg": {
+     "c": 0.5,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.12426772782628548,
+    "lattice_walls": 0.12232221713444291,
+    "lattice_chip_shuffled": 0.12152639703778143
+   },
+   "elapsed_s": 151.7
+  },
+  {
+   "fid": 9,
+   "n_bins": 12000,
+   "n_lattice_cells": 480,
+   "test_var": 0.024617845192551613,
+   "h1": {
+    "persistence": 0.024029435589909554,
+    "var_ridge": 0.016328685062554863,
+    "var_L": 2,
+    "esn_nonspatial": 0.01552367450463106,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.016113930547962414,
+    "lattice_cfg": {
+     "c": 2.0,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.01620987227980348,
+    "lattice_walls": 0.01599540103809435,
+    "lattice_chip_shuffled": 0.016076414695289046
+   },
+   "h4": {
+    "persistence": 0.033297810703516006,
+    "var_ridge": 0.021295083116102675,
+    "var_L": 8,
+    "esn_nonspatial": 0.020947627748978875,
+    "esn_cfg": {
+     "rho": 0.95,
+     "leak": 0.3,
+     "a": 0.5
+    },
+    "lattice_chip": 0.02125397438169273,
+    "lattice_cfg": {
+     "c": 0.5,
+     "gamma": 0.2,
+     "g": 0.5,
+     "a": 0.5
+    },
+    "lattice_full": 0.02125566460351383,
+    "lattice_walls": 0.021145293565536894,
+    "lattice_chip_shuffled": 0.021297393215260547
+   },
+   "elapsed_s": 156.9
+  }
+ ],
+ "reduced_check": [
+  {
+   "fid": 1,
+   "byte_identical_excluding_elapsed_s": true,
+   "ported_sha256": "6749836674caac3f70f2d9ee2461893310b66027d5a3501046a090d1641ede2a",
+   "pilot_sha256": "6749836674caac3f70f2d9ee2461893310b66027d5a3501046a090d1641ede2a",
+   "max_rel_diff": 0.0,
+   "elapsed_s": 179.5
+  },
+  {
+   "fid": 2,
+   "byte_identical_excluding_elapsed_s": true,
+   "ported_sha256": "d70a180ea4a6afc4ed74a9bca9bbaaf7c396e9547a4e93209ce96b2f7ee888ee",
+   "pilot_sha256": "d70a180ea4a6afc4ed74a9bca9bbaaf7c396e9547a4e93209ce96b2f7ee888ee",
+   "max_rel_diff": 0.0,
+   "elapsed_s": 175.1
+  }
+ ],
+ "pilot_file": {
+  "path": "colab/research/fran/_pilot/pilot_chiplattice.json (private working notes)",
+  "sha256": "b4bfd5648a887ca133701627b98264f08504e03c610ab6a5945e14856817b5fa"
+ },
+ "summary": {
+  "h1|lattice_chip_vs_var_ridge": {
+   "mean_rel_pct": 2.1,
+   "median": -0.13,
+   "ci95": [
+    -2.36,
+    6.26
+   ],
+   "n_better": 5,
+   "n": 9
+  },
+  "h1|lattice_full_vs_var_ridge": {
+   "mean_rel_pct": 2.26,
+   "median": 0.49,
+   "ci95": [
+    -1.85,
+    6.11
+   ],
+   "n_better": 4,
+   "n": 9
+  },
+  "h1|lattice_walls_vs_var_ridge": {
+   "mean_rel_pct": 10.34,
+   "median": -0.52,
+   "ci95": [
+    -2.16,
+    29.69
+   ],
+   "n_better": 5,
+   "n": 9
+  },
+  "h1|lattice_chip_shuffled_vs_var_ridge": {
+   "mean_rel_pct": 1.43,
+   "median": 0.39,
+   "ci95": [
+    -1.68,
+    4.4
+   ],
+   "n_better": 4,
+   "n": 9
+  },
+  "h1|esn_nonspatial_vs_var_ridge": {
+   "mean_rel_pct": 0.85,
+   "median": -1.34,
+   "ci95": [
+    -1.67,
+    3.57
+   ],
+   "n_better": 5,
+   "n": 9
+  },
+  "h1|lattice_chip_vs_esn_nonspatial": {
+   "mean_rel_pct": 1.31,
+   "median": 0.65,
+   "ci95": [
+    -2.9,
+    5.59
+   ],
+   "n_better": 1,
+   "n": 9
+  },
+  "h1|lattice_full_vs_esn_nonspatial": {
+   "mean_rel_pct": 1.47,
+   "median": 0.58,
+   "ci95": [
+    -2.47,
+    5.44
+   ],
+   "n_better": 1,
+   "n": 9
+  },
+  "h1|lattice_walls_vs_esn_nonspatial": {
+   "mean_rel_pct": 9.21,
+   "median": 0.83,
+   "ci95": [
+    -2.2,
+    27.4
+   ],
+   "n_better": 2,
+   "n": 9
+  },
+  "h1|lattice_chip_shuffled_vs_esn_nonspatial": {
+   "mean_rel_pct": 0.63,
+   "median": 1.25,
+   "ci95": [
+    -2.16,
+    2.8
+   ],
+   "n_better": 2,
+   "n": 9
+  },
+  "h1|lattice_chip_vs_persistence": {
+   "mean_rel_pct": -27.52,
+   "median": -32.94,
+   "ci95": [
+    -34.04,
+    -19.88
+   ],
+   "n_better": 9,
+   "n": 9
+  },
+  "h1|lattice_full_vs_persistence": {
+   "mean_rel_pct": -27.44,
+   "median": -32.46,
+   "ci95": [
+    -33.93,
+    -19.87
+   ],
+   "n_better": 9,
+   "n": 9
+  },
+  "h1|lattice_walls_vs_persistence": {
+   "mean_rel_pct": -21.63,
+   "median": -33.2,
+   "ci95": [
+    -33.67,
+    -6.45
+   ],
+   "n_better": 8,
+   "n": 9
+  },
+  "h1|lattice_chip_shuffled_vs_persistence": {
+   "mean_rel_pct": -28.11,
+   "median": -31.05,
+   "ci95": [
+    -33.81,
+    -21.58
+   ],
+   "n_better": 9,
+   "n": 9
+  },
+  "h1|esn_nonspatial_vs_persistence": {
+   "mean_rel_pct": -28.51,
+   "median": -30.98,
+   "ci95": [
+    -34.28,
+    -22.36
+   ],
+   "n_better": 9,
+   "n": 9
+  },
+  "h4|lattice_chip_vs_var_ridge": {
+   "mean_rel_pct": -0.75,
+   "median": 0.85,
+   "ci95": [
+    -6.71,
+    3.12
+   ],
+   "n_better": 4,
+   "n": 9
+  },
+  "h4|lattice_full_vs_var_ridge": {
+   "mean_rel_pct": -1.9,
+   "median": 0.07,
+   "ci95": [
+    -7.41,
+    1.84
+   ],
+   "n_better": 3,
+   "n": 9
+  },
+  "h4|lattice_walls_vs_var_ridge": {
+   "mean_rel_pct": -2.16,
+   "median": -0.11,
+   "ci95": [
+    -7.82,
+    1.59
+   ],
+   "n_better": 5,
+   "n": 9
+  },
+  "h4|lattice_chip_shuffled_vs_var_ridge": {
+   "mean_rel_pct": -2.59,
+   "median": -0.05,
+   "ci95": [
+    -8.16,
+    0.69
+   ],
+   "n_better": 6,
+   "n": 9
+  },
+  "h4|esn_nonspatial_vs_var_ridge": {
+   "mean_rel_pct": 1.24,
+   "median": -1.18,
+   "ci95": [
+    -2.11,
+    5.62
+   ],
+   "n_better": 6,
+   "n": 9
+  },
+  "h4|lattice_chip_vs_esn_nonspatial": {
+   "mean_rel_pct": -1.79,
+   "median": 1.09,
+   "ci95": [
+    -7.49,
+    3.03
+   ],
+   "n_better": 2,
+   "n": 9
+  },
+  "h4|lattice_full_vs_esn_nonspatial": {
+   "mean_rel_pct": -2.8,
+   "median": 0.25,
+   "ci95": [
+    -9.05,
+    2.74
+   ],
+   "n_better": 4,
+   "n": 9
+  },
+  "h4|lattice_walls_vs_esn_nonspatial": {
+   "mean_rel_pct": -3.1,
+   "median": 0.94,
+   "ci95": [
+    -9.33,
+    2.24
+   ],
+   "n_better": 4,
+   "n": 9
+  },
+  "h4|lattice_chip_shuffled_vs_esn_nonspatial": {
+   "mean_rel_pct": -3.58,
+   "median": 0.16,
+   "ci95": [
+    -9.46,
+    1.12
+   ],
+   "n_better": 4,
+   "n": 9
+  },
+  "h4|lattice_chip_vs_persistence": {
+   "mean_rel_pct": -30.28,
+   "median": -33.38,
+   "ci95": [
+    -37.78,
+    -22.36
+   ],
+   "n_better": 9,
+   "n": 9
+  },
+  "h4|lattice_full_vs_persistence": {
+   "mean_rel_pct": -31.12,
+   "median": -35.57,
+   "ci95": [
+    -38.18,
+    -23.25
+   ],
+   "n_better": 9,
+   "n": 9
+  },
+  "h4|lattice_walls_vs_persistence": {
+   "mean_rel_pct": -31.29,
+   "median": -36.5,
+   "ci95": [
+    -38.39,
+    -23.52
+   ],
+   "n_better": 9,
+   "n": 9
+  },
+  "h4|lattice_chip_shuffled_vs_persistence": {
+   "mean_rel_pct": -31.68,
+   "median": -36.04,
+   "ci95": [
+    -38.55,
+    -24.65
+   ],
+   "n_better": 9,
+   "n": 9
+  },
+  "h4|esn_nonspatial_vs_persistence": {
+   "mean_rel_pct": -27.76,
+   "median": -34.12,
+   "ci95": [
+    -38.16,
+    -15.05
+   ],
+   "n_better": 8,
+   "n": 9
+  }
+ },
+ "summary_check": {
+  "ported_file_sha256": "c056a1d42b09243fc25f62f1d98a28da1452d1d7c8f6c268fe0b55a491e57bef",
+  "pilot_file_sha256": "c056a1d42b09243fc25f62f1d98a28da1452d1d7c8f6c268fe0b55a491e57bef",
+  "byte_identical": true
+ },
+ "ablations": {
+  "h1|lattice_chip_vs_lattice_full": {
+   "mean_rel_pct": -0.18,
+   "median": -0.4,
+   "ci95": [
+    -0.56,
+    0.25
+   ],
+   "n_better": 6,
+   "n": 9,
+   "n_within_1pct": 8
+  },
+  "h1|lattice_chip_vs_lattice_walls": {
+   "mean_rel_pct": -4.37,
+   "median": 0.15,
+   "ci95": [
+    -13.82,
+    0.55
+   ],
+   "n_better": 3,
+   "n": 9,
+   "n_within_1pct": 7
+  },
+  "h1|lattice_chip_vs_lattice_chip_shuffled": {
+   "mean_rel_pct": 0.6,
+   "median": -0.07,
+   "ci95": [
+    -0.96,
+    2.63
+   ],
+   "n_better": 5,
+   "n": 9,
+   "n_within_1pct": 5
+  },
+  "h4|lattice_chip_vs_lattice_full": {
+   "mean_rel_pct": 1.16,
+   "median": -0.04,
+   "ci95": [
+    -0.21,
+    3.04
+   ],
+   "n_better": 6,
+   "n": 9,
+   "n_within_1pct": 6
+  },
+  "h4|lattice_chip_vs_lattice_walls": {
+   "mean_rel_pct": 1.44,
+   "median": 0.51,
+   "ci95": [
+    0.25,
+    3.05
+   ],
+   "n_better": 2,
+   "n": 9,
+   "n_within_1pct": 7
+  },
+  "h4|lattice_chip_vs_lattice_chip_shuffled": {
+   "mean_rel_pct": 1.89,
+   "median": 1.17,
+   "ci95": [
+    0.36,
+    3.62
+   ],
+   "n_better": 4,
+   "n": 9,
+   "n_within_1pct": 4
+  },
+  "mean_test_mse": {
+   "h1": {
+    "persistence": 0.07980088703334332,
+    "var_ridge": 0.05579198199433254,
+    "esn_nonspatial": 0.05599848113454586,
+    "lattice_chip": 0.05758205128241789,
+    "lattice_full": 0.05765042851000646,
+    "lattice_walls": 0.05837084203072026,
+    "lattice_chip_shuffled": 0.05670996303086381
+   },
+   "h4": {
+    "persistence": 0.11865338207119042,
+    "var_ridge": 0.08434685268241443,
+    "esn_nonspatial": 0.0834844194104227,
+    "lattice_chip": 0.08179529724253298,
+    "lattice_full": 0.08145111709248767,
+    "lattice_walls": 0.08092480450758852,
+    "lattice_chip_shuffled": 0.0798650192336082
+   }
+  }
+ },
+ "elapsed_s": 363.2
+}
