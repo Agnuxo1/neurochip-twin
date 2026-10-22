@@ -1,90 +1,75 @@
-# AI4S Open Innovation — Final-Round Scientific Positioning
-## NeuroChip Twin v2 | From measured neural-network dynamics to uncertainty-aware decisions in vitro
+# NeuroChip Twin v2 — Targeted Final-Round Clarifications
+## Technical Innovation and Practical Value | AI4S Open Innovation
 
-**Submission category:** End-to-End System  
-**Applicant and sole human team member:** Francisco Angulo de Lafuente  
-**Core submission:** [NeuroChip Twin v2](https://github.com/Agnuxo1/neurochip-twin)  
-**Prepared:** 22 October 2026  
-**Document status:** Optional supporting context for the final-round presentation and Q&A. Not a change to the evaluated submission. Only submit it if the organisers explicitly permit supplementary material.
+**Applicant:** Francisco Angulo de Lafuente  
+**Submission:** NeuroChip Twin v2 — *End-to-End System*  
+**Status:** Optional supplementary explanation for the final-round talk or Q&A; **not an amended submission, new experiment or additional benchmark**. The original technical report, code and submitted results remain authoritative.
 
-### The proposition
+### Executive statement
 
-**Neural-network formation is a time-dependent biological process. NeuroChip Twin v2 turns real electrophysiology measurements into calibrated forecasts and decision support for in-vitro neural studies.**
+NeuroChip Twin v2 addresses a focused experimental bottleneck: neural-network responses to chemical exposure unfold over several days, while laboratory dose–response measurements are limited and costly. The submitted system learns from real rat microelectrode-array (MEA) assays to forecast how a previously unseen chemical will affect network formation from only a few measured concentrations, reports the reliability of those forecasts and evaluates decisions a laboratory could make with them.
 
-The scientific objective is specific: make better use of scarce, expensive and time-consuming measurements in neural microphysiological systems by predicting dose-dependent network-development trajectories for **unseen chemicals**, expressing uncertainty, recognising when to abstain, and testing whether those forecasts can support laboratory decisions.
+The final-round clarification strengthens **two specific aspects of the existing evidence**: **(A) why the modelling design is technically distinctive**, and **(B) how a laboratory would use it, with benefits and risks stated at their actual evidence level**. No change to the numerical results or dataset is proposed.
 
-This is the AI4S contribution. It is not a claim to have reproduced a human brain, grown synthetic biological neurons, or built a general-purpose brain simulator.
+## A. Technical innovation — a testable combination, not a slogan
 
-### Why it fits AI + organ-on-a-chip
+**Core innovation:** a **chemical-as-few-shot-task** formulation, where a model trained across chemicals receives a small observed dose-response context for a completely held-out compound, and forecasts its joint **dose × developmental day × neural network feature** response.
 
-A neural culture's response to chemical exposure is not adequately represented by a single endpoint. It evolves across days and involves multiple interacting network features. Laboratories need models that can cope with missing concentrations, generalise to new chemicals and disclose uncertainty before their outputs influence what is measured next.
+The submission's distinctive and assessable design elements are:
 
-NeuroChip Twin v2 follows a traceable workflow:
+1. **Joint developmental prediction.** NeuroTrajectory predicts **17 measured network features** on days in vitro (DIV) **5, 7, 9 and 12**, not a single static toxicity endpoint.
+2. **Interpolation-informed residual decoder.** Instead of discarding well-understood dose interpolation, the neural model learns per feature and day how strongly to trust measured neighbouring concentrations, and how to correct that interpolation using patterns learned across other chemicals. This is a principled hybrid of an interpretable laboratory baseline and learned generalisation.
+3. **Dose-local attention.** Queries attend directly to the actually measured concentration levels, so the influence of nearby evidence can vary with the requested dose.
+4. **Bounded trust, not universal certainty.** Calibration, chemical-level cross-validation and abstention supply experimentally assessed safeguards within the studied data domain.
 
-**Real rat MEA recordings → provenance-tracked features and chemical-level data splits → few-shot trajectory forecasting → uncertainty calibration and abstention → decision-support evaluation.**
+**What directly supports the novelty claim:**
 
-A **separate**, descriptive layer analyses directed connectivity from recordings of a real four-compartment hippocampal MEA chip. It provides a bridge to compartmental neural systems without claiming that its chip dataset and the chemical-exposure dataset are one experimentally calibrated platform.
-
-### The evidence that matters to the jury
-
-The following values are reported in the submitted project's [README](https://github.com/Agnuxo1/neurochip-twin/blob/main/README.md), [technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf) and checked `results/*.json` records. They are **not new experimental findings** of this supporting document.
-
-| Judge's question | Submitted evidence | Interpretation |
+| Test in original submission | Reported evidence | What it establishes |
 |---|---|---|
-| Does it predict network formation for chemicals excluded from training? | At three observed concentrations, curve MAE **1.180** vs **1.325** for the strongest reported comparator | Positive on the held-out EPA NFA chemical evaluation |
-| Does it report usable uncertainty? | Nominal 90% intervals: empirical coverage **89.9%**; **10.7%** abstention | Calibrated and selective **within the tested domain** |
-| Can predictions help a practical laboratory decision? | Three-dose hazard classification: balanced accuracy **86.4%** vs **82.6–85.9%** EPA-rule comparators | Promising but modest; only one of three paired tests significant |
-| Is next-dose selection demonstrably better? | DoseCompass **ties** a log-spaced strategy (and outperforms random in the reported comparison) | No claim of superiority over practical log-spaced selection |
-| Are failure modes investigated? | Model-derived potency underperforms interpolation; cytotoxic selectivity AUROC **0.51** | Unsuccessful components are disclosed; limitations bound the claims |
+| R2 — held-out chemical prediction at 3 measured concentration levels | Curve MAE **1.180** versus **1.325** for the best reported comparator; paired difference **−0.145 [−0.188, −0.099]** | Out-of-sample predictive improvement against the evaluated methods |
+| R9 — remove interpolation-informed decoder at 3 levels | Error rises by **6.9%** in the specified single-seed ablation; reported paired MAE difference **+0.082 [0.062, 0.104]** | The interpolation-aware design contributes measurable value |
+| R9 — remove local dose attention at 3 levels | Paired MAE difference **+0.021 [0.008, 0.035]** | Attention adds a smaller, measurable contribution in that setup |
+| R7 — nominal 90% prediction intervals | Empirical coverage **89.9%**, with **10.7%** abstention | A quantitative reliability check on held-out NFA data |
 
-**Reproducibility:** public [code](https://github.com/Agnuxo1/neurochip-twin), [technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf), [demonstration video](https://youtu.be/yLzpvGqP_2A), [online demo](https://agnuxo1.github.io/neurochip-twin/) and [Kaggle notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo). The repository exposes a CPU demonstration, traceable result files, validation scripts, model-bundle hashes and explicit dataset provenance.
+**Correct interpretation:** The novelty lies in the *experimentally tested workflow and combination of mechanisms*, not a claim to have invented attention, interpolation, neural processes or conformal prediction individually. Ablation conditions and full baselines are detailed in the original report; distinct evaluations should not be casually conflated.
 
-**Scientific boundaries:** the biological measurements come from rat cultures; they do not establish human clinical validity. The four-compartment chip dataset is undosed and separate from the chemically exposed EPA cohort. Predictions are not validated across all chip architectures, species or cellular systems. Claims of experimental savings, physical device performance or clinical utility would require additional prospective studies.
+## B. Practical value — show the decision and the evidence boundary
 
-### The research line behind the submission
+**Primary user:** an in-vitro neural-screening laboratory or a neural organ-on-a-chip research group able to map its electrophysiology recordings to the required features and assay descriptors.
 
-A consistent long-term question connects the applicant's wider work:
+**A concrete workflow consistent with the submitted implementation:**
 
-> **How can the spatial organisation, changing activity and signal propagation of biological neural networks inspire computational systems whose states and predictions can be inspected, tested and eventually implemented in alternative substrates?**
+1. **Start with real measurements.** Register compound, available concentrations, culture day, assay metadata, provenance and MEA network features.
+2. **Forecast unmeasured conditions.** After a small set of observed concentrations, inspect predicted dose–development trajectories for the remaining concentrations, together with calibrated intervals and an abstention flag.
+3. **Assess a decision.** Use the evaluated developmental-neurotoxicity hazard classifier, compare against established EPA rules, and choose another observation when uncertainty is high.
+4. **Plan the next assay.** Use a sensible fixed log-spaced concentration scheme as the practical default unless a prospectively validated planner can outperform it. DoseCompass is an inspectable candidate, **not** a demonstrated improvement over that strong baseline.
+5. **Decide when to measure again.** The separate retrospective early-exit study compares throughput- and safety-oriented gates on DIV 5/7 observations. Any prospective stop rule would require a pre-agreed tolerated false-negative rate.
 
-This is a research direction, **not** a claim that the distinct projects below share a trained model, dataset, equivalent biological dynamics, or validated end-to-end pipeline.
+**How to quantify potential laboratory value without claiming measured savings:**
 
-The stages must be distinguished:
+| Relevant question | Existing evidence | Honest limitation |
+|---|---|---|
+| Can three measured levels replace a full seven-level profile for modelling? | In the tested retrospective setting, a 3-of-7 design entails **57.1% fewer treated wells for that chemical** at equal replication; R2 tests prediction of the held-out responses | A *design scenario*, not a prospectively observed reduction in cost, time or error at a partner laboratory |
+| Can the partial profile inform hazard screening? | R4: **86.4%** balanced accuracy on the specified **97-chemical** comparison versus **82.6–85.9%** for EPA-rule variants | Only **one of three** paired comparisons is statistically significant; **19** reference negatives make specificity estimates uncertain |
+| Does adaptive dose selection already outperform a simple lab design? | R6: DoseCompass ties fixed log-spaced selection, while outperforming the mean random design in the primary retrospective test | **No claim of superiority** over fixed log spacing |
+| Is early exit potentially useful? | R11: a simple persistence-based gate offers a retrospective throughput operating point; the twin's uncertainty-based gate trades throughput for fewer missed known neurotoxicants under the reported post-hoc reference-label check | Retrospective, reference-dependent; not an approved laboratory stopping policy or a demonstrated animal-test reduction |
 
-1. **Biological evidence — delivered and evaluated here.** NeuroChip Twin v2 models neural-network measurements from living rat cultures. Its relevant numerical claims are independently inspectable in the competition submission.
-2. **Spatial computation — exploratory, separate research.** [NeuroPixel](https://github.com/Agnuxo1/NeuroPixel) explores neural state updates organised over a two-dimensional grid, with local interactions and inspectable intermediate states. Pixels are **computational cells in a model**, not living neurons or verified equivalents of biological cells. This project contributes experience with spatial representations, testing and visual interpretation; it is **not a component of NeuroChip Twin v2**.
-3. **Alternative optical implementation — long-term methodology, not biological evidence.** [Neuro3D Lab](https://extensions.blender.org/add-ons/neuro3d-lab/) is a publicly distributed **virtual optical bench** for scalar coherent propagation and diffractive networks; the [source](https://github.com/Agnuxo1/Neuro3D-Lab) includes numerical validation and explicitly reported limitations. [Neuro3D](https://github.com/Agnuxo1/Neuro3D) investigates optical networks derived from Blender geometry. [Silice-Neuro3D-Cube](https://github.com/Agnuxo1/Silice-Neuro3D-Cube) examines a prospective path toward waveguide circuits in fused silica. These are **optical and photonic research**, not organ-on-a-chip experiments or demonstrated copies of biological neural networks; no fabricated, experimentally validated silica neural processor is claimed.
+**The next real-world validation is precisely defined:** map a partner laboratory's new chip recordings, freeze the prediction model and trial protocol, blind the withheld measurements, compare against log-spaced or current lab procedures and quantify *measured* prediction error, calibration, false negatives, wells used, assay days and decision utility. No external-lab success is claimed before this study.
 
-**Strategic relevance:** These additional projects demonstrate a consistent practice of building transparent numerical models, measuring error and exposing limitations. They do **not** add biological validation or raise the evidence level of the competition submission. Their names and links belong in **one optional backup slide or in answers to questions about technical capabilities**, not in the main results slides.
+## C. What a final-round judge should retain
 
-### Recommended one-sentence description of the wider programme
+> **“NeuroChip Twin v2 adds value at two levels: it tests a hybrid, interpolation-aware neural forecasting method on unseen chemicals, and it translates those forecasts into bounded, auditable decision support for real in-vitro workflows. Its accuracy and uncertainty improvements are documented; prospective laboratory savings remain the next validation milestone.”**
 
-> “Our research programme studies neural-network dynamics across biological measurement and computational modelling; NeuroChip Twin v2 is its experimentally grounded life-science application, while our spatial-computation and optical-simulation work explores separate longer-term methods for interpretable, testable neural-inspired systems.”
+**Suggested 45-second oral emphasis:**
 
-### Presentation discipline
+> “Our innovation is not a biological-looking simulation. A chemical is treated as a few-shot prediction task: we learn across real neural culture experiments, then forecast the development of a new compound from a few measured concentrations. The interpolation-informed decoder is not cosmetic: when removed, our specified ablation reports a 6.9 percent increase in error. With three measured levels, the reported forecasting error is 1.180, versus 1.325 for the strongest tested baseline. For laboratories, the practical opportunity is to target future measurements while seeing uncertainty and a clear abstention signal. We evaluated hazard calls and dose selection against real experimental baselines. We also state where the latter does not yet beat a simple fixed strategy. The next step is prospective validation of actual laboratory savings.”
 
-**Show first:** the laboratory problem; real neural MEA data; frozen data splits; the unseen-chemical example; comparison against baselines; calibrated uncertainty; reproducibility; the precise laboratory decision supported.
+## D. Relation to the broader research programme — one sentence only
 
-**Show only when directly relevant:** the publicly listed Neuro3D Lab Blender extension and one sentence about NeuroPixel's inspectable spatial computation. Other optical/silica projects should remain in this background note unless the jury specifically asks about the long-term research programme.
+The applicant's parallel work on [NeuroPixel](https://github.com/Agnuxo1/NeuroPixel), [Neuro3D](https://github.com/Agnuxo1/Neuro3D), [Neuro3D Lab](https://extensions.blender.org/add-ons/neuro3d-lab/) and [Silice-Neuro3D-Cube](https://github.com/Agnuxo1/Silice-Neuro3D-Cube) shares an interest in inspectable neural-inspired computation and numerical validation; **those projects are separate and supply no additional biological validation, manufactured photonic hardware or measured performance benefit to NeuroChip Twin v2**. Include this only if directly asked about longer-term research.
 
-**Do not imply:** that each pixel is a living cell; that current optical simulations reconstruct a biological neural network; that a glass-based processor exists; that NeuroPixel trained or improved NeuroChip Twin v2; that a non-significant or negative result demonstrates efficacy; or that rat data validate human clinical decisions.
+## Source of truth and submission gate
 
-### Committee-facing 35-second introduction
+The technical proof is in [the submitted report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf), particularly Method, **R2**, **R4**, **R6**, **R7**, **R9**, **R11**, Practical Value and Limitations, supported by the [public code and results](https://github.com/Agnuxo1/neurochip-twin), [interactive demo](https://agnuxo1.github.io/neurochip-twin/), [video](https://youtu.be/yLzpvGqP_2A) and [Kaggle notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo). Reported figures have not been independently remeasured for this addendum.
 
-> “NeuroChip Twin v2 tackles a concrete life-science problem: how to infer the development of a neural network under chemical exposure when only a few concentrations have been measured. We use real rat microelectrode-array recordings, evaluate on chemicals held out from training, and attach calibrated uncertainty so predictions can be interpreted responsibly. At three observed doses, our reported trajectory error is 1.180 versus 1.325 for the strongest evaluated baseline. Some decision tasks remain inconclusive, and we document those limits. The accompanying open code, report and demonstration make the findings inspectable. This is a focused step towards trustworthy digital-twin assistance in neural organ-on-a-chip research.”
-
-### Technical evidence and primary links
-
-- [Main NeuroChip Twin v2 submission source](https://github.com/Agnuxo1/neurochip-twin)
-- [Submitted technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf)
-- [Interactive demonstrator](https://agnuxo1.github.io/neurochip-twin/)
-- [Submitted video demonstration](https://youtu.be/yLzpvGqP_2A)
-- [Kaggle executable notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo)
-- [Official Blender Extensions listing — Neuro3D Lab](https://extensions.blender.org/add-ons/neuro3d-lab/)
-- [NeuroPixel research source](https://github.com/Agnuxo1/NeuroPixel)
-- [Neuro3D optical research source](https://github.com/Agnuxo1/Neuro3D)
-- [Silice-Neuro3D-Cube research source](https://github.com/Agnuxo1/Silice-Neuro3D-Cube)
-
-### Release gate
-
-The competition's official submission is the **Kaggle Writeup**. The jury's final-round presentation format and any permission to provide updated or supplementary materials must come from the organising committee. Do not upload this document, send it by email, merge it into the frozen public submission, or represent it as accepted additional evidence without that confirmation. This note is prepared for controlled use during final presentation and Q&A.
+**Do not send or upload this note until the organisers confirm that final-round supporting documentation is permitted.** The judged submission and original report remain unchanged.
