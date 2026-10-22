@@ -1,113 +1,90 @@
-# Supplementary Research Portfolio — AI4S Open Innovation Final
+# AI4S Open Innovation — Final-Round Scientific Positioning
+## NeuroChip Twin v2 | From measured neural-network dynamics to uncertainty-aware decisions in vitro
 
-**Primary submission:** NeuroChip Twin v2 — A Digital Twin of Neural-Network Formation  
-**Researcher:** Francisco Angulo de Lafuente  
+**Submission category:** End-to-End System  
+**Applicant and sole human team member:** Francisco Angulo de Lafuente  
+**Core submission:** [NeuroChip Twin v2](https://github.com/Agnuxo1/neurochip-twin)  
 **Prepared:** 22 October 2026  
-**Status:** Optional supporting material for an online final presentation and technical Q&A. **Not an amended competition submission or a claim that the projects below have been integrated.**
+**Document status:** Optional supporting context for the final-round presentation and Q&A. Not a change to the evaluated submission. Only submit it if the organisers explicitly permit supplementary material.
 
-## Executive summary
+### The proposition
 
-NeuroChip Twin v2 is the **sole evaluated AI4S project**. It addresses few-shot, uncertainty-aware prediction of neural-network formation and toxicological responses using real, publicly available rat microelectrode-array (MEA) measurements. The author's related open-source research portfolio demonstrates complementary competencies in numerical simulation, experimentally disciplined benchmarking, GPU computation, visualisation, geometric models, and transparent reporting of failed hypotheses.
+**Neural-network formation is a time-dependent biological process. NeuroChip Twin v2 turns real electrophysiology measurements into calibrated forecasts and decision support for in-vitro neural studies.**
 
-The portfolio is **supporting evidence of research and engineering capability**, not additional validation data for NeuroChip Twin v2. In particular, optical fields and photonic neural-network simulations are **not** the biological neural-network-formation measurements used by NeuroChip Twin v2.
+The scientific objective is specific: make better use of scarce, expensive and time-consuming measurements in neural microphysiological systems by predicting dose-dependent network-development trajectories for **unseen chemicals**, expressing uncertainty, recognising when to abstain, and testing whether those forecasts can support laboratory decisions.
 
-## 1. Main project: NeuroChip Twin v2
+This is the AI4S contribution. It is not a claim to have reproduced a human brain, grown synthetic biological neurons, or built a general-purpose brain simulator.
 
-**Repository:** https://github.com/Agnuxo1/neurochip-twin  
-**Technical report:** https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf  
-**Interactive demonstration:** https://agnuxo1.github.io/neurochip-twin/  
-**Kaggle notebook:** https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo  
-**Demonstration video:** https://youtu.be/yLzpvGqP_2A
+### Why it fits AI + organ-on-a-chip
 
-The primary system meta-learns across 243 chemicals from the US EPA Network Formation Assay to forecast responses for held-out chemicals from a small number of measured concentrations. It predicts 17 network features across days in vitro (DIV) 5, 7, 9 and 12, and includes uncertainty calibration, domain-aware abstention, decision support and a separate descriptive layer fitted on real four-compartment hippocampal MEA recordings.
+A neural culture's response to chemical exposure is not adequately represented by a single endpoint. It evolves across days and involves multiple interacting network features. Laboratories need models that can cope with missing concentrations, generalise to new chemicals and disclose uncertainty before their outputs influence what is measured next.
 
-The following figures are **reported by the main repository and its linked results files**, rather than independently remeasured for this portfolio:
+NeuroChip Twin v2 follows a traceable workflow:
 
-| Evaluation | Reported result | Interpretation |
-| --- | --- | --- |
-| Held-out chemical trajectory forecasting, 3 observed doses | MAE 1.180 versus 1.325 for the best reported baseline | Positive within the stated held-out NFA evaluation |
-| Nominal 90% conformal intervals | Coverage 0.899 (reported interval 0.891–0.906); 10.7% abstention | Calibration supported **within** the evaluated domain |
-| Three-dose hazard classification | Balanced accuracy 86.4%; reference comparators 82.6–85.9% | Modest evidence; only one of three paired comparisons significant |
-| Next-dose selection | Tied with log-spaced selection; better than random in the reported experiment | No superiority over the strongest reported practical dose-selection baseline |
-| Model-derived benchmark concentration | Worse than interpolation of measured doses | Negative result; no predictive potency superiority claimed |
-| Specific versus cytotoxic selectivity | AUROC 0.51 | Negative result |
+**Real rat MEA recordings → provenance-tracked features and chemical-level data splits → few-shot trajectory forecasting → uncertainty calibration and abstention → decision-support evaluation.**
 
-**Scope:** The measured biological data are from rat cortical and hippocampal cultures. The chip recordings are from a different, undosed experiment; the repository explicitly does not claim cross-platform calibration or human/clinical validity. The source of truth for published numbers is `results/*.json`, with scripts and number-tracing checks in the primary repository.
+A **separate**, descriptive layer analyses directed connectivity from recordings of a real four-compartment hippocampal MEA chip. It provides a bridge to compartmental neural systems without claiming that its chip dataset and the chemical-exposure dataset are one experimentally calibrated platform.
 
-## 2. Complementary scientific research and software
+### The evidence that matters to the jury
 
-### A. Neuro3D Lab — published Blender virtual optical laboratory
+The following values are reported in the submitted project's [README](https://github.com/Agnuxo1/neurochip-twin/blob/main/README.md), [technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf) and checked `results/*.json` records. They are **not new experimental findings** of this supporting document.
 
-**Official Blender Extensions listing:** https://extensions.blender.org/add-ons/neuro3d-lab/  
-**Source and methods:** https://github.com/Agnuxo1/Neuro3D-Lab
+| Judge's question | Submitted evidence | Interpretation |
+|---|---|---|
+| Does it predict network formation for chemicals excluded from training? | At three observed concentrations, curve MAE **1.180** vs **1.325** for the strongest reported comparator | Positive on the held-out EPA NFA chemical evaluation |
+| Does it report usable uncertainty? | Nominal 90% intervals: empirical coverage **89.9%**; **10.7%** abstention | Calibrated and selective **within the tested domain** |
+| Can predictions help a practical laboratory decision? | Three-dose hazard classification: balanced accuracy **86.4%** vs **82.6–85.9%** EPA-rule comparators | Promising but modest; only one of three paired tests significant |
+| Is next-dose selection demonstrably better? | DoseCompass **ties** a log-spaced strategy (and outperforms random in the reported comparison) | No claim of superiority over practical log-spaced selection |
+| Are failure modes investigated? | Model-derived potency underperforms interpolation; cytotoxic selectivity AUROC **0.51** | Unsuccessful components are disclosed; limitations bound the claims |
 
-Neuro3D Lab is a virtual bench for **coherent scalar optics and diffractive optical neural-network** experiments. A Blender add-on constructs source planes, phase layers and detectors, exports geometry and height maps, runs numerical propagation, and imports detector intensity for inspection. Its public extension version **0.2.1** is listed as approved in the official Blender Extensions catalogue (checked 22 October 2026).
+**Reproducibility:** public [code](https://github.com/Agnuxo1/neurochip-twin), [technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf), [demonstration video](https://youtu.be/yLzpvGqP_2A), [online demo](https://agnuxo1.github.io/neurochip-twin/) and [Kaggle notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo). The repository exposes a CPU demonstration, traceable result files, validation scripts, model-bundle hashes and explicit dataset provenance.
 
-Research capabilities include a NumPy angular-spectrum core, an optional finite-support model with numerical refinement, independently compared numerical references, recorded settings and file hashes, testable Blender installation, and GPU-oriented development. The project publicly retains failed convergence and benchmark tests. For example, its own README reports that historically sampled phase-only D2NN classifications **did not outperform** the CNN baseline, and that one sample per subwavelength pixel was not a converged description of the fabricated physical element.
+**Scientific boundaries:** the biological measurements come from rat cultures; they do not establish human clinical validity. The four-compartment chip dataset is undosed and separate from the chemically exposed EPA cohort. Predictions are not validated across all chip architectures, species or cellular systems. Claims of experimental savings, physical device performance or clinical utility would require additional prospective studies.
 
-**Contribution to the AI4S presentation:** tangible third-party software publication, numerical method verification, instrument-building, reproducibility and a visual demonstration of research workflow.
+### The research line behind the submission
 
-**Boundary:** This is an **optical** laboratory in simulation. It contains no measured biological chip data, is not a physical optical device, and is not currently an organ-on-a-chip simulator.
+A consistent long-term question connects the applicant's wider work:
 
-### B. NeuroPixel — inspectable spatial neural computation
+> **How can the spatial organisation, changing activity and signal propagation of biological neural networks inspire computational systems whose states and predictions can be inspected, tested and eventually implemented in alternative substrates?**
 
-**Repository:** https://github.com/Agnuxo1/NeuroPixel
+This is a research direction, **not** a claim that the distinct projects below share a trained model, dataset, equivalent biological dynamics, or validated end-to-end pipeline.
 
-NeuroPixel represents learned recurrent neural states on a spatial canvas and includes GPU graphics-based state updates, image-based processing, a shared dictionary decoder and visible intermediate activity. According to its README, the project reports **136 GPU engineering checks** on an RTX 3090 and retention of **320 test decisions** across five learned models. Its bounded external UCI optical-digits comparison reports **94.36%** versus **90.84%** for a paired CNN comparator; its own robustness tests also show a pronounced performance collapse under a one-column image shift.
+The stages must be distinguished:
 
-**Contribution:** inspectable intermediate states, GPU computation, comparative benchmarking and explicit negative controls. The architecture offers research ideas for interpretability and computational efficiency, **not evidence that NeuroChip's toxicological forecasts improve by adopting it**.
+1. **Biological evidence — delivered and evaluated here.** NeuroChip Twin v2 models neural-network measurements from living rat cultures. Its relevant numerical claims are independently inspectable in the competition submission.
+2. **Spatial computation — exploratory, separate research.** [NeuroPixel](https://github.com/Agnuxo1/NeuroPixel) explores neural state updates organised over a two-dimensional grid, with local interactions and inspectable intermediate states. Pixels are **computational cells in a model**, not living neurons or verified equivalents of biological cells. This project contributes experience with spatial representations, testing and visual interpretation; it is **not a component of NeuroChip Twin v2**.
+3. **Alternative optical implementation — long-term methodology, not biological evidence.** [Neuro3D Lab](https://extensions.blender.org/add-ons/neuro3d-lab/) is a publicly distributed **virtual optical bench** for scalar coherent propagation and diffractive networks; the [source](https://github.com/Agnuxo1/Neuro3D-Lab) includes numerical validation and explicitly reported limitations. [Neuro3D](https://github.com/Agnuxo1/Neuro3D) investigates optical networks derived from Blender geometry. [Silice-Neuro3D-Cube](https://github.com/Agnuxo1/Silice-Neuro3D-Cube) examines a prospective path toward waveguide circuits in fused silica. These are **optical and photonic research**, not organ-on-a-chip experiments or demonstrated copies of biological neural networks; no fabricated, experimentally validated silica neural processor is claimed.
 
-**Boundary:** These are engineering and image-recognition results, not demonstrations of biological neural behaviour, cross-assay transfer or general architectural superiority.
+**Strategic relevance:** These additional projects demonstrate a consistent practice of building transparent numerical models, measuring error and exposing limitations. They do **not** add biological validation or raise the evidence level of the competition submission. Their names and links belong in **one optional backup slide or in answers to questions about technical capabilities**, not in the main results slides.
 
-### C. Neuro3D / OpticNeuroBlender — trainable optical geometry
+### Recommended one-sentence description of the wider programme
 
-**Repository:** https://github.com/Agnuxo1/Neuro3D
+> “Our research programme studies neural-network dynamics across biological measurement and computational modelling; NeuroChip Twin v2 is its experimentally grounded life-science application, while our spatial-computation and optical-simulation work explores separate longer-term methods for interpretable, testable neural-inspired systems.”
 
-Neuro3D studies a trainable scalar optical network whose response derives from evaluated Blender geometry. Its README distinguishes the graphics-engine part (triangle capture, geometrical distance, phase and derivatives) from topology, coherent fusion and optimisation still handled on CPU. It documents comparison with independent numerical solvers, geometric consistency checks, actual training runs and failed acceleration hypotheses.
+### Presentation discipline
 
-Reported bounded examples include a captured scene with **104 objects, 6,656 triangles, 133 graph states and 17,060 paths**, and a small Iris task reporting **27/30** test decisions correct in a specified split. These examples are not proof of generalisation to other tasks or of a full GPU-native neural pipeline.
+**Show first:** the laboratory problem; real neural MEA data; frozen data splits; the unseen-chemical example; comparison against baselines; calibrated uncertainty; reproducibility; the precise laboratory decision supported.
 
-**Contribution:** geometric modelling, coherent field computation, numerical cross-checking and transparent performance evaluation.
+**Show only when directly relevant:** the publicly listed Neuro3D Lab Blender extension and one sentence about NeuroPixel's inspectable spatial computation. Other optical/silica projects should remain in this background note unless the jury specifically asks about the long-term research programme.
 
-**Boundary:** An optical computational model; it has no direct validation against the MEA chemical-exposure data used for NeuroChip Twin v2.
+**Do not imply:** that each pixel is a living cell; that current optical simulations reconstruct a biological neural network; that a glass-based processor exists; that NeuroPixel trained or improved NeuroChip Twin v2; that a non-significant or negative result demonstrates efficacy; or that rat data validate human clinical decisions.
 
-### D. Silice-Neuro3D-Cube — prospective three-dimensional photonic hardware
+### Committee-facing 35-second introduction
 
-**Repository:** https://github.com/Agnuxo1/Silice-Neuro3D-Cube
+> “NeuroChip Twin v2 tackles a concrete life-science problem: how to infer the development of a neural network under chemical exposure when only a few concentrations have been measured. We use real rat microelectrode-array recordings, evaluate on chemicals held out from training, and attach calibrated uncertainty so predictions can be interpreted responsibly. At three observed doses, our reported trajectory error is 1.180 versus 1.325 for the strongest evaluated baseline. Some decision tasks remain inconclusive, and we document those limits. The accompanying open code, report and demonstration make the findings inspectable. This is a focused step towards trustworthy digital-twin assistance in neural organ-on-a-chip research.”
 
-This numerical research programme investigates waveguides and optical transformations in fused silica, with a proposed FEMTO-1 prototype based on femtosecond-laser-written structures. The repository reports a **22.33×** timing improvement for **one specified resident CUDA128 scalar-propagation case**, and **168/168** audited coherent-field representation checks across the tested OpenGL/Vulkan cases.
+### Technical evidence and primary links
 
-The repository is unusually explicit about counter-evidence: some proposed energy-efficiency advantages fail under the documented assumptions; the preregistered numerical work narrows the claimed design benefits.
+- [Main NeuroChip Twin v2 submission source](https://github.com/Agnuxo1/neurochip-twin)
+- [Submitted technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf)
+- [Interactive demonstrator](https://agnuxo1.github.io/neurochip-twin/)
+- [Submitted video demonstration](https://youtu.be/yLzpvGqP_2A)
+- [Kaggle executable notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo)
+- [Official Blender Extensions listing — Neuro3D Lab](https://extensions.blender.org/add-ons/neuro3d-lab/)
+- [NeuroPixel research source](https://github.com/Agnuxo1/NeuroPixel)
+- [Neuro3D optical research source](https://github.com/Agnuxo1/Neuro3D)
+- [Silice-Neuro3D-Cube research source](https://github.com/Agnuxo1/Silice-Neuro3D-Cube)
 
-**Contribution:** a prospective hardware pathway, numerical validation discipline, physical assumptions and fabrication-readiness planning.
+### Release gate
 
-**Boundary:** **No photonic processor has been fabricated or measured.** Simulated benefits must not be presented as realised hardware performance, nor as a manufactured biological organ-on-a-chip.
-
-## 3. What the four projects demonstrate together
-
-1. **Practical scientific software development:** a Blender extension distributed through Blender's official catalogue, plus documented simulations and demonstrations.
-2. **Reproducibility and falsifiability:** protocols, tests, code, tracked result files, numerical comparisons and retention of failed or inconclusive experiments.
-3. **Engineering breadth:** GPU numerical methods, visual and geometrical interfaces, neural architectures and prospective optical hardware, without pretending that these fields are experimentally interchangeable.
-4. **Research maturity:** clearly identified domains of validity, negative findings and milestones necessary before physical experiments.
-
-These are **capabilities of the researcher and supporting portfolio**, not extra entries in the AI4S scoring dataset.
-
-## 4. Suggested usage at the final
-
-Include **one optional supporting slide** headed *Beyond the Submission: A Reproducible Research Toolchain*, with a screenshot of the officially published Neuro3D Lab extension and a compact link/QR code to this document.
-
-The primary presentation should spend most of its time on the rat MEA data, unseen-chemical cross-validation, effect sizes, uncertainty calibration, decision-making evidence, practical laboratory value and limitations of **NeuroChip Twin v2**. Present the related projects only when asked about technical execution, software dissemination, reproducibility or future research directions.
-
-### Suggested oral answer (approximately 30 seconds)
-
-> “NeuroChip Twin v2 is our life-science entry and its claims stand entirely on the reported rat MEA datasets and frozen evaluations. Separately, I have developed an open scientific software portfolio covering numerical simulation, graphics-based neural computation and photonic research. One tangible outcome is Neuro3D Lab, a virtual optical bench publicly approved in Blender's official extensions catalogue. These projects document my ability to build and test scientific tools. They are complementary research, not additional biological validation or already integrated parts of NeuroChip Twin.”
-
-## 5. Review and submission conditions
-
-- **Use this document as optional context only.** Submit it through Kaggle or any final-round channel **only if the organisers permit updated or supplementary material**.
-- Do **not** replace the frozen evaluated submission, edit its reported benchmark results, or claim that the optical tools have been experimentally connected to the biological chip.
-- Avoid private or unreleased data, credentials, and third-party assets without appropriate permissions.
-- Keep original citations and software licences attached to each repository. The Blender add-on is GPL-3.0-or-later; repository cores may have different licences.
-- If the committee requests a PDF or slides, render a separate submission-ready version and confirm the exact deadline and delivery format.
-
-**All quantitative statements above are taken from the linked public project READMEs or extension listing as of 22 October 2026; they are reported research results with the stated limitations, not fresh independent replication.**
+The competition's official submission is the **Kaggle Writeup**. The jury's final-round presentation format and any permission to provide updated or supplementary materials must come from the organising committee. Do not upload this document, send it by email, merge it into the frozen public submission, or represent it as accepted additional evidence without that confirmation. This note is prepared for controlled use during final presentation and Q&A.
