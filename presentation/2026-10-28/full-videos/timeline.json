@@ -1,0 +1,170 @@
+{
+  "fps": 25,
+  "width": 1920,
+  "height": 1080,
+  "main_frames": 6939,
+  "main_seconds": 277.56,
+  "total_frames": 8943,
+  "total_seconds": 357.72,
+  "question_cards_seconds": 5.52,
+  "questions_spoken": false,
+  "questions_displayed": true,
+  "audio_speed_changed": false,
+  "synchronization": "Source transcript segment timing; two mixed-sentence transitions estimated within a segment. All audio is unmodified in speed.",
+  "segments": [
+    {
+      "name": "01_problem",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\01_problem.mp4",
+      "frames": 863,
+      "kind": "main",
+      "start_frame": 0
+    },
+    {
+      "name": "02_digital_twin",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\02_digital_twin.mp4",
+      "frames": 782,
+      "kind": "main",
+      "start_frame": 863
+    },
+    {
+      "name": "03_innovation",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\03_innovation.mp4",
+      "frames": 1483,
+      "kind": "main",
+      "start_frame": 1645
+    },
+    {
+      "name": "04_earlier_work",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\04_earlier_work.mp4",
+      "frames": 681,
+      "kind": "main",
+      "start_frame": 3128
+    },
+    {
+      "name": "05_data",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\05_data.mp4",
+      "frames": 321,
+      "kind": "main",
+      "start_frame": 3809
+    },
+    {
+      "name": "06_validation",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\06_validation.mp4",
+      "frames": 225,
+      "kind": "main",
+      "start_frame": 4130
+    },
+    {
+      "name": "07_results",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\07_results.mp4",
+      "frames": 478,
+      "kind": "main",
+      "start_frame": 4355
+    },
+    {
+      "name": "08_uncertainty",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\08_uncertainty.mp4",
+      "frames": 236,
+      "kind": "main",
+      "start_frame": 4833
+    },
+    {
+      "name": "09_resources",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\09_resources.mp4",
+      "frames": 429,
+      "kind": "main",
+      "start_frame": 5069
+    },
+    {
+      "name": "10_future",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\10_future.mp4",
+      "frames": 1441,
+      "kind": "main",
+      "start_frame": 5498
+    },
+    {
+      "name": "11_question_one",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\video_final_20261028\\assets\\question_01.png",
+      "frames": 138,
+      "kind": "card",
+      "start_frame": 6939
+    },
+    {
+      "name": "12_answer_1_1",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\03_innovation.mp4",
+      "frames": 325,
+      "kind": "answer",
+      "question": 1,
+      "overlay": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\video_final_20261028\\assets\\question_01_overlay.png",
+      "start_frame": 7077
+    },
+    {
+      "name": "13_answer_1_2",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\11_real_example.mp4",
+      "frames": 225,
+      "kind": "answer",
+      "question": 1,
+      "overlay": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\video_final_20261028\\assets\\question_01_overlay.png",
+      "start_frame": 7402
+    },
+    {
+      "name": "14_answer_1_3",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\07_results.mp4",
+      "frames": 200,
+      "kind": "answer",
+      "question": 1,
+      "overlay": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\video_final_20261028\\assets\\question_01_overlay.png",
+      "start_frame": 7627
+    },
+    {
+      "name": "15_answer_1_4",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\08_uncertainty.mp4",
+      "frames": 186,
+      "kind": "answer",
+      "question": 1,
+      "overlay": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\video_final_20261028\\assets\\question_01_overlay.png",
+      "start_frame": 7827
+    },
+    {
+      "name": "21_question_two",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\video_final_20261028\\assets\\question_02.png",
+      "frames": 138,
+      "kind": "card",
+      "start_frame": 8013
+    },
+    {
+      "name": "22_answer_2_1",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\12_real_chip.mp4",
+      "frames": 125,
+      "kind": "answer",
+      "question": 2,
+      "overlay": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\video_final_20261028\\assets\\question_02_overlay.png",
+      "start_frame": 8151
+    },
+    {
+      "name": "23_answer_2_2",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\05_data.mp4",
+      "frames": 250,
+      "kind": "answer",
+      "question": 2,
+      "overlay": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\video_final_20261028\\assets\\question_02_overlay.png",
+      "start_frame": 8276
+    },
+    {
+      "name": "24_answer_2_3",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\visuales_cientificos_20261027\\english\\mp4\\10_future.mp4",
+      "frames": 367,
+      "kind": "answer",
+      "question": 2,
+      "overlay": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\video_final_20261028\\assets\\question_02_overlay.png",
+      "start_frame": 8526
+    },
+    {
+      "name": "99_closing",
+      "source": "D:\\PROJECTS\\Presentacion-NeuroChip-20261030\\video_final_20261028\\assets\\closing.png",
+      "frames": 50,
+      "kind": "card",
+      "start_frame": 8893
+    }
+  ]
+}
