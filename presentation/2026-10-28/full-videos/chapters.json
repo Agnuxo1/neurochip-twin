@@ -1,0 +1,50 @@
+[
+  {
+    "start_seconds": 0.0,
+    "title": "Problem and purpose"
+  },
+  {
+    "start_seconds": 34.52,
+    "title": "Digital twin"
+  },
+  {
+    "start_seconds": 65.8,
+    "title": "Technical innovation"
+  },
+  {
+    "start_seconds": 125.12,
+    "title": "Earlier work"
+  },
+  {
+    "start_seconds": 152.36,
+    "title": "Real biological data"
+  },
+  {
+    "start_seconds": 165.2,
+    "title": "Validation"
+  },
+  {
+    "start_seconds": 174.2,
+    "title": "Results"
+  },
+  {
+    "start_seconds": 193.32,
+    "title": "Uncertainty"
+  },
+  {
+    "start_seconds": 202.76,
+    "title": "Experimental resources"
+  },
+  {
+    "start_seconds": 219.92,
+    "title": "Next steps"
+  },
+  {
+    "start_seconds": 277.56,
+    "title": "Question 1 - Innovation"
+  },
+  {
+    "start_seconds": 320.52,
+    "title": "Question 2 - Laboratory validation"
+  }
+]

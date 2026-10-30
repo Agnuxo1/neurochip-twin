@@ -1,0 +1,265 @@
+{
+  "title": "NeuroChip Twin V2 AI4S narrated presentation",
+  "assets": [
+    {
+      "path": "full-videos/chapters.json",
+      "bytes": 891,
+      "sha256": "0b1e9bf19486c780a6c80d51d5574bdf7e40a17ae72cbea527ddacae66005466"
+    },
+    {
+      "path": "full-videos/NeuroChip_Twin_Presentation_and_QA_EN.mp4",
+      "bytes": 34702488,
+      "sha256": "0b96bb85859270208600f9d100cb7682b62702138029cb80ef6654965d82cc26"
+    },
+    {
+      "path": "full-videos/NeuroChip_Twin_Presentation_Only_EN.mp4",
+      "bytes": 28112700,
+      "sha256": "906146e6a37fb2866639bd7cc48441c6cfd4263806e9a3da34111ac23776cb20"
+    },
+    {
+      "path": "full-videos/README.md",
+      "bytes": 2882,
+      "sha256": "9218178276bbea67641f62cc17924b1e8605b286715f3059983adec052a27c3c"
+    },
+    {
+      "path": "full-videos/timeline.json",
+      "bytes": 6372,
+      "sha256": "008c999007451f1a5f515bb12de673a7818e9a3501e13ecc8b2fd73c3137bc7f"
+    },
+    {
+      "path": "index.html",
+      "bytes": 24195,
+      "sha256": "5eaf40266586341cc2b10ae1d8f059ce5885771d6275175c58cf7c6287915732"
+    },
+    {
+      "path": "LEEME_es.md",
+      "bytes": 3115,
+      "sha256": "b70b4d496f1c1caefed672bf7bd858dd6547a17e2d8de7f30ee061eb42449fc2"
+    },
+    {
+      "path": "media/audio/01_problem.mp3",
+      "bytes": 553110,
+      "sha256": "34bbac843fb261697072a8971d5679902d8942bb61869c7bdb6d4def115c7ed9"
+    },
+    {
+      "path": "media/audio/02_digital_twin.mp3",
+      "bytes": 770657,
+      "sha256": "83a006acf924be4d753a7d10f53140d0f34c24bb9ec1997796cfdea102d795fb"
+    },
+    {
+      "path": "media/audio/03_innovation.mp3",
+      "bytes": 1425808,
+      "sha256": "302867bc9fe9472382f4fc2184c99065ca90d414434f4cc2a4edcdc3c32a5933"
+    },
+    {
+      "path": "media/audio/04_earlier_work.mp3",
+      "bytes": 657181,
+      "sha256": "55f31f60f9f1074465e598a61327c33b2666d86f749bb0d2ac25ac785825745e"
+    },
+    {
+      "path": "media/audio/05_data.mp3",
+      "bytes": 309857,
+      "sha256": "1db7529e8f98e16352259f880540532d0e53005783454471814318f80606ba90"
+    },
+    {
+      "path": "media/audio/06_validation.mp3",
+      "bytes": 208920,
+      "sha256": "a8efc61df9b1ebe24424a8aeeb0bf7294c189bd4c012591444b883a4a090af54"
+    },
+    {
+      "path": "media/audio/07_results.mp3",
+      "bytes": 475369,
+      "sha256": "fd5e5d03316da030633105071b939c841572ba460a070ff151eed6ba11dadc42"
+    },
+    {
+      "path": "media/audio/08_uncertainty.mp3",
+      "bytes": 215190,
+      "sha256": "5887e40cc88da457df67484246a45e31fd87865a5cdf2af9aebd3a149083657d"
+    },
+    {
+      "path": "media/audio/09_resources.mp3",
+      "bytes": 416437,
+      "sha256": "f65f3eb8db080d3a87e6589db9e3d364c65e5499e0dabd076ff5d5d9f596544f"
+    },
+    {
+      "path": "media/audio/10_future.mp3",
+      "bytes": 1371892,
+      "sha256": "29b11b298c0defc28f0caa262df4df8eddc74323735916844c22da7335339920"
+    },
+    {
+      "path": "media/audio/qa1.mp3",
+      "bytes": 899700,
+      "sha256": "455aeed17bfc5e8a0404e484da87d2deae1b62f148d88e3606bdd35bf3252ee3"
+    },
+    {
+      "path": "media/audio/qa2.mp3",
+      "bytes": 713499,
+      "sha256": "34de9375fbd8efddbe50963e80e2d089ad170fcb236e335fa29dba4d0775f0e8"
+    },
+    {
+      "path": "media/audio/thanks.mp3",
+      "bytes": 27735,
+      "sha256": "a85a2338a73e557f6a73884d9573d871da28aa19b89a2a31ddcf188a44dadc19"
+    },
+    {
+      "path": "media/deck.js",
+      "bytes": 32378,
+      "sha256": "18d925ebc7c932005b7bc1f91767ac3ce9b2963bb855dbb46dadf20b02b54204"
+    },
+    {
+      "path": "media/poster/01_problem.png",
+      "bytes": 75587,
+      "sha256": "46c640ef34257e3aa87296aa2252883e21fa7a22b5986b09044f79a8e52ffb1a"
+    },
+    {
+      "path": "media/poster/02_digital_twin.png",
+      "bytes": 70669,
+      "sha256": "0a6993505495cfab1eec11d48da0eb871bfc870309c434b141b351fca15303df"
+    },
+    {
+      "path": "media/poster/03_innovation.png",
+      "bytes": 81048,
+      "sha256": "2b4539ed7233de0b97f573e7f72bc07972bf4baacdf417cc869d60ad743586b0"
+    },
+    {
+      "path": "media/poster/04_earlier_work.png",
+      "bytes": 90932,
+      "sha256": "9cb816a1436294c4c0ddf94e14a59cf946c9b7a20d5efada5f53a85e1013d88d"
+    },
+    {
+      "path": "media/poster/05_data.png",
+      "bytes": 220352,
+      "sha256": "3b6937abf0e28cfff649a566858f82ad57a7f89c0edfbf813a061639e2cca871"
+    },
+    {
+      "path": "media/poster/06_validation.png",
+      "bytes": 91442,
+      "sha256": "9fbc1a791df0add06823c08e6f3bbc34fdcdb680636d1eddea265219c7e25755"
+    },
+    {
+      "path": "media/poster/07_results.png",
+      "bytes": 93984,
+      "sha256": "59ee0acf9d12fdfebfac3b80b7d8eabfb4c8a5cc5eda31330a9acc2450264753"
+    },
+    {
+      "path": "media/poster/08_uncertainty.png",
+      "bytes": 92541,
+      "sha256": "e422dd443631d0d06ec221e297384d53e7598ad7e206b70cfe3c98b233bdcad3"
+    },
+    {
+      "path": "media/poster/09_resources.png",
+      "bytes": 83194,
+      "sha256": "e52673e4602c68231c04d8448d70a444109c7d52c2ae279feaf4bc21bc19f25b"
+    },
+    {
+      "path": "media/poster/10_future.png",
+      "bytes": 80414,
+      "sha256": "fbf8b57d65abe40e84d0925401201d15b3dc9d4a18b6003244bcbc2933f6b210"
+    },
+    {
+      "path": "media/poster/11_real_example.png",
+      "bytes": 144261,
+      "sha256": "3ccb3eecfa77e2b8899df1ed632487bb9ce4835bfa319cbebcef4b9083774ade"
+    },
+    {
+      "path": "media/poster/12_real_chip.png",
+      "bytes": 203451,
+      "sha256": "8525541a31976da8ca672ad47249a485fed07d3ee9417d92338bfd8c34ded49d"
+    },
+    {
+      "path": "media/poster/13_qa_innovation.png",
+      "bytes": 107856,
+      "sha256": "277567ad466c1dac7f3e9385618232bc3a7a8dc6672a87d16374ddf957a02952"
+    },
+    {
+      "path": "media/poster/14_qa_validation.png",
+      "bytes": 99211,
+      "sha256": "07b8fe95832cb2a809ae3cb88eaf7085cd6ac89cfcd219a6b2c30ecbb8ce362d"
+    },
+    {
+      "path": "media/video/01_problem.mp4",
+      "bytes": 577287,
+      "sha256": "046dd848d5888cd2b367e7992b98895777c0c95dd5d2da5062e16031ed7fedfc"
+    },
+    {
+      "path": "media/video/02_digital_twin.mp4",
+      "bytes": 471397,
+      "sha256": "ba4e3e58f7edd72b6ea82ca41e8b2e39cf8a4080d56e1b6302d70e49c140725f"
+    },
+    {
+      "path": "media/video/03_innovation.mp4",
+      "bytes": 297170,
+      "sha256": "3107aa7e9458a1ca32656ce75b41170aac3e750a1b8df32361efc3be76a900e2"
+    },
+    {
+      "path": "media/video/04_earlier_work.mp4",
+      "bytes": 229947,
+      "sha256": "6ebd5636587d5b39c59ce0e9b67339ff7328c325bb64d3a27bfbfe01383ea105"
+    },
+    {
+      "path": "media/video/05_data.mp4",
+      "bytes": 275944,
+      "sha256": "c745321a4984950067eb57ce9edcca70bc7b6a3dc0d63118301e1afe392d8a1d"
+    },
+    {
+      "path": "media/video/06_validation.mp4",
+      "bytes": 208935,
+      "sha256": "9d383f8d6f84c6dc1fb3b8fcadc15705d6ff678b694960d7d271aef362649f2e"
+    },
+    {
+      "path": "media/video/07_results.mp4",
+      "bytes": 179534,
+      "sha256": "3c63afe982163ad2dcd2e3a00912620434698533380fcaffadf8c24b5a146692"
+    },
+    {
+      "path": "media/video/08_uncertainty.mp4",
+      "bytes": 184583,
+      "sha256": "05ed36971c0e1ba24b5c67f31e4d3472d1113293cb0acb1febf2732adf30376c"
+    },
+    {
+      "path": "media/video/09_resources.mp4",
+      "bytes": 221641,
+      "sha256": "a6b46c83fdd20a37abf248d8fa4e5db2c9fee02655ce2010cfeedb39372016dc"
+    },
+    {
+      "path": "media/video/10_future.mp4",
+      "bytes": 430906,
+      "sha256": "d495f42cca73edfd53b1db3f3d31daf72ec145a095c12c19e48114b387d42f1e"
+    },
+    {
+      "path": "media/video/11_real_example.mp4",
+      "bytes": 208723,
+      "sha256": "902f2ba580f67e7a8936f22d6a85ebb1cfab16837cca95aec4a23c6919164b33"
+    },
+    {
+      "path": "media/video/12_real_chip.mp4",
+      "bytes": 309614,
+      "sha256": "1fe5d289d6feefe97d2a060c23d7836ab638596e61ff694ce43f9ef9ab876cf0"
+    },
+    {
+      "path": "media/video/13_qa_innovation.mp4",
+      "bytes": 1991320,
+      "sha256": "28ac6c65ac0a55f27828b20c01adc32db960c44b7ea7aa1e28735672332dac67"
+    },
+    {
+      "path": "media/video/14_qa_validation.mp4",
+      "bytes": 1876588,
+      "sha256": "14971461f25a8a1a7fda382a0ee37f16b63eeb66fe1f4992e1d05189b34de197"
+    },
+    {
+      "path": "qa-with-voice/13_qa_innovation_with_voice.mp4",
+      "bytes": 2911346,
+      "sha256": "166e99984ef981afe8da10fd4b8fcd9253b185f2d8a6b8f5cad3004a08eb76c4"
+    },
+    {
+      "path": "qa-with-voice/14_qa_validation_with_voice.mp4",
+      "bytes": 2602787,
+      "sha256": "92609030849f3e7b8b55b918e09eb719143f2c0e572a0e787ea27c924bd44544"
+    },
+    {
+      "path": "README.md",
+      "bytes": 872,
+      "sha256": "714cb865ec36736d7bf85066a72a5ecbdb4ce2d05d1820a9c02252520befb2d5"
+    }
+  ]
+}
