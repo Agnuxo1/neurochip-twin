@@ -15,6 +15,15 @@ a real 4-compartment neural chip.*
 
 **Links:** [Technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf) · [Video](https://youtu.be/yLzpvGqP_2A) · [Interactive demo](https://agnuxo1.github.io/neurochip-twin/) · [Kaggle notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo)
 
+## Video demonstrations
+
+Click a preview to watch the corresponding video. GitHub README pages display clickable previews; the videos play on their linked pages.
+
+| Published project video | Website teaser (MP4) |
+|:---:|:---:|
+| [![Watch the NeuroChip Twin v2 project video](https://img.youtube.com/vi/yLzpvGqP_2A/hqdefault.jpg)](https://youtu.be/yLzpvGqP_2A) | [![Watch the NeuroChip Twin v2 website teaser](site/assets/img/graphical_abstract_16x9.png)](https://agnuxo1.github.io/neurochip-twin/#video) |
+| [Watch on YouTube](https://youtu.be/yLzpvGqP_2A) | [Watch on the interactive website](https://agnuxo1.github.io/neurochip-twin/#video) · [MP4 file](site/video/teaser.mp4) |
+
 ## Why
 
 Neural organ-on-a-chip labs screen compounds by recording network activity for days at up to seven
