@@ -58,6 +58,11 @@ Click a preview to open its chapter, with synchronized English narration and bil
 
 These visuals explain retrospective scientific results; proposed savings in laboratory resources remain to be demonstrated experimentally.
 
+### Final-round PDFs
+
+- [Final-round slides and scientific annex (PDF)](presentation/final-round-pdfs/NeuroChip_Twin_V2_AI4S_Reviewed_Slides_and_Scientific_Annex.pdf)
+- [Jury brief, with the Review Committee's question and answer (PDF)](presentation/final-round-pdfs/NeuroChip_Twin_V2_Jury_Brief.pdf)
+
 ## Why
 
 Neural organ-on-a-chip labs screen compounds by recording network activity for days at up to seven
