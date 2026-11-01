@@ -1,5 +1,25 @@
 [
  {
+  "doc": "docs/FEATURES.md",
+  "value": "19",
+  "source": "brewer_features.json:rows.0.n_electrodes"
+ },
+ {
+  "doc": "docs/FEATURES.md",
+  "value": "21",
+  "source": "data_audit_brewer.json:n_recordings"
+ },
+ {
+  "doc": "docs/FEATURES.md",
+  "value": "300",
+  "source": "data_audit_brewer.json:duration_s"
+ },
+ {
+  "doc": "docs/FEATURES.md",
+  "value": "307,383,784",
+  "source": "r1_feature_fidelity.json:source_h5_total_bytes"
+ },
+ {
   "doc": "docs/epa_nfa.md",
   "value": "31,756",
   "source": "cohort_freeze.json:summary.n_wells"
@@ -68,26 +88,6 @@
   "doc": "docs/epa_nfa.md",
   "value": "87.2",
   "source": "epa_baseline_repro.json:models.Top2.balanced_accuracy_pct"
- },
- {
-  "doc": "docs/FEATURES.md",
-  "value": "19",
-  "source": "brewer_features.json:rows.0.n_electrodes"
- },
- {
-  "doc": "docs/FEATURES.md",
-  "value": "21",
-  "source": "data_audit_brewer.json:n_recordings"
- },
- {
-  "doc": "docs/FEATURES.md",
-  "value": "300",
-  "source": "data_audit_brewer.json:duration_s"
- },
- {
-  "doc": "docs/FEATURES.md",
-  "value": "307,383,784",
-  "source": "r1_feature_fidelity.json:source_h5_total_bytes"
  },
  {
   "doc": "README.md",

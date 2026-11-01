@@ -62,13 +62,13 @@ def fmt(val, spec):
 
 def targets():
     pairs = []
-    for t in sorted((REPO / "docs/templates").glob("*.tmpl")):
+    for t in sorted((REPO / "docs/templates").glob("*.tmpl"), key=lambda q: q.as_posix()):
         pairs.append((t, REPO / "docs" / t.name[:-5]))
-    for t in sorted(REPO.glob("*.tmpl")):
+    for t in sorted(REPO.glob("*.tmpl"), key=lambda q: q.as_posix()):
         pairs.append((t, REPO / t.name[:-5]))
-    for t in sorted((REPO / "writeup").glob("*.tmpl")) if (REPO / "writeup").exists() else []:
+    for t in sorted((REPO / "writeup").glob("*.tmpl"), key=lambda q: q.as_posix()) if (REPO / "writeup").exists() else []:
         pairs.append((t, REPO / "writeup" / t.name[:-5]))
-    for t in sorted((REPO / "report").glob("*.tmpl")) if (REPO / "report").exists() else []:
+    for t in sorted((REPO / "report").glob("*.tmpl"), key=lambda q: q.as_posix()) if (REPO / "report").exists() else []:
         pairs.append((t, REPO / "report" / t.name[:-5]))
     caps = REPO / "report/figures/captions.md"         # figure captions (also rendered by make_figures.py)
     if caps.exists():
