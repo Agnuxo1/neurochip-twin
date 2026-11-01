@@ -46,8 +46,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[2]
-REPO = ROOT / "repo"
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
 RESULTS = REPO / "results"
 PARTS = RESULTS / "appendix_own_arch_parts"
 PILOT_DIR = ROOT / "colab/research/fran/_pilot"

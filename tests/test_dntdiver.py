@@ -6,14 +6,14 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import pytest
 
 from neurotwin.data.dntdiver import NTP_TO_NFA
 from neurotwin.data.toxcast_viability import read_aid
 from neurotwin.models.trajectory import FEATURES
 
-ROOT = Path(__file__).resolve().parents[2]
-
-
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
 def test_pubchem_conflicting_sids_abstain(tmp_path: Path) -> None:
     header = ("PUBCHEM_RESULT_TAG,PUBCHEM_SID,PUBCHEM_CID,"
               "PUBCHEM_EXT_DATASOURCE_SMILES,PUBCHEM_ACTIVITY_OUTCOME,"
@@ -38,9 +38,11 @@ def test_pubchem_conflicting_sids_abstain(tmp_path: Path) -> None:
 
 def test_production_joins_and_units() -> None:
     base = ROOT / "data" / "processed" / "epa_nfa"
+    if not (base / "viability.parquet").exists():
+        pytest.skip("needs raw data that is not shipped in the published repository (author workspace only)")
     viability = pd.read_parquet(base / "viability.parquet")
     potency = pd.read_parquet(base / "reference_potency.parquet")
-    audit = json.loads((ROOT / "repo" / "results" / "viability_join_audit.json").read_text())
+    audit = json.loads((REPO / "results" / "viability_join_audit.json").read_text())
     assert audit["same_physical_well_as_nfa"] is False
     assert audit["pubchem_chemical_coverage"] == {"viability_AB": 243, "viability_LDH": 243}
     pub = viability[viability.source.eq("PubChem CCTE_Shafer_MEA_dev")]
@@ -63,6 +65,9 @@ def test_endpoint_correspondence_is_complete_and_explicit() -> None:
     assert len(FEATURES) == 17
     assert len(NTP_TO_NFA) == 9
     assert set(NTP_TO_NFA.values()).issubset(set(FEATURES))
-    potency = pd.read_parquet(ROOT / "data" / "processed" / "epa_nfa" / "reference_potency.parquet")
+    potency_path = ROOT / "data" / "processed" / "epa_nfa" / "reference_potency.parquet"
+    if not potency_path.exists():
+        pytest.skip("needs raw data that is not shipped in the published repository (author workspace only)")
+    potency = pd.read_parquet(potency_path)
     assert set(potency.nfa_endpoint) == set(FEATURES)
     assert set(potency.loc[potency.analysis.eq("cross_assay"), "nfa_endpoint"]) == set(NTP_TO_NFA.values())

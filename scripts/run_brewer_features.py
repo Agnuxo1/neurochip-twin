@@ -10,8 +10,9 @@ from pathlib import Path
 
 import pyarrow.parquet as pq
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo" / "src"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
 
 from neurotwin.features.mea import FEATURES, extract_features  # noqa: E402
 
@@ -45,7 +46,7 @@ def run(wells_path: Path, output_path: Path) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--wells", type=Path, default=ROOT / "data/processed/brewer/wells.parquet")
-    parser.add_argument("--output", type=Path, default=ROOT / "repo/results/brewer_features.json")
+    parser.add_argument("--output", type=Path, default=REPO / "results/brewer_features.json")
     args = parser.parse_args()
     print(json.dumps(run(args.wells, args.output), indent=2))
 

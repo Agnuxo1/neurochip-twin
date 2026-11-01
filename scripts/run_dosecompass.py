@@ -17,9 +17,10 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
-sys.path.insert(0, str(ROOT / "repo/scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 from neurotwin.models.cnp import predict  # noqa: E402
 from neurotwin.models.potency import BMR, chemical_potency, dev_summary  # noqa: E402
 from neurotwin.models.trajectory import predict_interp, split_context  # noqa: E402
@@ -180,8 +181,8 @@ def write_json(path: Path, obj: dict):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="smoke test on the first N chemicals of each fold")
-    ap.add_argument("--out", default=str(ROOT / "repo/results/r6_dosecompass.json"))
-    ap.add_argument("--fig", default=str(ROOT / "repo/results/figures/dosecompass_r6.png"))
+    ap.add_argument("--out", default=str(REPO / "results/r6_dosecompass.json"))
+    ap.add_argument("--fig", default=str(REPO / "results/figures/dosecompass_r6.png"))
     ap.add_argument("--figure-only", action="store_true", help="redraw the figure from an existing JSON")
     ap.add_argument("--diagnostics-only", action="store_true",
                     help="recompute the 'diagnostics' block from the per-chemical rows of an existing JSON")

@@ -11,11 +11,12 @@ import numpy as np
 import pandas as pd
 import pytest
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo" / "src"))
-sys.path.insert(0, str(ROOT / "repo" / "scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 DATA = ROOT / "data"
-RESULTS = ROOT / "repo" / "results"
+RESULTS = REPO / "results"
 HARRILL_XLSX = DATA / "raw" / "epa_dnt" / "Harrill_DNT_Assay_Dataset.xlsx"
 KOSNIK_DIR = DATA / "neurotox_probe" / "kosnik2020"
 

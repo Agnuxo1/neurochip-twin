@@ -20,12 +20,13 @@ import numpy as np
 from scipy.stats import beta
 from sklearn.metrics import roc_auc_score
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
 from neurotwin.models.potency import BMR, dev_summary  # noqa: E402
 from neurotwin.models.trajectory import ChemTask, interp_rows  # noqa: E402
 
-PROTOCOL = ROOT / "repo/docs/prereg/r11_early_exit.md"
+PROTOCOL = REPO / "docs/prereg/r11_early_exit.md"
 PROTOCOL_SHA = "c92b9476be82b0a8b2d29556e096047edc8ff314505b4658b7f02c5ecabbf159"
 EARLY = [0, 1]                    # DIV 5, DIV 7 (indices into DIVS = [5, 7, 9, 12])
 SENS_TARGET = 0.95
@@ -182,9 +183,9 @@ def main():
         "culture_days_saved_per_exit": 5, "culture_days_per_full_assay": 12,
         "recording_sessions_saved_pct": round(float(100 * ex.mean() * 2 / 4), 2),
         "note": "Assumptions, not measured costs: an exiting chemical skips the DIV 9 and DIV 12 recordings and 5 of 12 culture days."}
-    (ROOT / "repo/results/r11_early_exit.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
+    (REPO / "results/r11_early_exit.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
     import csv
-    with open(ROOT / "repo/results/r11_early_exit_rows.csv", "w", newline="", encoding="utf-8") as fh:
+    with open(REPO / "results/r11_early_exit_rows.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0]) + [f"exit_{m}" for m in METHODS])
         w.writeheader()
         for i, r in enumerate(rows):

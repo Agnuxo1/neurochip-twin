@@ -6,3 +6,5 @@
 *.png binary
 *.pdf binary
 *.mp4 binary
+# transform.json is hashed in data_bundle/manifest.json with the CRLF line endings it was written with
+data_bundle/transform.json -text

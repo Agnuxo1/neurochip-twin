@@ -14,7 +14,8 @@ from pathlib import Path
 
 import pyarrow.parquet as pq
 
-ROOT = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
 TREE_URL = "https://api.github.com/repos/sje30/EPAmeadev/git/trees/master?recursive=1"
 
 
@@ -62,7 +63,7 @@ def run(nfa_path: Path, output_path: Path) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--nfa", type=Path, default=ROOT / "data/processed/epa_nfa/wells.parquet")
-    parser.add_argument("--output", type=Path, default=ROOT / "repo/results/r1_feature_fidelity.json")
+    parser.add_argument("--output", type=Path, default=REPO / "results/r1_feature_fidelity.json")
     args = parser.parse_args()
     result = run(args.nfa, args.output)
     (args.output.parent / "feature_engine_fidelity.json").write_text(

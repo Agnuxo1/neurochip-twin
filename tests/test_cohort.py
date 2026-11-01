@@ -8,12 +8,14 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo" / "scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "scripts"))
 from check_freeze_g0 import verify  # noqa: E402
 
-RESULTS = ROOT / "repo" / "results"
+RESULTS = REPO / "results"
 
 
 def _read(name: str) -> dict:
@@ -21,11 +23,13 @@ def _read(name: str) -> dict:
 
 
 def test_freeze_hashes_and_unmodified_chemical_split():
-    checked = verify(ROOT)
+    workspace = (ROOT / "repo" / "results" / "freeze_g0.json").is_file()   # author layout: workspace/repo + workspace/data
+    checked = verify(ROOT if workspace else REPO)
     assert checked["status"] == "verified"
-    assert checked["checked_files"] >= 29
+    # published repo: only the repo/ entries are shipped (raw EPA data are not), and they are all verified
+    assert checked["checked_files"] >= (29 if workspace else 12)
     manifest = _read("freeze_g0.json")
-    existing = ROOT / "repo" / "results" / "splits_epa_nfa.json"
+    existing = REPO / "results" / "splits_epa_nfa.json"
     assert manifest["chemical_split_unchanged_sha256"] == manifest["files"]["repo/results/splits_epa_nfa.json"]
     assert existing.is_file()
     assert manifest["x1_targets"].startswith("deferred")
@@ -46,7 +50,10 @@ def test_cohort_aliases_and_qc():
 
 def test_dose_levels_are_wholly_held_out():
     dose = _read("splits_dose.json")
-    wells = pd.read_parquet(ROOT / "data" / "processed" / "epa_nfa" / "wells.parquet",
+    wells_path = ROOT / "data" / "processed" / "epa_nfa" / "wells.parquet"
+    if not wells_path.exists():
+        pytest.skip("needs the unshipped EPA NFA wells.parquet (author workspace only)")
+    wells = pd.read_parquet(wells_path,
                             columns=["dtxsid", "concentration_uM"])
     expected = {(row.dtxsid, float(row.concentration_uM))
                 for row in wells[wells.concentration_uM.gt(0)].drop_duplicates().itertuples()}

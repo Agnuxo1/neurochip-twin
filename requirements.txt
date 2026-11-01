@@ -2,6 +2,7 @@
 numpy>=1.26,<2.6
 pandas>=2.1
 scipy>=1.11
+scikit-learn>=1.3   # logistic baselines / AUROC in the R4, R11 and site-precompute scripts imported by the tests
 torch>=2.2
 matplotlib>=3.8
 pyarrow>=14

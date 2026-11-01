@@ -20,12 +20,13 @@ import numpy as np
 import torch
 from torch import nn
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
 from neurotwin.models.cnp import LOSSES, NeuroTrajectoryCNP, TrainConfig, make_batch, sample_episode  # noqa: E402
 from neurotwin.models.trajectory import ChemTask  # noqa: E402
 
-PROTOCOL = ROOT / "repo/docs/prereg/r11b_early_exit_retrained.md"
+PROTOCOL = REPO / "docs/prereg/r11b_early_exit_retrained.md"
 PROTOCOL_SHA = "3ed9b54de673ee23f0a7f5afdc1d88ed87069e76ca052875a634eb48d6eb1a51"
 MASK_P = 0.5
 LATE = [2, 3]                       # DIV 9, DIV 12

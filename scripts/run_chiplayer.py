@@ -10,8 +10,9 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo" / "src"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
 
 from neurotwin.chip.propagation import write_outputs  # noqa: E402
 
@@ -67,7 +68,7 @@ def figures(result_dir: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path, default=ROOT / "data" / "processed" / "brewer")
-    parser.add_argument("--result-dir", type=Path, default=ROOT / "repo" / "results")
+    parser.add_argument("--result-dir", type=Path, default=REPO / "results")
     args = parser.parse_args()
     compact = write_outputs(args.data_dir, args.result_dir)
     figures(args.result_dir)

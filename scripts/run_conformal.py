@@ -24,9 +24,10 @@ import numpy as np
 import pandas as pd
 import torch
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
-sys.path.insert(0, str(ROOT / "repo/scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 from neurotwin.models.cnp import Z90, NeuroTrajectoryCNP, predict  # noqa: E402
 from neurotwin.models.trajectory import level_means, split_context  # noqa: E402
 from run_trajectory_cv import designs  # noqa: E402
@@ -152,7 +153,7 @@ def main():
                                            "mae_abstained": round(float(a[a.abstain].curve_mae.mean()), 4)}
                                   for k, a in A.groupby("k")}}
     print("abstention", out["abstention"], flush=True)
-    (ROOT / "repo/results/conformal_r7.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
+    (REPO / "results/conformal_r7.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
     print("wrote conformal_r7.json")
 
 

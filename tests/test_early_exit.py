@@ -10,10 +10,11 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo" / "src"))
-sys.path.insert(0, str(ROOT / "repo" / "scripts"))
-OUT = ROOT / "repo" / "results" / "r11_early_exit.json"
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
+OUT = REPO / "results" / "r11_early_exit.json"
 
 import run_early_exit as EE  # noqa: E402
 
@@ -60,11 +61,11 @@ def test_result_json_coherent():
 
 
 def test_r11b_json_coherent():
-    p = ROOT / "repo" / "results" / "r11b_early_exit.json"
+    p = REPO / "results" / "r11b_early_exit.json"
     if not p.exists():
         pytest.skip("r11b_early_exit.json not generated")
     d = json.loads(p.read_text(encoding="utf-8"))
-    assert d["protocol_sha256"] == hashlib.sha256((ROOT / "repo/docs/prereg/r11b_early_exit_retrained.md").read_bytes()).hexdigest()
+    assert d["protocol_sha256"] == hashlib.sha256((REPO / "docs/prereg/r11b_early_exit_retrained.md").read_bytes()).hexdigest()
     for ref, blk in d["references"].items():
         assert blk["n_active"] + blk["n_inactive"] == d["n_chemicals"]
         for m, e in blk["methods"].items():

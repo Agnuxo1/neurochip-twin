@@ -28,9 +28,10 @@ import pandas as pd
 import torch
 from scipy.stats import spearmanr
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
-sys.path.insert(0, str(ROOT / "repo/scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 from neurotwin.models.cnp import load_fold_models, predict  # noqa: E402
 from neurotwin.models.potency import BMR, chemical_potency, dev_summary  # noqa: E402
 from neurotwin.models.trajectory import (AnalogKNN, ChemTask, interp_rows, predict_hill,  # noqa: E402
@@ -119,7 +120,7 @@ def main():
                                      "n_levels": len(t.levels)})
         print(f"fold {f} done", flush=True)
     df = pd.DataFrame(rows)
-    df.to_csv(ROOT / "repo/results/potency_r3_rows.csv", index=False)
+    df.to_csv(REPO / "results/potency_r3_rows.csv", index=False)
     out = {"description": __doc__.strip().splitlines()[0], "protocol": __doc__.strip(), "bmr_vehicle_sd": BMR,
            "n_chemicals": int(df.chemical.nunique()),
            "n_chemicals_with_epa_reference": int(df[df.method == "observed_all_levels"].epa_active.notna().sum()),
@@ -164,7 +165,7 @@ def main():
         print(k, {m: (v["composite_mean"], ent["vs_epa"][m]["spearman_potency"], ent["vs_epa"][m]["activity_kappa"])
                   for m, v in ent["vs_replicate_split"].items()}, ent["replicate_split_paired_vs_best"], flush=True)
     print("observed all levels vs EPA:", out["observed_all_levels_vs_epa"])
-    (ROOT / "repo/results/potency_r3.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
+    (REPO / "results/potency_r3.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
     print("wrote potency_r3.json")
 
 

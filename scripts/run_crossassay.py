@@ -36,9 +36,10 @@ import numpy as np
 import pandas as pd
 from scipy.stats import rankdata
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
-sys.path.insert(0, str(ROOT / "repo/scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 from neurotwin.data import harrill as H  # noqa: E402
 from neurotwin.data import kosnik as K  # noqa: E402
 from neurotwin.models.potency import BMR, chemical_potency, dev_summary  # noqa: E402
@@ -49,7 +50,7 @@ CENSOR_LOG10 = 4.0            # inactive chemicals ranked after every active one
 INTERVAL_FEATURES = {"per_burst_interspike_interval", "interburst_interval_mean",
                      "inter_network_spike_interval_mean"}
 MIN_CLASS = 10                # below this many chemicals in a class, BA/AUROC go to the appendix
-RES = ROOT / "repo/results"
+RES = REPO / "results"
 CW_CACHE = ROOT / "data/processed/crossassay/cas_dtxsid_crosswalk.parquet"
 UNPAIRED = ("UNPAIRED cross-assay comparison: different plates, cultures, exposure windows and "
             "readouts; no well or plate is shared with the EPA NFA data.")

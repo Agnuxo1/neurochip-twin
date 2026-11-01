@@ -30,9 +30,10 @@ from sklearn.metrics import roc_auc_score
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
-sys.path.insert(0, str(ROOT / "repo/scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 from neurotwin.models.potency import bmc_from_curve, dev_summary  # noqa: E402
 from neurotwin.models.trajectory import interp_rows, split_context  # noqa: E402
 
@@ -70,7 +71,7 @@ def mcnemar(y, a, b):
 def main():
     tasks, _ = pickle.load(open(ROOT / "data/processed/epa_nfa/tasks_cache.pkl", "rb"))
     lab = [t for t in tasks if t.label in ("positive", "negative")]
-    repro = json.loads((ROOT / "repo/results/epa_baseline_repro.json").read_text(encoding="utf-8"))
+    repro = json.loads((REPO / "results/epa_baseline_repro.json").read_text(encoding="utf-8"))
     # EPA per-chemical hit sums (reproduced) -> rule calls
     hits = pd.read_csv(ROOT / "data/processed/epa_nfa/upstream/Bioactivity_bin_tbl_comp_methods.csv") \
         if (ROOT / "data/processed/epa_nfa/upstream/Bioactivity_bin_tbl_comp_methods.csv").exists() else None
@@ -145,8 +146,8 @@ def main():
     out["note"] = ("EPA rule results are reproduced on their reference cohort (86 pos / 19 neg); our cohort is the "
                    "subset of those chemicals present as tasks here. With 19 negatives no balanced-accuracy "
                    "difference of a few points can be significant; see McNemar where per-chemical EPA calls are available.")
-    (ROOT / "repo/results/dnt_r4.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
-    df.drop(columns=[c for c in df.columns if c.startswith("x_")]).to_csv(ROOT / "repo/results/dnt_r4_calls.csv", index=False)
+    (REPO / "results/dnt_r4.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
+    df.drop(columns=[c for c in df.columns if c.startswith("x_")]).to_csv(REPO / "results/dnt_r4_calls.csv", index=False)
     print("wrote dnt_r4.json")
 
 

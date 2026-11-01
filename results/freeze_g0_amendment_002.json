@@ -1,0 +1,17 @@
+{
+  "amendment_id": "G0-A002",
+  "date_utc": "2026-11-01",
+  "author": "claude (reviewer: codex, pending)",
+  "reason": "Publication hygiene: the verifier and its test assumed the author's workspace layout (workspace/repo + workspace/data) and failed in the published repository and in CI. check_freeze_g0.py now also accepts the repository root as --root (only the repo/ entries are verified there, matching either the LF or the CRLF form of a text file, because the freeze was taken on Windows checkouts and git stores LF); test_cohort.py resolves paths relative to the repository root and skips the one test that needs the unshipped EPA NFA wells.parquet. No cohort, QC rule, split, data file or result changed.",
+  "evidence": "In the workspace layout verify() takes exactly the same code path as before; in the published layout all 'repo/' entries of the freeze (and amendment G0-A001) verify with the hashes recorded in freeze_g0.json; see CI run of this commit.",
+  "files": {
+    "repo/scripts/check_freeze_g0.py": {
+      "old_sha256": "8e933827ed5d7b7c38fc09142fffec3f1745ece225e7f4a225ae94e85b759f1f",
+      "new_sha256": "52588d69cfc27d9b193b2225d4f539a97277a0012f2d5267e18e78c2933f7256"
+    },
+    "repo/tests/test_cohort.py": {
+      "old_sha256": "80a73e58be158c0b17f8f4f88098a4b5e1b8ba4788a24dbe35a5f32508143e7a",
+      "new_sha256": "d6559a790f5a45cfd57a6fb6d168f647b5b6a6561d32375da38318e9bde86682"
+    }
+  }
+}

@@ -21,15 +21,16 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
-sys.path.insert(0, str(ROOT / "repo/scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 import run_dosecompass as v1  # noqa: E402  (read-only reuse of the v1 functions)
 from neurotwin.models.potency import BMR  # noqa: E402
 from neurotwin.planner import full_information_potency, load_fold_models, sequential_design  # noqa: E402
 from run_trajectory_cv import paired_boot  # noqa: E402
 
-V1_JSON = ROOT / "repo/results/r6_dosecompass.json"
+V1_JSON = REPO / "results/r6_dosecompass.json"
 
 PROTOCOL = """- Every strategy starts by measuring the HIGHEST tested concentration (anchor), identical for all strategies. Budget B total levels (primary B=3; sensitivity B=2 and B=4).
 - DoseCompass-anchored: after the anchor, chooses the remaining B-1 levels greedily by the same expected-information criterion and the same cross-fitted calibration (tau, ell) as v1, using only already-measured wells and the fold's own models (never hidden wells).
@@ -132,8 +133,8 @@ def rep_distribution(rep_metrics: list) -> dict:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="smoke test on the first N chemicals of each fold")
-    ap.add_argument("--out", default=str(ROOT / "repo/results/r6b_dosecompass_anchored.json"))
-    ap.add_argument("--fig", default=str(ROOT / "repo/results/figures/dosecompass_r6b.png"))
+    ap.add_argument("--out", default=str(REPO / "results/r6b_dosecompass_anchored.json"))
+    ap.add_argument("--fig", default=str(REPO / "results/figures/dosecompass_r6b.png"))
     ap.add_argument("--register-only", action="store_true", help="write the protocol header and stop")
     ap.add_argument("--figure-only", action="store_true", help="redraw the figure from an existing JSON")
     a = ap.parse_args()

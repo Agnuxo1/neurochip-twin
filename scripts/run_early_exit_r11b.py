@@ -16,14 +16,15 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
-sys.path.insert(0, str(ROOT / "repo/scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 import run_early_exit as R11  # noqa: E402
 from neurotwin.models.potency import dev_summary  # noqa: E402
 from neurotwin.models.trajectory import interp_rows, split_context  # noqa: E402
 
-PROTOCOL = ROOT / "repo/docs/prereg/r11b_early_exit_retrained.md"
+PROTOCOL = REPO / "docs/prereg/r11b_early_exit_retrained.md"
 PROTOCOL_SHA = "3ed9b54de673ee23f0a7f5afdc1d88ed87069e76ca052875a634eb48d6eb1a51"
 R11B_DIR = ROOT / "data/processed/models_r11b"
 V1_DIR = ROOT / "data/processed/models"
@@ -111,9 +112,9 @@ def main():
         exits[ref] = ex
     out["primary"] = out["references"]["reference_active"]["twin_r11b_vs_best_baseline"]
     out["noninferiority_dose_interpolation"] = noninferiority(tasks, v1, r11b, rng)
-    (ROOT / "repo/results/r11b_early_exit.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
+    (REPO / "results/r11b_early_exit.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
     import csv
-    with open(ROOT / "repo/results/r11b_early_exit_rows.csv", "w", newline="", encoding="utf-8") as fh:
+    with open(REPO / "results/r11b_early_exit_rows.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0]))
         w.writeheader()
         w.writerows(rows)

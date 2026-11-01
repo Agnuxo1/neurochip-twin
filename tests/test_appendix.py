@@ -12,10 +12,11 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo" / "src"))
-sys.path.insert(0, str(ROOT / "repo" / "scripts"))
-RESULTS = ROOT / "repo" / "results"
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
+RESULTS = REPO / "results"
 OUT = RESULTS / "appendix_own_arch.json"
 PARTS = RESULTS / "appendix_own_arch_parts"
 BREWER = ROOT / "data" / "processed" / "brewer" / "wells.parquet"

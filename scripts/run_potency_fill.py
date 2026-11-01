@@ -18,9 +18,10 @@ import numpy as np
 import pandas as pd
 import torch
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
-sys.path.insert(0, str(ROOT / "repo/scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 from neurotwin.models.cnp import load_fold_models, predict  # noqa: E402
 from neurotwin.models.potency import chemical_potency, dev_summary  # noqa: E402
 from neurotwin.models.trajectory import (AnalogKNN, interp_rows, predict_hill,  # noqa: E402
@@ -77,7 +78,7 @@ def main():
                                      "n_levels": len(t.levels)})
         print(f"fold {f} done", flush=True)
     df = pd.DataFrame(rows)
-    df.to_csv(ROOT / "repo/results/potency_r3b_rows.csv", index=False)
+    df.to_csv(REPO / "results/potency_r3b_rows.csv", index=False)
     from scipy.stats import spearmanr
     out = {"description": __doc__.strip().splitlines()[0], "protocol": __doc__.strip(), "by_k": {}}
     for k in KS:
@@ -104,7 +105,7 @@ def main():
         print(k, {m: (v["composite_mean"], ent["vs_epa"][m]["spearman_potency"], ent["vs_epa"][m]["activity_kappa"])
                   for m, v in ent["vs_replicate_split"].items()}, flush=True)
         print("   fill vs:", {b: (v["mean_diff"], v["ci95"]) for b, v in ent["fill_paired_vs"].items()}, flush=True)
-    (ROOT / "repo/results/potency_r3b.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
+    (REPO / "results/potency_r3b.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
     print("wrote potency_r3b.json")
 
 

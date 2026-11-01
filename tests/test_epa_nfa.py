@@ -11,18 +11,21 @@ import numpy as np
 import pandas as pd
 import pytest
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo" / "src"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
 sys.path.insert(0, str(ROOT / "data" / ".pylibs"))
 from neurotwin.data.epa_nfa import FEATURES, frozen_splits, process  # noqa: E402
 
 RAW = ROOT / "data" / "neurotox_probe" / "nfa_refine"
 OUT = ROOT / "data" / "processed" / "epa_nfa"
-RESULTS = ROOT / "repo" / "results"
+RESULTS = REPO / "results"
 
 
 @pytest.fixture(scope="module")
 def generated():
+    if not (OUT / "wells.parquet").exists() and not RAW.is_dir():
+        pytest.skip("needs raw data that is not shipped in the published repository (author workspace only)")
     if not (OUT / "wells.parquet").exists() or not (RESULTS / "epa_baseline_repro.json").exists():
         process(RAW, OUT, RESULTS)
     return (

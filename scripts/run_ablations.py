@@ -23,9 +23,10 @@ from pathlib import Path
 import numpy as np
 import torch
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
-sys.path.insert(0, str(ROOT / "repo/scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 from neurotwin.models.cnp import TrainConfig, load_model, predict, train_cnp  # noqa: E402
 from neurotwin.models.trajectory import level_means, split_context  # noqa: E402
 from run_trajectory_cv import designs, paired_boot  # noqa: E402
@@ -46,7 +47,7 @@ def main():
     ap.add_argument("--summary", default="trajectory_cv_v2.json")
     ap.add_argument("--models-dir", default=str(ROOT / "data/processed/models_v2"))
     ap.add_argument("--folds", type=int, nargs="*")
-    ap.add_argument("--out", default=str(ROOT / "repo/results"))
+    ap.add_argument("--out", default=str(REPO / "results"))
     a = ap.parse_args()
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     tasks, _ = pickle.load(open(ROOT / "data/processed/epa_nfa/tasks_cache.pkl", "rb"))

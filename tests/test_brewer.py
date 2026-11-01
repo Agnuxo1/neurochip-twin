@@ -12,8 +12,9 @@ import h5py
 import numpy as np
 import pytest
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo" / "src"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
 from neurotwin.data.brewer import (  # noqa: E402
     CONDITIONS,
     DURATION_S,
@@ -26,11 +27,13 @@ from neurotwin.data.brewer import (  # noqa: E402
 
 RAW = ROOT / "data" / "raw" / "brewer_hfs"
 OUT = ROOT / "data" / "processed" / "brewer"
-AUDIT = ROOT / "repo" / "results" / "data_audit_brewer.json"
+AUDIT = REPO / "results" / "data_audit_brewer.json"
 
 
 @pytest.fixture(scope="module")
 def outputs():
+    if not RAW.is_dir() and not (OUT / "recordings.csv").exists():
+        pytest.skip("needs raw data that is not shipped in the published repository (author workspace only)")
     if not AUDIT.exists() or not (OUT / "recordings.csv").exists():
         process(RAW, OUT, AUDIT)
     return json.loads(AUDIT.read_text(encoding="utf-8"))
@@ -46,6 +49,7 @@ def _table_rows(name: str):
     return [json.loads(item) for item in data["rows"]]
 
 
+@pytest.mark.skipif(not RAW.is_dir(), reason="needs raw data that is not shipped in the published repository (author workspace only)")
 def test_sample_geometry_and_layout():
     assert SAMPLE_RATE_HZ == 25_000
     assert N_SAMPLES == 7_500_000

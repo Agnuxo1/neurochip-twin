@@ -29,8 +29,9 @@ from pathlib import Path
 import numpy as np
 import torch
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
 from neurotwin.models.trajectory import (  # noqa: E402
     AnalogKNN, level_means, load_tasks, predict_ctx_mean, predict_hill, predict_interp,
     predict_zero, split_context)
@@ -121,7 +122,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2])
     ap.add_argument("--quick", action="store_true", help="1 fold, 1 seed, no nesting (smoke test)")
-    ap.add_argument("--out", default=str(ROOT / "repo/results"))
+    ap.add_argument("--out", default=str(REPO / "results"))
     ap.add_argument("--folds", type=int, nargs="*", help="run only these outer folds (parallel workers)")
     ap.add_argument("--summarize", action="store_true", help="merge per-fold outputs and write the summary")
     ap.add_argument("--grid", default="v1", choices=sorted(GRIDS))

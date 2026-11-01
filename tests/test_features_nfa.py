@@ -9,8 +9,9 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo" / "src"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
 
 from neurotwin.features.mea import (  # noqa: E402
     FEATURES, detect_bursts, detect_network_spikes, extract_features,
@@ -70,8 +71,8 @@ def test_undefined_vs_zero_and_input_validation():
 
 
 def test_brewer_and_r1_audits():
-    brewer = ROOT / "repo/results/brewer_features.json"
-    r1 = ROOT / "repo/results/r1_feature_fidelity.json"
+    brewer = REPO / "results/brewer_features.json"
+    r1 = REPO / "results/r1_feature_fidelity.json"
     if not brewer.exists() or not r1.exists():
         pytest.skip("Run run_brewer_features.py and audit_r1_sources.py")
     features = json.loads(brewer.read_text(encoding="utf-8"))

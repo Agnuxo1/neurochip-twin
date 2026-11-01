@@ -24,8 +24,9 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import roc_auc_score
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
 from neurotwin.models.potency import chemical_potency, dev_summary  # noqa: E402
 from neurotwin.models.trajectory import interp_rows  # noqa: E402
 
@@ -74,7 +75,7 @@ def main():
           "cyto_active_frac": {lab: round(float(g.cyto_active.mean()), 4) for lab, g in L.groupby("label")},
           "n_by_label_and_cyto": {f"{lab}|{'cytotoxic' if c else 'not_cytotoxic'}": int(len(g)) for (lab, c), g in L.groupby(["label", "cyto_active"])},
           "note": "Cytotoxicity is a chemical-level anchor (PubChem AB/LDH of the NFA assay), not a same-well viability readout."}
-    (ROOT / "repo/results/r5_selectivity.json").write_text(json.dumps(r5, indent=2), encoding="utf-8")
+    (REPO / "results/r5_selectivity.json").write_text(json.dumps(r5, indent=2), encoding="utf-8")
     print("R5", {k: r5[k] for k in ("auroc_selectivity_index", "auroc_si_ci95", "auroc_network_potency_only", "auroc_cytotoxic_potency_only", "specific_disruption_frac")})
 
     # R10
@@ -88,12 +89,12 @@ def main():
                 if isinstance(key, str):
                     cls[key] = c
     chem_cls = {chem: next((cls[d] for d in ds if d in cls), "unannotated") for chem, ds in dtx.items()}
-    cv = pd.read_csv(ROOT / "repo/results/trajectory_cv_per_chemical.csv")
+    cv = pd.read_csv(REPO / "results/trajectory_cv_per_chemical.csv")
     k3 = cv[cv.k == 3].pivot_table(index="chemical", columns="method", values="curve_mae")
     base = [c for c in ("loglinear_interp", "analog_knn", "hill_per_endpoint", "context_mean", "zero") if c in k3]
     best = min(base, key=lambda c: k3[c].mean())
     k3["class"] = [chem_cls.get(c, "unannotated") for c in k3.index]
-    ab_p = ROOT / "repo/results/conformal_r7_per_chemical.csv"
+    ab_p = REPO / "results/conformal_r7_per_chemical.csv"
     ab = pd.read_csv(ab_p).groupby("chemical").abstain.mean() if ab_p.exists() else None
     no_est = D.set_index("chemical").network_active.eq(False)
     r10 = {"description": "R10 failure analysis by annotated chemical class (k = 3 measured concentrations)",
@@ -107,7 +108,7 @@ def main():
             ent["abstention_rate"] = round(float(ab.reindex(g.index).mean()), 4)
         r10["classes"][c] = ent
     r10["n_no_estimable_total"] = int(no_est.sum())
-    (ROOT / "repo/results/r10_failures.json").write_text(json.dumps(r10, indent=2), encoding="utf-8")
+    (REPO / "results/r10_failures.json").write_text(json.dumps(r10, indent=2), encoding="utf-8")
     print("R10", json.dumps(r10["classes"], indent=0)[:1500])
 
 

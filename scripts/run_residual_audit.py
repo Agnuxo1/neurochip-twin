@@ -45,9 +45,10 @@ os.environ.setdefault("OMP_NUM_THREADS", os.environ.get("NT_THREADS", "4"))
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo/src"))
-sys.path.insert(0, str(ROOT / "repo/scripts"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "scripts"))
 
 from neurotwin.audit.darwin import (Alphabet, AtomCache, DarwinSearch, integer_view,  # noqa: E402
                                     plant_residual, program_key, uses_atoms)
@@ -58,7 +59,7 @@ RESID = AUDIT / "residuals_v1.parquet"
 DESIGN_TAB = AUDIT / "designs_v1.parquet"
 PARTS = AUDIT / "parts"
 MODELS = ROOT / "data/processed/models"
-OUT = ROOT / "repo/results"
+OUT = REPO / "results"
 FIG = OUT / "figures"
 KS = (1, 2, 3, 4)
 FOLDS = (1, 2, 3, 4)

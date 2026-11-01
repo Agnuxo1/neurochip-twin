@@ -8,8 +8,9 @@ from pathlib import Path
 
 import pytest
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "repo" / "src"))
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
+sys.path.insert(0, str(REPO / "src"))
 
 from neurotwin.chip.propagation import (  # noqa: E402
     PAIRS, TUNNELS, _fit, _predict, cross_validate, pair_for_tunnel, read_data,
@@ -39,6 +40,8 @@ def test_fit_uses_only_passed_training_rows():
 
 @pytest.mark.parametrize("condition", ["NoStim", "HFS5", "HFS40"])
 def test_source_topology(condition):
+    if not (ROOT / "data" / "processed" / "brewer" / "recordings.csv").exists():
+        pytest.skip("needs raw data that is not shipped in the published repository (author workspace only)")
     recordings, _, axons = read_data(ROOT / "data" / "processed" / "brewer")
     orientations = {(r["condition"], r["fid"]): r["orientation"] for r in recordings}
     for row in (r for r in axons if r["condition"] == condition):
@@ -46,7 +49,7 @@ def test_source_topology(condition):
 
 
 def test_r8_outputs_and_split():
-    path = ROOT / "repo" / "results" / "r8_chiplayer.json"
+    path = REPO / "results" / "r8_chiplayer.json"
     if not path.exists():
         pytest.skip("Run repo/scripts/run_chiplayer.py to create R8 evidence")
     result = json.loads(path.read_text(encoding="utf-8"))

@@ -13,7 +13,8 @@ from neurotwin.models.trajectory import DIVS, ND, NF, ChemTask
 from neurotwin.planner import (bmc_batch, mask_divs, mutual_info_bits, plan_step, potency_codes,
                                recommend_next, sequential_design)
 
-ROOT = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO.parent  # author workspace root; raw data lives in ROOT/"data" and is not shipped
 DATA = ROOT / "data"
 LEVELS = np.log10([0.03, 0.1, 0.3, 1, 3, 10, 30]).astype(np.float32)
 
@@ -113,7 +114,7 @@ def test_sequential_design_and_div_mask():
 
 
 def test_fixed_log_spaced_rule():
-    sys.path.insert(0, str(ROOT / "repo" / "scripts"))
+    sys.path.insert(0, str(REPO / "scripts"))
     from run_dosecompass import first_index, fixed_design
     assert first_index(7) == 3 and first_index(8) == 3
     assert fixed_design(7, 3) == (0, 3, 6)
@@ -144,7 +145,7 @@ def test_real_chemical_no_peeking():
 
 
 def test_results_json_consistent():
-    p = ROOT / "repo/results/r6_dosecompass.json"
+    p = REPO / "results/r6_dosecompass.json"
     if not p.exists():
         pytest.skip("run repo/scripts/run_dosecompass.py to create R6 evidence")
     d = json.loads(p.read_text(encoding="utf-8"))
@@ -165,7 +166,7 @@ def test_results_json_consistent():
 
 # ---------------------------------------------------------------- R6b DoseCompass-anchored
 def _r6b():
-    sys.path.insert(0, str(ROOT / "repo" / "scripts"))
+    sys.path.insert(0, str(REPO / "scripts"))
     import run_dosecompass_anchored as r6b
     return r6b
 
@@ -216,7 +217,7 @@ def test_r6b_real_chemical_no_hidden_wells():
 
 
 def test_r6b_results_json_consistent():
-    p = ROOT / "repo/results/r6b_dosecompass_anchored.json"
+    p = REPO / "results/r6b_dosecompass_anchored.json"
     if not p.exists():
         pytest.skip("run repo/scripts/run_dosecompass_anchored.py to create R6b evidence")
     d = json.loads(p.read_text(encoding="utf-8"))
@@ -229,9 +230,12 @@ def test_r6b_results_json_consistent():
     assert d["protocol_registered_utc"] <= d.get("run_started_utc", d["protocol_registered_utc"])
     assert "second DoseCompass protocol" in d["multiplicity"] and "v1" in d["multiplicity"]
     assert d["v1_reference"]["unchanged_during_run"]
-    v1p = ROOT / "repo/results/r6_dosecompass.json"
+    v1p = REPO / "results/r6_dosecompass.json"
     if v1p.exists():
-        assert hashlib.sha256(v1p.read_bytes()).hexdigest() == d["v1_reference"]["file_sha256_at_start"]
+        raw = v1p.read_bytes()
+        lf_or_crlf = {hashlib.sha256(raw).hexdigest(),     # git may normalise line endings: accept both forms
+                      hashlib.sha256(raw.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")).hexdigest()}
+        assert d["v1_reference"]["file_sha256_at_start"] in lf_or_crlf
     prim = d["primary_endpoint"]
     r3 = d["results"]["B=3"]["neurotrajectory"]
     assert prim["dosecompass_anchored"] == r3["strategies"]["dosecompass_anchored"]["composite_error_mean"]
