@@ -1,5 +1,10 @@
 # NeuroChip Twin v2
 
+![Animated conceptual workflow from measured neural signals through few-shot conditioning and conditional neural-process forecasting](docs/figures/neurochip-concept.gif)
+
+*Conceptual schematic, not an experimental result. Animated boxes illustrate measured MEA signals, few-shot context, the conditional neural-process encoder and uncertainty-aware forecasting; the lines are **not** recorded electrophysiology or measured dose-response curves. [Static PNG alternative](docs/figures/neurochip-concept.png) · [Reproducible generator](scripts/generate_neurochip_diagram.py).*
+
+
 *Few-shot, uncertainty-aware forecasting of neural-network formation under chemical exposure — trained and
 validated on real MEA electrophysiology (rat cortical cultures), with a directed-propagation layer fitted on
 a real 4-compartment neural chip.*

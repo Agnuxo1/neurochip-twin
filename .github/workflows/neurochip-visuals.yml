@@ -1,0 +1,22 @@
+name: NeuroChip conceptual image integrity
+on:
+  push:
+    paths:
+      - 'scripts/generate_neurochip_diagram.py'
+      - 'docs/figures/neurochip-concept.*'
+      - '.github/workflows/neurochip-visuals.yml'
+  pull_request:
+    paths:
+      - 'scripts/generate_neurochip_diagram.py'
+      - 'docs/figures/neurochip-concept.*'
+      - '.github/workflows/neurochip-visuals.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow==10.4.0
+      - run: python scripts/generate_neurochip_diagram.py
