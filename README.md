@@ -20,6 +20,10 @@ a real 4-compartment neural chip.*
 
 **Links:** [Technical report](https://github.com/Agnuxo1/neurochip-twin/releases/download/v2.0.0/neurochip_twin_v2.pdf) · [Video](https://youtu.be/yLzpvGqP_2A) · [Interactive demo](https://agnuxo1.github.io/neurochip-twin/) · [Kaggle notebook](https://www.kaggle.com/code/franciscoangulo/neurochip-twin-v2-demo)
 
+<!-- impact-note:start -->
+<sub><strong>Efficiency and practical value.</strong> NeuroChip Twin reuses measured dose responses across chemicals to forecast unobserved trajectories with calibrated uncertainty. The repository reports lower forecasting error than its best baseline at three measured doses. This can support more selective experiment planning, while the <a href="#key-numbers">reported positive and negative results</a> define the limits. Reductions in laboratory time, reagents or water remain prospective benefits requiring experimental confirmation.</sub>
+<!-- impact-note:end -->
+
 ## Video demonstrations
 
 Click a preview to watch the corresponding video. GitHub README pages display clickable previews; the videos play on their linked pages.
